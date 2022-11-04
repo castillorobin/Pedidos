@@ -10,7 +10,7 @@
 @section('content')
 
 <h2>Ver Ticket</h2>
-
+<br>
 <form action="/tickets/{{$ticket->id}}" >
     
 <div class="row mb-12">
