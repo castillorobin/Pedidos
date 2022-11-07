@@ -21,6 +21,8 @@ Route::resource('pedidos', 'App\Http\Controllers\PedidoController');
 
 Route::resource('tickets', 'App\Http\Controllers\TicketController');
 
+Route::resource('vendedores', 'App\Http\Controllers\VendedorController');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

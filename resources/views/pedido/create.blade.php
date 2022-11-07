@@ -15,7 +15,12 @@
     @csrf
     <div class="mb-3 col-6" >
         <label for="" class="form-label">Vendedor</label>
-        <input type="text" id="vende" name="vende" class="form-control" tabindex="1">
+        <select id="id_role" name="id_role" class="form-control">
+       <option>-Seleccionar vendedor-</option>
+        @foreach($vendedores as $vendedor)
+       <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
+       @endforeach
+       </select>
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Direccion de Entrega</label>

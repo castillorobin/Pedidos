@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pedido;
+use App\Models\Vendedor;
 
 class PedidoController extends Controller
 {
@@ -16,7 +17,7 @@ class PedidoController extends Controller
     {
         $pedidos = Pedido::all();
         return view('pedido.index')->with('pedidos', $pedidos);
-
+ 
     }
 
     /**
@@ -26,7 +27,8 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        return view('pedido.create');
+        $vendedores = Vendedor::all();
+        return view('pedido.create')->with('vendedores', $vendedores);
     }
 
     /**

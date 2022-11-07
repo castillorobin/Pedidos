@@ -346,12 +346,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Listado',
-                    'url'  => '#',
+                    'url'  => '/vendedores/',
                 ],
                 
                 [
                     'text' => 'Agregar',
-                    'url'  => '#',
+                    'url'  => '/vendedores/create',
                 ],
             ],
         ],
