@@ -27,6 +27,8 @@ class CreatePedidosTable extends Migration
             $table->string('ruta');
             $table->string('estado');
             $table->string('nota');
+            $table->string('destinatario');
+            $table->string('pagado');
             $table->timestamps();
         });
     }

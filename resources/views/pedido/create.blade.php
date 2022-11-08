@@ -15,12 +15,16 @@
     @csrf
     <div class="mb-3 col-6" >
         <label for="" class="form-label">Vendedor</label>
-        <select id="id_role" name="id_role" class="form-control">
-       <option>-Seleccionar vendedor-</option>
+        <select id="vende" name="vende" class="form-control">
+       <option >-Seleccionar vendedor-</option>
         @foreach($vendedores as $vendedor)
        <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
        @endforeach
        </select>
+    </div>
+    <div class="mb-3 col-6">
+        <label for="" class="form-label">Nombre del Destinatario</label>
+        <input type="text" id="destino" name="destino" class="form-control" tabindex="2">
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Direccion de Entrega</label>
@@ -37,7 +41,17 @@
     </div>
     <div class="mb-3 col-3">
         <label for="" class="form-label">Tipo del paquete</label>
+
+        <select id="tipo" name="tipo" aria-label="Select a Timezone"  class="form-select ">
+			<option value="Ruta">Seleccionar tipo</option>		
+			<option value="Casillero">Casillero</option>
+			<option value="Personalizado">Personalizado</option>
+		    <option value="Punto Fijo">Punto Fijo</option>
+			
+		</select>
+<!--
         <input type="text" id="tipo" name="tipo" class="form-control" tabindex="5" >
+         -->
     </div>
 
     <div class="mb-3 col-3">
@@ -54,16 +68,37 @@
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Repartidor</label>
+        
         <input type="text" id="repa" name="repa" class="form-control" tabindex="8">
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Ruta</label>
+
+        <select id="ruta" name="ruta" aria-label="Select a Timezone"  class="form-select ">
+			<option value="Ruta">Seleccionar ruta</option>		
+			<option value="Ruta 1">Ruta 1</option>
+			<option value="Ruta 2">Ruta 2</option>
+		    <option value="Ruta 3">Ruta 3</option>
+			<option value="Ruta 4">Ruta 4</option>
+		</select>
+        <!--
         <input type="text" id="ruta" name="ruta" class="form-control" tabindex="8">
+        -->
     </div>
 
     <div class="mb-3 col-6">
         <label for="" class="form-label">Estado del paquete</label>
+
+        <select id="estado" name="estado" aria-label="Select a Timezone"  class="form-select ">
+			<option value="Ruta">Seleccionar Estado</option>		
+			<option value="Pendiente">Pendiente</option>
+			<option value="Entregado">Entregado</option>
+		    <option value="En Camino">En Camino</option>
+			<option value="Cancelado">Cancelado</option>
+		</select>
+<!--
         <input type="text" id="estado" name="estado" class="form-control" tabindex="9">
+         -->
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Nota</label>

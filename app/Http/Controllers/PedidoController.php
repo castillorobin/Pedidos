@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pedido;
 use App\Models\Vendedor;
+use PDF;
 
 class PedidoController extends Controller
 {
@@ -20,6 +21,13 @@ class PedidoController extends Controller
  
     }
 
+    public function etiquetas($id)
+    {
+        $pedido = Pedido::find($id);
+        $pdf = PDF::loadView('pedido.etiqueta', ['pedido'=>$pedido]);
+        //return view('pedido.etiqueta')->with('pedido', $pedido);
+        return $pdf->stream();
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -52,6 +60,7 @@ class PedidoController extends Controller
         $pedidos->ruta = $request->get('ruta');
         $pedidos->estado = $request->get('estado');
         $pedidos->nota = $request->get('nota');
+        $pedidos->destinatario = $request->get('destino');
         $pedidos->save();
         return redirect('/pedidos');
 

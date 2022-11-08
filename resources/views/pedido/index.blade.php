@@ -34,8 +34,8 @@
     <td>{{ $pedido->telefono }}</td>
     <td>{{ $pedido->tipo }}</td>
     <td>{{ $pedido->estado }}</td>
-    <td>
-        <div style="display:inline-flex;">
+    <td style="width: 400px; text-align:center;">
+        <div style="display:inline-flex; " >
     <form action="{{ route ('pedidos.show', $pedido->id)}}" method="POST">
     @csrf
     @method('GET')
@@ -47,6 +47,13 @@
         @method('DELETE')
         <button class="btn btn-danger">Borrar</button>
         </form>
+        &nbsp;&nbsp;
+        <form action="/pedido/etiqueta/{{ $pedido->id }}" method="POST">
+    @csrf
+    @method('GET')
+    <button class="btn btn-success" style="margin-right:10px;">Etiqueta de Envio</button>
+</form>
+    
         </div>
     </td>
     </tr>
