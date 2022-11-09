@@ -23,6 +23,10 @@ Route::resource('tickets', 'App\Http\Controllers\TicketController');
 
 Route::resource('vendedores', 'App\Http\Controllers\VendedorController');
 
+Route::resource('tipos', 'App\Http\Controllers\TipoController');
+
+Route::resource('estados', 'App\Http\Controllers\EstadoController');
+
 Route::get('pedido/etiqueta/{id}', [App\Http\Controllers\PedidoController::class, 'etiquetas'] )->name('pedido.etiqueta') ;
 
 Route::middleware([

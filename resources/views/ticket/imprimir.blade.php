@@ -13,10 +13,11 @@ Vendedor: {{ $tickets->vendedor }}
 <br>
 Correlativo: {{ $tickets->id }}
 <h4> Cantidad de pedidos recibidos: </h4>
-Casillero: {{ $tickets->casillero }} 
-<br>Personalizado: {{ $tickets->personalizado }} 
-<br>Punto Fijo: {{ $tickets->punto_fijo }}
-<br>Precio Total: ${{ $tickets->total }}
+{{ $tickets->casillero }} &nbsp; &nbsp; Casillero
+<br>{{ $tickets->personalizado }} &nbsp; &nbsp; Personalizado
+<br>{{ $tickets->punto_fijo }} &nbsp; &nbsp; Punto Fijo
+<p></p>
+<br>Precio Total: &nbsp; &nbsp; &nbsp; $ &nbsp;{{ $tickets->total }}
 
 
 <br> <p></p>

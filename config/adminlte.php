@@ -390,6 +390,31 @@ return [
                 
               
             ],
+        ],
+        [
+            'text'    => 'Ajustes',
+            'icon'    => 'fa fa-asterisk',
+            'submenu' => [
+                [
+                    'text' => 'Tipo de Pedido',
+                    'url'  => '/tipos',
+                ],
+                
+                [
+                    'text' => 'Precios Pedidos',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Estados Pedidos',
+                    'url'  => '/estados',
+                ],
+                [
+                    'text' => 'Rutas',
+                    'url'  => '#',
+                ]
+                
+              
+            ],
         ]
         
     ],
