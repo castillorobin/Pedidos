@@ -72,7 +72,9 @@ class PedidoController extends Controller
         $pedidos->nota = $request->get('nota');
         $pedidos->destinatario = $request->get('destino');
         $pedidos->save();
-        return redirect('/pedidos');
+
+        return view('/pedido/etiqueta')->with('pedido', $pedidos);
+       //return redirect('/pedido/etiqueta')->with('id', $pedidos->id);
 
     }
 

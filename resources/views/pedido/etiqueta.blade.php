@@ -44,7 +44,7 @@
     <td style=" font-size: 20px;">
 
         <strong> Datos de Entrega: </strong><br>
-        Nombre: {{ $pedido->vendedor }}  <br>
+        Nombre: {{ $pedido->destinatario }}  <br>
     Dirección: {{ $pedido->direccion }} <br>
     Telefono: {{ $pedido->telefono }} <br>
     Ruta : {{ $pedido->ruta }} 
@@ -69,6 +69,18 @@ Pedido: {{ $pedido->id }}
     
     
 </div>
+
+<script>
+
+window.print();
+setTimeout(saludos, 3000);
+
+function saludos(){
+    window.location.href = '/pedidos';
+}
+
+</script>
+
 </body>
 
 </html>
