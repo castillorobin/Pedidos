@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pedido;
 use App\Models\Vendedor;
-use PDF;
+use App\Models\Tipo;
+use App\Models\Ruta;
+use App\Models\Estado;
+
+use PDF; 
 
 class PedidoController extends Controller
 {
@@ -36,7 +40,13 @@ class PedidoController extends Controller
     public function create()
     {
         $vendedores = Vendedor::all();
-        return view('pedido.create')->with('vendedores', $vendedores);
+        $tipos = Tipo::all();
+        $rutas = Ruta::all();
+        $estados = Estado::all();
+
+        return view('pedido.create')->with(['vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados]);
+
+        //return view('pedido.create')->with('vendedores', $vendedores);
     }
 
     /**

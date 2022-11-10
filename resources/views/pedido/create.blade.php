@@ -42,6 +42,16 @@
     <div class="mb-3 col-3">
         <label for="" class="form-label">Tipo del paquete</label>
 
+        <select id="tipo" name="tipo" class="form-control">
+       <option >-Seleccionar tipo-</option>
+        @foreach($tipos as $tipo)
+       <option value="{{ $tipo->nombre }}">{{ $tipo->nombre }}</option>
+       @endforeach
+       </select>
+
+
+<!--
+
         <select id="tipo" name="tipo" aria-label="Select a Timezone"  class="form-select ">
 			<option value="Ruta">Seleccionar tipo</option>		
 			<option value="Casillero">Casillero</option>
@@ -49,7 +59,7 @@
 		    <option value="Punto Fijo">Punto Fijo</option>
 			
 		</select>
-<!--
+
         <input type="text" id="tipo" name="tipo" class="form-control" tabindex="5" >
          -->
     </div>
@@ -74,13 +84,16 @@
     <div class="mb-3 col-6">
         <label for="" class="form-label">Ruta</label>
 
-        <select id="ruta" name="ruta" aria-label="Select a Timezone"  class="form-select ">
-			<option value="Ruta">Seleccionar ruta</option>		
-			<option value="Ruta 1">Ruta 1</option>
-			<option value="Ruta 2">Ruta 2</option>
-		    <option value="Ruta 3">Ruta 3</option>
-			<option value="Ruta 4">Ruta 4</option>
-		</select>
+        <select id="ruta" name="ruta" class="form-control">
+       <option >-Seleccionar ruta-</option>
+        @foreach($rutas as $ruta)
+       <option value="{{ $tipo->nombre }}">{{ $ruta->nombre }}</option>
+       @endforeach
+       </select>
+
+
+
+        
         <!--
         <input type="text" id="ruta" name="ruta" class="form-control" tabindex="8">
         -->
@@ -89,13 +102,16 @@
     <div class="mb-3 col-6">
         <label for="" class="form-label">Estado del paquete</label>
 
-        <select id="estado" name="estado" aria-label="Select a Timezone"  class="form-select ">
-			<option value="Ruta">Seleccionar Estado</option>		
-			<option value="Pendiente">Pendiente</option>
-			<option value="Entregado">Entregado</option>
-		    <option value="En Camino">En Camino</option>
-			<option value="Cancelado">Cancelado</option>
-		</select>
+        <select id="estado" name="estado" class="form-control">
+       <option >-Seleccionar estado-</option>
+        @foreach($estados as $estado)
+       <option value="{{ $tipo->nombre }}">{{ $estado->nombre }}</option>
+       @endforeach
+       </select>
+
+
+
+        
 <!--
         <input type="text" id="estado" name="estado" class="form-control" tabindex="9">
          -->

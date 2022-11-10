@@ -402,7 +402,7 @@ return [
                 
                 [
                     'text' => 'Precios Pedidos',
-                    'url'  => '#',
+                    'url'  => '/precios',
                 ],
                 [
                     'text' => 'Estados Pedidos',
@@ -410,7 +410,7 @@ return [
                 ],
                 [
                     'text' => 'Rutas',
-                    'url'  => '#',
+                    'url'  => '/rutas',
                 ]
                 
               
