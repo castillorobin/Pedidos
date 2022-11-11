@@ -105,7 +105,7 @@
         <select id="estado" name="estado" class="form-control">
        <option >-Seleccionar estado-</option>
         @foreach($estados as $estado)
-       <option value="{{ $tipo->nombre }}">{{ $estado->nombre }}</option>
+       <option value="{{ $estado->nombre }}">{{ $estado->nombre }}</option>
        @endforeach
        </select>
 

@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Carbon\Carbon;
+use App\Models\Pedido;
+use App\Models\Vendedor;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +39,10 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dash', function () {
-        return view('dash.index');
+        $pedidos= Pedido::select("*")
+        ->whereDate('created_at', Carbon::today())
+        ->get();
+        $vendedores = Vendedor::all();
+        return view('dash.index', ['pedidos' => $pedidos], ['vendedores' => $vendedores]);
     })->name('panel');
 });
