@@ -43,6 +43,21 @@ Route::middleware([
         ->whereDate('created_at', Carbon::today())
         ->get();
         $vendedores = Vendedor::all();
-        return view('dash.index', ['pedidos' => $pedidos], ['vendedores' => $vendedores]);
+        $casilleros= Pedido::select("*")
+        ->where('tipo', 'Casillero')
+        ->get();
+        $ctotal = $casilleros->count();
+
+        $personalizados= Pedido::select("*")
+        ->where('tipo', 'Personalizado')
+        ->get();
+        $ptotal = $personalizados->count();
+
+        $puntofijo= Pedido::select("*")
+        ->where('tipo', 'Punto Fijo')
+        ->get();
+        $ftotal = $puntofijo->count();
+     //   return view('dash.index', ['pedidos' => $pedidos], ['vendedores' => $vendedores], ['casilleros' => $casilleros]);
+        return view('dash.index', ['pedidos' => $pedidos, 'vendedores' => $vendedores, 'ctotal' => $ctotal, 'ptotal' => $ptotal, 'ftotal' => $ftotal]);
     })->name('panel');
 });

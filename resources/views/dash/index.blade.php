@@ -310,7 +310,7 @@
 											</div>
 											<!--end::Header-->
 											<!--begin::Body-->
-											<div class="card-body pt-0">
+											<div class="card-body pt-0" style="font-weight:bolder;">
 												<!--begin::Content-->
 												
 												<!--end::Content-->
@@ -334,19 +334,21 @@
 												<div class="separator separator-dashed my-4"></div>
 												<!--end::Separator-->
 												<!--begin::Item-->
-												Personalizado:
+												Personalizado: {{ $ptotal }}
 												<!--end::Item-->
 												<!--begin::Separator-->
 												<div class="separator separator-dashed my-4"></div>
 												<!--end::Separator-->
 												<!--begin::Item-->
-												Casillero:
+												Casillero: {{ $ctotal }}
+                                              
+                                                
 												<!--end::Item-->
 												<!--begin::Separator-->
 												<div class="separator separator-dashed my-4"></div>
 												<!--end::Separator-->
 												<!--begin::Item-->
-												Punto Fijo:
+												Punto Fijo: {{ $ftotal }}
 												<!--end::Item-->
 											</div>
 											<!--end::Body-->
@@ -1047,7 +1049,7 @@
 
 
 
-                                                        
+
 														<!--end::Item-->
 													</div>
 													<!--end::Tap pane-->
@@ -1067,8 +1069,8 @@
 											<div class="card-header pt-7">
 												<!--begin::Title-->
 												<h3 class="card-title align-items-start flex-column">
-													<span class="card-label fw-bolder text-dark">Sales Statistics</span>
-													<span class="text-gray-400 pt-2 fw-bold fs-6">Top Selling Products</span>
+													<span class="card-label fw-bolder text-dark">Ventas</span>
+													<span class="text-gray-400 pt-2 fw-bold fs-6">Estadisticas de Ventas</span>
 												</h3>
 												<!--end::Title-->
 												<!--begin::Toolbar-->
@@ -1076,103 +1078,24 @@
 													<!--begin::Menu-->
 													<button class="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">
 														<!--begin::Svg Icon | path: icons/duotune/general/gen023.svg-->
-														<span class="svg-icon svg-icon-1 svg-icon-gray-300 me-n1">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="black" />
-																<rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="black" />
-																<rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="black" />
-																<rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="black" />
-															</svg>
-														</span>
+														
 														<!--end::Svg Icon-->
 													</button>
 													<!--begin::Menu 3-->
 													<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3" data-kt-menu="true">
 														<!--begin::Heading-->
-														<div class="menu-item px-3">
-															<div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Payments</div>
-														</div>
-														<!--end::Heading-->
-														<!--begin::Menu item-->
-														<div class="menu-item px-3">
-															<a href="/#" class="menu-link px-3">Create Invoice</a>
-														</div>
-														<!--end::Menu item-->
-														<!--begin::Menu item-->
-														<div class="menu-item px-3">
-															<a href="/#" class="menu-link flex-stack px-3">Create Payment
-															<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a target name for future usage and reference"></i></a>
-														</div>
-														<!--end::Menu item-->
-														<!--begin::Menu item-->
-														<div class="menu-item px-3">
-															<a href="/#" class="menu-link px-3">Generate Bill</a>
-														</div>
-														<!--end::Menu item-->
-														<!--begin::Menu item-->
+														
 														<div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-end">
-															<a href="/#" class="menu-link px-3">
-																<span class="menu-title">Subscription</span>
-																<span class="menu-arrow"></span>
-															</a>
-															<!--begin::Menu sub-->
-															<div class="menu-sub menu-sub-dropdown w-175px py-4">
-																<!--begin::Menu item-->
-																<div class="menu-item px-3">
-																	<a href="/#" class="menu-link px-3">Plans</a>
-																</div>
-																<!--end::Menu item-->
-																<!--begin::Menu item-->
-																<div class="menu-item px-3">
-																	<a href="/#" class="menu-link px-3">Billing</a>
-																</div>
-																<!--end::Menu item-->
-																<!--begin::Menu item-->
-																<div class="menu-item px-3">
-																	<a href="/#" class="menu-link px-3">Statements</a>
-																</div>
-																<!--end::Menu item-->
-																<!--begin::Menu separator-->
-																<div class="separator my-2"></div>
-																<!--end::Menu separator-->
-																<!--begin::Menu item-->
-																<div class="menu-item px-3">
-																	<div class="menu-content px-3">
-																		<!--begin::Switch-->
-																		<label class="form-check form-switch form-check-custom form-check-solid">
-																			<!--begin::Input-->
-																			<input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications" />
-																			<!--end::Input-->
-																			<!--end::Label-->
-																			<span class="form-check-label text-muted fs-6">Recuring</span>
-																			<!--end::Label-->
-																		</label>
-																		<!--end::Switch-->
-																	</div>
-																</div>
-																<!--end::Menu item-->
-															</div>
-															<!--end::Menu sub-->
+															
+															
 														</div>
-														<!--end::Menu item-->
-														<!--begin::Menu item-->
-														<div class="menu-item px-3 my-1">
-															<a href="/#" class="menu-link px-3">Settings</a>
-														</div>
-														<!--end::Menu item-->
-													</div>
-													<!--end::Menu 3-->
-													<!--end::Menu-->
+														
 												</div>
 												<!--end::Toolbar-->
 											</div>
 											<!--end::Header-->
 											<!--begin::Body-->
-											<div class="card-body pt-5">
-												<!--begin::Chart container-->
-												<div id="kt_charts_widget_17_chart" class="w-100 h-400px"></div>
-												<!--end::Chart container-->
-											</div>
+											
 											<!--end::Body-->
 										</div>
 										<!--end::Chart widget 17-->
