@@ -318,38 +318,84 @@
 												<div class="d-flex flex-stack">
 													<!--begin::Wrapper-->
 													
-													<!--end::Wrapper-->
-													<!--begin::Value-->
-													
-													<!--end::Value-->
+												
 												</div>
 												<!--end::Item-->
-												<!--begin::Separator-->
-											
-												<!--end::Separator-->
-												<!--begin::Item-->
 												
-												<!--end::Item-->
-												<!--begin::Separator-->
-												<div class="separator separator-dashed my-4"></div>
-												<!--end::Separator-->
+											
 												<!--begin::Item-->
 												Personalizado: {{ $ptotal }}
 												<!--end::Item-->
-												<!--begin::Separator-->
-												<div class="separator separator-dashed my-4"></div>
-												<!--end::Separator-->
+												
 												<!--begin::Item-->
 												Casillero: {{ $ctotal }}
                                               
                                                 
-												<!--end::Item-->
-												<!--begin::Separator-->
-												<div class="separator separator-dashed my-4"></div>
-												<!--end::Separator-->
-												<!--begin::Item-->
 												Punto Fijo: {{ $ftotal }}
 												<!--end::Item-->
+                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<canvas id="myPieGraph" style="max-height: 200px;"></canvas>
+
+
+                                            <script>
+                                                
+                                                const pieData = {
+  labels: [
+    "Personalizado",
+    "Punto FIjo",
+    "Casillero",
+  ],
+  datasets: [{
+    data: [ {{ $ptotal }}, {{ $ftotal }}, {{ $ctotal }} ],
+    backgroundColor: [
+      "#3F86CB",
+      "#CD5C5C",
+      "#28B463",
+    ],
+    hoverOffset: 4,
+  }],
+};
+
+var pieCtx = myPieGraph.getContext('2d');
+
+var myPieChart = new Chart(pieCtx, {
+  /* IMPORTANTE: cargamos el complemento */
+  plugins: [ChartDataLabels],
+  type: 'pie',
+  data: pieData,
+  options: {
+    plugins: {
+      datalabels: {
+        /* anchor puede ser "start", "center" o "end" */
+        anchor: "center",
+        /* Podemos modificar el texto a mostrar */
+       // formatter: (data) => data + "%",
+        /* Color del texto */
+        color: "black",
+        /* Formato de la fuente */
+        font: {
+          family: '"Times New Roman", Times, serif',
+          size: "14",
+          weight: "bold",
+        },
+        /* Formato de la caja contenedora */
+        //padding: "4",
+        //borderWidth: 2,
+        //borderColor: "darkblue",
+        //borderRadius: 8,
+        //backgroundColor: "lightblue"
+      }
+    }
+  }
+});
+
+                                            </script>
+
+
+
+
+
 											</div>
 											<!--end::Body-->
 										</div>
