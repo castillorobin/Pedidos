@@ -10,7 +10,7 @@
 
 @section('content')
 
-<h1>Listado de Vendedores</h1>
+<h1>Listado de Comercios</h1>
 <div ><a href="/vendedores/create" class="btn btn-primary float-right" > Agregar Vendedor</a></div>
 <br>
 <table id="tvendedor" class="table table-bordered table-striped shadow-lg mt-4">

@@ -9,7 +9,7 @@
 
 @section('content')
 
-<h2>Agregar Vendedor</h2>
+<h2>Agregar Comercio</h2>
 
 <form action="/vendedores" method="POST">
     @csrf

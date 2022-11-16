@@ -14,9 +14,9 @@
 <form action="/pedidos" method="POST">
     @csrf
     <div class="mb-3 col-6" >
-        <label for="" class="form-label">Vendedor</label>
+        <label for="" class="form-label">Comercio</label>
         <select id="vende" name="vende" class="form-control">
-       <option >-Seleccionar vendedor-</option>
+       <option >-Seleccionar comercio-</option>
         @foreach($vendedores as $vendedor)
        <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
        @endforeach

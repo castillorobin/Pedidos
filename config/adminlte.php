@@ -341,7 +341,7 @@ return [
             ],
         ],
         [
-            'text'    => 'Vendedores',
+            'text'    => 'Comercios',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [

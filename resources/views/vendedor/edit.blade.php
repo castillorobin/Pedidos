@@ -9,7 +9,7 @@
 
 @section('content')
 
-<h2>Editar Vendedor</h2>
+<h2>Editar Comercio</h2>
 
 <form action="/vendedores/{{$vendedor->id}}" method="POST">
 @csrf

@@ -16,7 +16,7 @@
     @method('PUT')
     <div class="row mb-12">
                                                         <!--begin::Label-->
-                                                        <label class="col-lg-3 col-form-label required fw-bold fs-6">Vendedor</label>
+                                                        <label class="col-lg-3 col-form-label required fw-bold fs-6">Comercio</label>
                                                         <!--end::Label-->
                                                         <!--begin::Col-->
                                                         <div class="col-lg-8 ">

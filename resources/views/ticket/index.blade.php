@@ -17,7 +17,7 @@
 <thead class="table-dark">
     <tr >
         <th scope="col">Correlativo</th>
-        <th scope="col">Vendedor</th>
+        <th scope="col">Comercio</th>
         <th scope="col">Casillero</th>
         <th scope="col">Personalizado</th>
         <th scope="col">Punto Fijo</th>

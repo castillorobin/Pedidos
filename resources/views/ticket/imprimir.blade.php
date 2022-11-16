@@ -9,7 +9,7 @@ Centro Comercial Metrogaleria local 3-9, San Salvador<h3>
 <hr>
 Fecha: {{ $tickets->fecha }} 
 <br> 
-Vendedor: {{ $tickets->vendedor }} 
+Comercio: {{ $tickets->vendedor }} 
 <br>
 Correlativo: {{ $tickets->id }}
 <h4> Cantidad de pedidos recibidos: </h4>

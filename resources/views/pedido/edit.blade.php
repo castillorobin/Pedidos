@@ -15,7 +15,7 @@
     @csrf
     @method('PUT')
     <div class="mb-3 col-6" >
-        <label for="" class="form-label">Vendedor</label>
+        <label for="" class="form-label">Comercio</label>
         <input type="text" id="vende" name="vende" class="form-control" tabindex="1" value=" {{$pedido->vendedor}} ">
     </div>
     <div class="mb-3 col-6">

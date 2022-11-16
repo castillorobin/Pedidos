@@ -17,7 +17,8 @@
 <thead class="table-dark">
     <tr >
         <th scope="col">ID</th>
-        <th scope="col">Vendedor</th>
+        <th scope="col">Comercio</th>
+        <th scope="col">Cliente</th>
         <th scope="col">Direccion</th>
         <th scope="col">Telefono</th>
         <th scope="col">Tipo</th>
@@ -27,9 +28,10 @@
 </thead>
 <tbody>
     @foreach ($pedidos as $pedido)
-    <tr>
-    <td>{{ $pedido->id }}</td>
-    <td>{{ $pedido->vendedor }}</td>
+    <tr >
+    <td style="font-weight: bolder; color: #0080ff;">{{ $pedido->id }}</td>
+    <td style="font-weight: bolder; color: #0080ff;">{{ $pedido->vendedor }}</td>
+    <td style="font-weight: bolder; color: #0080ff;">{{ $pedido->destinatario }}</td>
     <td>{{ $pedido->direccion }}</td>
     <td>{{ $pedido->telefono }}</td>
     <td>{{ $pedido->tipo }}</td>
