@@ -336,7 +336,7 @@ return [
                 
                 [
                     'text' => 'Pagar para Remunerar',
-                    'url'  => '#',
+                    'url'  => '/remunerars/',
                 ],
             ],
         ],
