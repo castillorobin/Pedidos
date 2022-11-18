@@ -13,18 +13,25 @@
 <h1>Listado de Pedidos</h1>
 <div ><a href="/pedidos/create" class="btn btn-primary float-right" > Agregar Pedido</a></div>
 <br>
+<form action="/remunerar/generar/" method="POST">
+    @csrf
+    @method('GET')
 <table id="tpedido" class="table table-bordered table-striped shadow-lg">
 <thead class="table-dark">
     <tr >
     <th scope="col">Pagar</th>
+    <th scope="col">ID</th>
         <th scope="col">Comercio</th>
         <th scope="col">Cliente</th>
         <th scope="col">Direccion de entrega</th>
         <th scope="col">Telefono</th>
         <th scope="col">Tipo de envío</th>
+        <th scope="col">Fecha de recepción</th>
+        <th scope="col">Fecha de entrega</th>
+        <th scope="col">Tipo de Servicio</th>
         <th scope="col">Estado del envío</th>
         <th scope="col">Estado del pago</th>
-        <th scope="col">Fecha de recepción</th>
+        
         <th scope="col">Nota</th>
         <th scope="col">Ruta</th>
      
@@ -33,45 +40,48 @@
 <tbody>
     @foreach ($pedidos as $pedido)
     <tr >
-    <td style="text-align:center"><input class="form-check-input" type="checkbox" name="flexRadioDefault" id="flexRadioDefault1"></td>
+    <td style="text-align:center"><input class="form-check-input" type="checkbox" name="ids[]" value=" {{ $pedido->id }} "></td>
+    <td>{{ $pedido->id }}</td>
     <td style="font-weight: bolder; color: #0080ff;">{{ $pedido->vendedor }}</td>
     <td style="font-weight: bolder; color: #0080ff;">{{ $pedido->destinatario }}</td>
     <td>{{ $pedido->direccion }}</td>
     <td>{{ $pedido->telefono }}</td>
     <td>{{ $pedido->tipo }}</td>
-
+    <td>{{ $pedido->created_at }}</td>
+    <td>Entrega</td>
+    <td>servicio</td>
     @if($pedido->estado =='Pendiente') 
-    <td style="text-align:center; font-weight:bolder; display: table-cell; vertical-align: middle"> <div style="display: inline-block; padding: 0px; border-radius: 15px; background: #277ae0; color:white; width: 100px;" >{{$pedido->estado}}</div> </td>
+    <td style="text-align:center; font-weight:bolder; display: table-cell; vertical-align: middle"> <div style="display: inline-block; padding: 0px; border-radius: 15px; background: #277ae0; color:white; width: 100px;" >PENDIENTE</div> </td>
     @endif
     @if($pedido->estado =='Entregado') 
-    <td style="text-align:center; font-weight:bolder; display: table-cell; vertical-align: middle">  <div style=" display: inline-block; padding: 0px; border-radius: 15px; background: #408080; color:white; width: 100px;" >{{ $pedido->estado }}
+    <td style="text-align:center; font-weight:bolder; display: table-cell; vertical-align: middle">  <div style=" display: inline-block; padding: 0px; border-radius: 15px; background: #408080; color:white; width: 100px;" >ENTREGADO
 </div>   </td>
     @endif
     @if($pedido->estado =='En Camino') 
-    <td style="text-align:center; font-weight:bolder; display: table-cell; vertical-align: middle"><div style=" display: inline-block; padding: 0px; border-radius: 15px; background: #caca00; color:white; width: 100px;" >{{ $pedido->estado }}
+    <td style="text-align:center; font-weight:bolder; display: table-cell; vertical-align: middle"><div style=" display: inline-block; padding: 0px; border-radius: 15px; background: #caca00; color:white; width: 100px;" >EN CAMINO
 </div>    </td>
     @endif
     @if($pedido->estado =='Cancelado') 
-    <td style="text-align:center; color: black; font-weight:bolder; display: table-cell; vertical-align: middle"> <div style="display: inline-block; padding: 0px; border-radius: 15px; background: #000040; color:white; width: 100px;" >{{ $pedido->estado }}
+    <td style="text-align:center; color: black; font-weight:bolder; display: table-cell; vertical-align: middle"> <div style="display: inline-block; padding: 0px; border-radius: 15px; background: #000040; color:white; width: 100px;" >CANCELADO
 </div>    </td>
     @endif
     @if($pedido->pagado == 1) {
     <td style="text-align:center; font-weight:bolder; display: table-cell; vertical-align: middle;">
-    <div style="padding: 0px; border-radius: 15px; background: #277ae0; color:white; width: 100px; display: inline-block;" >
-  Pagado
+    <div style="padding: 0px; border-radius: 15px; background: #277ae0; color:white; width: 75px; display: inline-block;" >
+  PAGADO
     </div>     
         </td>
 }
 @else{
     <td style="text-align:center; font-weight:bolder; display: table-cell; vertical-align: middle;">
-    <div style="padding: 0px; border-radius: 15px; background: #ff8080; color:white; width: 100px; display: inline-block;" >Por Pagar
+    <div style="padding: 2px; border-radius: 15px; background: #ff8080; color:white; width: 95px; display: inline-block;" >POR PAGAR
 </div>
     
    </td>
 }@endif
 
 
- <td>{{ $pedido->created_at }}</td>
+
  <td>{{ $pedido->nota }}</td>
  <td>{{ $pedido->ruta }}</td>
 
@@ -82,71 +92,13 @@
 </table>
 
 <div class="row mb-12" style="text-align:center;">
-													
+
 														<button class="btn btn-success">Generar Factura</button>
 
 													</div>
-
+                                                    </form>
 <br>
-<div style="width: 100%; background-color:white;">
 
-
-
-
-<div class="row mb-12" style="text-align:center;">
-													
-														<h1>Factura</h1>
-
-													</div>
-
-<div class="row mb-12">
-													<div class="col-xl-3">
-													<img alt="Logosss" src="/vendor/adminlte/dist/img/logo.jpg" style="width:200px;"  />
-												</div>
-													<div class="col-xl-5">
-													<h2>Melo Express</h2>
-													<h5>Servicios de Encomiendas <br>Centro Comercial Metrogaleria local 3-9, San Salvador<h5>
-													</div>
-													<div class="col-xl-4" >
-													<h2 style="color:red;">No. 0001</h2>
-													
-													</div>
-													</div>
-													<div class="row mb-12" >
-													
-														<h3>Comercio:</h3>
-														<h3>Fecha: <?php echo date('d-m-Y') ;?></h3>
-
-													</div>
-
-												<table class="table">
-													<thead>
-														<th>Tipo</th>
-														<th>Precio</th>
-													</thead>
-													<tbody id="seleccion">
-
-													</tbody>
-
-												</table>
-
-													<!--begin::Card-->
-													
-													</div>
-													
-
-												<!--end::Col-->
-											</div>
-											
-											
-
-</div>
-
-
-
-
-
-</div>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" defer></script>

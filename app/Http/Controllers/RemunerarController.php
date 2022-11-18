@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Pedido;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RemunerarController extends Controller
 {
@@ -22,9 +23,31 @@ class RemunerarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function generars(Request $request)
+    {
+       //$user = Auth::user();
+        //$usuario = $user->name;
+        $pagares = $request->input('ids');
+        $pedidos = Pedido::Find($pagares);
+        $total=0;
+        foreach($pedidos as $pedido){
+            $total += $pedido->precio;
+        }
+
+        /*
+        foreach($pagares as $pagar){
+            $pedidos = Pedido::select("*")
+            ->where('id', $pagar)
+            ->get();
+        }
+*/
+        return view('remunerar.pagando')->with(['pedidos'=>$pedidos, 'total'=>$total]);
+       // return view('remunerar.pagando');
+    }
+
     public function create()
     {
-        //
+        //return view('remunerar.pagando');
     }
 
     /**
@@ -44,9 +67,19 @@ class RemunerarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($ids)
     {
-        //
+        /*
+        $pagares = $ids->input('ids');
+        foreach($pagares as $pagar){
+
+        }
+
+        return view('remunerar.pagando')->with('pagares', $pagares);
+*/
+
+        
+
     }
 
     /**
