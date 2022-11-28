@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Pedido;
 use App\Models\Vendedor;
@@ -43,8 +43,9 @@ class PedidoController extends Controller
         $tipos = Tipo::all();
         $rutas = Ruta::all();
         $estados = Estado::all();
-
-        return view('pedido.create')->with(['vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados]);
+        $date = Carbon::today();
+        $date = $date->format('d-m-Y');
+        return view('pedido.create')->with(['vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date]);
 
         //return view('pedido.create')->with('vendedores', $vendedores);
     }

@@ -10,8 +10,8 @@
 
 @section('content')
 
-<h1>Listado de Pedidos</h1>
-<div ><a href="/pedidos/create" class="btn btn-primary float-right" > Agregar Pedido</a></div>
+<h1>Listado de Envios</h1>
+<div ><a href="/pedidos/create" class="btn btn-primary float-right" > Agregar Envio</a></div>
 <br>
 <table id="tpedido" class="table table-bordered table-striped shadow-lg mt-4">
 <thead class="table-dark">

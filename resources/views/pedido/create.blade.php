@@ -9,124 +9,194 @@
 
 @section('content')
 
-<h2>Ingresar Pedidos</h2>
-
+<h2>Ingresar Envios</h2>
+<div class="container ">
 <form action="/pedidos" method="POST">
     @csrf
-    <div class="mb-3 col-6" >
-        <label for="" class="form-label">Comercio</label>
-        <select id="vende" name="vende" class="form-control">
+<div class="row border" style="background-color: white; padding: 15px; border-radius:20px;">
+<div class="row mb-3">
+<label for="" class="col-sm-2 col-form-label">COMERCIO</label>
+
+    <div class="col-sm-4">
+    <select id="vende" name="vende" class="form-control">
        <option >-Seleccionar comercio-</option>
         @foreach($vendedores as $vendedor)
        <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
        @endforeach
        </select>
+
     </div>
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Nombre del Destinatario</label>
-        <input type="text" id="destino" name="destino" class="form-control" tabindex="2">
-    </div>
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Direccion de Entrega</label>
-        <input type="text" id="dire" name="dire" class="form-control" tabindex="2">
-    </div>
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Telefono del Cliente</label>
-        <input type="text" id="tele" name="tele" class="form-control" tabindex="3">
     </div>
 
-    <div class="mb-3 col-3">
-        <label for="" class="form-label">fecha de entrega</label>
-        <input type="date" id="fech" name="fech" class="form-control" tabindex="4">
-    </div>
-    <div class="mb-3 col-3">
-        <label for="" class="form-label">Tipo del paquete</label>
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">DESTINATARIO</label>
 
-        <select id="tipo" name="tipo" class="form-control">
+    <div class="col-sm-8">
+    <input type="text" id="destino" name="destino" class="form-control" tabindex="2" placeholder="NOMBRE DEL DESTINATARIO">
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">DIRECCION DE ENTREGA</label>
+
+    <div class="col-sm-8">
+    <input type="text" id="dire" name="dire" class="form-control" tabindex="1" placeholder="DIRECCION" >
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">TELEFONO</label>
+
+    <div class="col-sm-8">
+    <input type="text" id="tele" name="tele" class="form-control" tabindex="1" placeholder="TELEFONO" >
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">TIPO DE ENVIO</label>
+
+    <div class="col-sm-4">
+    <select id="tipo" name="tipo" class="form-control">
        <option >-Seleccionar tipo-</option>
         @foreach($tipos as $tipo)
        <option value="{{ $tipo->nombre }}">{{ $tipo->nombre }}</option>
        @endforeach
        </select>
 
+    </div>
+    </div>
+    
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">FECHA DE RECEPCION</label>
 
-<!--
-
-        <select id="tipo" name="tipo" aria-label="Select a Timezone"  class="form-select ">
-			<option value="Ruta">Seleccionar tipo</option>		
-			<option value="Casillero">Casillero</option>
-			<option value="Personalizado">Personalizado</option>
-		    <option value="Punto Fijo">Punto Fijo</option>
-			
-		</select>
-
-        <input type="text" id="tipo" name="tipo" class="form-control" tabindex="5" >
-         -->
+    <div class="col-sm-8">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">{{ $date }}</label>
+    </div>
     </div>
 
-    <div class="mb-3 col-3">
-        <label for="" class="form-label">Precio del Paquete</label>
-        <input type="text" id="precio" name="precio" class="form-control" tabindex="5" placeholder="$0.00">
-    </div>
-    <div class="mb-3 col-3">
-        <label for="" class="form-label">Envio</label>
-        <input type="text" id="envio" name="envio" class="form-control" tabindex="6" placeholder="$0.00">
-    </div>
-    <div class="mb-3 col-3">
-        <label for="" class="form-label">Total</label>
-        <input type="text" id="total" name="total" class="form-control" tabindex="7" placeholder="$0.00">
-    </div>
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Repartidor</label>
-        
-        <input type="text" id="repa" name="repa" class="form-control" tabindex="8">
-    </div>
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Ruta</label>
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">PRECIO </label>
 
-        <select id="ruta" name="ruta" class="form-control">
-       <option >-Seleccionar ruta-</option>
-        @foreach($rutas as $ruta)
-       <option value="{{ $tipo->nombre }}">{{ $ruta->nombre }}</option>
-       @endforeach
-       </select>
-
-
-
-        
-        <!--
-        <input type="text" id="ruta" name="ruta" class="form-control" tabindex="8">
-        -->
+    <div class="col-sm-4">
+    <input type="text" id="precio" name="precio" class="form-control" tabindex="5" placeholder="$0.00">
+    </div>
     </div>
 
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Estado del paquete</label>
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">ENVIO </label>
 
-        <select id="estado" name="estado" class="form-control">
+    <div class="col-sm-4">
+    <input type="text" id="envio" name="envio" class="form-control" tabindex="6" placeholder="$0.00">
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">TOTAL </label>
+
+    <div class="col-sm-4">
+    <input type="text" id="total" name="total" class="form-control" tabindex="7" placeholder="$0.00" DISABLED>
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">TIPO DE SERVICIO </label>
+
+    <div class="col-sm-4" >
+    <select name="tipos" id="tipos" class="form-control">
+    <option >-Seleccionar tipo-</option>
+        <option value="ENTREGA">ENTREGA</option>
+        <option value="RECOELCTA">RECOLECTA</option>
+        <option value="RECOLECTA Y ENTREGA">RECOLECTA Y ENTREGA</option>
+    </select>
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">ESTADO DEL ENVIO </label>
+
+    <div class="col-sm-4">
+    <select id="estado" name="estado" class="form-control">
        <option >-Seleccionar estado-</option>
         @foreach($estados as $estado)
        <option value="{{ $estado->nombre }}">{{ $estado->nombre }}</option>
        @endforeach
        </select>
 
-
-
-        
-<!--
-        <input type="text" id="estado" name="estado" class="form-control" tabindex="9">
-         -->
     </div>
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Nota</label>
-        <input type="text" id="nota" name="nota" class="form-control" tabindex="10">
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">NOTA </label>
+
+    <div class="col-sm-8">
+    <input type="text" id="nota" name="nota" class="form-control" tabindex="10">
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">SOLICITUD DE PAGO </label>
+
+    <div class="col-sm-4">
+    <select id="estado" name="estado" class="form-control">
+       <option >-Seleccionar pago-</option>
+       <option value="EFECTIVO">EFECTIVO</option>
+       <option value="TRANSFERENCIA">TRANSFERENCIA</option>
+       <option value="TIGO MONEY">TIGO MONEY</option>
+       <option value="CHIVO WALLET">CHIVO WALLET</option>
+       </select>
+
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">RUTA </label>
+
+    <div class="col-sm-4">
+    <select id="ruta" name="ruta" class="form-control">
+       <option >-Seleccionar ruta-</option>
+        @foreach($rutas as $ruta)
+       <option value="{{ $tipo->nombre }}">{{ $ruta->nombre }}</option>
+       @endforeach
+       </select>
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">REPARTIDOR</label>
+
+    <div class="col-sm-8">
+    <input type="text" id="repar" name="repar" class="form-control" tabindex="10">
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">FOTO DEL PAQUETE</label>
+
+    <div class="col-sm-8">
+    <input type="file" id="foto" name="foto" class="form-control" tabindex="10">
+    </div>
     </div>
     <br>
-   <button type="submit" class="btn btn-primary">Guardar</button>
-
-
+    <p></p>
+    <div class="row mb-3">
+    
+    
+    
+    <button type="submit" class="col-sm-2 btn btn-primary">Guardar</button>
+    </div>
 </form>
 
+<br>
+    
 
+
+
+
+
+</div> 
+<br>
+
+</div>
 @endsection
 
 

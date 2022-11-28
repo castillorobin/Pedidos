@@ -307,7 +307,7 @@ return [
         ['header' => 'Opciones'],
         
         [
-            'text'    => 'Pedidos',
+            'text'    => 'Envios',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [

@@ -93,7 +93,7 @@
 
 <div class="row mb-12" style="text-align:center;">
 
-														<button class="btn btn-success">Generar Factura</button>
+														<button type="submit" class="btn btn-success">Generar Factura</button>
 
 													</div>
                                                     </form>
