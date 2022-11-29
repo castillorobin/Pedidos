@@ -69,11 +69,15 @@
     <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">FECHA DE RECEPCION</label>
 
+    
+
     <div class="col-sm-8">
     <label for="inputEmail3" class="col-sm-2 col-form-label">{{ $date }}</label>
     </div>
     </div>
-
+</div>
+<br>
+<div class="row border" style="background-color: white; padding: 15px; border-radius:20px;">
     <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">PRECIO </label>
 
@@ -97,7 +101,9 @@
     <input type="text" id="total" name="total" class="form-control" tabindex="7" placeholder="$0.00" DISABLED>
     </div>
     </div>
-
+    </div>
+<br>
+<div class="row border" style="background-color: white; padding: 15px; border-radius:20px;">
     <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">TIPO DE SERVICIO </label>
 

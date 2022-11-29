@@ -13,7 +13,7 @@
 <h1>Listado de Pedidos</h1>
 <div ><a href="/pedidos/create" class="btn btn-primary float-right" > Agregar Pedido</a></div>
 <br>
-<form action="/remunerar/generar/" method="POST">
+<form action="/remunerar/generar/" method="GET">
     @csrf
     @method('GET')
 <table id="tpedido" class="table table-bordered table-striped shadow-lg">
