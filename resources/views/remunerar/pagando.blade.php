@@ -69,21 +69,47 @@
 
                                                    
 													</div>
-													<div class="row mb-12">
-                                                        <div  class="col-xl-1">
-                                                        <label for="exampleFormControlInput1" class="form-label">Tipo de Pago</label>
-                                                        </div>
-                                                        <div class="col-xl-3">
 
-                                                    <select class="form-select form-select-lg mb-" name="tpago" id="tpago">
-                                                        <option value="">Seleccionar </option>
-                                                        <option value="Efectivo">Efectivo</option>
-                                                        <option value="Efectivo">Transferencia</option>
-                                                        <option value="Efectivo">Tigo Money</option>
-                                                        <option value="Efectivo">Chivo Wallet</option>
-                                                    </select>
-</div>
-                                                    </div>
+                                                    <div class="row mb-3">
+
+    <label for="inputEmail3" class="col-sm-2 col-form-label"> Tipo de Pago </label>
+
+    <div class="col-sm-8">
+    
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+  <label class="form-check-label" for="flexRadioDefault1">
+   
+   Efectivo
+   <img src="/imgs/efectivo.png" alt="" width="40">
+  </label>
+&nbsp; &nbsp; &nbsp;
+
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+  <label class="form-check-label" for="flexRadioDefault2">
+    Transferencia
+    <img src="/imgs/transferencia.png" alt="" width="40">
+  </label>
+
+  &nbsp; &nbsp; &nbsp;
+
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+  <label class="form-check-label" for="flexRadioDefault2">
+    Tigo Money
+    <img src="/imgs/tigo.png" alt="" width="60">
+  </label>
+
+  &nbsp; &nbsp; &nbsp;
+
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+  <label class="form-check-label" for="flexRadioDefault2">
+    Chivo Wallet
+    <img src="/imgs/chivo.jpg" alt="" width="60">
+  </label>
+    </div>
+    </div>
+
+
+													
 												<!--end::Col-->
 											</div>
 											<br>
