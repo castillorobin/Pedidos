@@ -360,8 +360,12 @@ return [
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
+                    'text' => 'Listado',
+                    'url'  => '/repartidores/',
+                ],
+                [
                     'text' => 'Agregar',
-                    'url'  => '#',
+                    'url'  => '/repartidores/create',
                 ]
                 
               

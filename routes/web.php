@@ -33,6 +33,8 @@ Route::resource('rutas', 'App\Http\Controllers\RutaController');
 
 Route::resource('remunerars', 'App\Http\Controllers\RemunerarController');
 
+Route::resource('repartidores', 'App\Http\Controllers\RepartidorController');
+
 Route::get('pedido/etiqueta/{id}', [App\Http\Controllers\PedidoController::class, 'etiquetas'] )->name('pedido.etiqueta') ;
 
 Route::get('remunerar/generar/', [App\Http\Controllers\RemunerarController::class, 'generars'] )->name('remunerar.generar') ;
