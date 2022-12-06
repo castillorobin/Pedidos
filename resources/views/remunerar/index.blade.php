@@ -13,7 +13,7 @@
 <h1>Listado de Pedidos</h1>
 <div ><a href="/pedidos/create" class="btn btn-primary float-right" > Agregar Pedido</a></div>
 <br>
-<form action="/remunerar/generar/" method="GET">
+<form action="/remunerar/generar/" method="GET" target="_blank">
     @csrf
     @method('GET')
 <table id="tpedido" class="table table-bordered table-striped shadow-lg">
@@ -93,11 +93,14 @@
 
 <div class="row mb-12" style="text-align:center;">
 
-														<button type="submit" class="btn btn-success">Generar Factura</button>
+														<button class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Generar Factura</button>
 
 													</div>
                                                     </form>
 <br>
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 

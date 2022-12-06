@@ -1,45 +1,42 @@
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+ 
+  
+
+<div class="container">
 
 
-@extends('adminlte::page')
-
-@section('title', 'Melo Express')
-
-@section('content_header')
-    <h1 style="text-align:center">Melo Express</h1>
-@stop
-
-@section('content')
-
-<div class="row mb-12" style="text-align:center;">
-													
-														<h1>Factura</h1>
-
-													</div>
-
-                                                    <div class="row mb-12">
-													<div class="col-xl-3">
+                    <div class="row mb-12" style="text-align:center;">
+											<div class="col">
 													<img alt="Logosss" src="/vendor/adminlte/dist/img/logo.jpg" style="width:200px;"  />
-												</div>
-													<div class="col-xl-5">
+											</div>
+											  <div class="col">
 													<h2>Melo Express</h2>
 													<h5>Servicios de Encomiendas <br>Centro Comercial Metrogaleria local 3-9, San Salvador<h5>
-													</div>
-													<div class="col-xl-4" >
+												</div>
+													<div class="col" >
 													<h2 style="color:red;">No. 0001</h2>
 													
-													</div>
-													</div>
+											    </div>
+										</div>
                                                     <br>
-													<div class="row mb-12" >
+
+
+                      <div class="row" style="border: 1px solid black;">
+                          <div class="row text-center" style="background-color:#2e5e8d; color:white;">
+                                                      <h1>Datos del comercio</h1>
+                          </div>
+													  <div class="row mb-12" >
 													<br>
                                                     <h3>Cliente: {{ $pedidos[0]->vendedor}}</h3>
 														<h3>Fecha: <?php echo date('d-m-Y') ;?></h3>
 
-													</div>
-
+											      </div>
+                      </div>
+</div>
+                        <br>
 												<table class="table">
-													<thead>
+													<thead style="background-color:#2e5e8d; color:white;">
                                                     <th scope="col">Comercio</th>
                                                     <th scope="col">Tipo de envío</th>
                                                     <th scope="col">Fecha de entrega</th>
@@ -68,7 +65,7 @@
 													
 
                                                    
-													</div>
+												
 
                                                     <div class="row mb-3">
 
@@ -111,23 +108,11 @@
 
 													
 												<!--end::Col-->
-											</div>
+											
 											<br>
 											<button type="submit"  class="btn btn-primary" >Pagar Factura</button>
 
 </div>
+</div>
 
-
-                        
-
-
-
-
-@endsection
-
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-@stop
+                 
