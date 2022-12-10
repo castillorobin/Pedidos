@@ -338,6 +338,11 @@ return [
                     'text' => 'Pagar para Remunerar',
                     'url'  => '/remunerars/',
                 ],
+
+                [
+                    'text' => 'Ver Pagos',
+                    'url'  => '/pagos/',
+                ],
             ],
         ],
         [

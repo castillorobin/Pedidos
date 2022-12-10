@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Pedido;
+use App\Models\Pago;
+use App\Models\Detallepago;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,7 +19,7 @@ class RemunerarController extends Controller
         $pedidos = Pedido::all();
         return view('remunerar.index')->with('pedidos', $pedidos);
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -56,9 +58,27 @@ class RemunerarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($pedidos)
     {
-        //
+        $pago = new Pago();
+        $detalles = new Detallepago();
+        $vendedores = new Pedido();
+
+        $pago->comercio = "Hola";
+        $pago->save();
+/*
+        foreach($pedidos as $pedido){
+            $total += $pedido->precio;
+        }
+
+
+        $vendedores->nombre = $request->get('nombre');
+        $vendedores->direccion = $request->get('dire');
+       
+                
+        $vendedores->save();
+        */
+        return redirect('/vendedores');
     }
 
     /**

@@ -34,10 +34,14 @@
 											      </div>
                       </div>
 </div>
+
                         <br>
+                        <form action="/remunerars/" method="POST">
+                        @csrf
+                        @method('GET')
 												<table class="table">
 													<thead style="background-color:#2e5e8d; color:white;">
-                                                    <th scope="col">Comercio</th>
+                                                    <th scope="col">Destinatario</th>
                                                     <th scope="col">Tipo de envío</th>
                                                     <th scope="col">Fecha de entrega</th>
                                                     <th scope="col">Precio</th>
@@ -46,7 +50,7 @@
 													<tbody id="seleccion">
                                                     @foreach ($pedidos as $pedido)
                                                     <tr>
-                                                    <td>{{ $pedido->vendedor }}</td>
+                                                    <td>{{ $pedido->destinatario }}</td>
                                                     <td>{{ $pedido->tipo }}</td>
                                                     <td>{{ $pedido->fecha_entrega }}</td>
                                                     <td>${{ $pedido->precio }}</td>
@@ -111,7 +115,7 @@
 											
 											<br>
 											<button type="submit"  class="btn btn-primary" >Pagar Factura</button>
-
+                      </form>
 </div>
 </div>
 
