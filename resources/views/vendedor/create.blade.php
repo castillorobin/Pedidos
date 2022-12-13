@@ -60,6 +60,14 @@
     </div>
    
     <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">CORREO DEL COMERCIO</label>
+
+    <div class="col-sm-8">
+    <input type="text" id="dire" name="dire" class="form-control" tabindex="1" placeholder="CORREO" >
+    </div>
+    </div>
+
+    <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">FECHA DE INGRESO</label>
     
     <div class="col-sm-3">
@@ -68,10 +76,10 @@
     <label for="inputEmail3" class="col-sm-2 col-form-label">TIPO DE VENDEDOR</label>
     <div class="col-sm-3">
     <select id="tipo" name="tipo" aria-label="Select a Timezone"  class="form-select ">
-			<option value="Corriente">Seleccionar tipo</option>		
-			<option value="Pequeño">Pequeño</option>
-            <option value="Grande">Grande</option>
-			<option value="Nuevo">Nuevo</option>
+			<option value="Corriente">SELECCIONAR TIPO</option>		
+			<option value="Pequeño">PEQUEÑO</option>
+            <option value="Grande">GRANDE</option>
+			<option value="Nuevo">NUEVO</option>
 			
 		</select>
     </div>
@@ -123,6 +131,22 @@
 		</select>
     </div>
     </div>
+    
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">BANCO</label>
+    <div class="col-sm-8">
+    <select id="tipoc" name="tipoc" aria-label="Select a Timezone"  class="form-select ">
+			<option value="sele">SELECCIONAR BANCO</option>		
+			<option value="Davivienda">AGRICOLA</option>
+			<option value="Agricola">DAVIVIENDA</option>
+      <option value="Agricola">AMERICA CENTRAL</option>
+      <option value="Agricola">CUSCATLAN</option>
+			
+		</select>
+    </div>
+    </div>
+
 
 
 </div>

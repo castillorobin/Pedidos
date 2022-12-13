@@ -19,7 +19,7 @@
 
     <div class="col-sm-4">
     <select id="vende" name="vende" class="form-control">
-       <option >-Seleccionar comercio-</option>
+       <option >-SELECCIONAR COMERCIO-</option>
         @foreach($vendedores as $vendedor)
        <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
        @endforeach
@@ -57,7 +57,7 @@
 
     <div class="col-sm-4">
     <select id="tipo" name="tipo" class="form-control">
-       <option >-Seleccionar tipo-</option>
+       <option >-SELECCIONAR TIPO-</option>
         @foreach($tipos as $tipo)
        <option value="{{ $tipo->nombre }}">{{ $tipo->nombre }}</option>
        @endforeach
@@ -71,8 +71,9 @@
 
     
 
-    <div class="col-sm-8">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">{{ $date }}</label>
+    <div class="col-sm-4">
+        <input type="text"  class="form-control" placeholder="{{ $date }}" DISABLED>
+   
     </div>
     </div>
 </div>
@@ -84,7 +85,7 @@
     <div class="col-sm-4">
     <input type="text" id="precio" name="precio" class="form-control" tabindex="5" placeholder="$0.00">
     </div>
-    </div>
+    </div> 
 
     <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">ENVIO </label>
@@ -109,7 +110,7 @@
 
     <div class="col-sm-4" >
     <select name="tipos" id="tipos" class="form-control">
-    <option >-Seleccionar tipo-</option>
+    <option >-SELECCIONAR TIPO-</option>
         <option value="ENTREGA">ENTREGA</option>
         <option value="RECOELCTA">RECOLECTA</option>
         <option value="RECOLECTA Y ENTREGA">RECOLECTA Y ENTREGA</option>
@@ -122,7 +123,7 @@
 
     <div class="col-sm-4">
     <select id="estado" name="estado" class="form-control">
-       <option >-Seleccionar estado-</option>
+       <option >-SELECCIONAR ESTADO-</option>
         @foreach($estados as $estado)
        <option value="{{ $estado->nombre }}">{{ $estado->nombre }}</option>
        @endforeach
@@ -144,7 +145,7 @@
 
     <div class="col-sm-4">
     <select id="estado" name="estado" class="form-control">
-       <option >-Seleccionar pago-</option>
+       <option >-SELECCIONAR PAGO-</option>
        <option value="EFECTIVO">EFECTIVO</option>
        <option value="TRANSFERENCIA">TRANSFERENCIA</option>
        <option value="TIGO MONEY">TIGO MONEY</option>
@@ -159,7 +160,7 @@
 
     <div class="col-sm-4">
     <select id="ruta" name="ruta" class="form-control">
-       <option >-Seleccionar ruta-</option>
+       <option >-SELECCIONAR RUTA-</option>
         @foreach($rutas as $ruta)
        <option value="{{ $tipo->nombre }}">{{ $ruta->nombre }}</option>
        @endforeach
@@ -171,7 +172,12 @@
     <label for="inputEmail3" class="col-sm-2 col-form-label">REPARTIDOR</label>
 
     <div class="col-sm-8">
-    <input type="text" id="repar" name="repar" class="form-control" tabindex="10">
+    <select id="ruta" name="ruta" class="form-control">
+       <option >-SELECCIONAR REPARTIDOR-</option>
+        @foreach($repartidores as $repartidor)
+       <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
+       @endforeach
+       </select>
     </div>
     </div>
 
@@ -203,6 +209,25 @@
 <br>
 
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+                                                $(document).ready(function() {
+   													 $("#envio").change(function() {
+       												 //alert($(this).val());
+														const preci = parseFloat(document.getElementById("precio").value);
+														                                                    
+                                                        const envi =parseFloat($(this).val()); 
+
+                                                        document.getElementById("total").value = preci + envi;
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+
+    													});
+                                                
+                                            });
+</script>
+
 @endsection
 
 

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 use Carbon\Carbon;
+//Carbon::setLocale('es');
 use Illuminate\Http\Request;
 use App\Models\Pedido;
 use App\Models\Vendedor;
 use App\Models\Tipo;
 use App\Models\Ruta;
 use App\Models\Estado;
+use App\Models\Repartidor;
 
 use PDF; 
 
@@ -39,13 +41,17 @@ class PedidoController extends Controller
      */
     public function create()
     {
+        setlocale(LC_TIME, "spanish");
         $vendedores = Vendedor::all();
         $tipos = Tipo::all();
         $rutas = Ruta::all();
         $estados = Estado::all();
+        $repartidores = Repartidor::all();
         $date = Carbon::today();
-        $date = $date->format('d-m-Y');
-        return view('pedido.create')->with(['vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date]);
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+
+        return view('pedido.create')->with(['vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores]);
 
         //return view('pedido.create')->with('vendedores', $vendedores);
     }

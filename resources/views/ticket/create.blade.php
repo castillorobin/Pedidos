@@ -143,7 +143,7 @@
 															function calculart() {
 																const casic = document.getElementById("casit");
 																const casip = document.getElementById("casipr");
-
+ 
 															}
 																
 
