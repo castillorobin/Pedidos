@@ -343,6 +343,10 @@ return [
                     'text' => 'Ver Pagos',
                     'url'  => '/pagos/',
                 ],
+                [
+                    'text' => 'Recolectas',
+                    'url'  => '/recolectas',
+                ],
             ],
         ],
         [

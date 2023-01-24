@@ -41,6 +41,8 @@ Route::get('pedido/etiqueta/{id}', [App\Http\Controllers\PedidoController::class
 
 Route::get('remunerar/generar/', [App\Http\Controllers\RemunerarController::class, 'generars'] )->name('remunerar.generar') ;
 
+Route::get('recolectas', [App\Http\Controllers\TicketController::class, 'recolectas'] ) ;
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

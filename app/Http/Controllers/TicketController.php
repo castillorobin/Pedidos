@@ -16,6 +16,11 @@ class TicketController extends Controller
         $tickets = Ticket::all();
         return view('ticket.index')->with('tickets', $tickets);
     }
+    public function recolectas()
+    {
+        //$tickets = Ticket::all();
+        return view('ticket.recolecta');
+    }
 
     /**
      * Show the form for creating a new resource.
