@@ -112,8 +112,8 @@ return [
             'path' => 'vendor/adminlte/dist/img/logo.jpg',
             'alt' => 'Melo Express',
             'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
+            'width' => 50,
+            'height' => 50,
         ],
     ],
 
@@ -211,7 +211,7 @@ return [
     */
 
     'sidebar_mini' => 'lg',
-    'sidebar_collapse' => false,
+    'sidebar_collapse' => true,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
@@ -312,12 +312,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Listado',
-                    'url'  => '/pedidos/',
+                    'url'  => '#',
                 ],
                 
                 [
                     'text' => 'Agregar',
-                    'url'  => '/pedidos/create',
+                    'url'  => '#',
                 ],
             ],
         ],
@@ -327,25 +327,25 @@ return [
             'submenu' => [
                 [
                     'text' => 'Listado de Tickets',
-                    'url'  => '/tickets/',
+                    'url'  => '#',
                 ],
                 [
                     'text' => 'Recepcion de Paquetes',
-                    'url'  => '/tickets/create',
+                    'url'  => '#',
                 ],
                 
                 [
                     'text' => 'Pagar para Remunerar',
-                    'url'  => '/remunerars/',
+                    'url'  => '#',
                 ],
 
                 [
                     'text' => 'Ver Pagos',
-                    'url'  => '/pagos/',
+                    'url'  => '#',
                 ],
                 [
                     'text' => 'Recolectas',
-                    'url'  => '/recolectas',
+                    'url'  => '#',
                 ],
             ],
         ],
@@ -355,12 +355,12 @@ return [
             'submenu' => [
                 [
                     'text' => 'Listado',
-                    'url'  => '/vendedores/',
+                    'url'  => '#',
                 ],
                 
                 [
                     'text' => 'Agregar',
-                    'url'  => '/vendedores/create',
+                    'url'  => '#',
                 ],
             ],
         ],
@@ -370,11 +370,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Listado',
-                    'url'  => '/repartidores/',
+                    'url'  => '#',
                 ],
                 [
                     'text' => 'Agregar',
-                    'url'  => '/repartidores/create',
+                    'url'  => '#',
                 ]
                 
               
@@ -410,20 +410,20 @@ return [
             'submenu' => [
                 [
                     'text' => 'Tipo de Pedido',
-                    'url'  => '/tipos',
+                    'url'  => '#',
                 ],
                 
                 [
                     'text' => 'Precios Pedidos',
-                    'url'  => '/precios',
+                    'url'  => '#',
                 ],
                 [
                     'text' => 'Estados Pedidos',
-                    'url'  => '/estados',
+                    'url'  => '#',
                 ],
                 [
                     'text' => 'Rutas',
-                    'url'  => '/rutas',
+                    'url'  => '#',
                 ]
                 
               

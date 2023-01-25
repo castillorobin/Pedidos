@@ -43,6 +43,7 @@ Route::get('remunerar/generar/', [App\Http\Controllers\RemunerarController::clas
 
 Route::get('recolectas', [App\Http\Controllers\TicketController::class, 'recolectas'] ) ;
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
