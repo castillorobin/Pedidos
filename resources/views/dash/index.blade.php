@@ -146,8 +146,7 @@
 
 
 					<h1>Últimos Envios</h1>
-<div ><a href="/pedidos/create" class="btn btn-primary float-right" > Agregar Envio</a></div>
-<br>
+
 <table id="tpedido" class="table table-bordered  shadow-lg mt-4">
 <thead >
     <tr >
