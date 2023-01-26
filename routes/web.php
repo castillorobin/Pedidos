@@ -50,9 +50,8 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dash', function () {
-        $pedidos= Pedido::select("*")
-        ->whereDate('created_at', Carbon::today())
-        ->get();
+        $pedidos= Pedido::all();
+       
         $vendedores = Vendedor::all();
         $casilleros= Pedido::select("*")
         ->where('tipo', 'Casillero')

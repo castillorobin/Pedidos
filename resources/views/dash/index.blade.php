@@ -144,12 +144,63 @@
 					</div>
 
 
-				
+					<h1>Últimos Envios</h1>
+<div ><a href="/pedidos/create" class="btn btn-primary float-right" > Agregar Envio</a></div>
+<br>
+<table id="tpedido" class="table table-bordered  shadow-lg mt-4">
+<thead >
+    <tr >
+        <th scope="col">ID</th>
+        <th scope="col">Comercio</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Estado</th>
+        
+    </tr>
+</thead>
+<tbody>
+    @foreach ($pedidos as $pedido)
+    <tr >
+    <td style="font-weight: bolder; color: #0080ff;">{{ $pedido->id }}</td>
+    <td style="font-weight: bolder; color: #0080ff;">{{ $pedido->vendedor }}</td>
+    <td style="font-weight: bolder; color: #0080ff;">{{ $pedido->destinatario }}</td>
+    <td>{{ $pedido->direccion }}</td>
+    <td>{{ $pedido->telefono }}</td>
+    <td>{{ $pedido->tipo }}</td>
+
+    @if($pedido->estado =='Pendiente') 
+    <td style="color: red; font-weight:bolder;"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+  <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+</svg>  {{ $pedido->estado }}</td>
+    @endif
+    @if($pedido->estado =='Entregado') 
+    <td style="color: #008040; font-weight:bolder;"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16">
+  <path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z"/>
+</svg>  {{ $pedido->estado }}</td>
+    @endif
+    @if($pedido->estado =='En Camino') 
+    <td style="color: #F1C40F; font-weight:bolder;"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+  <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+</svg> {{ $pedido->estado }}</td>
+    @endif
+    @if($pedido->estado =='Cancelado') 
+    <td style="color: black; font-weight:bolder;"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+</svg> {{ $pedido->estado }}</td>
+    @endif
 
 
-				
 
-					
+    
+    </tr>
+    @endforeach
+</tbody>
+</table>				
+
+
 
 					
 				</div>
