@@ -312,13 +312,10 @@ return [
             'submenu' => [
                 [
                     'text' => 'Listado',
-                    'url'  => '#',
+                    'url'  => '/pedidos',
                 ],
                 
-                [
-                    'text' => 'Agregar',
-                    'url'  => '#',
-                ],
+                
             ],
         ],
         [

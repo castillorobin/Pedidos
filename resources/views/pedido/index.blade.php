@@ -11,7 +11,80 @@
 @section('content')
 
 <h1>Listado de Envios</h1>
-<div ><a href="/pedidos/create" class="btn btn-primary float-right" > Agregar Envio</a></div>
+<div ><a href="/pedidos/create" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"> Agregar Envio</a>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar envio</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       
+
+
+        <div class="container ">
+<form action="/pedidos" method="POST">
+    @csrf
+<div class="row border" style="background-color: white; padding: 15px; border-radius:20px;">
+<div class="row mb-3">
+<label for="" class="col-sm-2 col-form-label">COMERCIO</label>
+
+    <div class="col-sm-4">
+    <select id="vende" name="vende" class="form-control">
+       <option >-SELECCIONAR COMERCIO-</option>
+        
+       </select>
+
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">DESTINATARIO</label>
+
+    <div class="col-sm-8">
+    <input type="text" id="destino" name="destino" class="form-control" tabindex="2" placeholder="NOMBRE DEL DESTINATARIO">
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">DIRECCION DE ENTREGA</label>
+
+    <div class="col-sm-8">
+    <input type="text" id="dire" name="dire" class="form-control" tabindex="1" placeholder="DIRECCION" >
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">TELEFONO</label>
+
+    <div class="col-sm-8">
+    <input type="text" id="tele" name="tele" class="form-control" tabindex="1" placeholder="TELEFONO" >
+    </div>
+    </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+</div>
+
 <br>
 <table id="tpedido" class="table table-bordered table-striped shadow-lg mt-4">
 <thead class="table-dark">
@@ -92,6 +165,8 @@
 <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" defer></script>
 
 
+	
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" defer></script>
 <script src="https://cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"></script>
@@ -364,6 +439,7 @@
 
 
 @section('css')
+<link rel="stylesheet" href="vendor/adminlte/dist/css/core.css">
     <link rel="stylesheet" href="/css/admin_custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
