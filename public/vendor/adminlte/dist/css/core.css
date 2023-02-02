@@ -23,7 +23,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
   }
   .glyphicon {
-    font-size: 16px;
+    font-size: 8px;
     vertical-align: middle;
     top: -1px;
   }
@@ -6372,8 +6372,14 @@
     top: 50%;
     margin-top: 0;
   }
+  .modal-body  {
+    margin-top: 0!important;
+    font-size: 12px;
+    
+  }
   .modal-body .close {
     margin-top: 0!important;
+    
   }
   .modal-footer {
     padding-top: 0;

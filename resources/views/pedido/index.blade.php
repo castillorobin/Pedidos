@@ -24,17 +24,45 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-       
+      
 
 
         <div class="container ">
 <form action="/pedidos" method="POST">
     @csrf
 <div class="row border" style="background-color: white; padding: 15px; border-radius:20px;">
-<div class="row mb-3">
-<label for="" class="col-sm-2 col-form-label">COMERCIO</label>
 
-    <div class="col-sm-4">
+<div class="row mb-4">
+    
+
+
+    <div class="  col-sm-6">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">ID DE ENVIO</label>
+    <div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/fluency-systems-regular/48/null/checked-identification-documents.png" width="25" /></span>
+  </div>
+  <input type="text" class="form-control" placeholder="ID" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+    </div>
+    
+    <div class="col-sm-4 text-center">
+    <label for="inputEmail3" class="col-sm-8 col-form-label">CODIGO DE BARRAS</label>
+    <img width="110" src="vendor/adminlte/dist/img/barra.jpg" alt="" >
+    </div>
+
+    </div>
+
+
+
+
+
+<div class="row mb-3">
+
+
+    <div class="col-sm-12">
+    <label for="" class="col-sm-6 col-form-label">NOMBRE DE COMERCIO/TIENDA</label>
     <select id="vende" name="vende" class="form-control">
        <option >-SELECCIONAR COMERCIO-</option>
         
@@ -43,31 +71,285 @@
     </div>
     </div>
 
-    <div class="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">DESTINATARIO</label>
-
-    <div class="col-sm-8">
-    <input type="text" id="destino" name="destino" class="form-control" tabindex="2" placeholder="NOMBRE DEL DESTINATARIO">
+    <div class="row mb-3 text-center">
+        <h5>------------------------------DATOS DEL DESTINATARIO-------------------------------</h5>
+     
+        <P></P>
+    
+    
+    <div class="col-sm-6 ">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">DESTINATARIO</label>
+    <input type="text" id="tele" name="tele" class="form-control" tabindex="3" placeholder="DESTINATARIO">
+    </div>
+    
+    <div class="col-sm-6">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">TELEFONO</label>
+    <input type="text" id="what" name="what" class="form-control" tabindex="3" placeholder="TELEFONO">
     </div>
     </div>
 
     <div class="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">DIRECCION DE ENTREGA</label>
 
-    <div class="col-sm-8">
-    <input type="text" id="dire" name="dire" class="form-control" tabindex="1" placeholder="DIRECCION" >
+
+<div class="col-sm-12">
+<label for="" class="col-sm-6 col-form-label">DIRECCION DE ENTREGA</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
+  </div>
+  <input type="text" class="form-control" placeholder="DIRECCION" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+</div>
+</div>
+
+<div class="col-sm-6 ">
+<label for="" class="col-sm-6 col-form-label">FECHA DE CREACION</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
+  </div>
+  <input type="date" class="form-control" placeholder="CREACION" aria-label="Username" aria-describedby="basic-addon1">
+</div>
     </div>
+    
+    <div class="col-sm-6">
+    <label for="" class="col-sm-6 col-form-label">FECHA DE ENTREGA</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
+  </div>
+  <input type="date" class="form-control" placeholder="ENTREGA" aria-label="Username" aria-describedby="basic-addon1">
+</div>
     </div>
 
-    <div class="row mb-3">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">TELEFONO</label>
 
-    <div class="col-sm-8">
-    <input type="text" id="tele" name="tele" class="form-control" tabindex="1" placeholder="TELEFONO" >
+    <div class="row">
+
+<div class="col-sm-4">
+<label for="" class="col-sm-4 col-form-label">PRECIO</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="PRECIO" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-4 col-form-label">ENVIO</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="ENVIO" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-4 col-form-label">TOTAL</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="TOTAL" aria-label="Username" aria-describedby="basic-addon1" disabled>
+</div>
+</div>
+
+
+<div class="col-sm-12 text-center">
+<h5>------------------------------DATOS INTERNOS-------------------------------</h5>
+</div>
+<div class="col-sm-6 ">
+
+
+<label for="" class="col-sm-6 col-form-label">ESTADO DEL ENVIO</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
+  </div>
+  <select id="vende" name="vende" class="form-control">
+       <option >-SELECCIONAR ESTADO-</option>
+       <option >CREADO</option>
+       <option >EN RUTA</option>
+       <option >ENTREGADO</option>
+       <option >NO ENTREGADO EN LOCAL</option>
+       <option >REPROGRAMADO</option>
+       <option >DEVUELTO AL VENDEDOR</option>
+       </select>
+</div>
     </div>
+    
+    <div class="col-sm-6">
+    <label for="" class="col-sm-6 col-form-label">ESTADO DEL PAGO</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cash-in-hand.png"/></span>
+  </div>
+  <select id="vende" name="vende" class="form-control">
+       <option >-SELECCIONAR ESTADO-</option>
+       <option >POR PAGAR</option>
+       <option >PAGADO</option>
+       </select>
+</div>
     </div>
 
 
+
+    <div class="col-sm-6 ">
+
+
+<label for="" class="col-sm-6 col-form-label">TIPO DE SERVICIO</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/online-support.png"/></span>
+  </div>
+  <select id="vende" name="vende" class="form-control">
+       <option >-SELECCIONAR ESTADO-</option>
+       <option >RECOLECTA</option>
+       <option >ENTREGA</option>
+       <option >ENTREGA Y RECOLECTA</option>
+  
+       </select>
+</div>
+    </div>
+    
+    <div class="col-sm-6">
+    <label for="" class="col-sm-6 col-form-label">TIPO DE ENVIO</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/25/null/external-delivery-logistic-delivery-kiranshastry-solid-kiranshastry.png"/></span>
+  </div>
+  <select id="vende" name="vende" class="form-control">
+       <option >-SELECCIONAR ESTADO-</option>
+       <option >PERSONALIZADO</option>
+       <option >PERSONALIZADO DEPARTAMENTAL</option>
+       <option >PUNTO FIJO</option>
+       <option >CASILLERO</option>
+       </select>
+</div>
+    </div>
+    <div class="col-sm-12">
+<label for="" class="col-sm-6 col-form-label">NOTA</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/notepad.png"/></span>
+  </div>
+  <input type="text" class="form-control" placeholder="NOTA" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+</div>
+
+
+<div class="col-sm-6 ">
+
+
+<label for="" class="col-sm-6 col-form-label">INGRESADO POR</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-itim2101-lineal-itim2101/25/null/external-operator-logistics-and-delivery-itim2101-lineal-itim2101.png"/></span>
+  </div>
+  <select id="vende" name="vende" class="form-control">
+       <option >-SELECCIONAR ESTADO-</option>
+       <option >ERICKº</option>
+       <option >KAREN</option>
+       <option >ALEIDI</option>
+       <option >GABI</option>
+     
+       </select>
+</div>
+    </div>
+    
+    <div class="col-sm-6">
+    <label for="" class="col-sm-6 col-form-label">AGENCIA</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/ios-filled/25/null/online-store.png"/></span>
+  </div>
+  <select id="vende" name="vende" class="form-control">
+       <option >-SELECCIONAR ESTADO-</option>
+       <option >SAN SALVADOR</option>
+       <option >SAN MIGUEL</option>
+       <option >SANTA ANA</option>
+       </select>
+</div>
+    </div>
+
+
+    <div class="col-sm-6 ">
+
+
+<label for="" class="col-sm-6 col-form-label">REPARTIDOR</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
+  </div>
+  <select id="vende" name="vende" class="form-control">
+       <option >-SELECCIONAR ESTADO-</option>
+       <option >ERICK</option>
+       <option >KAREN</option>
+       <option >CARLOS</option>
+       <option >JUAN</option>
+     
+       </select>
+</div>
+    </div>
+    
+    <div class="col-sm-6">
+    <label for="" class="col-sm-6 col-form-label">RUTA</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
+  </div>
+  <select id="vende" name="vende" class="form-control">
+       <option >-SELECCIONAR ESTADO-</option>
+       <option >RUTA 1</option>
+       <option >RUTA 2</option>
+       <option >RUTA 3</option>
+       <option >RUTA 4</option>
+       </select>
+</div>
+    </div>
+
+
+     <P></P>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    
 
       </div>
       <div class="modal-footer">
@@ -439,8 +721,12 @@
 
 
 @section('css')
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css" /> 
+
 <link rel="stylesheet" href="vendor/adminlte/dist/css/core.css">
-    <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="vendor/adminlte/dist/css/admin_custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     
