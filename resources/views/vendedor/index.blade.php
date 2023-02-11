@@ -10,8 +10,312 @@
 
 @section('content')
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Comercio</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+<div class="row mb-3">
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-6 col-form-label">ID COMERCIO</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/fluency-systems-regular/48/null/checked-identification-documents.png" width="25" /></span>
+  </div>
+  <input type="text" class="form-control" placeholder="ID" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+</div>
+
+
+<div class="row mb-3">
+
+
+<div class="col-sm-12">
+<label for="" class="col-sm-6 col-form-label">NOMBRE DEL COMERCIO / TIENDA</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/25/null/gender-neutral-user--v1.png"/></span>
+  </div>
+  <input type="text" class="form-control" placeholder="NOMBRE" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+</div>
+
+<div class="row mb-3">
+<div class="col-sm-12">
+<label for="" class="col-sm-6 col-form-label">DIRECCION</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
+  </div>
+  <input type="text" class="form-control" placeholder="DIRECCION" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+</div>
+</div>
+
+<div class="row mb-3 text-center">
+<div class="col-sm-6 ">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">TELEFONO</label>
+    <div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/phone--v1.png"/></span>
+  </div>
+  <input type="text" class="form-control" placeholder="TELEFONO" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+    </div>
+    
+    <div class="col-sm-6">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">WHATSAPP</label>
+    <div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/whatsapp--v1.png"/></span>
+  </div>
+  <input type="text" class="form-control" placeholder="WHATSAPP" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+    </div>
+    </div>
+    
+    
+    <div class="row mb-3">
+
+<div class="col-sm-4">
+<label for="" class="col-sm-4 col-form-label">FECHA DE ALTA</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/upload-2--v1.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="ALTA" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-4 col-form-label">FECHA DE BAJA</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/download-2--v1.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="BAJA" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-4 col-form-label">TIPO DE COMERCIO</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/climbing-wall.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="COMERCIO" aria-label="Username" aria-describedby="basic-addon1" >
+</div>
+</div>
+</div>
+
+<div class="row mb-3">
+<div class="col-sm-12">
+<label for="" class="col-sm-6 col-form-label">CORREO</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/metro/25/null/email.png"/></span>
+  </div>
+  <input type="text" class="form-control" placeholder="CORREO" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+</div>
+</div>
+
+<div class="row mb-3 text-center">
+        <h6>------------------------------DATOS PARA DEPOSITO-------------------------------</h6>
+     
+        
+        <div class="col-sm-12">
+<label for="" class="col-sm-6 col-form-label">TITULAR DE LA CUENTA</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/bank-building.png"/></span>
+  </div>
+  <input type="text" class="form-control" placeholder="CUENTA" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+</div>
+</div>
+
+
+<div class="row mb-3 text-center">
+<div class="col-sm-6 ">
+    <label for="inputEmail3" class="col-sm-6 col-form-label">NOMBRE DEL BANCO</label>
+    <div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/money-box--v1.png"/></span>
+  </div>
+  <input type="text" class="form-control" placeholder="BANCO" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+    </div>
+    
+    <div class="col-sm-6">
+    <label for="inputEmail3" class="col-sm-6 col-form-label">NUMERO DE CUENTA</label>
+    <div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/100.png"/></span>
+  </div>
+  <input type="text" class="form-control" placeholder="CUENTA" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+    </div>
+    </div>
+    
+    <div class="row mb-3 text-center">
+
+<div class="col-sm-4">
+<label for="" class="col-sm-4 col-form-label">TIPO DE CUENTA</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/merchant-account.png"/></span>
+</div>
+<select id="vende" name="vende" class="form-control">
+       <option >-SELECCIONAR TIPO-</option>
+       <option >CORRIENTE</option>
+       <option >AHORROS</option>
+        
+       </select>
+
+</div>
+</div>
+
+
+
+<div class="col-sm-4 ">
+<label for="" class="col-sm-4 col-form-label"># DE CHIVO</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/bitcoin--v1.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="CHIVO" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-4 col-form-label"># DE TIGO MONEY</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/stack-of-money.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="TIGO MONEY" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+</div>
+
+<div class="row mb-3 text-center">
+        <h6>------------------------------DATOS DEL FISCALES-------------------------------</h6>
+     
+  
+    
+    <div class="col-sm-8 ">
+    <label for="inputEmail3" class="col-sm-8 col-form-label">NOMBRE DE LA EMPRESA</label>
+    <div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/shop-department.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="EMPRESA" aria-label="Username" aria-describedby="basic-addon1" >
+</div>
+    </div>
+    
+    <div class="col-sm-4">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">GIRO</label>
+    <div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/business-network.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="GIRO" aria-label="Username" aria-describedby="basic-addon1" >
+</div>
+    </div>
+    </div>
+    
+
+    <div class="row mb-3 text-center">
+
+<div class="col-sm-4">
+<label for="" class="col-sm-4 col-form-label"># DE DUI</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/merchant-account.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="DUI" aria-label="Username" aria-describedby="basic-addon1">
+
+</div>
+</div>
+
+
+
+<div class="col-sm-4 ">
+<label for="" class="col-sm-4 col-form-label"># DE IVA</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/bitcoin--v1.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="IVA" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-4 col-form-label">REGISTRO(NRC)</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/stack-of-money.png"/></span>
+</div>
+<input type="text" class="form-control" placeholder="NCR" aria-label="Username" aria-describedby="basic-addon1" >
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+<div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+</div>
+</div>
+</div>
 <h1>Listado de Comercios</h1>
-<div ><a href="/vendedores/create" class="btn btn-primary float-right" > Agregar Vendedor</a></div>
+<div ><a href="" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"> Agregar Comercio</a></div>
 <br>
 <table id="tvendedor" class="table table-bordered table-striped shadow-lg mt-4">
 <thead class="table-dark">
@@ -329,6 +633,11 @@
 
 
 @section('css')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css" /> 
+
+<link rel="stylesheet" href="vendor/adminlte/dist/css/core.css">
+    <link rel="stylesheet" href="vendor/adminlte/dist/css/admin_custom.css">
     <link rel="stylesheet" href="/css/admin_custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
