@@ -72,9 +72,9 @@
     $('#tvendedor').DataTable(
         {
            
-            language: {
-        search: "Buscar pedido:",
-        "processing": "Procesando...",
+    language: {
+    search: "Buscar pedido:",
+    "processing": "Procesando...",
     "lengthMenu": "Mostrar _MENU_ registros",
     "zeroRecords": "No se encontraron resultados",
     "emptyTable": "Ningún dato disponible en esta tabla",
