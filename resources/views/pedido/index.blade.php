@@ -65,7 +65,10 @@
     <label for="" class="col-sm-6 col-form-label">NOMBRE DE COMERCIO/TIENDA</label>
     <select id="vende" name="vende" class="form-control">
        <option >-SELECCIONAR COMERCIO-</option>
-        
+       
+        @foreach($vendedores as $vendedor)
+       <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
+       @endforeach
        </select>
 
     </div>
@@ -111,7 +114,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
   </div>
-  <input type="date" class="form-control" placeholder="CREACION" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" placeholder="{{ $date }}" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     
@@ -198,7 +201,6 @@
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cash-in-hand.png"/></span>
   </div>
   <select id="vende" name="vende" class="form-control">
-       <option >-SELECCIONAR ESTADO-</option>
        <option >POR PAGAR</option>
        <option >PAGADO</option>
        </select>
@@ -332,7 +334,14 @@
 
      <P></P>
 
+     <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">FOTO DEL PAQUETE</label>
 
+    <div class="col-sm-8">
+    <input type="file" id="foto" name="foto" class="form-control" tabindex="10">
+    </div>
+    </div>
+    <br>
 
 
 </div>
