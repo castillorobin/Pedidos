@@ -76,7 +76,11 @@ class RepartidorController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $repartidor = Repartidor::where('id', $id)->first();
+
+        return response()->json($repartidor);
+
     }
 
     /**

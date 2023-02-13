@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Repartidor extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'id_empleado'
         ,'nombre'          
         ,'direccion'       
         ,'telefono'        
         ,'dui'             
-        ,'nit'             
+        ,'dui'             
         ,'tipo_contrato'   
         ,'agencia'         
         ,'num_seguro'      
