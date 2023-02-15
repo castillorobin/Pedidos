@@ -23,7 +23,18 @@ class PedidoController extends Controller
     public function index()
     {
         $pedidos = Pedido::all();
-        return view('pedido.index')->with('pedidos', $pedidos);
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+        $tipos = Tipo::all();
+        $rutas = Ruta::all();
+        $estados = Estado::all();
+        $repartidores = Repartidor::all();
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        //return view('pedido.index')->with('pedidos', $pedidos);
+
+        return view('pedido.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores]);
  
     }
 
