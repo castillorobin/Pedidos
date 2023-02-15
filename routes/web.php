@@ -43,6 +43,8 @@ Route::get('remunerar/generar/', [App\Http\Controllers\RemunerarController::clas
 
 Route::get('recolectas', [App\Http\Controllers\TicketController::class, 'recolectas'] ) ;
 
+Route::get('/repartidor/{id}', 'RepartidorController@show')->name('repartidor.modal');
+
 
 Route::middleware([
     'auth:sanctum',
