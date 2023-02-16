@@ -23,8 +23,10 @@
 
 
 <h1>Listado de Repartidores</h1>
-<div ><a href="/repartidores/create" data-toggle="modal" data-target="#addrepartidor" class="btn btn-primary float-right" > Agregar Repartidor</a></div>
+<div ><a href="/repartidores/create" data-toggle="modal" data-target="#addrepartidor" class="btn btn-primary float-right" > <i class="fa-solid fa-user-plus"></i> Agregar Repartidor</a></div>
 <br>
+<br>
+
 {{-- <table id="trepartidor" class="display responsive nowrap" style="width:100%"> --}}
   <div class="table-responsive">
 <table id="trepartidor" class="table table-bordered table-striped display responsive nowrap" style="width:100%">
@@ -109,62 +111,403 @@
 {{-- aqui empieza el modal --}}
 
 
-
-<!-- Button trigger modal -->
-
-
 <!-- Modal -->
 <div class="modal fade" id="addrepartidor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"><h3>Datos Repartidor:</h3></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+
+
+        <div class="container">
+          <form>
+         
+           
+            <div class="row">
+                  <div class="col-6">
+                  
+              {{-- Input de Nombre  --}}
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Nombre">
+                </div>
+              </div>
+  
+                  </div>
+  
+                  <div class="col-6">
+                  {{-- Input de Direccion  --}}
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa-sharp fa-solid fa-house"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Direccion">
+              </div>
+            </div> 
+  
+  
+            </div>
+  
+            </div>    
+  
+  <br>
+            <div class="row">
+             
+              <div class="col-6 col-md-4">
+  
+           {{-- Input de Telefono --}}
+           <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa-sharp fa-solid fa-phone"></i>
+                </span>
+              </div>
+              <input type="email" class="form-control" placeholder="Telefono">
+            </div>
+          </div>
+              </div>
+  
+  
+              <div class="col-6 col-md-4">
+               {{-- Input de dui  --}}
+               <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fa-solid fa-id-card"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="DUI">
+                </div>
+              </div>
+  
+              </div>
+  
+              <div class="col-6 col-md-4">
+        {{-- Input de tipo de NIT  --}}
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="fa-regular fa-id-card"></i>
+                      </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="NIT">
+                  </div>
+                </div>
+  
+              </div>
+  
+            </div>
+  <br>
+            <div class="row">
+          {{-- INICIO ROW  --}}
+  
+              <div class="col-6">
+  
+              {{-- Input de tipo de contrato  --}}
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fa-solid fa-building"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="tipo de contrato:">
+                </div>
+              </div> 
+               {{--FIN Input de tipo de contrato  --}}
+              </div>
+  
+              <div class="col-6">
+              {{-- Input de agencia  --}}
+              <div class="input-group">
+                <select class="form-select" id="inputGroupSelect04" >
+                  <option selected>Agencia</option>
+                  <option value="1">San Salvador</option>
+                  <option value="2">San Miguel</option>
+                  <option value="3">Santa Ana</option>
+                </select>
+              </div>
+              {{-- FIN Input de agencia  --}}
+              </div>
+  
+  
+            </div>{{-- FIN ROW  --}}
+  <br>
+            <div class="row">
+              {{-- INICIO ROW  --}}
       
-        <form>
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fas fa-user"></i>
-                </span>
+                  <div class="col">{{-- INICIO COL  --}}
+
+              {{-- Input de numero de seguro  --}}
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fa-regular fa-id-card"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Numero de Seguro">
+                </div>
               </div>
-              <input type="text" class="form-control" placeholder="Username">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fas fa-trash"></i>
-                </span>
+
+                    
+                  </div>{{-- FIN COL  --}}
+
+                  <div class="col">{{-- INICIO COL  --}}
+
+              {{-- Input de numero de AFP  --}}
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fa-solid fa-id-card-clip"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Numero de AFP:">
+                </div>
               </div>
-              <input type="text" class="form-control" placeholder="Username">
-            </div>
-          </div>
+                          
+                        </div>{{-- FIN COL  --}}
 
 
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fas fa-envelope"></i>
-                </span>
-              </div>
-              <input type="email" class="form-control" placeholder="Email">
-            </div>
-          </div>
-        </form> 
+                        <div class="col">{{-- INICIO COL  --}}
 
+                      {{-- Input de numero de Cargo  --}}
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa-sharp fa-solid fa-house"></i>
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="Cargo">
+        </div>
       </div>
+                                      
+                                    </div>{{-- FIN COL  --}}
+
+  
+                  </div>{{-- FIN ROW  --}}
+<br>
+
+
+                      <div class="row">
+                        {{-- INICIO ROW  --}}
+                
+                            <div class="col">{{-- INICIO COL  --}}
+          {{-- Input de  Fecha de alta  --}}
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  &nbsp;&nbsp;&nbsp; Fecha de Alta
+                </span>
+              </div>
+              <input id="startDate" class="form-control" type="date" />
+            </div>
+          </div>
+                              
+                            </div>{{-- FIN COL  --}}
+
+
+
+                            <div class="col">{{-- INICIO COL  --}}
+
+                      {{-- Input de Salario   --}}
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="fa-regular fa-money-bill-1"></i>
+                            </span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Salario">
+                        </div>
+                      </div>
+                            </div>{{-- FIN COL  --}}
+
+
+                            <div class="col">{{-- INICIO COL  --}}
+                    
+          {{-- Input de  Fecha de baja  --}}
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-calendar-days"> </i>
+                  &nbsp;&nbsp;&nbsp;Fecha de Baja
+                </span>
+              </div>
+              <input id="startDate" class="form-control" type="date" />
+            </div>
+          </div>
+
+                              </div>{{-- FIN COL  --}}
+
+    
+                          </div>{{-- FIN ROW  --}}
+<br>
+
+                          <div class="row">
+                            {{-- INICIO ROW  --}}
+                    
+                                <div class="col">{{-- INICIO COL  --}}
+              
+                            {{-- Input de numero de notas --}}
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                    <i class="fa-regular fa-note-sticky"></i>
+                                  </span>
+                                </div>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Escribe tu nota aqui." rows="3"></textarea>
+                              </div>
+                            </div>
+              
+                                  
+                                </div>{{-- FIN COL  --}}
+        
+                              </div>{{-- FIN ROW  --}}
+
+                              <div class="row">
+                              {{-- INICIO ROW  --}}
+                      
+                                  <div class="col">{{-- INICIO COL  --}}
+                
+                              {{-- Input de tipo de vehiculo  --}}
+                              <div class="input-group">
+                                <select class="form-select" id="inputtipo_vehiculo" >
+                                  <option selected>Tipo de vehiculo</option>
+                                  <option value="1">Motocicleta</option>
+                                  <option value="2">Vehiculo</option>
+                                  <option value="3">Santa Ana</option>
+                                </select>
+                              </div>
+                
+                                    
+                                  </div>{{-- FIN COL  --}}
+      
+      
+      
+              <div class="col">{{-- INICIO COL  --}}
+                
+                {{-- Input de numero de seguro  --}}
+                <div class="input-group">
+                  <select class="form-select" id="inputGroupSelect04" >
+                    <option selected>Asigno unidad</option>
+                    <option value="1">Si</option>
+                    <option value="2">No</option>
+                    
+                  </select>
+                </div>
+                      
+                      
+                    </div>{{-- FIN COL  --}}
+          
+            </div>{{-- FIN ROW  --}}
+
+
+
+
+
+<br>
+                      <div class="row">
+                        {{-- INICIO ROW  --}}
+                
+                            <div class="col">{{-- INICIO COL  --}}
+                            <center><h4>DATOS DEL VEHICULO</h4></center>
+<center><h4>_____________________________________________________________________________________________________</h4></center> 
+                            </div>{{-- FIN COL  --}}
+
+                          </div>{{-- FIN ROW  --}}
+    
+                          <br>
+                      <br>
+                          <div class="row">
+                            {{-- INICIO ROW  --}}
+                    
+                                <div class="col">{{-- INICIO COL  --}}
+          {{-- Input de numero de placa  --}}
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-car-side"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Numero de Placa:">
+            </div>
+          </div>
+                                </div>{{-- FIN COL  --}}
+                                
+                                <div class="col">{{-- INICIO COL  --}}
+
+         {{-- Input de numero de tarjeta  --}}
+  
+          
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-hashtag"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Numero de tarjeta:">
+            </div>
+          </div>
+
+                                </div>{{-- FIN COL  --}}
+
+                                <div class="col">{{-- INICIO COL  --}}
+             
+          {{-- Input numero de licencia  --}}
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-id-card"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="numero de licencia de conducir:">
+            </div>
+          </div>                       
+                                </div>{{-- FIN COL  --}}
+                              </div>{{-- FIN ROW  --}}
+
+            </div>
+         
+      
+                </form> 
+  
+              </div>
+
+
+<br>
+<br>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
+      
     </div>
   </div>
 </div>

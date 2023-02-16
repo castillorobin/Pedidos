@@ -15,7 +15,7 @@ class Repartidor extends Model
         ,'direccion'       
         ,'telefono'        
         ,'dui'             
-        ,'dui'             
+        ,'nit'             
         ,'tipo_contrato'   
         ,'agencia'         
         ,'num_seguro'      
