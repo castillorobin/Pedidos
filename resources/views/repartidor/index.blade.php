@@ -65,15 +65,14 @@
         <td></td>
       <td>
         <div style="display:inline-flex;">
-    <form action="{{ route ('repartidor.modal', $repartidor->id)}}" method="POST">
+    <form action="{{ route ('repartidor.edit', $repartidor->id)}}" method="POST">
     @csrf
     @method('GET')
-    {{-- <button  type="button" class="btn btn-success rounded-circle" data-toggle="modal" data-target="#modalVerMasData">
-      <b> + </b>
-      </button>                                                                      --}}
+    <a href="/repartidores/{{ $repartidor->id }}" class="btn btn-primary rounded-circle"><i class="fa-regular fa-pen-to-square"></i></a>
+
 </form>
         <form action="{{ route ('repartidores.destroy', $repartidor->id)}}" method="POST">
-        <a href="/repartidores/{{ $repartidor->id }}/edit" class="btn btn-primary rounded-circle"><i class="fa-regular fa-pen-to-square"></i></a>
+       
         @csrf
         @method('DELETE')
         <button class="btn btn-danger rounded-circle"><i class="fa-solid fa-trash"></i></button>
@@ -125,7 +124,8 @@
 
 
         <div class="container">
-          <form>
+          <form method="POST" action="{{ route('repartidores.store') }}">
+            @csrf
          
            
             <div class="row">
@@ -139,7 +139,7 @@
                       <i class="fas fa-user"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Nombre">
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                 </div>
               </div>
   
@@ -154,7 +154,7 @@
                     <i class="fa-sharp fa-solid fa-house"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Direccion">
+                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
               </div>
             </div> 
   
@@ -176,7 +176,7 @@
                   <i class="fa-sharp fa-solid fa-phone"></i>
                 </span>
               </div>
-              <input type="email" class="form-control" placeholder="Telefono">
+              <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
             </div>
           </div>
               </div>
@@ -191,7 +191,7 @@
                       <i class="fa-solid fa-id-card"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="DUI">
+                  <input type="text" class="form-control" id="dui" name="dui" placeholder="DUI">
                 </div>
               </div>
   
@@ -206,7 +206,7 @@
                         <i class="fa-regular fa-id-card"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="NIT">
+                    <input type="text" class="form-control" id="nit" name="nit" placeholder="NIT">
                   </div>
                 </div>
   
@@ -227,7 +227,7 @@
                       <i class="fa-solid fa-building"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="tipo de contrato:">
+                  <input type="text" class="form-control" id="tipo_contrato" name="tipo_contrato" placeholder="tipo de contrato:">
                 </div>
               </div> 
                {{--FIN Input de tipo de contrato  --}}
@@ -236,11 +236,11 @@
               <div class="col-6">
               {{-- Input de agencia  --}}
               <div class="input-group">
-                <select class="form-select" id="inputGroupSelect04" >
+                <select class="form-select" id="agencia" name="agencia" >
                   <option selected>Agencia</option>
-                  <option value="1">San Salvador</option>
-                  <option value="2">San Miguel</option>
-                  <option value="3">Santa Ana</option>
+                  <option value="San Salvador">San Salvador</option>
+                  <option value="San Miguel">San Miguel</option>
+                  <option value="Santa Ana">Santa Ana</option>
                 </select>
               </div>
               {{-- FIN Input de agencia  --}}
@@ -262,7 +262,7 @@
                       <i class="fa-regular fa-id-card"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Numero de Seguro">
+                  <input type="text" class="form-control" id="num_seguro" name="num_seguro" placeholder="Numero de Seguro">
                 </div>
               </div>
 
@@ -279,7 +279,7 @@
                       <i class="fa-solid fa-id-card-clip"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Numero de AFP:">
+                  <input type="text" class="form-control" id="num_afp" name="num_afp" placeholder="Numero de AFP:">
                 </div>
               </div>
                           
@@ -296,7 +296,7 @@
               <i class="fa-sharp fa-solid fa-house"></i>
             </span>
           </div>
-          <input type="text" class="form-control" placeholder="Cargo">
+          <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Cargo">
         </div>
       </div>
                                       
@@ -320,7 +320,8 @@
                   &nbsp;&nbsp;&nbsp; Fecha de Alta
                 </span>
               </div>
-              <input id="startDate" class="form-control" type="date" />
+              <input  class="form-control" id="fecha_de_alta" 
+                      name="fecha_de_alta" type="date" />
             </div>
           </div>
                               
@@ -338,7 +339,8 @@
                               <i class="fa-regular fa-money-bill-1"></i>
                             </span>
                           </div>
-                          <input type="text" class="form-control" placeholder="Salario">
+                          <input type="text" class="form-control" 
+                                 id="salario" name="salario" placeholder="Salario">
                         </div>
                       </div>
                             </div>{{-- FIN COL  --}}
@@ -355,7 +357,8 @@
                   &nbsp;&nbsp;&nbsp;Fecha de Baja
                 </span>
               </div>
-              <input id="startDate" class="form-control" type="date" />
+              <input class="form-control" 
+                     id="fecha_de_baja" name="fecha_de_baja" type="date" />
             </div>
           </div>
 
@@ -378,7 +381,7 @@
                                     <i class="fa-regular fa-note-sticky"></i>
                                   </span>
                                 </div>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Escribe tu nota aqui." rows="3"></textarea>
+                                <textarea class="form-control" id="nota" name="nota" placeholder="Escribe tu nota aqui." rows="3"></textarea>
                               </div>
                             </div>
               
@@ -394,11 +397,11 @@
                 
                               {{-- Input de tipo de vehiculo  --}}
                               <div class="input-group">
-                                <select class="form-select" id="inputtipo_vehiculo" >
+                                <select class="form-select" id="tipo_vehiculo" name="tipo_vehiculo" >
                                   <option selected>Tipo de vehiculo</option>
-                                  <option value="1">Motocicleta</option>
-                                  <option value="2">Vehiculo</option>
-                                  <option value="3">Santa Ana</option>
+                                  <option value="Motocicleta">Motocicleta</option>
+                                  <option value="Vehiculo">Vehiculo</option>
+                                  <option value="Camion">Camion</option>
                                 </select>
                               </div>
                 
@@ -411,10 +414,10 @@
                 
                 {{-- Input de numero de seguro  --}}
                 <div class="input-group">
-                  <select class="form-select" id="inputGroupSelect04" >
+                  <select class="form-select" id="asigno_unidad" name="asigno_unidad" >
                     <option selected>Asigno unidad</option>
-                    <option value="1">Si</option>
-                    <option value="2">No</option>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
                     
                   </select>
                 </div>
@@ -423,9 +426,6 @@
                     </div>{{-- FIN COL  --}}
           
             </div>{{-- FIN ROW  --}}
-
-
-
 
 
 <br>
@@ -453,7 +453,7 @@
                   <i class="fa-solid fa-car-side"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Numero de Placa:">
+              <input type="text" class="form-control" id="num_placa" name="num_placa" placeholder="Numero de Placa:">
             </div>
           </div>
                                 </div>{{-- FIN COL  --}}
@@ -470,14 +470,14 @@
                   <i class="fa-solid fa-hashtag"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Numero de tarjeta:">
+              <input type="text" class="form-control" id="num_tarjeta" 
+                     name="num_tarjeta" placeholder="Numero de tarjeta:">
             </div>
           </div>
 
-                                </div>{{-- FIN COL  --}}
+          </div>{{-- FIN COL  --}}
 
-                                <div class="col">{{-- INICIO COL  --}}
-             
+          <div class="col">{{-- INICIO COL  --}}   
           {{-- Input numero de licencia  --}}
           <div class="form-group">
             <div class="input-group">
@@ -486,18 +486,45 @@
                   <i class="fa-solid fa-id-card"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="numero de licencia de conducir:">
+              <input type="text" class="form-control" id="num_licencia" 
+                     name="num_licencia" placeholder="Licencia de conducir:">
             </div>
           </div>                       
-                                </div>{{-- FIN COL  --}}
-                              </div>{{-- FIN ROW  --}}
+          </div>{{-- FIN COL  --}}
+          </div>{{-- FIN ROW  --}}
 
-            </div>
-         
+
+      <div class="row">
+        {{-- INICIO ROW  --}}
+        <div class="col">{{-- INICIO COL  --}}
       
-                </form> 
-  
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa-solid fa-image"></i></span>
+            </div>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile01">
+              <label class="custom-file-label" for="inputGroupFile01">Seleccionar archivo de imagen...</label>
+            </div>
+          </div>
+
+        </div>{{-- FIN COL  --}}
+      </div>{{-- FIN ROW  --}}
+
+
+
               </div>
+
+
+              
+              </div>
+
+
+                                 
+  
+  
+  
+
 
 
 <br>
@@ -505,9 +532,9 @@
       
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="Submit" class="btn btn-primary">Guardar Datos</button>
       </div>
-      
+    </form> 
     </div>
   </div>
 </div>

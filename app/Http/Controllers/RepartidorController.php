@@ -26,7 +26,7 @@ class RepartidorController extends Controller
      */
     public function create()
     {
-        $vendedores = Repartidor::all();
+        $repartidores = Repartidor::all();
         return view('repartidor.create');
     }
 
@@ -43,8 +43,8 @@ class RepartidorController extends Controller
         $repartidores = new Repartidor();
 
         $repartidores->nombre        = $request->nombre;
-        $repartidores->direccion     = $request->dire;
-        $repartidores->telefono      = $request->tele;
+        $repartidores->direccion     = $request->direccion;
+        $repartidores->telefono      = $request->telefono;
         $repartidores->dui           = $request->dui;
         $repartidores->nit           = $request->nit;
         $repartidores->tipo_contrato = $request->tipo_contrato;
@@ -65,7 +65,7 @@ class RepartidorController extends Controller
         
         $repartidores->save();
 
-        return redirect('/repartidores')->with('repartidores', $repartidores);
+        return redirect('/repartidores')->with('status','Usuario creado Exitosamente ');
     }
 
     /**
@@ -91,7 +91,8 @@ class RepartidorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $repartidores = Repartidor::all();
+        return view('repartidor.create');
     }
 
     /**
@@ -141,6 +142,6 @@ class RepartidorController extends Controller
     {
         $repartidor = Repartidor::destroy($id);
 
-        return $repartidor;
+        return redirect('/repartidores')->with('eliminar','ok');    
     }
 }
