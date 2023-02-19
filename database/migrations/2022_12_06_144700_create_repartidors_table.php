@@ -16,25 +16,25 @@ class CreateRepartidorsTable extends Migration
         Schema::create('repartidors', function (Blueprint $table) {
            
             $table -> id();
-            $table -> string  ('nombre');
-            $table -> string  ('direccion');
+            $table -> string  ('nombre',150);
+            $table -> string  ('direccion',300);
             $table -> string  ('telefono', 15); 
             $table -> string  ('dui', 25);
-            $table -> string  ('nit', 100);
-            $table -> string  ('tipo_contrato');
-            $table -> string  ('agencia');
-            $table -> string  ('num_seguro');
-            $table -> string  ('num_afp');
-            $table -> string  ('cargo');
+            $table -> string  ('nit', 35);
+            $table -> string  ('tipo_contrato',25);
+            $table -> string  ('agencia',25);
+            $table -> string  ('num_seguro',35);
+            $table -> string  ('num_afp',35);
+            $table -> string  ('cargo',50);
             $table -> date    ('fecha_de_alta');
             $table -> float   ('salario');
             $table -> date    ('fecha_de_baja');
             $table -> text    ('nota')->nullable();
-            $table -> string  ('tipo_vehiculo');
-            $table -> string  ('asigno_unidad');
-            $table -> string  ('num_placa');
-            $table -> string  ('num_tarjeta');
-            $table -> string  ('num_licencia');
+            $table -> string  ('tipo_vehiculo',35);
+            $table -> string  ('asigno_unidad',5);
+            $table -> string  ('num_placa',25);
+            $table -> string  ('num_tarjeta',25);
+            $table -> string  ('num_licencia',25);
             $table -> string  ('foto')->nullable();   
             $table->timestamps();
 
