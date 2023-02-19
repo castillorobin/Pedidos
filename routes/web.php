@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Carbon\Carbon;
 use App\Models\Pedido;
 use App\Models\Vendedor;
+use App\Models\Repartidor;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,8 +44,7 @@ Route::get('remunerar/generar/', [App\Http\Controllers\RemunerarController::clas
 
 Route::get('recolectas', [App\Http\Controllers\TicketController::class, 'recolectas'] ) ;
 
-Route::get('/repartidor/{id}', 'RepartidorController@show')->name('repartidor.modal');
-
+Route::get('repartidor/{id}/edit', [App\Http\Controllers\RepartidorController::class, 'repartidores'] )->name('repartidor.edit') ;
 
 Route::middleware([
     'auth:sanctum',
