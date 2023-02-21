@@ -364,7 +364,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Listado',
-                    'url'  => '#',
+                    'url'  => '/repartidores',
                 ],
                 [
                     'text' => 'Agregar',
@@ -379,8 +379,8 @@ return [
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Agregar',
-                    'url'  => '#',
+                    'text' => 'Listado',
+                    'url'  => '/ruteros',
                 ]
                 
               

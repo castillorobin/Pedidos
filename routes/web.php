@@ -36,6 +36,8 @@ Route::resource('remunerars', 'App\Http\Controllers\RemunerarController');
 
 Route::resource('repartidores', 'App\Http\Controllers\RepartidorController');
 
+Route::resource('ruteros', 'App\Http\Controllers\RuteroController');
+
 Route::resource('pagos', 'App\Http\Controllers\PagoController');
 
 Route::get('pedido/etiqueta/{id}', [App\Http\Controllers\PedidoController::class, 'etiquetas'] )->name('pedido.etiqueta') ;

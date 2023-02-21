@@ -444,7 +444,7 @@
     <button class="btn btn-success" style="margin-right:10px;">Etiqueta de Envio</button>
 </form>
     
-        </div>
+        </div> 
     </td>
     </tr>
     @endforeach
