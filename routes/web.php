@@ -40,11 +40,13 @@ Route::resource('ruteros', 'App\Http\Controllers\RuteroController');
 
 Route::resource('pagos', 'App\Http\Controllers\PagoController');
 
+Route::resource('recolectas', 'App\Http\Controllers\RecolectaController');
+
 Route::get('pedido/etiqueta/{id}', [App\Http\Controllers\PedidoController::class, 'etiquetas'] )->name('pedido.etiqueta') ;
 
 Route::get('remunerar/generar/', [App\Http\Controllers\RemunerarController::class, 'generars'] )->name('remunerar.generar') ;
 
-Route::get('recolectas', [App\Http\Controllers\TicketController::class, 'recolectas'] ) ;
+//Route::get('recolectas', [App\Http\Controllers\TicketController::class, 'recolectas'] ) ;
 
 Route::get('repartidor/{id}/edit', [App\Http\Controllers\RepartidorController::class, 'repartidores'] )->name('repartidor.edit') ;
 

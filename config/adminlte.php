@@ -387,12 +387,12 @@ return [
             ],
         ],
         [
-            'text'    => 'Estadistica',
+            'text'    => 'Recolecta',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Mensuales',
-                    'url'  => '#',
+                    'text' => 'Listado',
+                    'url'  => '/recolectas',
                 ]
                 
               
