@@ -87,15 +87,15 @@
 
 
 
-<h1>Listado de Repartidores</h1>
-<div ><a href="/repartidores/create" data-toggle="modal" data-target="#addrepartidor" class="btn btn-primary float-right" > <i class="fa-solid fa-user-plus"></i> Agregar Repartidor</a></div>
+<h1>Empleados</h1>
+<div ><a href="/repartidores/create" data-toggle="modal" data-target="#addrepartidor" class="btn btn-primary float-right" > <i class="fa-solid fa-user-plus"></i> Agregar Empleado</a></div>
 <br>
 <br>
 
 {{-- <table id="trepartidor" class="display responsive nowrap" style="width:100%"> --}}
   <div class="table-responsive">
 <table id="trepartidor" class="table table-bordered table-striped display responsive " style="width:100%">
-<thead class="table-dark">
+<thead>
     <tr >
       <th></th>
       <th>Acciones</th>
