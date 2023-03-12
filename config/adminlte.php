@@ -307,120 +307,65 @@ return [
         ['header' => 'Opciones'],
         
         [
-            'text'    => 'Envios',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Listado',
-                    'url'  => '/pedidos',
-                ],
+            'text'    => 'Inicio',
+            'icon'    => 'fas fa-home',
+            'url'  => '/dash',
                 
                 
-            ],
         ],
+        
         [
-            'text'    => 'Facturación',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'Almacen',
+            'icon'    => 'fas fa-building',
             'submenu' => [
                 [
-                    'text' => 'Listado de Tickets',
-                    'url'  => '#',
-                ],
-                [
-                    'text' => 'Recepcion de Paquetes',
-                    'url'  => '#',
-                ],
-                
-                [
-                    'text' => 'Pagar para Remunerar',
-                    'url'  => '#',
-                ],
-
-                [
-                    'text' => 'Ver Pagos',
-                    'url'  => '#',
+                    'text' => 'Envios',
+                    'url'  => '/pedidos',
                 ],
                 [
                     'text' => 'Recolectas',
                     'url'  => '#',
                 ],
-            ],
-        ],
-        [
-            'text'    => 'Comercios',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
                 [
-                    'text' => 'Listado',
+                    'text' => 'Comercios',
                     'url'  => '/vendedores',
                 ],
-                
-                
-            ],
-        ],
-        [
-            'text'    => 'Repartidores',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
                 [
-                    'text' => 'Listado',
+                    'text' => 'Empleados',
                     'url'  => '/repartidores',
-                ],
-                [
-                    'text' => 'Agregar',
-                    'url'  => '#',
                 ]
                 
               
             ],
         ],
+
+
         [
-            'text'    => 'Ruteros',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'Facturación',
+            'icon'    => 'fas fa-calculator',
             'submenu' => [
                 [
-                    'text' => 'Listado',
-                    'url'  => '/ruteros',
-                ]
-                
-              
-            ],
-        ],
-        [
-            'text'    => 'Recolecta',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
+                    'text' => 'Pagar',
+                    'url'  => '#',
+                ],
                 [
-                    'text' => 'Listado',
-                    'url'  => '/recolectas',
-                ]
-                
-              
-            ],
-        ],
-        [
-            'text'    => 'Ajustes',
-            'icon'    => 'fa fa-asterisk',
-            'submenu' => [
-                [
-                    'text' => 'Tipo de Pedido',
+                    'text' => 'Cobrar',
                     'url'  => '#',
                 ],
                 
                 [
-                    'text' => 'Precios Pedidos',
+                    'text' => 'Consultar pagos del dia',
+                    'url'  => '#',
+                ],
+
+                [
+                    'text' => 'Consultar pagos por fechas',
                     'url'  => '#',
                 ],
                 [
-                    'text' => 'Estados Pedidos',
-                    'url'  => '#',
-                ],
-                [
-                    'text' => 'Rutas',
+                    'text' => 'Consultar pagos',
                     'url'  => '#',
                 ]
-                
-              
             ],
         ]
         
