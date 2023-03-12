@@ -24,6 +24,17 @@ class CreateVendedorsTable extends Migration
             $table->string('cuenta');
             $table->string('banco');
             $table->string('tcuenta');
+            $table->string('whatsapp');
+            $table->date('falta');
+            $table->date('fbaja');
+            $table->string('correo');
+            $table->string('chivo');
+            $table->string('tmoney');
+            $table->string('empresa');
+            $table->string('giro');
+            $table->string('dui');
+            $table->string('niva');
+            $table->string('nrc');
             $table->timestamps();
         });
     }

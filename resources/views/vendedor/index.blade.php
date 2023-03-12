@@ -19,7 +19,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
+      <form action="/comercio/guardar" method="GET">
+    @csrf
 <div class="row mb-3">
 
 
@@ -46,7 +47,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/25/null/gender-neutral-user--v1.png"/></span>
   </div>
-  <input type="text" class="form-control" placeholder="NOMBRE" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="NOMBRE" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 </div>
@@ -59,7 +60,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
   </div>
-  <input type="text" class="form-control" placeholder="DIRECCION" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="direccion" name="direccion" class="form-control" placeholder="DIRECCION" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
 </div>
@@ -73,7 +74,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/phone--v1.png"/></span>
   </div>
-  <input type="text" class="form-control" placeholder="TELEFONO" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="telefono" name="telefono" class="form-control" placeholder="TELEFONO" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     
@@ -84,7 +85,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/whatsapp--v1.png"/></span>
   </div>
-  <input type="text" class="form-control" placeholder="WHATSAPP" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="WHATSAPP" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     </div>
@@ -99,7 +100,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/upload-2--v1.png"/></span>
 </div>
-<input type="text" class="form-control" placeholder="ALTA" aria-label="Username" aria-describedby="basic-addon1">
+<input type="date" id="falta" name="falta" class="form-control" placeholder="ALTA" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 
@@ -112,7 +113,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/download-2--v1.png"/></span>
 </div>
-<input type="text" class="form-control" placeholder="BAJA" aria-label="Username" aria-describedby="basic-addon1">
+<input type="date" id="fbaja" name="fbaja" class="form-control" placeholder="BAJA" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 
@@ -124,7 +125,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/climbing-wall.png"/></span>
 </div>
-<input type="text" class="form-control" placeholder="COMERCIO" aria-label="Username" aria-describedby="basic-addon1" >
+<input type="text" id="tipoven" name="tipoven" class="form-control" placeholder="COMERCIO" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
 </div>
 </div>
@@ -137,7 +138,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/metro/25/null/email.png"/></span>
   </div>
-  <input type="text" class="form-control" placeholder="CORREO" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="correo" name="correo" class="form-control" placeholder="CORREO" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
 </div>
@@ -154,7 +155,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/bank-building.png"/></span>
   </div>
-  <input type="text" class="form-control" placeholder="CUENTA" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="titular" name="titular" class="form-control" placeholder="CUENTA" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
 </div>
@@ -169,7 +170,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/money-box--v1.png"/></span>
   </div>
-  <input type="text" class="form-control" placeholder="BANCO" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="banco" name="banco" class="form-control" placeholder="BANCO" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     
@@ -180,7 +181,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/100.png"/></span>
   </div>
-  <input type="text" class="form-control" placeholder="CUENTA" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="ncuenta" name="ncuenta" class="form-control" placeholder="CUENTA" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     </div>
@@ -194,7 +195,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/merchant-account.png"/></span>
 </div>
-<select id="vende" name="vende" class="form-control">
+<select id="tcuenta" name="tcuenta" class="form-control">
        <option >-SELECCIONAR TIPO-</option>
        <option >CORRIENTE</option>
        <option >AHORROS</option>
@@ -213,7 +214,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/bitcoin--v1.png"/></span>
 </div>
-<input type="text" class="form-control" placeholder="CHIVO" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" id="chivo" name="chivo" class="form-control" placeholder="CHIVO" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 
@@ -225,7 +226,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/stack-of-money.png"/></span>
 </div>
-<input type="text" class="form-control" placeholder="TIGO MONEY" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" id="tmoney" name="tmoney" class="form-control" placeholder="TIGO MONEY" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 </div>
@@ -242,7 +243,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/shop-department.png"/></span>
 </div>
-<input type="text" class="form-control" placeholder="EMPRESA" aria-label="Username" aria-describedby="basic-addon1" >
+<input type="text" id="empresa" name="empresa" class="form-control" placeholder="EMPRESA" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
     </div>
     
@@ -253,7 +254,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/business-network.png"/></span>
 </div>
-<input type="text" class="form-control" placeholder="GIRO" aria-label="Username" aria-describedby="basic-addon1" >
+<input type="text" id="giro" name="giro" class="form-control" placeholder="GIRO" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
     </div>
     </div>
@@ -268,7 +269,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/merchant-account.png"/></span>
 </div>
-<input type="text" class="form-control" placeholder="DUI" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" id="dui" name="dui" class="form-control" placeholder="DUI" aria-label="Username" aria-describedby="basic-addon1">
 
 </div>
 </div>
@@ -282,7 +283,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/bitcoin--v1.png"/></span>
 </div>
-<input type="text" class="form-control" placeholder="IVA" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" id="niva" name="niva" class="form-control" placeholder="IVA" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 
@@ -294,7 +295,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/stack-of-money.png"/></span>
 </div>
-<input type="text" class="form-control" placeholder="NCR" aria-label="Username" aria-describedby="basic-addon1" >
+<input type="text" id="nrc" name="nrc" class="form-control" placeholder="NCR" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
 </div>
 </div>
@@ -309,18 +310,18 @@
 </div>
 <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
       </div>
 </div>
 </div>
 </div>
-<h1>Listado de Comercios</h1>
-<div ><a href="" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"> Agregar Comercio</a></div>
+<h3>Listado de Comercios</h3>
+<div ><a href="" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fas fa-database"> </i> Agregar Comercio</a></div>
 <br>
-<table id="tvendedor" class="table table-bordered table-striped shadow-lg mt-4">
-<thead class="table-dark">
+<table id="tvendedor" class="table table-bordered shadow-lg mt-4">
+<thead>
     <tr >
-        <th scope="col">ID</th>
+        
         <th scope="col">Nombre</th>
         <th scope="col">Direccion</th>
         <th scope="col">Telefono</th>
@@ -331,25 +332,24 @@
 <tbody>
     @foreach ($vendedores as $vendedor)
     <tr>
-    <td>{{ $vendedor->id }}</td>
+    
     <td>{{ $vendedor->nombre }}</td>
     <td>{{ $vendedor->direccion }}</td>
     <td>{{ $vendedor->telefono }}</td>
     <td>{{ $vendedor->tipovende }}</td>
     <td>
-        <div style="display:inline-flex;">
-    <form action="{{ route ('vendedores.show', $vendedor->id)}}" method="POST">
-    @csrf
-    @method('GET')
-    <button class="btn btn-primary" style="margin-right:10px;">Ver</button>
-</form>
-        <form action="{{ route ('vendedores.destroy', $vendedor->id)}}" method="POST">
-        <a href="/vendedores/{{ $vendedor->id }}/edit" class="btn btn-info">Editar</a>
-        @csrf
-        @method('DELETE')
-        <button class="btn btn-danger">Borrar</button>
-        </form>
-        </div>
+    <select name="" id="">
+        <option>
+        <a href="/pedidos/" class="btn btn-info">Info</a>
+        </option>
+    <option>
+        
+        <a href="/pedidos/edit" class="btn btn-info">Editar</a>
+        
+       
+        
+        </option>
+        </select>
     </td>
     </tr>
     @endforeach

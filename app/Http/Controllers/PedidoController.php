@@ -10,7 +10,7 @@ use App\Models\Tipo;
 use App\Models\Ruta;
 use App\Models\Estado;
 use App\Models\Repartidor;
-
+ 
 use PDF; 
 
 class PedidoController extends Controller
@@ -73,25 +73,37 @@ class PedidoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function guardar(Request $request)
     {
-        $pedidos = new Pedido();
-        $pedidos->vendedor = $request->get('vende');
-        $pedidos->direccion = $request->get('dire');
-        $pedidos->telefono = $request->get('tele');
-        $pedidos->fecha_entrega = $request->get('fech');
-        $pedidos->tipo = $request->get('tipo');
-        $pedidos->precio = $request->get('precio');
-        $pedidos->envio = $request->get('envio');
-        $pedidos->total = $request->get('total');
-        $pedidos->repartidor = $request->get('repa');
-        $pedidos->ruta = $request->get('ruta');
-        $pedidos->estado = $request->get('estado');
-        $pedidos->nota = $request->get('nota');
-        $pedidos->destinatario = $request->get('destino');
-        $pedidos->save();
+        $pedido = new Pedido();
+        $pedidos = Pedido::all();
+        $pedido->vendedor = $request->get('comer');
+        $pedido->destinatario = $request->get('desti');
+        $pedido->telefono = $request->get('telefono');
+        $pedido->direccion = $request->get('direccion');
+        $pedido->fecha_entrega = $request->get('fentrega');
+        $pedido->precio = $request->get('precio');
+        $pedido->envio = $request->get('envio');
+        $pedido->total = $request->get('total');
+        $pedido->estado = $request->get('estado');
+        $pedido->pagado = $request->get('pagado');
+        $pedido->servicio = $request->get('servicio');
+        $pedido->tipo = $request->get('tenvio');
+        $pedido->nota = $request->get('nota');
+        $pedido->ingresado = $request->get('ingresado');
+        $pedido->agencia = $request->get('agencia');
+        $pedido->repartidor = $request->get('repartidor');
+        $pedido->ruta = $request->get('ruta');
+        //$pedidos->foto = $request->get('foto');
+        $pedido->save();
 
-        return view('/pedido/etiqueta')->with('pedido', $pedidos);
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        $vendedores = Vendedor::all();
+        $repartidores = Repartidor::all();
+        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores]);
        //return redirect('/pedido/etiqueta')->with('id', $pedidos->id);
 
     }

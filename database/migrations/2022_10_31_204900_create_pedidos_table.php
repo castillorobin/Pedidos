@@ -29,6 +29,10 @@ class CreatePedidosTable extends Migration
             $table->string('nota');
             $table->string('destinatario');
             $table->string('pagado');
+            $table->string('servicio');
+            $table->string('ingresado');
+            $table->string('agencia');
+            $table->string('foto');
             $table->timestamps();
         });
     }

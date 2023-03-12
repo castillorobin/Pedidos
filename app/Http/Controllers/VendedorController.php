@@ -34,18 +34,31 @@ class VendedorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function guardar(Request $request)
     {
         $vendedores = new Vendedor();
         $vendedores->nombre = $request->get('nombre');
-        $vendedores->direccion = $request->get('dire');
-        $vendedores->telefono = $request->get('tele');
-        $vendedores->fecha_ingreso = $request->get('fech');
-        $vendedores->tipovende = $request->get('tipo');
+        $vendedores->direccion = $request->get('direccion');
+        $vendedores->telefono = $request->get('telefono');
+        $vendedores->whatsapp = $request->get('whatsapp');
+        $vendedores->falta = $request->get('falta');
+        $vendedores->fbaja = $request->get('fbaja');
+        $vendedores->tipovende = $request->get('tipoven');
+        $vendedores->correo = $request->get('correo');
         $vendedores->titular = $request->get('titular');
-        $vendedores->cuenta = $request->get('cuenta');
         $vendedores->banco = $request->get('banco');
-        $vendedores->tcuenta = $request->get('tipoc');
+        $vendedores->cuenta = $request->get('ncuenta');
+        $vendedores->tcuenta = $request->get('tcuenta');
+        $vendedores->chivo = $request->get('chivo');
+        $vendedores->tmoney = $request->get('tmoney');
+        $vendedores->empresa = $request->get('empresa');
+        $vendedores->giro = $request->get('giro');
+        $vendedores->dui = $request->get('dui');
+        $vendedores->niva = $request->get('niva');
+
+        $vendedores->nrc = $request->get('nrc');
+        
+        
                 
         $vendedores->save();
         return redirect('/vendedores');
