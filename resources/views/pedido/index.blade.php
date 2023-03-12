@@ -404,18 +404,28 @@
     <td> {{ $pedido->fecha_entrega }}</td>
     <td> {{ $pedido->agencia }}</td>
     <td style="text-align:center;">
-    <select name="" id="">
-        <option>
-        <a href="/pedidos/{{ $pedido->id }}/edit" class="btn btn-info">Info</a>
-        </option>
-    <option>
-        
-        <a href="/pedidos/{{ $pedido->id }}/edit" class="btn btn-info">Editar</a>
-        
-       
-        
-        </option>
-        </select>
+    
+    <ul class="icons-list " style="text-align:center;"> 
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="fas fa-stream"></i>
+												</a>
+
+												<ul class="dropdown-menu dropdown-menu-right">
+													<li><a
+													href="#" data-toggle="modal" data-target="#modal_iconified"
+													onclick="">
+												   <i class="fas fa-pencil-alt">
+											       </i> Editar</a></li>
+													<li><a
+													href="javascript:;" data-toggle="modal" data-target="#modal_iconified"
+													onclick=" ">
+													<i class="fas fa-eye">
+													</i> Ver</a></li>
+												</ul>
+											</li>
+										</ul>
+
         &nbsp;&nbsp;
         <!--
         <form action="/pedido/etiqueta/{{ $pedido->id }}" method="POST">
