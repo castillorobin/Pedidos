@@ -4,8 +4,8 @@
 @section('title', 'Melo Express')
 
 @section('content_header')
-    <h1 style="text-align:center">Melo Express</h1>
-    
+<h5 ><i class="fas fa-home"></i> Inicio / Almacen / Recolectas</h5>
+     
 @stop
 
 @section('content')
@@ -152,19 +152,28 @@
 </div>
 </div>
 </div>
+<div class="row">
+    <hr>
+<div class="  col-sm-6">
+<h3>Listado de Recolectas</h3>
+</div>
+<div class="  col-sm-6">
+<a href="" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-database"></i> Agregar Recolecta</a>
+</div>
+<hr>
+</div>
 
 
-<h1>Listado de Recolecta</h1>
-<div ><a href="" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"> Agregar Recolecta</a></div>
+
 <br>
-<table id="tvendedor" class="table table-bordered table-striped shadow-lg mt-4">
-<thead class="table-dark">
+<table id="tvendedor" class="table shadow-lg mt-4">
+<thead class="table-secondary">
     <tr >
         <th scope="col">ID</th>
         <th scope="col">Nombre</th>
         <th scope="col">Direccion</th>
         <th scope="col">Telefono</th>
-        <th scope="col">Acciones</th>
+        <th scope="col">Opciones</th>
     </tr>
 </thead>
 <tbody> 

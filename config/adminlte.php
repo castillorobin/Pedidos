@@ -324,7 +324,7 @@ return [
                 ],
                 [
                     'text' => 'Recolectas',
-                    'url'  => '#',
+                    'url'  => '/recolectas',
                 ],
                 [
                     'text' => 'Comercios',
