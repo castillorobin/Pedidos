@@ -38,7 +38,7 @@
 <div class="row border" style="background-color: white; padding: 15px; border-radius:20px;">
 
 <div class="row mb-4">
-    
+<h5>------------------------------DATOS DEL COMERCIO-------------------------------</h5>
 
 
     <div class="  col-sm-6">
@@ -87,12 +87,12 @@
     
     <div class="col-sm-6 ">
     <label for="inputEmail3" class="col-sm-4 col-form-label">DESTINATARIO</label>
-    <input type="text" id="desti" name="desti" class="form-control" tabindex="3" placeholder="DESTINATARIO">
+    <input type="text" id="desti" name="desti" class="form-control" tabindex="3" placeholder="Ingrese el nombre del destinatario">
     </div>
     
     <div class="col-sm-6">
     <label for="inputEmail3" class="col-sm-4 col-form-label">TELEFONO</label>
-    <input type="text" id="telefono" name="telefono" class="form-control" tabindex="3" placeholder="TELEFONO">
+    <input type="text" id="telefono" name="telefono" class="form-control" tabindex="3" placeholder="Ingrese teléfono del destinatario">
     </div>
     </div>
 
@@ -106,13 +106,16 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
   </div>
-  <input type="text" id="direccion" name="direccion" class="form-control" placeholder="DIRECCION" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección de entrega del destinatario
+" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
 </div>
 </div>
-
+<div class="col-sm-12 text-center">
+<h5 >------------------------------DATOS DEL PAQUETE-------------------------------</h5></div>
 <div class="col-sm-6 ">
+
 <label for="" class="col-sm-6 col-form-label">FECHA DE CREACION</label>
 <div class="input-group mb-3">
 
