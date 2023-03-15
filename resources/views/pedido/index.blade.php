@@ -143,7 +143,7 @@
     <div class="col-sm-6 ">
 
 
-<label for="" class="col-sm-6 col-form-label">TIPO DE SERVICIO</label>
+<label for="" class="col-sm-6 col-form-label">Tipo de servicio</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
@@ -151,7 +151,6 @@
   </div>
   <select id="servicio" name="servicio" class="form-control">
      
-       <option value="RECOLECTA">RECOLECTA</option>
        <option value="ENTREGA">ENTREGA</option>
        <option value="ENTREGA Y RECOLECTA">ENTREGA Y RECOLECTA</option>
   
@@ -160,7 +159,7 @@
     </div>
     
     <div class="col-sm-6">
-    <label for="" class="col-sm-6 col-form-label">TIPO DE ENVIO</label>
+    <label for="" class="col-sm-6 col-form-label">Tipo de envio</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
@@ -206,13 +205,20 @@
   </div>
   <select id="estado" name="estado" class="form-control">
       
-       <option value="CREADO" >CREADO</option>
-       <option value="EN RUTA">EN RUTA</option>
-       <option value="ENTREGADO">ENTREGADO</option>
-       <option value="NO ENTREGADO EN LOCAL">NO ENTREGADO EN LOCAL</option>
-       <option value="REPROGRAMADO">REPROGRAMADO</option>
-       <option value="DEVUELTO AL VENDEDOR">DEVUELTO AL VENDEDOR</option>
-       <option value="TRANSFERENCIA">TRANSFERENCIA</option>
+       <option value="Creado" >Creado</option>
+       <option value="En ruta">En ruta</option>
+       <option value="Entregado">Entregado</option>
+       <option value="Reprogramado">Reprogramado</option>
+       <option value="Agencia San Salvador">Agencia San Salvador</option>
+       <option value="Agencia San Miguel">Agencia San Miguel</option>
+       <option value="Agencia Santa Ana">Agencia Santa Ana</option>
+       <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
+       <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
+       <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
+       <option value="No retirado Centro logístico">No retirado Centro logístico</option>
+       <option value="Casillero San Salvador">Casillero San Salvador</option>
+       <option value="Casillero San Miguel">Casillero San Miguel</option>
+       <option value="Casillero Santa Ana">Casillero Santa Ana</option>
        </select>
 </div>
 </div>
