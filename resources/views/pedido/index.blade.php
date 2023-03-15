@@ -138,84 +138,6 @@
     </div>
 
 
-    <div class="row">
-
-<div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label">PRECIO</label>
-<div class="input-group mb-3">
-
-<div class="input-group-prepend">
-<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
-</div>
-<input type="text" id="precio" name="precio" class="form-control" placeholder="PRECIO" aria-label="Username" aria-describedby="basic-addon1">
-</div>
-</div>
-
-
-
-<div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label">ENVIO</label>
-<div class="input-group mb-3">
-
-<div class="input-group-prepend">
-<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
-</div>
-<input type="text" id="envio" name="envio" class="form-control" placeholder="ENVIO" aria-label="Username" aria-describedby="basic-addon1">
-</div>
-</div>
-
-
-<div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label">TOTAL</label>
-<div class="input-group mb-3">
-
-<div class="input-group-prepend">
-<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
-</div>
-<input type="text" id="total" name="total" class="form-control" placeholder="TOTAL" aria-label="Username" aria-describedby="basic-addon1" readonly>
-</div>
-</div>
-
-
-<div class="col-sm-12 text-center">
-<h5>------------------------------DATOS INTERNOS-------------------------------</h5>
-</div>
-<div class="col-sm-6 ">
-
-
-<label for="" class="col-sm-6 col-form-label">ESTADO DEL ENVIO</label>
-<div class="input-group mb-3">
-
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
-  </div>
-  <select id="estado" name="estado" class="form-control">
-       <option >-SELECCIONAR ESTADO-</option>
-       <option value="CREADO" >CREADO</option>
-       <option value="EN RUTA">EN RUTA</option>
-       <option value="ENTREGADO">ENTREGADO</option>
-       <option value="NO ENTREGADO EN LOCAL">NO ENTREGADO EN LOCAL</option>
-       <option value="REPROGRAMADO">REPROGRAMADO</option>
-       <option value="DEVUELTO AL VENDEDOR">DEVUELTO AL VENDEDOR</option>
-       <option value="TRANSFERENCIA">TRANSFERENCIA</option>
-       </select>
-</div>
-    </div>
-    
-    <div class="col-sm-6">
-    <label for="" class="col-sm-6 col-form-label">ESTADO DEL PAGO</label>
-<div class="input-group mb-3">
-
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cash-in-hand.png"/></span>
-  </div>
-  <select id="pagado" name="pagado" class="form-control">
-       <option value="POR PAGAR">POR PAGAR</option>
-       <option value="PAGADO">PAGADO</option>
-       </select>
-</div>
-    </div>
-
 
 
     <div class="col-sm-6 ">
@@ -228,7 +150,7 @@
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/online-support.png"/></span>
   </div>
   <select id="servicio" name="servicio" class="form-control">
-       <option >-SELECCIONAR ESTADO-</option>
+     
        <option value="RECOLECTA">RECOLECTA</option>
        <option value="ENTREGA">ENTREGA</option>
        <option value="ENTREGA Y RECOLECTA">ENTREGA Y RECOLECTA</option>
@@ -245,7 +167,7 @@
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/25/null/external-delivery-logistic-delivery-kiranshastry-solid-kiranshastry.png"/></span>
   </div>
   <select id="tenvio" name="tenvio" class="form-control">
-       <option >-SELECCIONAR ESTADO-</option>
+      
        <option value="PERSONALIZADO">PERSONALIZADO</option>
        <option value="PERSONALIZADO DEPARTAMENTAL">PERSONALIZADO DEPARTAMENTAL</option>
        <option value="PUNTO FIJO">PUNTO FIJO</option>
@@ -253,30 +175,122 @@
        </select>
 </div>
     </div>
-    <div class="col-sm-12">
-<label for="" class="col-sm-6 col-form-label">NOTA</label>
+
+
+    <div class="row">
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Cobro del envio</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+</div>
+<select id="cenvio" name="cenvio" class="form-control">
+       <option value="Pendiente">Pendiente</option>
+       <option value="Pagado">Pagado</option>
+       <option value="Casillero pendienteL">Casillero pendiente</option>
+      
+       </select>
+</div>
+</div>
+
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Estado del envio</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/notepad.png"/></span>
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
   </div>
-  <input type="text" id="nota" name="nota" class="form-control" placeholder="NOTA" aria-label="Username" aria-describedby="basic-addon1">
+  <select id="estado" name="estado" class="form-control">
+      
+       <option value="CREADO" >CREADO</option>
+       <option value="EN RUTA">EN RUTA</option>
+       <option value="ENTREGADO">ENTREGADO</option>
+       <option value="NO ENTREGADO EN LOCAL">NO ENTREGADO EN LOCAL</option>
+       <option value="REPROGRAMADO">REPROGRAMADO</option>
+       <option value="DEVUELTO AL VENDEDOR">DEVUELTO AL VENDEDOR</option>
+       <option value="TRANSFERENCIA">TRANSFERENCIA</option>
+       </select>
+</div>
 </div>
 
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Estado del pago</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cash-in-hand.png"/></span>
+  </div>
+  <select id="pagado" name="pagado" class="form-control">
+       <option value="Por pagar">Por pagar</option>
+       <option value="Pagado">Pagado</option>
+       <option value="Trans. a la empresa">Trans. a la empresa</option>
+       <option value="Trans. al comercio">Trans. al comercio</option>
+       </select>
+</div>
+</div>
+
+
+
+    <div class="row">
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Precio del paquete</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+</div>
+<input type="text" id="precio" name="precio" class="form-control" placeholder="PRECIO" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Costo del envio</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+</div>
+<input type="text" id="envio" name="envio" class="form-control" placeholder="ENVIO" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Total a cobrar</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+</div>
+<input type="text" id="total" name="total" class="form-control" placeholder="TOTAL" aria-label="Username" aria-describedby="basic-addon1" readonly>
+</div>
+</div>
+
+
+<div class="col-sm-12 text-center">
+<h5>------------------------------DATOS INTERNOS-------------------------------</h5>
 </div>
 
 
 <div class="col-sm-6 ">
 
 
-<label for="" class="col-sm-6 col-form-label">INGRESADO POR</label>
+<label for="" class="col-sm-6 col-form-label">Usuario que registra</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-itim2101-lineal-itim2101/25/null/external-operator-logistics-and-delivery-itim2101-lineal-itim2101.png"/></span>
   </div>
   <select id="ingresado" name="ingresado" class="form-control">
-       <option >-SELECCIONAR ESTADO-</option>
+       
        <option value="ERICK">ERICK</option>
        <option value="KAREN">KAREN</option>
        <option value="ALEIDI">ALEIDI</option>
@@ -287,14 +301,14 @@
     </div>
     
     <div class="col-sm-6">
-    <label for="" class="col-sm-6 col-form-label">AGENCIA</label>
+    <label for="" class="col-sm-6 col-form-label">Recepción agencia</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/ios-filled/25/null/online-store.png"/></span>
   </div>
   <select id="agencia" name="agencia" class="form-control">
-       <option >-SELECCIONAR ESTADO-</option>
+       
        <option value="SAN SALVADOR">SAN SALVADOR</option>
        <option value="SAN MIGUEL">SAN MIGUEL</option>
        <option value="SANTA ANA">SANTA ANA</option>
@@ -306,14 +320,14 @@
     <div class="col-sm-6 ">
 
 
-<label for="" class="col-sm-6 col-form-label">REPARTIDOR</label>
+<label for="" class="col-sm-6 col-form-label">Repartidor</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
   </div>
   <select id="repartidor" name="repartidor" class="form-control">
-       <option >-SELECCIONAR REPARTIDOR-</option>
+       <option >-Seleccionar repartidor-</option>
        @foreach($repartidores as $repartidor)
        <option value="{{ $repartidor->id }}">{{ $repartidor->nombre }}</option>
        @endforeach
@@ -323,21 +337,46 @@
     </div>
     
     <div class="col-sm-6">
-    <label for="" class="col-sm-6 col-form-label">RUTA</label>
+    <label for="" class="col-sm-6 col-form-label">Ruta</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
   </div>
   <select id="ruta" name="ruta" class="form-control">
-       <option >-SELECCIONAR ESTADO-</option>
        <option value="RUTA 1">RUTA 1</option>
        <option value="RUTA 2">RUTA 2</option>
        <option value="RUTA 3">RUTA 3</option>
        <option value="RUTA 4">RUTA 4</option>
+       <option value="RUTA 5">RUTA 5</option>
        </select>
 </div>
     </div>
+
+
+    
+    <div class="col-sm-6 ">
+
+
+<label for="" class="col-sm-6 col-form-label">Nota</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"> <i class="fas fa-file-alt"></i> </span>
+  </div>
+  <input type="text" id="nota" name="nota" class="form-control" placeholder="Ingresar nota" aria-describedby="basic-addon1" >
+</div>
+    </div>
+    <div class="col-sm-6">
+    <label for="" class="col-sm-8 col-form-label">Código de barra del estante</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"> <i class="fas fa-barcode"></i> </span>
+  </div>
+  <input type="text" id="estante" name="estante" class="form-control" placeholder="TOTAL" aria-label="Username" aria-describedby="basic-addon1" >
+</div>
+    </div>
+
 
 
      <P></P>
@@ -370,8 +409,11 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      <button type="button" class="btn btn-primary">Registrar nuevo comercio</button>
+      <button type="button" class="btn btn-primary">Limpiar</button>
+        
         <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
