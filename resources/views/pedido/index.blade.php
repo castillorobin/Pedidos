@@ -125,7 +125,7 @@
   <input type="text" class="form-control" placeholder="{{ $date }}" aria-label="Username" aria-describedby="basic-addon1" disabled>
 </div>
     </div>
-    
+     
     <div class="col-sm-6">
     <label for="" class="col-sm-6 col-form-label">FECHA DE ENTREGA</label>
 <div class="input-group mb-3">
