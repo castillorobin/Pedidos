@@ -4,16 +4,21 @@
 @section('title', 'Melo Express')
 
 @section('content_header')
-    <h1 style="text-align:center">Melo Express</h1>
+    <h5 ><i class="fas fa-home"></i> Inicio / Almacen / Envíos</h5>
     
 @stop
 
 @section('content')
-
+<div class="row">
+    <hr>
+<div class="  col-sm-6">
 <h3>Envíos del día</h3>
-<div ><a href="" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-database"></i> Agregar Envio</a>
-
-
+</div>
+<div class="  col-sm-6">
+<a href="" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-database"></i> Agregar Envio</a>
+</div>
+<hr>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -25,7 +30,7 @@
       </div>
       <div class="modal-body">
       
-
+      
 
         <div class="container ">
 <form action="/pedido/guardar" method="GET">
@@ -377,8 +382,8 @@
 </div>
 
 <br>
-<table id="tpedido" class="table table-bordered shadow-lg mt-4">
-<thead >
+<table id="tpedido" class="table shadow-lg mt-4">
+<thead class="table-secondary">
     <tr >
         
         <th scope="col">Comercio</th>

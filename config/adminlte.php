@@ -318,7 +318,7 @@ return [
             'text'    => 'Almacen',
             'icon'    => 'fas fa-building',
             'submenu' => [
-                [
+                [ 
                     'text' => 'Envios',
                     'url'  => '/pedidos',
                 ],
