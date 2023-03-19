@@ -4,11 +4,21 @@
 @section('title', 'Melo Express')
 
 @section('content_header')
-    <h1 style="text-align:center">Melo Express</h1>
+<h5 ><i class="fas fa-home"></i> Inicio / Almacen / Comercios</h5>
     
 @stop
 
 @section('content')
+<div class="row">
+    <hr>
+<div class="  col-sm-6">
+<h3>Listado de Comercios</h3>
+</div>
+<div class="  col-sm-6">
+<a href="" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-database"></i> Agregar Comercio</a>
+</div>
+<hr>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -41,26 +51,26 @@
 
 
 <div class="col-sm-12">
-<label for="" class="col-sm-6 col-form-label">NOMBRE DEL COMERCIO / TIENDA</label>
+<label for="" class="col-sm-6 col-form-label">Comercio/Tienda</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/25/null/gender-neutral-user--v1.png"/></span>
   </div>
-  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="NOMBRE" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese nombre del comercio" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 </div>
 
 <div class="row mb-3">
 <div class="col-sm-12">
-<label for="" class="col-sm-6 col-form-label">DIRECCION</label>
+<label for="" class="col-sm-6 col-form-label">Direccion del comercio</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
   </div>
-  <input type="text" id="direccion" name="direccion" class="form-control" placeholder="DIRECCION" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese direccion del comercio" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
 </div>
@@ -68,24 +78,24 @@
 
 <div class="row mb-3 text-center">
 <div class="col-sm-6 ">
-    <label for="inputEmail3" class="col-sm-4 col-form-label">TELEFONO</label>
+    <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono</label>
     <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/phone--v1.png"/></span>
   </div>
-  <input type="text" id="telefono" name="telefono" class="form-control" placeholder="TELEFONO" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Ingrese telefono" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     
     <div class="col-sm-6">
-    <label for="inputEmail3" class="col-sm-4 col-form-label">WHATSAPP</label>
+    <label for="inputEmail3" class="col-sm-4 col-form-label">Whatsapp</label>
     <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/whatsapp--v1.png"/></span>
   </div>
-  <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="WHATSAPP" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="Ingrese whatsapp" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     </div>
@@ -94,7 +104,7 @@
     <div class="row mb-3">
 
 <div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label">FECHA DE ALTA</label>
+<label for="" class="col-sm-6 col-form-label">Fecha de alta</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
@@ -107,7 +117,7 @@
 
 
 <div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label">FECHA DE BAJA</label>
+<label for="" class="col-sm-6 col-form-label">Fecha de baja</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
@@ -119,43 +129,96 @@
 
 
 <div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label">TIPO DE COMERCIO</label>
+<label for="" class="col-sm-6 col-form-label">Tipo de comercio</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/climbing-wall.png"/></span>
 </div>
-<input type="text" id="tipoven" name="tipoven" class="form-control" placeholder="COMERCIO" aria-label="Username" aria-describedby="basic-addon1" >
+<select id="tipoven" name="tipoven" class="form-control">
+       <option value="Pequeño">Pequeño</option>
+       <option value="Mediano">Mediano</option>
+       <option value="Grande">Grande</option>
+        
+       </select>
 </div>
 </div>
 </div>
 
-<div class="row mb-3">
-<div class="col-sm-12">
-<label for="" class="col-sm-6 col-form-label">CORREO</label>
-<div class="input-group mb-3">
+
+
+<div class="row mb-3 text-center">
+<div class="col-sm-8 ">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">Correo</label>
+    <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/metro/25/null/email.png"/></span>
   </div>
-  <input type="text" id="correo" name="correo" class="form-control" placeholder="CORREO" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="correo" name="correo" class="form-control" placeholder="Ingrese telefono" aria-label="Username" aria-describedby="basic-addon1">
 </div>
+    </div>
+    
+    <div class="col-sm-4">
+    <label for="inputEmail3" class="col-sm-8 col-form-label">Estado del comercio</label>
+    <div class="input-group mb-3">
 
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/whatsapp--v1.png"/></span>
+  </div>
+  <select id="estado" name="estado" class="form-control">
+       <option value="Alta">Alta</option>
+       <option value="Baja">Baja</option>
+       <option value="Lista negra">Lista negra</option>
+        
+       </select>
 </div>
+    </div>
+    </div>
+
+
+    <div class="row mb-3 text-center">
+<div class="col-sm-8 ">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">Nota</label>
+    <div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/metro/25/null/email.png"/></span>
+  </div>
+  <input type="text" id="nota" name="nota" class="form-control" placeholder="Ingrese una nota" aria-label="Username" aria-describedby="basic-addon1">
 </div>
+    </div>
+    
+    <div class="col-sm-4">
+    <label for="inputEmail3" class="col-sm-8 col-form-label">Agencia de registro</label>
+    <div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/whatsapp--v1.png"/></span>
+  </div>
+  <select id="agenr" name="agenr" class="form-control">
+       <option value="San Salvador">San Salvador</option>
+       <option value="San Miguel">San Miguel</option>
+       <option value="Santa Ana">Santa Ana</option>
+        
+       </select>
+</div>
+    </div>
+    </div>
+
 
 <div class="row mb-3 text-center">
-        <h6>------------------------------DATOS PARA DEPOSITO-------------------------------</h6>
+        <h6>------------------------------Información Bancaria-------------------------------</h6>
      
         
         <div class="col-sm-12">
-<label for="" class="col-sm-6 col-form-label">TITULAR DE LA CUENTA</label>
+<label for="" class="col-sm-6 col-form-label">Nombre del titular de la cuenta</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/bank-building.png"/></span>
   </div>
-  <input type="text" id="titular" name="titular" class="form-control" placeholder="CUENTA" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="titular" name="titular" class="form-control" placeholder="Ingrese el nombre del titular de la cuenta" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
 </div>
@@ -164,24 +227,24 @@
 
 <div class="row mb-3 text-center">
 <div class="col-sm-6 ">
-    <label for="inputEmail3" class="col-sm-6 col-form-label">NOMBRE DEL BANCO</label>
+    <label for="inputEmail3" class="col-sm-6 col-form-label">Nombre del banco</label>
     <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/money-box--v1.png"/></span>
   </div>
-  <input type="text" id="banco" name="banco" class="form-control" placeholder="BANCO" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="banco" name="banco" class="form-control" placeholder="Ingrese el nombre del banco" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     
     <div class="col-sm-6">
-    <label for="inputEmail3" class="col-sm-6 col-form-label">NUMERO DE CUENTA</label>
+    <label for="inputEmail3" class="col-sm-6 col-form-label">Número de cuenta</label>
     <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/100.png"/></span>
   </div>
-  <input type="text" id="ncuenta" name="ncuenta" class="form-control" placeholder="CUENTA" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="ncuenta" name="ncuenta" class="form-control" placeholder="Ingrese el número de cuenta" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     </div>
@@ -189,16 +252,16 @@
     <div class="row mb-3 text-center">
 
 <div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label">TIPO DE CUENTA</label>
+<label for="" class="col-sm-6 col-form-label">Tipo de cuenta</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/merchant-account.png"/></span>
 </div>
 <select id="tcuenta" name="tcuenta" class="form-control">
-       <option >-SELECCIONAR TIPO-</option>
-       <option >CORRIENTE</option>
-       <option >AHORROS</option>
+<option value="Ahorros">Ahorros</option>
+       <option value="Corriente">Corriente</option>
+       
         
        </select>
 
@@ -208,7 +271,7 @@
 
 
 <div class="col-sm-4 ">
-<label for="" class="col-sm-4 col-form-label"># DE CHIVO</label>
+<label for="" class="col-sm-6 col-form-label"># de chivo</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
@@ -220,7 +283,7 @@
 
 
 <div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label"># DE TIGO MONEY</label>
+<label for="" class="col-sm-6 col-form-label"># de tigo money</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
@@ -315,18 +378,20 @@
 </div>
 </div>
 </div>
-<h3>Listado de Comercios</h3>
-<div ><a href="" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fas fa-database"> </i> Agregar Comercio</a></div>
+
 <br>
 <table id="tvendedor" class="table table-bordered shadow-lg mt-4">
 <thead>
     <tr >
         
-        <th scope="col">Nombre</th>
+        <th scope="col">Comercio</th>
         <th scope="col">Direccion</th>
-        <th scope="col">Telefono</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Acciones</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Tipo de comercio</th>
+        <th scope="col">Estado del comercio</th>
+        <th scope="col">Fecha de alta</th>
+        <th scope="col">Agencia</th>
+        <th scope="col">Opciones</th>
     </tr>
 </thead>
 <tbody>
@@ -337,19 +402,35 @@
     <td>{{ $vendedor->direccion }}</td>
     <td>{{ $vendedor->telefono }}</td>
     <td>{{ $vendedor->tipovende }}</td>
-    <td>
-    <select name="" id="">
-        <option>
-        <a href="/pedidos/" class="btn btn-info">Info</a>
-        </option>
-    <option>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="text-align:center;">
+    
+    <ul class="icons-list " style="text-align:center;"> 
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="fas fa-stream"></i>
+												</a>
+
+												<ul class="dropdown-menu dropdown-menu-right">
+													<li><a
+													href="#" data-toggle="modal" data-target="#modal_iconified"
+													onclick="">
+												   <i class="fas fa-pencil-alt">
+											       </i> Editar</a></li>
+													<li><a
+													href="javascript:;" data-toggle="modal" data-target="#modal_iconified"
+													onclick=" ">
+													<i class="fas fa-eye">
+													</i> Ver</a></li>
+												</ul>
+											</li>
+										</ul>
+
+        &nbsp;&nbsp;
+   
         
-        <a href="/pedidos/edit" class="btn btn-info">Editar</a>
-        
-       
-        
-        </option>
-        </select>
     </td>
     </tr>
     @endforeach

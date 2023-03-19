@@ -167,10 +167,13 @@
   </div>
   <select id="tenvio" name="tenvio" class="form-control">
       
-       <option value="PERSONALIZADO">PERSONALIZADO</option>
-       <option value="PERSONALIZADO DEPARTAMENTAL">PERSONALIZADO DEPARTAMENTAL</option>
-       <option value="PUNTO FIJO">PUNTO FIJO</option>
-       <option value="CASILLERO">CASILLERO</option>
+       <option value="Personalizado">Personalizado</option>
+       <option value="Personalizado departamental">Personalizado departamental</option>
+       <option value="Punto fijo">Punto fijo</option>
+       <option value="Casillero">Casillero</option>
+       <option value="Casillero San Salvador">Casillero San Salvador</option>
+       <option value="Casillero San Miguel">Casillero San Miguel</option>
+       <option value="Casillero Santa Ana">Casillero Santa Ana</option>
        </select>
 </div>
     </div>
