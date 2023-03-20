@@ -24,60 +24,74 @@
     <div class="row mb-3 ">
 
 <div class="col-sm-12">
-<label for="" class="col-sm-4 col-form-label">NOMBRE</label>
+<label for="" class="col-sm-4 col-form-label">Comercio / tienda</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-user"></i> </span>
 </div>
-<input type="text" class="form-control" placeholder="NOMBRE" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" class="form-control" placeholder="Ingrese nombre del comercio" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 
     
 <div class="row mb-3 ">
 <div class="col-sm-7 ">
-    <label for="inputEmail3" class="col-sm-6 col-form-label">DIRECCION DE RECOELCTA</label>
+    <label for="inputEmail3" class="col-sm-6 col-form-label">Dirección de recolecta</label>
     <div class="input-group mb-3">
 
   <div class="input-group-prepend">
   <span class="input-group-text" id="basic-addon1"> <i class="fas fa-map-marker-alt"></i> </span>
   </div>
-  <input type="text" class="form-control" placeholder="DIRECCION" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" placeholder="Ingrese la dirección de recolecta" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     
     <div class="col-sm-5">
-    <label for="inputEmail3" class="col-sm-6 col-form-label">FECHA DE RECOELCTA</label>
+    <label for="inputEmail3" class="col-sm-6 col-form-label">Teléfono</label>
     <div class="input-group mb-3">
 
   <div class="input-group-prepend">
-  <span class="input-group-text" id="basic-addon1"> <i class="fas fa-truck"></i> </span>
+  <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-square-alt"></i> </span>
   </div>
-  <input type="date" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" placeholder="Ingrese teléfono del comercio" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     </div>
 
+    <div class="row mb-3 text-center">
+
+
+<div class="col-sm-6">
+<label for="" class="col-sm-4 col-form-label">Fecha de recolecta</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1"> <i class="fas fa-dolly"></i> </span>
+</div>
+<input type="date" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+
+
+<div class="col-sm-6">
+<label for="" class="col-sm-4 col-form-label">Fecha de entrega</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1"> <i class="fas fa-archive"></i> </span>
+</div>
+<input type="date" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+</div>
 
 
     
 <div class="row mb-3 text-center">
 
-<div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label">TELEFONO</label>
-<div class="input-group mb-3">
 
-<div class="input-group-prepend">
-<span class="input-group-text" id="basic-addon1"> <i class="fas fa-phone-square-alt"></i> </span>
-</div>
-<input type="text" class="form-control" placeholder="TELEFONO" aria-label="Username" aria-describedby="basic-addon1">
-</div>
-</div>
-
-
-
-<div class="col-sm-4">
+<div class="col-sm-6">
 <label for="" class="col-sm-4 col-form-label">REPARTIDOR</label>
 <div class="input-group mb-3">
 
@@ -94,18 +108,19 @@
 </div>
 
 
-<div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label">ESTADO</label>
+<div class="col-sm-6">
+<label for="" class="col-sm-4 col-form-label">Estado</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-archive"></i> </span>
 </div>
 <select id="vende" name="vende" class="form-control">
-       <option >CREADA</option>
-       <option >RECOELCTADA</option>
-       <option >REPROGRAMADA</option>
+       <option value="Creada">Creada</option>
+       <option value="Recolectada">Recolectada</option>
+       <option value="Reprogramada">Reprogramada</option>
         
+       <option value="No recolectada">No recolectada</option>
        </select>
 </div>
 </div>
@@ -116,14 +131,30 @@
 
 <div class="row mb-3 ">
 
-<div class="col-sm-12">
-<label for="" class="col-sm-4 col-form-label">NOTA</label>
+<div class="col-sm-8">
+<label for="" class="col-sm-4 col-form-label">Nota</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-book"></i> </span>
 </div>
-<input type="text" class="form-control" placeholder="NOTA" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" class="form-control" placeholder="Ingrese nota, indicación, etc." aria-label="Username" aria-describedby="basic-addon1">
+</div>
+</div>
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-4 col-form-label">Agencia</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1"> <i class="fas fa-book"></i> </span>
+</div>
+<select id="vende" name="vende" class="form-control">
+       <option value="San Salvador">San Salvador</option>
+       <option value="San Miguel">San Miguel</option>
+       <option value="Santa Ana">Santa Ana</option>
+       </select>
 </div>
 </div>
 
@@ -169,37 +200,53 @@
 <table id="tvendedor" class="table shadow-lg mt-4">
 <thead class="table-secondary">
     <tr >
-        <th scope="col">ID</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Direccion</th>
-        <th scope="col">Telefono</th>
+        <th scope="col">Comercio</th>
+        <th scope="col">Dirección de recolecta</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Fecha de recolecta</th>
+        <th scope="col">Fecha de entrega</th>
+        <th scope="col">Estado de recoelecta</th>
+        <th scope="col">Agencia</th>
         <th scope="col">Opciones</th>
     </tr>
 </thead>
 <tbody> 
     @foreach ($recolectas as $recolecta)
     <tr>
-    <td>{{ $recolecta->id }}</td>
     <td>{{ $recolecta->nombre }}</td>
     <td>{{ $recolecta->direccion }}</td>
     <td>{{ $recolecta->telefono }}</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
    
     <td>
-        <!--
-        <div style="display:inline-flex;">
-    <form action="{{ route ('vendedores.show', $vendedor->id)}}" method="POST">
-    @csrf
-    @method('GET')
-    <button class="btn btn-primary" style="margin-right:10px;">Ver</button>
-</form>
-        <form action="{{ route ('vendedores.destroy', $vendedor->id)}}" method="POST">
-        <a href="/vendedores/{{ $vendedor->id }}/edit" class="btn btn-info">Editar</a>
-        @csrf
-        @method('DELETE')
-        <button class="btn btn-danger">Borrar</button>
-        </form>
-        </div>
--->
+        
+    <ul class="icons-list " style="text-align:center;"> 
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="fas fa-stream"></i>
+												</a>
+
+												<ul class="dropdown-menu dropdown-menu-right">
+													<li><a
+													href="#" data-toggle="modal" data-target="#modal_iconified"
+													onclick="">
+												   <i class="fas fa-pencil-alt">
+											       </i> Editar</a></li>
+													<li><a
+													href="javascript:;" data-toggle="modal" data-target="#modal_iconified"
+													onclick=" ">
+													<i class="fas fa-eye">
+													</i> Ver</a></li>
+												</ul>
+											</li>
+										</ul>
+
+        &nbsp;&nbsp;
+   
     </td>
     </tr>
     @endforeach
