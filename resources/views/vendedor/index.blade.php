@@ -295,44 +295,66 @@
 </div>
 
 <div class="row mb-3 text-center">
-        <h6>------------------------------DATOS DEL FISCALES-------------------------------</h6>
+        <h6>------------------------------Información Fiscal-------------------------------</h6>
      
   
     
-    <div class="col-sm-8 ">
-    <label for="inputEmail3" class="col-sm-8 col-form-label">NOMBRE DE LA EMPRESA</label>
+    <div class="col-sm-12 ">
+    <label for="inputEmail3" class="col-sm-8 col-form-label">Nombre de la empresa</label>
     <div class="input-group mb-3">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/shop-department.png"/></span>
 </div>
-<input type="text" id="empresa" name="empresa" class="form-control" placeholder="EMPRESA" aria-label="Username" aria-describedby="basic-addon1" >
+<input type="text" id="empresa" name="empresa" class="form-control" placeholder="Ingrese el nombre de la empresa o persona natural" aria-label="Username" aria-describedby="basic-addon1" >
+</div>
+    </div>
+    
+    
+
+
+
+    <div class="col-sm-8 ">
+    <label for="inputEmail3" class="col-sm-8 col-form-label">Giro</label>
+    <div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/shop-department.png"/></span>
+</div>
+<input type="text" id="empresa" name="empresa" class="form-control" placeholder="Ingrese el giro de la empresa" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
     </div>
     
     <div class="col-sm-4">
-    <label for="inputEmail3" class="col-sm-4 col-form-label">GIRO</label>
+    <label for="inputEmail3" class="col-sm-8 col-form-label">Tipo de contribuyente</label>
     <div class="input-group mb-3">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/business-network.png"/></span>
 </div>
-<input type="text" id="giro" name="giro" class="form-control" placeholder="GIRO" aria-label="Username" aria-describedby="basic-addon1" >
+<select id="agenr" name="agenr" class="form-control">
+       <option value="Pequeño">Pequeño</option>
+       <option value="Mediano">Mediano</option>
+       <option value="Grande">Grande</option>
+        
+       </select>
 </div>
     </div>
     </div>
     
 
+
+
     <div class="row mb-3 text-center">
 
 <div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label"># DE DUI</label>
+<label for="" class="col-sm-8 col-form-label">Número de (DUI)</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/merchant-account.png"/></span>
 </div>
-<input type="text" id="dui" name="dui" class="form-control" placeholder="DUI" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" id="dui" name="dui" class="form-control" placeholder="Ingrese número de DUI" aria-label="Username" aria-describedby="basic-addon1">
 
 </div>
 </div>
@@ -340,30 +362,39 @@
 
 
 <div class="col-sm-4 ">
-<label for="" class="col-sm-4 col-form-label"># DE IVA</label>
+<label for="" class="col-sm-8 col-form-label">Número de (IVA)</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/bitcoin--v1.png"/></span>
 </div>
-<input type="text" id="niva" name="niva" class="form-control" placeholder="IVA" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" id="niva" name="niva" class="form-control" placeholder="Ingrese el NIT de la empresa" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 
 
 <div class="col-sm-4">
-<label for="" class="col-sm-4 col-form-label">REGISTRO(NRC)</label>
+<label for="" class="col-sm-10 col-form-label">Número de registro (NRC)</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/stack-of-money.png"/></span>
 </div>
-<input type="text" id="nrc" name="nrc" class="form-control" placeholder="NCR" aria-label="Username" aria-describedby="basic-addon1" >
+<input type="text" id="nrc" name="nrc" class="form-control" placeholder="Ingrese el NRC de la empresa" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
 </div>
 </div>
 
+<div class="col-sm-12 ">
+    <label for="inputEmail3" class="col-sm-8 col-form-label">Dirección fiscal</label>
+    <div class="input-group mb-3">
 
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/shop-department.png"/></span>
+</div>
+<input type="text" id="empresa" name="empresa" class="form-control" placeholder="Ingrese la dirección fiscal de la empresa" aria-label="Username" aria-describedby="basic-addon1" >
+</div>
+    </div>
 
 
 
