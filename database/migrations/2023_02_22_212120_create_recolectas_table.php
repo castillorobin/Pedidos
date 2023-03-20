@@ -17,11 +17,12 @@ class CreateRecolectasTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('direccion');
-            $table->date('fechareco');
+            $table->date('fechaent');
             $table->string('telefono');
             $table->string('repartidor');
             $table->string('estado');
             $table->string('nota');
+            $table->string('agencia');
             $table->timestamps();
         });
     }

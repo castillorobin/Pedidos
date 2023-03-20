@@ -35,7 +35,7 @@ class PedidoController extends Controller
         //return view('pedido.index')->with('pedidos', $pedidos);
 
         return view('pedido.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores]);
- 
+  
     }
 
     public function etiquetas($id)

@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-
+ 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -19,7 +19,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form action="/vendedores" method="POST">
+      <form action="/recolecta/guardar" method="GET">
     @csrf
     <div class="row mb-3 ">
 
@@ -30,7 +30,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-user"></i> </span>
 </div>
-<input type="text" class="form-control" placeholder="Ingrese nombre del comercio" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre del comercio" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 
@@ -43,7 +43,7 @@
   <div class="input-group-prepend">
   <span class="input-group-text" id="basic-addon1"> <i class="fas fa-map-marker-alt"></i> </span>
   </div>
-  <input type="text" class="form-control" placeholder="Ingrese la dirección de recolecta" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" name="direccion" placeholder="Ingrese la dirección de recolecta" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     
@@ -54,7 +54,7 @@
   <div class="input-group-prepend">
   <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-square-alt"></i> </span>
   </div>
-  <input type="text" class="form-control" placeholder="Ingrese teléfono del comercio" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" name="telefono" placeholder="Ingrese teléfono del comercio" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
     </div>
@@ -69,7 +69,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-dolly"></i> </span>
 </div>
-<input type="date" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" class="form-control" placeholder="{{ $date }}" aria-label="Username" aria-describedby="basic-addon1" disabled>
 </div>
 </div>
 
@@ -81,7 +81,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-archive"></i> </span>
 </div>
-<input type="date" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+<input type="date" class="form-control" name="fechaen" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 </div>
@@ -98,7 +98,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-dolly"></i> </span>
 </div>
-<select id="vende" name="vende" class="form-control">
+<select id="repartidor" name="repartidor" class="form-control">
        <option >ERICK</option>
        <option >KAREN</option>
        <option >CARLOS</option>
@@ -115,7 +115,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-archive"></i> </span>
 </div>
-<select id="vende" name="vende" class="form-control">
+<select id="estado" name="estado" class="form-control">
        <option value="Creada">Creada</option>
        <option value="Recolectada">Recolectada</option>
        <option value="Reprogramada">Reprogramada</option>
@@ -138,7 +138,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-book"></i> </span>
 </div>
-<input type="text" class="form-control" placeholder="Ingrese nota, indicación, etc." aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" class="form-control" name="nota" placeholder="Ingrese nota, indicación, etc." aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
 
@@ -150,7 +150,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-book"></i> </span>
 </div>
-<select id="vende" name="vende" class="form-control">
+<select id="agencia" name="agencia" class="form-control">
        <option value="San Salvador">San Salvador</option>
        <option value="San Miguel">San Miguel</option>
        <option value="Santa Ana">Santa Ana</option>
@@ -170,7 +170,7 @@
  
  
 <br>
-   <button type="submit" class="btn btn-primary">Guardar</button>
+<button type="submit" class="btn btn-primary">Guardar</button>
 
 
 </form>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Recolecta;
 class RecolectaController extends Controller
@@ -14,9 +14,13 @@ class RecolectaController extends Controller
     public function index()
     {
         $recolectas = Recolecta::all();
-        return view('recolecta.index')->with('recolectas', $recolectas);
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        return view('recolecta.index')->with(['recolectas'=>$recolectas, 'date'=>$date ]);
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -27,6 +31,26 @@ class RecolectaController extends Controller
         //
     }
 
+    public function guardar(Request $request)
+    {
+        $recolecta = new Recolecta();
+        $recolectas = Recolecta::all();
+        $recolecta->nombre = $request->get('nombre');
+        $recolecta->direccion = $request->get('direccion');
+        $recolecta->telefono = $request->get('telefono');
+        $recolecta->fechaent = $request->get('fechaen');
+        $recolecta->repartidor = $request->get('repartidor');
+        $recolecta->estado = $request->get('estado');
+        $recolecta->nota = $request->get('nota');
+        $recolecta->agencia = $request->get('agencia');
+        $recolecta->save();
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        return view('recolecta.index')->with(['recolectas'=>$recolectas, 'date'=>$date ]);
+
+    }
     /**
      * Store a newly created resource in storage.
      *

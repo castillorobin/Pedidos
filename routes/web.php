@@ -50,6 +50,9 @@ Route::get('remunerar/generar/', [App\Http\Controllers\RemunerarController::clas
 Route::get('repartidor/{id}/edit', [App\Http\Controllers\RepartidorController::class, 'repartidores'] )->name('repartidor.edit') ;
 
 Route::get('pedido/guardar', [App\Http\Controllers\PedidoController::class, 'guardar'] )->name('guardar') ;
+
+Route::get('recolecta/guardar', [App\Http\Controllers\RecolectaController::class, 'guardar'] )->name('guardar') ;
+
 Route::get('comercio/guardar', [App\Http\Controllers\VendedorController::class, 'guardar'] )->name('guardar') ;
 Route::middleware([
     'auth:sanctum',
