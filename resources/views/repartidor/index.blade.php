@@ -98,37 +98,32 @@
 <thead>
     <tr >
       <th></th>
-      <th>Acciones</th>
-      <th scope="col">:ID</th>
-        <th scope="col">Nombre:</th>
-        <th scope="col">Direccion:</th>
-         <th scope="col">Telefono:</th>
-        <th scope="col">DUI:</th>
-        <th scope="col">NIT:</th> 
-        <th scope="col">tipo de contrato:</th>
-        <th scope="col">agencia:</th>
-        <th scope="col">numero de seguro:</th>
-        <th scope="col">AFP:</th> 
-        <th scope="col">cargo:</th>
-        <th scope="col">fecha de alta:</th>
-        <th scope="col">salario:</th>
-        <th scope="col">fecha de baja:</th>
-        <th scope="col">nota:</th>
-        <th scope="col">tipo de vehiculo:</th>
-        <th scope="col">asigno unidad:</th>
-        <th scope="col">numero de placa:</th>
-        <th scope="col">numero de tarjeta:</th>
-        <th scope="col">numero de licencia:</th>
-        <th scope="col">foto</th>
-
-
+     
+      
+        <th scope="col">Nombre</th>
+        <th scope="col">Telefono</th> 
+        <th scope="col">Fecha de alta</th>
+        <th scope="col">Cargo</th>
+        <th scope="col">Estado del empleado</th> 
+        <th scope="col">Agencia</th>
+        <th scope="col">Nota</th>
+        <th scope="col">Opciones</th>
+        
     </tr>
 </thead>
 <tbody>
     @foreach ($repartidores as $repartidor)
     <tr data-id="{{ $repartidor->id  }}">
-        <td></td>
-      <td>
+        
+    <td>{{ $repartidor->nombre }}</td>
+    <td>{{ $repartidor->telefono }}</td>
+    <td>{{ $repartidor->direccion }}</td>
+    <td>{{ $repartidor->fecha_de_alta }}</td>
+    <td>{{ $repartidor->cargo }}</td>
+    <td></td>
+    <td>{{ $repartidor->agencia }}</td>
+    <td>{{ $repartidor->nota }}</td>    
+    <td>
         <div style="display:inline-flex;">
     <form action="{{ route ('repartidor.edit', $repartidor->id)}}" method="POST">
     @csrf
@@ -144,27 +139,7 @@
         </form>
         </div>
     </td>
-    <td>{{ $repartidor->id }}</td>
-    <td>{{ $repartidor->nombre }}</td>
-    <td>{{ $repartidor->direccion }}</td>
-    <td>{{ $repartidor->telefono }}</td>
-    <td>{{ $repartidor->dui }}</td>
-    <td>{{ $repartidor->nit }}</td> 
-    <td>{{ $repartidor->tipo_contrato }}</td>
-    <td>{{ $repartidor->agencia }}</td>
-    <td>{{ $repartidor->num_seguro }}</td>
-    <td>{{ $repartidor->num_afp }}</td>
-    <td>{{ $repartidor->cargo }}</td>
-    <td>{{ $repartidor->fecha_de_alta }}</td>
-    <td>${{ $repartidor->salario }}</td>
-    <td>{{ $repartidor->fecha_de_baja }}</td>
-    <td>{{ $repartidor->nota }}</td>
-    <td>{{ $repartidor->tipo_vehiculo }}</td>
-    <td>{{ $repartidor->asigno_unidad }}</td>
-    <td>{{ $repartidor->num_placa }}</td>
-    <td>{{ $repartidor->num_tarjeta }}</td>
-    <td>{{ $repartidor->num_licencia }}</td> 
-    <td><div class="modal-img"><img src="{{ asset('storage').'/'.$repartidor->foto }}" width="100"></div></td>   
+
     </tr>
     @endforeach
 </tbody>
@@ -406,7 +381,22 @@
               <i class="fa-sharp fa-solid fa-house"></i>
             </span>
           </div>
-          <input type="text" class="form-control @error('cargo') is-invalid @enderror" id="cargo" name="cargo" placeholder="Cargo">
+             <select class="form-select @error('cargo') is-invalid @enderror" id="cargo" name="cargo" >
+                  <option selected>Ceo</option>
+                  <option value="Gerente general">Gerente General</option>
+                  <option value="gerente">Gerente</option>
+                  <option value="Supervisor">Supervisor</option>
+                  <option value="Repartidor">Repartidor</option>
+                  <option value="Auxiliar">Auxiliar</option>
+                  <option value="Cajero">Cajero</option>
+                  <option value="Atencion al cliente">Atencion al cliente</option>
+                  <option value="Digitador">Digitador</option>
+                  <option value="Bodeguero">Bodeguero</option>
+                  <option value="Oficios Varios">Oficios varios</option>
+                  <option value="Seguridad">Seguridad</option>
+                </select>
+
+
           @error('cargo')
           <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
