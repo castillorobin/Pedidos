@@ -7,7 +7,7 @@
 <h5 ><i class="fas fa-home"></i> Inicio / Almacen / Comercios</h5>
     
 @stop
-
+ 
 @section('content')
 <div class="row">
     <hr>
@@ -27,12 +27,20 @@
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Comercio</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+        
       </div>
+     
       <div class="modal-body">
+  
       <form action="/comercio/guardar" method="GET">
     @csrf
 <div class="row mb-3">
 
+<div class="alert alert-danger" role="alert">
+<i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
+</div>
 
 <div class="col-sm-4">
 <label for="" class="col-sm-6 col-form-label">ID COMERCIO</label>
@@ -51,7 +59,7 @@
 
 
 <div class="col-sm-12">
-<label for="" class="col-sm-6 col-form-label">Comercio/Tienda</label>
+<label for="" class="col-sm-6 col-form-label">Comercio/Tienda *</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
@@ -64,7 +72,7 @@
 
 <div class="row mb-3">
 <div class="col-sm-12">
-<label for="" class="col-sm-6 col-form-label">Direccion del comercio</label>
+<label for="" class="col-sm-6 col-form-label">Direccion del comercio *</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
@@ -78,7 +86,7 @@
 
 <div class="row mb-3 text-center">
 <div class="col-sm-6 ">
-    <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono</label>
+    <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono *</label>
     <div class="input-group mb-3">
 
   <div class="input-group-prepend">
@@ -110,7 +118,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/upload-2--v1.png"/></span>
 </div>
-<input type="date" id="falta" name="falta" class="form-control" placeholder="ALTA" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" id="falta" name="falta" class="form-control" placeholder="{{ $date}}" aria-label="Username" aria-describedby="basic-addon1" disabled>
 </div>
 </div>
 
@@ -321,7 +329,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/shop-department.png"/></span>
 </div>
-<input type="text" id="empresa" name="empresa" class="form-control" placeholder="Ingrese el giro de la empresa" aria-label="Username" aria-describedby="basic-addon1" >
+<input type="text" id="giro" name="giro" class="form-control" placeholder="Ingrese el giro de la empresa" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
     </div>
     
@@ -433,9 +441,9 @@
     <td>{{ $vendedor->direccion }}</td>
     <td>{{ $vendedor->telefono }}</td>
     <td>{{ $vendedor->tipovende }}</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>{{ $vendedor->estado }}</td>
+    <td>{{  date("d/m/Y", strtotime($vendedor->created_at))  }}</td>
+    <td>{{ $vendedor->tipovende }}</td>
     <td style="text-align:center;">
     
     <ul class="icons-list " style="text-align:center;"> 

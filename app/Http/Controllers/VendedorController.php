@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Vendedor;
 class VendedorController extends Controller
@@ -14,7 +14,11 @@ class VendedorController extends Controller
     public function index()
     {
         $vendedores = Vendedor::all();
-        return view('vendedor.index')->with('vendedores', $vendedores);
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        return view('vendedor.index')->with(['vendedores'=>$vendedores, 'date'=>$date]);
     }
 
     /**
@@ -35,7 +39,7 @@ class VendedorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function guardar(Request $request)
-    {
+    { 
         $vendedores = new Vendedor();
         $vendedores->nombre = $request->get('nombre');
         $vendedores->direccion = $request->get('direccion');
@@ -57,7 +61,7 @@ class VendedorController extends Controller
         $vendedores->niva = $request->get('niva');
 
         $vendedores->nrc = $request->get('nrc');
-        
+        $vendedores->estado = $request->get('estado');
         
                 
         $vendedores->save();
