@@ -5,7 +5,7 @@
 
 @section('content_header')
 
-    <h1 style="text-align:center">Melo Express</h1>
+<h5 ><i class="fas fa-home"></i> Inicio / Almacen / Empleados</h5>
     
 @stop
 
@@ -85,12 +85,25 @@
 
 
 
+<div class="row">
+    <hr>
+<div class="  col-sm-6">
+<h3>Control de empleados</h3>
+</div>
+<div class="  col-sm-6">
 
 
-<h1>Empleados</h1>
 <div ><a href="/repartidores/create" data-toggle="modal" data-target="#addrepartidor" class="btn btn-primary float-right" > <i class="fa-solid fa-user-plus"></i> Agregar Empleado</a></div>
 <br>
+</div>
+<hr>
 <br>
+</div>
+
+
+
+
+
 
 {{-- <table id="trepartidor" class="display responsive nowrap" style="width:100%"> --}}
   <div class="table-responsive">
