@@ -96,7 +96,7 @@ class PedidoController extends Controller
         $pedido->ruta = $request->get('ruta');
         //$pedidos->foto = $request->get('foto');
         $pedido->save();
-
+ 
         setlocale(LC_TIME, "spanish");
         $date = Carbon::today();
         //$date = $date->format('l jS F Y');
