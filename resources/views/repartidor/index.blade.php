@@ -33,7 +33,7 @@
 @if (session('agregado')=='ok')
 <script>
   alertify.set('notifier','position', 'top-right');
-  alertify.error('Hubo un error, por favor revisa los campos!');
+  alertify.error('');
 </script> 
 @endif
 @endif
@@ -53,7 +53,7 @@
 </script>
 @endif 
 
-<style>
+<style> 
   .modal-img img{
     z-index: 1;
   }
@@ -117,7 +117,7 @@
         <th scope="col">Telefono</th> 
         <th scope="col">Fecha de alta</th>
         <th scope="col">Cargo</th>
-        <th scope="col">Estado del empleado</th> 
+       
         <th scope="col">Agencia</th>
         <th scope="col">Nota</th>
         <th scope="col">Opciones</th>
@@ -133,24 +133,32 @@
     <td>{{ $repartidor->direccion }}</td>
     <td>{{ $repartidor->fecha_de_alta }}</td>
     <td>{{ $repartidor->cargo }}</td>
-    <td></td>
+   
     <td>{{ $repartidor->agencia }}</td>
     <td>{{ $repartidor->nota }}</td>    
     <td>
-        <div style="display:inline-flex;">
-    <form action="{{ route ('repartidor.edit', $repartidor->id)}}" method="POST">
-    @csrf
-    @method('GET')
-    <a href="/repartidores/{{ $repartidor->id }}" class="btn btn-primary rounded-circle"><i class="fa-regular fa-pen-to-square"></i></a>
+    <ul > 
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="fas fa-stream"></i>
+												</a>
 
-</form>
-        <form action="{{ route ('repartidores.destroy', $repartidor->id)}}" method="POST">
-       
-        @csrf
-        @method('DELETE')
-        <button class="btn btn-danger rounded-circle"><i class="fa-solid fa-trash"></i></button>
-        </form>
-        </div>
+												<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="#" data-toggle="modal" data-target="#modal_iconified" onclick="">
+												   <i class="fas fa-pencil-alt">
+											       </i> Editar</a></li>
+													<li><a
+													href="javascript:;" data-toggle="modal" data-target="#modal_iconified"
+													onclick=" ">
+													<i class="fas fa-eye">
+													</i> Ver</a></li>
+												</ul>
+											</li>
+										</ul>
+
+        &nbsp;&nbsp;
+    
+        </div> 
     </td>
 
     </tr>
@@ -174,7 +182,9 @@
         </button>
       </div>
       <div class="modal-body">
-
+      <div class="alert alert-danger" role="alert">
+<i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
+</div>
 
         <div class="container">
           <form method="POST" action="{{ route('repartidores.store') }}" enctype="multipart/form-data">
@@ -182,10 +192,11 @@
          
            
             <div class="row">
-                  <div class="col-6">
+                  <div class="col-12">
                   
               {{-- Input de Nombre  --}}
               <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 col-form-label">Nombre del empleado *</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -203,9 +214,19 @@
   
                   </div>
   
-                  <div class="col-6">
+          
+  
+            </div>    
+  
+  <br>
+
+
+
+  <div class="row">
+  <div class="col-6">
                   {{-- Input de Direccion  --}}
             <div class="form-group">
+            <label for="inputEmail3" class="col-sm-4 col-form-label">Direccion *</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
@@ -220,39 +241,43 @@
                 @enderror
               </div>
             </div> 
-  
-  
             </div>
+            <div class="col-6">
   
-            </div>    
-  
-  <br>
+  {{-- Input de Telefono --}}
+  <div class="form-group">
+  <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono*</label>
+   <div class="input-group">
+     <div class="input-group-prepend">
+       <span class="input-group-text">
+         <i class="fa-sharp fa-solid fa-phone"></i>
+       </span>
+     </div>
+     <input type="text" class="form-control @error('telefono') is-invalid @enderror" id="telefono" name="telefono" placeholder="Telefono" maxlength="9">
+     @error('telefono')
+     <span class="invalid-feedback" role="alert">
+       <strong>{{ $message }}</strong>
+     </span>
+     @enderror
+   </div>
+ </div>
+     </div>
+
+  </div>
+
+
+
+
+
             <div class="row">
              
-              <div class="col-6 col-md-4">
-  
-           {{-- Input de Telefono --}}
-           <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">
-                  <i class="fa-sharp fa-solid fa-phone"></i>
-                </span>
-              </div>
-              <input type="text" class="form-control @error('telefono') is-invalid @enderror" id="telefono" name="telefono" placeholder="Telefono" maxlength="9">
-              @error('telefono')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-              @enderror
-            </div>
-          </div>
-              </div>
+             
   
   
-              <div class="col-6 col-md-4">
+              <div class="col-6 ">
                {{-- Input de dui  --}}
                <div class="form-group">
+               <label for="inputEmail3" class="col-sm-4 col-form-label">Numero de DUI *</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -270,9 +295,10 @@
   
               </div>
   
-              <div class="col-6 col-md-4">
+              <div class="col-6">
         {{-- Input de tipo de NIT  --}}
                 <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 col-form-label">Numero de NIT *</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">
@@ -299,6 +325,7 @@
   
               {{-- Input de tipo de contrato  --}}
               <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 col-form-label">Tipo de contrato</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -318,7 +345,9 @@
   
               <div class="col-6">
               {{-- Input de agencia  --}}
+              <label for="inputEmail3" class="col-sm-4 col-form-label">Agencia</label>
               <div class="input-group">
+
                 <select class="form-select @error('agencia') is-invalid @enderror" id="agencia" name="agencia" >
                   <option selected>Agencia</option>
                   <option value="San Salvador">San Salvador</option>
@@ -344,6 +373,7 @@
 
               {{-- Input de numero de seguro  --}}
               <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 col-form-label">Nº de ISSS</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -366,6 +396,7 @@
 
               {{-- Input de numero de AFP  --}}
               <div class="form-group">
+              <label for="inputEmail3" class="col-sm-4 col-form-label">Nº de AFP</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -388,6 +419,7 @@
 
                       {{-- Input de numero de Cargo  --}}
       <div class="form-group">
+      <label for="inputEmail3" class="col-sm-4 col-form-label">Cargo *</label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">
@@ -431,6 +463,7 @@
                             <div class="col">{{-- INICIO COL  --}}
           {{-- Input de  Fecha de alta  --}}
           <div class="form-group">
+          <label for="inputEmail3" class="col-sm-6 col-form-label">Fecha de Alta</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
@@ -456,7 +489,9 @@
 
                       {{-- Input de Salario   --}}
                       <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-4 col-form-label">Salario</label>
                         <div class="input-group">
+
                           <div class="input-group-prepend">
                             <span class="input-group-text">
                               <i class="fa-regular fa-money-bill-1"></i>
@@ -478,6 +513,7 @@
                     
           {{-- Input de  Fecha de baja  --}}
           <div class="form-group">
+          <label for="inputEmail3" class="col-sm-6 col-form-label">Fecha de baja</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
@@ -508,6 +544,7 @@
               
                             {{-- Input de numero de notas --}}
                             <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-6 col-form-label">Nota</label>
                               <div class="input-group">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">
@@ -523,13 +560,30 @@
         
                               </div>{{-- FIN ROW  --}}
 
-                              <div class="row">
+                              
+
+
+<br>
+                      <div class="row">
+                        {{-- INICIO ROW  --}}
+                
+                            <div class="col">{{-- INICIO COL  --}}
+                            <center><h4>DATOS DEL VEHICULO</h4></center>
+<center><h4>_____________________________________________________________________________________________________</h4></center> 
+                            </div>{{-- FIN COL  --}}
+
+                          </div>{{-- FIN ROW  --}}
+    
+                          <br>
+                      <br>
+                      <div class="row">
                               {{-- INICIO ROW  --}}
                       
                                   <div class="col">{{-- INICIO COL  --}}
-                
+                                  <label for="inputEmail3" class="col-sm-6 col-form-label">Tipo de Vehiculo</label>
                               {{-- Input de tipo de vehiculo  --}}
                               <div class="input-group">
+                              
                                 <select class="form-select @error('tipo_vehiculo') is-invalid @enderror" id="tipo_vehiculo" name="tipo_vehiculo" >
                                   <option value="" selected>Tipo de vehiculo</option>
                                   <option value="Motocicleta">Motocicleta</option>
@@ -549,9 +603,10 @@
       
       
               <div class="col">{{-- INICIO COL  --}}
-                
+              <label for="inputEmail3" class="col-sm-6 col-form-label">Equipo es asignado</label>
                 {{-- Input de numero de seguro  --}}
                 <div class="input-group">
+                
                   <select class="form-select @error('asigno_unidad') is-invalid @enderror" id="asigno_unidad" name="asigno_unidad" >
                     <option value="" selected>Asigno unidad</option>
                     <option value="Si">Si</option>
@@ -569,27 +624,15 @@
                     </div>{{-- FIN COL  --}}
           
             </div>{{-- FIN ROW  --}}
-
-
 <br>
-                      <div class="row">
-                        {{-- INICIO ROW  --}}
-                
-                            <div class="col">{{-- INICIO COL  --}}
-                            <center><h4>DATOS DEL VEHICULO</h4></center>
-<center><h4>_____________________________________________________________________________________________________</h4></center> 
-                            </div>{{-- FIN COL  --}}
 
-                          </div>{{-- FIN ROW  --}}
-    
-                          <br>
-                      <br>
                           <div class="row">
                             {{-- INICIO ROW  --}}
                     
                                 <div class="col">{{-- INICIO COL  --}}
           {{-- Input de numero de placa  --}}
           <div class="form-group">
+          <label for="inputEmail3" class="col-sm-6 col-form-label">Numero de placa</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
@@ -612,6 +655,7 @@
   
           
           <div class="form-group">
+          <label for="inputEmail3" class="col-sm-6 col-form-label">Numero de tarjeta</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
@@ -633,6 +677,7 @@
           <div class="col">{{-- INICIO COL  --}}   
           {{-- Input numero de licencia  --}}
           <div class="form-group">
+          <label for="inputEmail3" class="col-sm-6 col-form-label">Numero de licencia</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
@@ -657,6 +702,7 @@
         <div class="col">{{-- INICIO COL  --}}
       
           <div class="input-group mb-3">
+          <label for="inputEmail3" class="col-sm-6 col-form-label">Fotografia del Equipo</label>
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa-solid fa-image"></i></span>
             </div>

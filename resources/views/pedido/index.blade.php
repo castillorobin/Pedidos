@@ -38,6 +38,9 @@
 <div class="row border" style="background-color: white; padding: 15px; border-radius:20px;">
 
 <div class="row mb-4">
+<div class="alert alert-danger" role="alert">
+<i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
+</div>
 <h5>------------------------------DATOS DEL COMERCIO-------------------------------</h5>
 
 
@@ -67,7 +70,7 @@
 
 
     <div class="col-sm-12">
-    <label for="" class="col-sm-6 col-form-label">NOMBRE DE COMERCIO/TIENDA</label>
+    <label for="" class="col-sm-6 col-form-label">NOMBRE DE COMERCIO/TIENDA *</label>
     <select id="comer" name="comer" class="form-control">
        <option >-SELECCIONAR COMERCIO-</option>
        
@@ -86,7 +89,7 @@
     
     
     <div class="col-sm-6 ">
-    <label for="inputEmail3" class="col-sm-4 col-form-label">DESTINATARIO</label>
+    <label for="inputEmail3" class="col-sm-4 col-form-label">DESTINATARIO *</label>
     <input type="text" id="desti" name="desti" class="form-control" tabindex="3" placeholder="Ingrese el nombre del destinatario">
     </div>
     
@@ -100,7 +103,7 @@
 
 
 <div class="col-sm-12">
-<label for="" class="col-sm-6 col-form-label">DIRECCION DE ENTREGA</label>
+<label for="" class="col-sm-6 col-form-label">DIRECCION DE ENTREGA *</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
@@ -127,7 +130,7 @@
     </div>
      
     <div class="col-sm-6">
-    <label for="" class="col-sm-6 col-form-label">FECHA DE ENTREGA</label>
+    <label for="" class="col-sm-6 col-form-label">FECHA DE ENTREGA *</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
@@ -191,7 +194,7 @@
 <select id="cenvio" name="cenvio" class="form-control">
        <option value="Pendiente">Pendiente</option>
        <option value="Pagado">Pagado</option>
-       <option value="Casillero pendienteL">Casillero pendiente</option>
+       <option value="Casillero pendiente">Casillero pendiente</option>
       
        </select>
 </div>
@@ -382,7 +385,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1"> <i class="fas fa-barcode"></i> </span>
   </div>
-  <input type="text" id="estante" name="estante" class="form-control" placeholder="TOTAL" aria-label="Username" aria-describedby="basic-addon1" >
+  <input type="text" id="estante" name="estante" class="form-control" placeholder="Barras" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
     </div>
 
@@ -418,7 +421,8 @@
 
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-primary">Registrar nuevo comercio</button>
+        <a href="/vendedores" class="btn btn-primary">Registrar nuevo comercio</a>
+     
       <button type="button" class="btn btn-primary">Limpiar</button>
         
         <button type="submit" class="btn btn-primary">Guardar</button>

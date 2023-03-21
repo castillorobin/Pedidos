@@ -54,7 +54,7 @@ class RepartidorController extends Controller
             'num_afp'               => 'required|string|min:5|max:20',
             'cargo'                 => 'required|string|min:4|max:50',
             'fecha_de_alta'         => 'required|date',
-            'salario'               => 'required|float',
+            //'salario'               => 'required|float',
             'fecha_de_baja'         => 'required|date',
             // 'nota'                  => 'required',
             'tipo_vehiculo'         => 'required|string|min:2|max:35',
