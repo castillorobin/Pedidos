@@ -64,11 +64,17 @@ function myFunction() {
  $(document).ready(function() {
    					$("#envio").change(function() {
        												 //alert($(this).val());
-					const preci = parseFloat(document.getElementById("precio").value);
-														                                                    
-                    const envi =parseFloat($(this).val()); 
-
-                    document.getElementById("total").value = preci + envi;
+          const tenv = document.getElementById("tenvio").value;
+					const preci = parseFloat(document.getElementById("precio").value);						                                                    
+          const envi =parseFloat($(this).val()); 
+          
+          if(tenv=="Personalizado")
+          {
+            document.getElementById("total").value = preci;
+          }else{
+            document.getElementById("total").value = preci + envi;
+          }
+                    
 
 														//const castot = parseFloat(document.getElementById("totalc").value);
 														//document.getElementById("ptotal").value = castot ; 
