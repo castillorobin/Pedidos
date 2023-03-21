@@ -30,7 +30,13 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-user"></i> </span>
 </div>
-<input type="text" class="form-control" name="nombre" placeholder="Ingrese nombre del comercio" aria-label="Username" aria-describedby="basic-addon1">
+<select id="nombre" name="nombre" class="form-control">
+       <option >-Seleccionar comercio-</option>
+       
+       @foreach($vendedores as $vendedor)
+       <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
+       @endforeach
+       </select>
 </div>
 </div>
 
@@ -99,10 +105,11 @@
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-dolly"></i> </span>
 </div>
 <select id="repartidor" name="repartidor" class="form-control">
-       <option >ERICK</option>
-       <option >KAREN</option>
-       <option >CARLOS</option>
-        
+<option >-Seleccionar repartidor-</option>
+       @foreach($repartidores as $repartidor)
+       <option value="{{ $repartidor->id }}">{{ $repartidor->nombre }}</option>
+       @endforeach
+     
        </select>
 </div>
 </div>
@@ -177,7 +184,7 @@
 </div>
 
 
-
+ 
       </div>
 
 </div>

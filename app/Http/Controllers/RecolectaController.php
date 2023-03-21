@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Recolecta;
+use App\Models\Vendedor;
+use App\Models\Repartidor;
 class RecolectaController extends Controller
 {
     /**
@@ -13,12 +15,14 @@ class RecolectaController extends Controller
      */
     public function index()
     {
+        $repartidores = Repartidor::all();
+        $vendedores = Vendedor::all();
         $recolectas = Recolecta::all();
         setlocale(LC_TIME, "spanish");
         $date = Carbon::today();
         //$date = $date->format('l jS F Y');
         $date = strftime("%A %d de %B %Y");
-        return view('recolecta.index')->with(['recolectas'=>$recolectas, 'date'=>$date ]);
+        return view('recolecta.index')->with(['recolectas'=>$recolectas, 'date'=>$date , 'repartidores'=>$repartidores, 'vendedores'=>$vendedores  ]);
     }
  
     /**
@@ -32,7 +36,9 @@ class RecolectaController extends Controller
     }
 
     public function guardar(Request $request)
-    {
+    { 
+        $repartidores = Repartidor::all();
+        $vendedores = Vendedor::all();
         $recolecta = new Recolecta();
         $recolectas = Recolecta::all();
         $recolecta->nombre = $request->get('nombre');
@@ -48,7 +54,7 @@ class RecolectaController extends Controller
         $date = Carbon::today();
         //$date = $date->format('l jS F Y');
         $date = strftime("%A %d de %B %Y");
-        return view('recolecta.index')->with(['recolectas'=>$recolectas, 'date'=>$date ]);
+        return view('recolecta.index')->with(['recolectas'=>$recolectas, 'date'=>$date , 'repartidores'=>$repartidores, 'vendedores'=>$vendedores  ]);
 
     }
     /**
