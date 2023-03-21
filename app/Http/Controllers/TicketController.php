@@ -48,7 +48,7 @@ class TicketController extends Controller
         $tickets->fecha = $request->get('fecha');
         $tickets->total = $request->get('totalprecio');
 
-        
+         
         $tickets->save();
         return view('/ticket/imprimir')->with('tickets', $tickets);
     }
