@@ -45,8 +45,8 @@
     @foreach ($pedidos as $pedido)
     <tr >
     
-    <td style="font-weight: bolder; color: #0080ff;">{{ $pedido->vendedor }}</td>
-    <td style="font-weight: bolder; color: #0080ff;">{{ $pedido->destinatario }}</td>
+    <td style="font-weight: bolder; color: #484f55;">{{ $pedido->vendedor }}</td>
+    <td style="font-weight: bolder; color: #484f55;">{{ $pedido->destinatario }}</td>
     <td>{{ $pedido->direccion }}</td>
     <td>{{ $pedido->tipo }}</td>
     <td> {{ $pedido->estado }}</td>
