@@ -22,6 +22,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
+        $lastid = Pedido::latest('id')->first();
+        $uid= $lastid->id + 1;
         $pedidos = Pedido::all();
         setlocale(LC_TIME, "spanish");
         $vendedores = Vendedor::all();
@@ -34,7 +36,7 @@ class PedidoController extends Controller
         $date = strftime("%A %d de %B %Y");
         //return view('pedido.index')->with('pedidos', $pedidos);
 
-        return view('pedido.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores]);
+        return view('pedido.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
   
     }
 
@@ -75,6 +77,8 @@ class PedidoController extends Controller
      */
     public function guardar(Request $request)
     {
+        $lastid = Pedido::latest('id')->first();
+        $uid= $lastid->id + 1;
         $pedido = new Pedido();
         $pedidos = Pedido::all();
         $pedido->vendedor = $request->get('comer');
@@ -103,7 +107,7 @@ class PedidoController extends Controller
         $date = strftime("%A %d de %B %Y");
         $vendedores = Vendedor::all();
         $repartidores = Repartidor::all();
-        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores]);
+        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
        //return redirect('/pedido/etiqueta')->with('id', $pedidos->id);
 
     }

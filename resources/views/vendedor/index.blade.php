@@ -9,6 +9,9 @@
 @stop
  
 @section('content')
+
+
+
 <div class="row">
     <hr>
 <div class="  col-sm-6">
