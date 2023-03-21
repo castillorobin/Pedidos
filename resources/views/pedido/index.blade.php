@@ -113,7 +113,7 @@ function myFunction() {
        <option >-Seleccionar comercio-</option>
        
         @foreach($vendedores as $vendedor)
-       <option value="{{ $vendedor->id }}">{{ $vendedor->nombre }}</option>
+       <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
        @endforeach
        </select>
 
@@ -203,8 +203,8 @@ function myFunction() {
   </div>
   <select id="servicio" name="servicio" class="form-control">
      
-       <option value="ENTREGA">ENTREGA</option>
-       <option value="ENTREGA Y RECOLECTA">ENTREGA Y RECOLECTA</option>
+       <option value="Entrega">Entrega</option>
+       <option value="Entrega y recoelcta">Entrega y recoelcta</option>
   
        </select>
 </div>
@@ -354,10 +354,10 @@ function myFunction() {
   </div>
   <select id="ingresado" name="ingresado" class="form-control">
        
-       <option value="ERICK">ERICK</option>
-       <option value="KAREN">KAREN</option>
-       <option value="ALEIDI">ALEIDI</option>
-       <option value="GABI">GABI</option>
+       <option value="ERICK">Erick</option>
+       <option value="KAREN">Karen</option>
+       <option value="ALEIDI">Aleidi</option>
+       <option value="GABI">Gabi</option>
      
        </select>
 </div>
@@ -372,9 +372,9 @@ function myFunction() {
   </div>
   <select id="agencia" name="agencia" class="form-control">
        
-       <option value="SAN SALVADOR">SAN SALVADOR</option>
-       <option value="SAN MIGUEL">SAN MIGUEL</option>
-       <option value="SANTA ANA">SANTA ANA</option>
+       <option value="San Salvador">San Salvador</option>
+       <option value="San Miguel">San Miguel</option>
+       <option value="Santa Ana">Santa Ana</option>
        </select>
 </div>
     </div>
