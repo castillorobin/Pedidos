@@ -155,10 +155,10 @@ function myFunction() {
 
         <P></P>
     
-    
+        
     <div class="col-sm-6 ">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Destinatario *</label>
-    <input type="text" id="desti" name="desti" class="form-control" tabindex="3" placeholder="Ingrese el nombre del destinatario">
+    <input type="text" id="desti" name="desti" class="form-control" tabindex="3" placeholder="">
     </div>
     
     <div class="col-sm-6">
