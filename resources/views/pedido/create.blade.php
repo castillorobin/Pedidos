@@ -5,38 +5,18 @@
 
 @section('content_header')
 <h6 ><i class="fas fa-home"></i> Inicio / Almacen / Agregar envios</h6>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 @stop
 
 @section('content')
 <style>
-h5 {
-  font: 24px sans-serif;
-  margin-top: 10px;
-  text-align: center;
-}
-h5.linea {
-  position: relative;
-  z-index: 1;
-
-}
-h5.linea:before {
-  border-top: 2px solid #000000;
-  content: "";
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: -1;
-}
-h5.linea span {
-
-  background: #fff;
-  padding: 0 2px;
+body {
+  font-family: 'Roboto', sans-serif;
 }
 </style>
+
 <script>
     /*
 function myFunction() {
@@ -93,23 +73,24 @@ function myFunction() {
 
 <form action="/pedidos" method="POST" id="myForm">
     @csrf
-<div class="row border" style="background-color: white;">
-<div class="  col-sm-6">
-<h3>Agregar envio</h3>
-</div>
-<div class="row">
 
-<div class="alert alert-danger" role="alert">
-<i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
-</div>
+       
+    <div class="row mx-5" >
+    <h3>Agregar envio</h3>
+      <div class="alert alert-danger" role="alert">
+      <i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
+      </div>
+    </div>
+  <br>
+    <div class="row mx-5" >
+    <h4>Datos del Comercio</h4>
+    </div>
 
-<h5 class="linea"><span>Datos del Comercio</span></h5>
-
-
-
+    <div class="row border mx-5 py-4" style="background-color: white;" >
+    <div class="row">
     <div class="  col-sm-6">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Id de envio</label>
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 col-5">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/fluency-systems-regular/48/null/checked-identification-documents.png" width="25" /></span>
@@ -117,22 +98,18 @@ function myFunction() {
   <input type="text" class="form-control" placeholder="{{ $uid }}" aria-label="Username" aria-describedby="basic-addon1" disabled>
 </div>
     </div>
-    
+   
     <div class="col-sm-4 text-center">
     <label for="inputEmail3" class="col-sm-8 col-form-label">Codigo de barras</label>
     <img width="110" src="vendor/adminlte/dist/img/barra.jpg" alt="" >
     </div>
 
     </div>
- 
-
-
-
+    <br><p></p>
 
 <div class="row">
 
-
-    <div class="col-12">
+<div class="col-12">
     <label for="" class="col-12 col-form-label">Nombre de comercio / Tienda *</label>
     <select id="comer" name="comer" class="form-control">
        <option >-Seleccionar comercio-</option>
@@ -143,34 +120,37 @@ function myFunction() {
        </select>
 
     </div>
-    </div>
+
+</div>
 
 
-    <div class="row mb-3 ">
-      
-<br>
-<p></p>
 
-        <h5 class="linea"><span>Datos del destinatario</span></h5>
 
-        <P></P>
-    
-        
+
+  </div>
+
+
+
+  <div class="row mx-5 mt-4 " >
+      <h4>Datos del destinatario</h4>
+  </div>
+
+  <div class="row border mx-5 py-4" style="background-color: white;" >
+    <div class="row">
     <div class="col-sm-6 ">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Destinatario *</label>
-    <input type="text" id="desti" name="desti" class="form-control" tabindex="3" placeholder="">
+    <input type="text" id="desti" name="desti" class="form-control" tabindex="3" placeholder="Ingrese el nombre del destinatario">
     </div>
     
     <div class="col-sm-6">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono</label>
     <input type="text" id="telefono" name="telefono" class="form-control" tabindex="3" placeholder="Ingrese teléfono del destinatario">
     </div>
+
+
     </div>
-
-    <div class="row mb-3">
-
-
-<div class="col-sm-12">
+    <div class="row">
+    <div class="col-sm-12">
 <label for="" class="col-sm-6 col-form-label">Direccion de entrega *</label>
 
 
@@ -184,15 +164,22 @@ function myFunction() {
 </div>
 
 </div>
+                                    
+
+    </div>
 
 
+   
+  </div>
 
+    
+  <div class="row mx-5 mt-4 " >
+      <h4>Datos del paquete</h4>
+  </div>
 
-
-
-
-<h5 class="linea"><span>Datos del paquete</span></h5>
-<div class="col-sm-6 ">
+   <div class="row border mx-5 py-4" style="background-color: white;">
+   <div class="row">
+   <div class="col-sm-6 ">
 
 <label for="" class="col-sm-6 col-form-label">Fecha de creacion</label>
 <div class="input-group mb-3">
@@ -214,10 +201,17 @@ function myFunction() {
   <input type="date" id="fentrega" name="fentrega" class="form-control" placeholder="ENTREGA" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
+      </div>        
+      
 
 
 
 
+<div class="row">
+
+
+
+      
     <div class="col-sm-6 ">
 
 
@@ -254,12 +248,14 @@ function myFunction() {
        <option value="Casillero Santa Ana">Casillero Santa Ana</option>
        </select>
 </div>
+    </div>                                      
     </div>
 
-    </div>
 
 
-    <div class="row">
+
+
+<div class="row">
 
 <div class="col-sm-4">
 <label for="" class="col-sm-8 col-form-label">Cobro del envio</label>
@@ -323,9 +319,8 @@ function myFunction() {
 </div>
 </div>
 
-</div>
 
-    <div class="row">
+<div class="row">
 
 <div class="col-sm-4">
 <label for="" class="col-sm-8 col-form-label">Precio del paquete</label>
@@ -364,12 +359,21 @@ function myFunction() {
 </div>
 
 
-<div class="col-sm-12 text-center">
-<h5 class="linea"><span> Datos Internos </span></h5>
 </div>
 
+</div>
 
-<div class="col-sm-6 ">
+</div>
+   
+   
+<div class="row mx-5 mt-4 " >
+      <h4>Datos del internos</h4>
+  </div>
+
+   <div class="row border mx-5 py-4" style="background-color: white;">
+   <div class="row">
+    
+   <div class="col-sm-6 ">
 
 
 <label for="" class="col-sm-6 col-form-label">Usuario que registra</label>
@@ -406,7 +410,14 @@ function myFunction() {
     </div>
 
 
-    <div class="col-sm-6 ">
+
+   
+   </div>   
+   
+   <div class="row">
+
+
+   <div class="col-sm-6 ">
 
 
 <label for="" class="col-sm-6 col-form-label">Repartidor</label>
@@ -442,9 +453,10 @@ function myFunction() {
 </div>
     </div>
 
+   </div>
+<div class="row">
 
-    
-    <div class="col-sm-6 ">
+<div class="col-sm-6 ">
 
 
 <label for="" class="col-sm-6 col-form-label">Nota</label>
@@ -466,11 +478,10 @@ function myFunction() {
 </div>
     </div>
 
-    
-
-     <P></P>
-
-     <div class="row mb-3">
+</div>
+<div class="row">
+  
+<div class="row mb-3">
     <label for="inputEmail3" class="col-sm-12 col-form-label">Foto del paquete</label>
 
     <div class="col-sm-12">
@@ -478,25 +489,11 @@ function myFunction() {
     </div>
     </div>
     <br>
-
-
 </div>
 
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-      
-      <div class="modal-footer">
+<p></p>
+<div class="row">
+<div class="modal-footer">
         <a href="/vendedores/create" class="btn btn-primary">Registrar nuevo comercio</a>
         &nbsp; &nbsp;
       <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
@@ -505,15 +502,17 @@ function myFunction() {
         </div>
 
         </div>
-        
-      </div>
+
     </div>
-  </div>
-</div>
 
+    
+   </div>                                         
+    
+   
 
+      
+   
 
-</div>
 
 
 <br>
