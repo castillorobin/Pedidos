@@ -89,11 +89,11 @@ function myFunction() {
 
 
 
-<div class="container">
+
 
 <form action="/pedidos" method="POST" id="myForm">
     @csrf
-<div class="row border" style="background-color: white; padding: 15px; border-radius:20px;">
+<div class="row border" style="background-color: white;">
 <div class="  col-sm-6">
 <h3>Agregar envio</h3>
 </div>
@@ -516,7 +516,8 @@ function myFunction() {
 </div>
 
 
-</div>
+<br>
+<p></p>
 
 
 
