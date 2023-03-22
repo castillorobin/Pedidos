@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use Carbon\Carbon;
+
+use Illuminate\Support\Facades\Auth;
 //Carbon::setLocale('es');
 use Illuminate\Http\Request;
 use App\Models\Pedido;
