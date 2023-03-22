@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Vendedor;
+use App\Models\Pedido;
 class VendedorController extends Controller
 {
     /**
@@ -28,8 +29,14 @@ class VendedorController extends Controller
      */
     public function create()
     {
+        $lastid = Pedido::latest('id')->first();
+        $uid= $lastid->id + 1;
         $vendedores = Vendedor::all();
-        return view('vendedor.create');
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        return view('vendedor.create')->with(['vendedores'=>$vendedores, 'date'=>$date, 'uid'=>$uid]);
     }
 
     /**
@@ -38,34 +45,41 @@ class VendedorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function guardar(Request $request)
+    public function store(Request $request)
     { 
-        $vendedores = new Vendedor();
-        $vendedores->nombre = $request->get('nombre');
-        $vendedores->direccion = $request->get('direccion');
-        $vendedores->telefono = $request->get('telefono');
-        $vendedores->whatsapp = $request->get('whatsapp');
-        $vendedores->falta = $request->get('falta');
-        $vendedores->fbaja = $request->get('fbaja');
-        $vendedores->tipovende = $request->get('tipoven');
-        $vendedores->correo = $request->get('correo');
-        $vendedores->titular = $request->get('titular');
-        $vendedores->banco = $request->get('banco');
-        $vendedores->cuenta = $request->get('ncuenta');
-        $vendedores->tcuenta = $request->get('tcuenta');
-        $vendedores->chivo = $request->get('chivo');
-        $vendedores->tmoney = $request->get('tmoney');
-        $vendedores->empresa = $request->get('empresa');
-        $vendedores->giro = $request->get('giro');
-        $vendedores->dui = $request->get('dui');
-        $vendedores->niva = $request->get('niva');
+        $vendedor = new Vendedor();
+        $vendedor->nombre = $request->get('nombre');
+        $vendedor->direccion = $request->get('direccion');
+        $vendedor->telefono = $request->get('telefono');
+        $vendedor->whatsapp = $request->get('whatsapp');
+        $vendedor->falta = $request->get('falta');
+        $vendedor->fbaja = $request->get('fbaja');
+        $vendedor->tipovende = $request->get('tipoven');
+        $vendedor->correo = $request->get('correo');
+        $vendedor->titular = $request->get('titular');
+        $vendedor->banco = $request->get('banco');
+        $vendedor->cuenta = $request->get('ncuenta');
+        $vendedor->tcuenta = $request->get('tcuenta');
+        $vendedor->chivo = $request->get('chivo');
+        $vendedor->tmoney = $request->get('tmoney');
+        $vendedor->empresa = $request->get('empresa');
+        $vendedor->giro = $request->get('giro');
+        $vendedor->dui = $request->get('dui');
+        $vendedor->niva = $request->get('niva');
 
-        $vendedores->nrc = $request->get('nrc');
-        $vendedores->estado = $request->get('estado');
+        $vendedor->nrc = $request->get('nrc');
+        $vendedor->estado = $request->get('estado');
         
                 
-        $vendedores->save();
-        return redirect('/vendedores');
+        $vendedor->save();
+
+        $vendedores = Vendedor::all();
+        
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        return view('vendedor.index')->with(['vendedores'=>$vendedores, 'date'=>$date]);
     }
 
     /**

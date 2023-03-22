@@ -497,7 +497,7 @@ function myFunction() {
 
       
       <div class="modal-footer">
-        <a href="/vendedores" class="btn btn-primary">Registrar nuevo comercio</a>
+        <a href="/vendedores/create" class="btn btn-primary">Registrar nuevo comercio</a>
         &nbsp; &nbsp;
       <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
       &nbsp; &nbsp;
