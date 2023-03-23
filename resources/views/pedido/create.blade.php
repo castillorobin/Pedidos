@@ -82,12 +82,17 @@ function myFunction() {
       </div>
     </div>
   <br>
+
+
+
     <div class="row mx-5" >
     <h4>Datos del Comercio</h4>
     </div>
 
     <div class="row border mx-5 py-4" style="background-color: white;" >
     <div class="row">
+
+    
     <div class="  col-sm-6">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Id de envio</label>
     <div class="input-group mb-3 col-5">
