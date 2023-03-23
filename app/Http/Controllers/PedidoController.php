@@ -104,7 +104,7 @@ class PedidoController extends Controller
         $pedido->ruta = $request->get('ruta');
         //$pedidos->foto = $request->get('foto');
         $pedido->save();
- 
+  
         setlocale(LC_TIME, "spanish");
         $date = Carbon::today();
         //$date = $date->format('l jS F Y');
@@ -137,8 +137,10 @@ class PedidoController extends Controller
      */
     public function edit($id)
     {
+        $repartidores = Repartidor::all();
+        $vendedores = Vendedor::all();
         $pedido = Pedido::find($id);
-        return view('pedido.edit')->with('pedido', $pedido);
+        return view('pedido.edit')->with(['pedido'=>$pedido, 'vendedores'=>$vendedores, 'repartidores'=>$repartidores]);
     }
 
     /**
@@ -150,21 +152,39 @@ class PedidoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pedido =  Pedido::find($id) ;
-        $pedido->vendedor = $request->get('vende');
-        $pedido->direccion = $request->get('dire');
-        $pedido->telefono = $request->get('tele');
-        $pedido->fecha_entrega = $request->get('fech');
-        $pedido->tipo = $request->get('tipo');
+        $lastid = Pedido::latest('id')->first();
+        $uid= $lastid->id + 1;
+        $pedido = Pedido::find($id) ;
+        
+        $pedido->vendedor = $request->get('comer');
+        $pedido->destinatario = $request->get('desti');
+        $pedido->telefono = $request->get('telefono');
+        $pedido->direccion = $request->get('direccion');
+        $pedido->fecha_entrega = $request->get('fentrega');
         $pedido->precio = $request->get('precio');
         $pedido->envio = $request->get('envio');
         $pedido->total = $request->get('total');
-        $pedido->repartidor = $request->get('repa');
-        $pedido->ruta = $request->get('ruta');
         $pedido->estado = $request->get('estado');
+        $pedido->pagado = $request->get('pagado');
+        $pedido->servicio = $request->get('servicio');
+        $pedido->tipo = $request->get('tenvio');
         $pedido->nota = $request->get('nota');
+        $pedido->ingresado = $request->get('ingresado');
+        $pedido->agencia = $request->get('agencia');
+        $pedido->repartidor = $request->get('repartidor');
+        $pedido->ruta = $request->get('ruta');
+        //$pedidos->foto = $request->get('foto');
         $pedido->save();
-        return redirect('/pedidos');
+  
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        $vendedores = Vendedor::all();
+        $repartidores = Repartidor::all();
+        $pedidos = Pedido::all();
+        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+       //return redirect('/pedido/etiqueta')->with('id', $pedidos->id);
 
     }
 

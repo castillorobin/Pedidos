@@ -84,13 +84,25 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
     <i class="fas fa-stream"></i></a>
     <ul class="dropdown-menu dropdown-menu-center text-center">
-    <li><a href="#"><i class="fas fa-pencil-alt"  style="position:absolute; left: 30px; top: 4px;" ></i> Editar</a></li>
-	<li><a href="#"><i class="fas fa-eye" style="position:absolute; left: 30px; top: 4px;"></i> Ver</a></li>
-    <li><a href="#"><i class="fas fa-trash-alt" style="position:absolute; left: 30px; top: 4px;"></i> Eliminar</a></li>
+    <li><a href="/pedidos/{{ $pedido->id }}/edit"><i class="fas fa-pencil-alt"  style="position:absolute; left: 30px; top: 4px;" ></i> Editar</a></li>
+	<form action="{{ route ('pedidos.show', $pedido->id)}}" method="POST">
+    @csrf
+    @method('GET')
+    <i class="fas fa-eye"></i>
+    <button  style="margin-right:10px;">Ver</button>
+</form>
+    
+    <form action="{{ route ('pedidos.destroy', $pedido->id)}}" method="POST">
+      
+        @csrf
+        @method('DELETE')
+        <i class="fas fa-trash-alt"></i> 
+        <button >Eliminar</button>
+        </form>
     </ul>
   </div>
 </div>
-       
+
     </td>
     </tr>
     @endforeach

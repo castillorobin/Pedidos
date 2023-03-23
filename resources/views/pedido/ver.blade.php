@@ -9,63 +9,373 @@
 
 @section('content')
 
-<h2>Ver Pedido</h2>
+
 
 <form action="/pedidos/{{$pedido->id}}" >
     
-    <div class="mb-3 col-6" >
-        <label for="" class="form-label">Comercio</label>
-        <input type="text" id="vende" name="vende" class="form-control" tabindex="1" value=" {{$pedido->vendedor}} " readonly>
+   
+<div class="row mx-5" >
+    <h3>Informacion del envio</h3>
+      
     </div>
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Direccion de Entrega</label>
-        <input type="text" id="dire" name="dire" class="form-control" tabindex="2" value=" {{$pedido->direccion}} " readonly>
-    </div>
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Telefono del Cliente</label>
-        <input type="text" id="tele" name="tele" class="form-control" tabindex="3" value="{{$pedido->telefono}}" readonly>
+  <br>
+
+
+
+    <div class="row mx-5" >
+    <h4>Datos del Comercio</h4>
     </div>
 
-    <div class="mb-3 col-3">
-        <label for="" class="form-label">fecha de entrega</label>
-        <input type="date" id="fech" name="fech" class="form-control" tabindex="4" value="{{$pedido->fecha_entrega}}" readonly>
+    <div class="row border mx-5 py-4" style="background-color: white;" >
+    <div class="row">
+
+    
+    <div class="  col-sm-6">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">Id de envio</label>
+        <div class="input-group mb-3 col-5">
+
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/fluency-systems-regular/48/null/checked-identification-documents.png" width="25" /></span>
+            </div>
+        <input type="text" class="form-control" value=" {{$pedido->id}}" aria-label="Username" aria-describedby="basic-addon1" disabled>
+        </div>
     </div>
-    <div class="mb-3 col-3">
-        <label for="" class="form-label">Tipo del paquete</label>
-        <input type="text" id="tipo" name="tipo" class="form-control" tabindex="5" value="{{$pedido->tipo}}" readonly>
+   
+                <div class="col-sm-4 text-center">
+                    <label for="inputEmail3" class="col-sm-8 col-form-label">Codigo de barras</label>
+                <img width="110" src="vendor/adminlte/dist/img/barra.jpg" alt="" >
+                </div>
+
+    </div>
+    <br><p></p>
+
+<div class="row">
+
+            <div class="col-12">
+             <label for="" class="col-12 col-form-label">Nombre de comercio / Tienda *</label>
+             
+            
+             <input type="text" class="form-control" value=" {{$pedido->vendedor}} " aria-label="Username" aria-describedby="basic-addon1" readonly>
+       
+
+   
+
+            </div>
+ </div>
+
+ </div>
+
+  <div class="row mx-5 mt-4 " >
+      <h4>Datos del destinatario</h4>
+  </div>
+
+  <div class="row border mx-5 py-4" style="background-color: white;" >
+    <div class="row">
+    <div class="col-sm-6 ">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">Destinatario *</label>
+    <input type="text" id="desti" name="desti" class="form-control" tabindex="3" value=" {{$pedido->destinatario}} " readonly>
+    </div>
+    
+    <div class="col-sm-6">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono</label>
+    <input type="text" id="telefono" name="telefono" class="form-control" tabindex="3" value=" {{$pedido->telefono}} " readonly>
     </div>
 
-    <div class="mb-3 col-3">
-        <label for="" class="form-label">Precio del Paquete</label>
-        <input type="text" id="precio" name="precio" class="form-control" tabindex="5" placeholder="$0.00" value="{{$pedido->precio}}" readonly>
+
     </div>
-    <div class="mb-3 col-3">
-        <label for="" class="form-label">Envio</label>
-        <input type="text" id="envio" name="envio" class="form-control" tabindex="6" placeholder="$0.00" value="{{$pedido->envio}}" readonly>
-    </div>
-    <div class="mb-3 col-3">
-        <label for="" class="form-label">Total</label>
-        <input type="text" id="total" name="total" class="form-control" tabindex="7" placeholder="$0.00" value="{{$pedido->total}}" readonly>
-    </div>
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Repartidor</label>
-        <input type="text" id="repa" name="repa" class="form-control" tabindex="8" value="{{$pedido->repartidor}}" readonly>
-    </div>
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Ruta</label>
-        <input type="text" id="ruta" name="ruta" class="form-control" tabindex="8" value="{{$pedido->ruta}}" readonly>
+    <div class="row">
+    <div class="col-sm-12">
+<label for="" class="col-sm-6 col-form-label">Direccion de entrega *</label>
+
+
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
+  </div>
+  <input type="text" id="direccion" name="direccion" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{$pedido->direccion}} " readonly>
+</div>
+
+</div>
+                                    
+
     </div>
 
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Estado del paquete</label>
-        <input type="text" id="estado" name="estado" class="form-control" tabindex="9" value="{{$pedido->estado}}" readonly>
+
+   
+  </div>
+
+    
+  <div class="row mx-5 mt-4 " >
+      <h4>Datos del paquete</h4>
+</div>
+
+   <div class="row border mx-5 py-4" style="background-color: white;">
+   <div class="row">
+   <div class="col-sm-6 ">
+
+<label for="" class="col-sm-6 col-form-label">Fecha de creacion</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
+  </div>
+  <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" value=" {{  date('Y/m/d', strtotime($pedido->created_at))  }} " readonly>
+</div>
     </div>
-    <div class="mb-3 col-6">
-        <label for="" class="form-label">Nota</label>
-        <input type="text" id="nota" name="nota" class="form-control" tabindex="10" value="{{$pedido->nota}}" readonly>
+     
+    <div class="col-sm-6">
+    <label for="" class="col-sm-6 col-form-label">Fecha de entrega *</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
+  </div>
+  <input type="text" id="fentrega" name="fentrega" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{  date('Y/m/d', strtotime($pedido->fecha_entrega))  }} " readonly>
+</div>
+    </div>
+      </div>        
+      
+
+
+
+
+<div class="row">
+
+
+
+      
+    <div class="col-sm-6 ">
+
+
+<label for="" class="col-sm-6 col-form-label">Tipo de servicio</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/online-support.png"/></span>
+  </div>
+  <input type="text" class="form-control" value=" {{$pedido->servicio}}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+</div>
+    </div>
+     
+    <div class="col-sm-6">
+    <label for="" class="col-sm-6 col-form-label">Tipo de envio</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/25/null/external-delivery-logistic-delivery-kiranshastry-solid-kiranshastry.png"/></span>
+  </div>
+  <input type="text" class="form-control" value=" {{$pedido->tipo}}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+</div>
+    </div>                                      
+    </div>
+
+
+
+
+
+<div class="row">
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Cobro del envio</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+</div>
+<input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly>
+</div>
+</div>
+
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Estado del envio</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
+  </div>
+  <input type="text" class="form-control" value=" {{$pedido->estado}}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+</div>
+</div>
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Estado del pago</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cash-in-hand.png"/></span>
+  </div>
+  <input type="text" class="form-control" value=" {{$pedido->pagado}}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+</div>
+</div>
+
+
+<div class="row">
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Precio del paquete</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+</div>
+<input type="text" id="precio" name="precio" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{$pedido->precio}} " readonly>
+</div>
+</div>
+
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Costo del envio</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+</div>
+<input type="text" id="envio" name="envio" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{$pedido->precio}} " readonly>
+</div>
+</div>
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-8 col-form-label">Total a cobrar</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+</div>
+<input type="text" id="total" name="total" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly value=" {{$pedido->total}} " readonly>
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+   
+   
+<div class="row mx-5 mt-4 " >
+      <h4>Datos del internos</h4>
+  </div>
+
+   <div class="row border mx-5 py-4" style="background-color: white;">
+   <div class="row">
+    
+   <div class="col-sm-6 ">
+
+
+<label for="" class="col-sm-6 col-form-label">Usuario que registra</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-itim2101-lineal-itim2101/25/null/external-operator-logistics-and-delivery-itim2101-lineal-itim2101.png"/></span>
+  </div>
+  <input type="text" class="form-control" value=" {{$pedido->ingresado}}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+</div>
+    </div>
+    
+    <div class="col-sm-6">
+    <label for="" class="col-sm-6 col-form-label">Recepción agencia</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/ios-filled/25/null/online-store.png"/></span>
+  </div>
+  <input type="text" class="form-control" value=" {{$pedido->agencia}}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+</div>
+    </div>
+
+
+
+   
+   </div>   
+   
+   <div class="row">
+
+
+   <div class="col-sm-6 ">
+
+
+<label for="" class="col-sm-6 col-form-label">Repartidor</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
+  </div>
+  <input type="text" class="form-control" value=" {{$pedido->repartidor}}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+</div>
+    </div>
+    
+    <div class="col-sm-6">
+    <label for="" class="col-sm-6 col-form-label">Ruta</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
+  </div>
+  <input type="text" class="form-control" value=" {{$pedido->ruta}}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+</div>
+    </div>
+
+   </div>
+<div class="row">
+
+<div class="col-sm-6 ">
+
+
+<label for="" class="col-sm-6 col-form-label">Nota</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"> <i class="fas fa-file-alt"></i> </span>
+  </div>
+  <input type="text" id="nota" name="nota" class="form-control" aria-describedby="basic-addon1"  value=" {{$pedido->nota}} " readonly>
+</div>
+    </div>
+    <div class="col-sm-6">
+    <label for="" class="col-sm-8 col-form-label">Código de barra del estante</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"> <i class="fas fa-barcode"></i> </span>
+  </div>
+  <input type="text" id="estante" name="estante" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly>
+</div>
+    </div>
+
+</div>
+<div class="row">
+  
+<div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-12 col-form-label">Foto del paquete</label>
+
+    <div class="col-sm-12">
+    <input type="file" id="foto" name="foto" class="form-control" tabindex="10">
+    </div>
     </div>
     <br>
-   <a href="/pedidos" class="btn btn-primary">Regresar</a> 
+</div>
+
+
+
+
+
+
+
+<div class="row">
+<div class="modal-footer">
+        
+     
+<a href="/pedidos" class="btn btn-primary">Regresar</a> 
+        </div>
+
+        </div>
+    
+   
 
 
 </form>
