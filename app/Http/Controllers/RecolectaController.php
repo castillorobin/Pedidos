@@ -32,10 +32,17 @@ class RecolectaController extends Controller
      */
     public function create()
     {
-        //
-    }
+        $repartidores = Repartidor::all();
+        $vendedores = Vendedor::all();
+        $recolectas = Recolecta::all();
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        return view('recolecta.create')->with(['recolectas'=>$recolectas, 'date'=>$date , 'repartidores'=>$repartidores, 'vendedores'=>$vendedores  ]);
+    } 
 
-    public function guardar(Request $request)
+    public function store(Request $request)
     { 
         $repartidores = Repartidor::all();
         $vendedores = Vendedor::all();
@@ -63,10 +70,7 @@ class RecolectaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    
 
     /**
      * Display the specified resource.
