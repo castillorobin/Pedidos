@@ -18,33 +18,6 @@ body {
 
 
 
-h5 {
-  font: 24px sans-serif;
-  margin-top: 10px;
-  text-align: center;
-}
-h5.linea {
-  position: relative;
-  z-index: 1;
-
-}
-h5.linea:before {
-  border-top: 2px solid #000000;
-  content: "";
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: -1;
-}
-h5.linea span {
-
-  background: #fff;
-  padding: 0 2px;
-}
 </style>
 <script>
 function myFunction() {
@@ -56,7 +29,7 @@ function myFunction() {
     @csrf
 
     <div class="row mx-5" >
-    <h3>Agregar envio</h3>
+    <h3>Agregar Comercio</h3>
       <div class="alert alert-danger" role="alert">
       <i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
       </div>
@@ -456,21 +429,8 @@ function myFunction() {
 
 
 
-
-
-
-
-
-
-
-      </div>
-</div>
-</div>
-</div>
-
-
 </form>
-</div>
+
 
 
    
