@@ -5,10 +5,19 @@
 
 @section('content_header')
 <h6 ><i class="fas fa-home"></i> Inicio / Almacen / Agregar Comercio</h6>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 @stop
 
 @section('content')
 <style>
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
 h5 {
   font: 24px sans-serif;
   margin-top: 10px;
@@ -42,22 +51,23 @@ function myFunction() {
   document.getElementById("myForm").reset();
 }
 </script>
-<br>
-<div class="container ">
+
 <form action="/vendedores" method="POST" id="myForm">
     @csrf
-    <div class="row border" style="background-color: white; padding: 15px; border-radius:20px;">
-<div class="  col-sm-6">
-<h3>Agregar Comercio</h3>
-</div>
-    
-<div class="row mb-3">
 
-<div class="alert alert-danger" role="alert">
-<i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
-</div>
+    <div class="row mx-5" >
+    <h3>Agregar envio</h3>
+      <div class="alert alert-danger" role="alert">
+      <i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
+      </div>
+    </div>
+  <br>
+<!-- empieza row general  -->
+<div class="row border mx-5 py-4" style="background-color: white;" >
+  <div class="row">
 
-<div class="col-sm-4">
+
+  <div class="col-sm-4">
 <label for="" class="col-sm-6 col-form-label">ID Comercio</label>
 <div class="input-group mb-3">
 
@@ -67,13 +77,14 @@ function myFunction() {
   <input type="text" class="form-control" placeholder="{{ $uid }}" aria-label="Username" aria-describedby="basic-addon1" disabled>
 </div>
 </div>
-</div>
 
 
-<div class="row mb-3">
 
+  </div><!-- termina fila  -->
 
-<div class="col-sm-12">
+  <div class="row">
+
+  <div class="col-sm-12">
 <label for="" class="col-sm-6 col-form-label">Comercio/Tienda *</label>
 <div class="input-group mb-3">
 
@@ -83,10 +94,14 @@ function myFunction() {
   <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese nombre del comercio" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
-</div>
 
-<div class="row mb-3">
-<div class="col-sm-12">
+
+
+
+  </div><!-- termina fila  -->
+  <div class="row">
+
+  <div class="col-sm-12">
 <label for="" class="col-sm-6 col-form-label">Direccion del comercio *</label>
 <div class="input-group mb-3">
 
@@ -97,10 +112,10 @@ function myFunction() {
 </div>
 
 </div>
-</div>
 
-<div class="row mb-3">
-<div class="col-sm-6 ">
+  </div><!-- termina fila  -->
+  <div class="row">
+  <div class="col-sm-6 ">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono *</label>
     <div class="input-group mb-3">
 
@@ -121,12 +136,10 @@ function myFunction() {
   <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="Ingrese whatsapp" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
-    </div>
-    
-    
-    <div class="row mb-3">
+  </div><!-- termina fila  -->
+  <div class="row">
 
-<div class="col-sm-4">
+  <div class="col-sm-4">
 <label for="" class="col-sm-6 col-form-label">Fecha de alta</label>
 <div class="input-group mb-3">
 
@@ -166,11 +179,9 @@ function myFunction() {
        </select>
 </div>
 </div>
-</div>
-
-
-
-<div class="row mb-3">
+</div><!-- termina fila  -->
+<div class="row">
+ 
 <div class="col-sm-8 ">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Correo</label>
     <div class="input-group mb-3">
@@ -197,10 +208,9 @@ function myFunction() {
        </select>
 </div>
     </div>
-    </div>
-
-
-    <div class="row mb-3 ">
+</div><!-- termina fila  -->
+<div class="row">
+     
 <div class="col-sm-8 ">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Nota</label>
     <div class="input-group mb-3">
@@ -227,15 +237,19 @@ function myFunction() {
        </select>
 </div>
     </div>
-    </div>
+</div><!-- termina fila  -->
+
+</div><!--termina row general  -->
 
 
-<div class="row mb-3 ">
-        
-        <h5 class="linea"><span>Información Bancaria</span></h5>
-     
-        
-        <div class="col-sm-12">
+<div class="row mx-5 mt-4 " >
+      <h4>Información Bancaria</h4>
+  </div>
+
+  <div class="row border mx-5 py-4" style="background-color: white;" >
+  <div class="row">
+ 
+  <div class="col-sm-12">
 <label for="" class="col-sm-6 col-form-label">Nombre del titular de la cuenta</label>
 <div class="input-group mb-3">
 
@@ -246,10 +260,10 @@ function myFunction() {
 </div>
 
 </div>
-</div>
+</div><!-- termina fila  -->
 
-
-<div class="row mb-3 ">
+<div class="row">
+ 
 <div class="col-sm-6 ">
     <label for="inputEmail3" class="col-sm-6 col-form-label">Nombre del banco</label>
     <div class="input-group mb-3">
@@ -271,9 +285,9 @@ function myFunction() {
   <input type="text" id="ncuenta" name="ncuenta" class="form-control" placeholder="Ingrese el número de cuenta" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
-    </div>
-    
-    <div class="row mb-3 ">
+</div><!-- termina fila  -->
+
+<div class="row">
 
 <div class="col-sm-4">
 <label for="" class="col-sm-6 col-form-label">Tipo de cuenta</label>
@@ -316,14 +330,21 @@ function myFunction() {
 <input type="text" id="tmoney" name="tmoney" class="form-control" placeholder="TIGO MONEY" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
-</div>
+</div><!-- termina fila  -->
 
-<div class="row mb-3">
-        
-     
-        <h5 class="linea"><span>Información Fiscal</span></h5>
-    
-    <div class="col-sm-12 ">
+
+</div><!--termina row general  -->
+
+
+<div class="row mx-5 mt-4 " >
+      <h4>Información Fiscal</h4>
+  </div>
+
+  <div class="row border mx-5 py-4" style="background-color: white;" >
+
+  <div class="row">
+
+  <div class="col-sm-12 ">
     <label for="inputEmail3" class="col-sm-8 col-form-label">Nombre de la empresa</label>
     <div class="input-group mb-3">
 
@@ -334,11 +355,11 @@ function myFunction() {
 </div>
     </div>
     
-    
+</div><!-- termina fila  -->
 
+<div class="row">
 
-
-    <div class="col-sm-8 ">
+<div class="col-sm-8 ">
     <label for="inputEmail3" class="col-sm-8 col-form-label">Giro</label>
     <div class="input-group mb-3">
 
@@ -364,12 +385,9 @@ function myFunction() {
        </select>
 </div>
     </div>
-    </div>
-    
+</div><!-- termina fila  -->
 
-
-
-    <div class="row mb-3 ">
+<div class="row">
 
 <div class="col-sm-4">
 <label for="" class="col-sm-8 col-form-label">Número de (DUI)</label>
@@ -407,7 +425,9 @@ function myFunction() {
 <input type="text" id="nrc" name="nrc" class="form-control" placeholder="Ingrese el NRC de la empresa" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
 </div>
-</div>
+</div><!-- termina fila  -->
+
+<div class="row">
 
 <div class="col-sm-12 ">
     <label for="inputEmail3" class="col-sm-8 col-form-label">Dirección fiscal</label>
@@ -419,20 +439,29 @@ function myFunction() {
 <input type="text" id="empresa" name="empresa" class="form-control" placeholder="Ingrese la dirección fiscal de la empresa" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
     </div>
+</div><!-- termina fila  -->
 
-
-
-
-
-
-
-<div class="modal-footer">
+<div class="modal-footer px-4">
         
         &nbsp; &nbsp;
         <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
       &nbsp; &nbsp;
         <button type="submit" class="btn btn-primary">Guardar</button>
       </div>
+
+
+  </div><!--termina row general  -->
+
+<br>
+
+
+
+
+
+
+
+
+
 
       </div>
 </div>
