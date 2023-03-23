@@ -13,8 +13,28 @@
 @stop
 
 @section('content')
- 
+<style>
+    .dropdown-menu-center {
+  left: 50% !important;
+  /*right: auto !important;*/
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+        margin-top: 15px;
+}
+.cambiar {
+   
+    float: left;
+      
+    }
 
+.cambiar2 {
+   
+   float: right;
+     
+}
+
+
+</style>
 
 <style> 
   body {
@@ -45,10 +65,10 @@
 
 
 
-{{-- <table id="trepartidor" class="display responsive nowrap" style="width:100%"> --}}
+{{-- <table id="trepartidor" class="table shadow-lg mt-4" style="width:100%"> --}}
   <div class="table-responsive">
-<table id="trepartidor" class="table table-bordered table-striped display responsive " style="width:100%">
-<thead>
+<table id="trepartidor" class="table shadow-lg mt-4 responsive " style="width:100%">
+<thead class="table-secondary">
     <tr >
       <th></th>
      
@@ -77,28 +97,20 @@
     <td>{{ $repartidor->agencia }}</td>
     <td>{{ $repartidor->nota }}</td>    
     <td>
-    <ul > 
-											<li class="dropdown">
-												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-													<i class="fas fa-stream"></i>
-												</a>
-
-												<ul class="dropdown-menu dropdown-menu-right">
-													<li><a href="#" data-toggle="modal" data-target="#modal_iconified" onclick="">
-												   <i class="fas fa-pencil-alt">
-											       </i> Editar</a></li>
-													<li><a
-													href="javascript:;" data-toggle="modal" data-target="#modal_iconified"
-													onclick=" ">
-													<i class="fas fa-eye">
-													</i> Ver</a></li>
-												</ul>
-											</li>
-										</ul>
-
-        &nbsp;&nbsp;
     
-        </div> 
+    <div class="container text-center" id="cssmenu">
+  
+  <div class="dropdown text-center">
+    
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    <i class="fas fa-stream"></i></a>
+    <ul class="dropdown-menu dropdown-menu-center text-center">
+    <li><a href="#"><i class="fas fa-pencil-alt"  style="position:absolute; left: 30px; top: 4px;" ></i> Editar</a></li>
+	<li><a href="#"><i class="fas fa-eye" style="position:absolute; left: 30px; top: 4px;"></i> Ver</a></li>
+    <li><a href="#"><i class="fas fa-trash-alt" style="position:absolute; left: 30px; top: 4px;"></i> Eliminar</a></li>
+    </ul>
+  </div>
+</div>
     </td>
 
     </tr>
@@ -145,6 +157,14 @@
 $(document).ready(function() {
 
   $('#trepartidor').DataTable( {
+    language: {
+            "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+           
+        },
+        
+        dom: '<"cambiar" f><"cambiar2" l>trip',
+           
+
     responsive: true
 
 
