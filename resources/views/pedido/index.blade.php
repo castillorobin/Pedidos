@@ -15,7 +15,7 @@
   /*right: auto !important;*/
   text-align: center !important;
   transform: translate(-50%, 0) !important;
-        margin-top: 15px;
+        margin-top: 35px;
 }
 .cambiar {
    
@@ -28,7 +28,9 @@
    float: right;
      
 }
-
+.botones:hover{
+    background:#b2b2b2;
+}
 
 </style>
 
@@ -81,17 +83,20 @@
   
   <div class="dropdown text-center">
     
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    <i class="fas fa-stream"></i></a>
+    <button class="button btn-secondary dropdown-toggle" data-toggle="dropdown">
+
+  Acciones</button>
     <ul class="dropdown-menu dropdown-menu-center text-center">
-    <li><a href="/pedidos/{{ $pedido->id }}/edit"><i class="fas fa-pencil-alt"  style="position:absolute; left: 30px; top: 4px;" ></i> Editar</a></li>
-	<form action="{{ route ('pedidos.show', $pedido->id)}}" method="POST">
+    <li class="botones"><a href="/pedidos/{{ $pedido->id }}/edit"><i class="fas fa-pencil-alt"  style="position:absolute; left: 30px; top: 4px;" ></i> Editar</a></li>
+	<li class="botones">
+    <form action="{{ route ('pedidos.show', $pedido->id)}}" method="POST">
     @csrf
     @method('GET')
     <i class="fas fa-eye"></i>
     <button  style="margin-right:10px;">Ver</button>
 </form>
-    
+</li>
+<li class="botones">
     <form action="{{ route ('pedidos.destroy', $pedido->id)}}" method="POST">
       
         @csrf
@@ -99,6 +104,7 @@
         <i class="fas fa-trash-alt"></i> 
         <button >Eliminar</button>
         </form>
+        </li>
     </ul>
   </div>
 </div>
