@@ -247,7 +247,7 @@ function myFunction() {
        <option value="Personalizado">Personalizado</option>
        <option value="Personalizado departamental">Personalizado departamental</option>
        <option value="Punto fijo">Punto fijo</option>
-       <option value="Casillero">Casillero</option>
+       <option value="Casillero departamental">Casillero departamental</option>
        <option value="Casillero San Salvador">Casillero San Salvador</option>
        <option value="Casillero San Miguel">Casillero San Miguel</option>
        <option value="Casillero Santa Ana">Casillero Santa Ana</option>
