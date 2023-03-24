@@ -44,15 +44,15 @@ function myFunction() {
  $(document).ready(function() {
    					$("#envio").change(function() {
        												 //alert($(this).val());
-          const tenv = document.getElementById("tenvio").value;
+          const tenv = document.getElementById("cenvio").value;
 					const preci = parseFloat(document.getElementById("precio").value);						                                                    
           const envi =parseFloat($(this).val()); 
           
-          if(tenv=="Personalizado")
+          if(tenv=="Pagado")
           {
             document.getElementById("total").value = preci;
           }else{
-            document.getElementById("total").value = preci + envi;
+            document.getElementById("total").value = preci - envi;
           }
                     
 
@@ -272,7 +272,7 @@ function myFunction() {
 <select id="cenvio" name="cenvio" class="form-control">
        <option value="Pendiente">Pendiente</option>
        <option value="Pagado">Pagado</option>
-       <option value="Casillero pendiente">Casillero pendiente</option>
+    
       
        </select>
 </div>
