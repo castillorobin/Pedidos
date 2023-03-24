@@ -71,7 +71,7 @@ function myFunction() {
 
 
 
-<form action="/pedidos" method="POST" id="myForm">
+<form action="/pedidos" method="POST" id="myForm" enctype="multipart/form-data">
     @csrf
 
        
@@ -434,7 +434,7 @@ function myFunction() {
   <select id="repartidor" name="repartidor" class="form-control">
        <option >-Seleccionar repartidor-</option>
        @foreach($repartidores as $repartidor)
-       <option value="{{ $repartidor->id }}">{{ $repartidor->nombre }}</option>
+       <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
        @endforeach
      
        </select>
@@ -490,7 +490,7 @@ function myFunction() {
     <label for="inputEmail3" class="col-sm-12 col-form-label">Foto del paquete</label>
 
     <div class="col-sm-12">
-    <input type="file" id="foto" name="foto" class="form-control" tabindex="10">
+    <input type="file" name="foto" class="form-control" >
     </div>
     </div>
     <br>
@@ -515,7 +515,7 @@ function myFunction() {
     
    
 
-      
+                                          </form>
    
 
 

@@ -173,7 +173,15 @@ class PedidoController extends Controller
         $pedido->agencia = $request->get('agencia');
         $pedido->repartidor = $request->get('repartidor');
         $pedido->ruta = $request->get('ruta');
-        //$pedidos->foto = $request->get('foto');
+
+        $archivo = $request->file('foto');
+        //$nombre =  $archivo->getClientOriginalName();
+
+        //$pedido->foto = $request->file('foto')->getClientOriginalName() ;
+        $fileName = $archivo->getClientOriginalName();
+        $pedido->foto = $fileName;
+
+        //$request->file('foto')->store('public');
         $pedido->save();
   
         setlocale(LC_TIME, "spanish");
