@@ -10,12 +10,44 @@
 
 @section('content')
 <style>
+    /*
     .dropdown-menu-center {
-  left: 50% !important;
-  /*right: auto !important;*/
+  left: 2% !important;
+  right: auto !important;
   text-align: center !important;
   transform: translate(-50%, 0) !important;
-        margin-top: 35px;
+        margin-top: 25px;
+}
+*/
+li {
+ display: block;
+ transition-duration: 0.5s;
+text-align: left;
+ 
+}
+
+li:hover {
+  cursor: pointer;
+  background:#b2b2b2;
+}
+
+ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+  
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  
 }
 .cambiar {
    
@@ -28,9 +60,9 @@
    float: right;
      
 }
-.botones:hover{
-    background:#b2b2b2;
-}
+
+
+
 
 </style>
 
@@ -79,35 +111,43 @@
     <td> {{ $pedido->repartidor }}</td>
     <td >
     
-    <div class="container text-center" id="cssmenu">
-  
-  <div class="dropdown text-center">
     
-    <button class="button btn-secondary dropdown-toggle" data-toggle="dropdown">
+  
+ 
+    <a href="" class="dropdown-toggle" data-toggle="dropdown">
 
-  Acciones</button>
-    <ul class="dropdown-menu dropdown-menu-center text-center">
-    <li class="botones"><a href="/pedidos/{{ $pedido->id }}/edit"><i class="fas fa-pencil-alt"  style="position:absolute; left: 30px; top: 4px;" ></i> Editar</a></li>
+    <i class="fas fa-list"></i></a>
+    <ul class="dropdown-menu">
+     <div class="botones"> 
+    <li class="botones">
+    &nbsp;
+    <i class="fas fa-edit"></i>
+    &nbsp;&nbsp;
+    <a href="/pedidos/{{ $pedido->id }}/edit" ><button>Editar</button></a></li> 
+    </div>  
 	<li class="botones">
     <form action="{{ route ('pedidos.show', $pedido->id)}}" method="POST">
     @csrf
     @method('GET')
+    &nbsp;
     <i class="fas fa-eye"></i>
-    <button  style="margin-right:10px;">Ver</button>
+    &nbsp;&nbsp;
+    <button>Ver</button>
 </form>
 </li>
 <li class="botones">
     <form action="{{ route ('pedidos.destroy', $pedido->id)}}" method="POST">
-      
         @csrf
         @method('DELETE')
+        &nbsp;
         <i class="fas fa-trash-alt"></i> 
+        &nbsp;&nbsp;
         <button >Eliminar</button>
         </form>
         </li>
     </ul>
-  </div>
-</div>
+ 
+
 
     </td>
     </tr>
