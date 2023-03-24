@@ -19,19 +19,19 @@
         margin-top: 25px;
 }
 */
-li {
+.opciones li {
  display: block;
  transition-duration: 0.5s;
 text-align: left;
  
 }
 
-li:hover {
+.opciones li:hover {
   cursor: pointer;
   background:#b2b2b2;
 }
 
-ul li ul {
+.opciones ul li ul {
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -42,7 +42,7 @@ ul li ul {
   
 }
 
-ul li:hover > ul,
+.opciones ul li:hover > ul,
 ul li ul:hover {
   visibility: visible;
   opacity: 1;
@@ -109,7 +109,7 @@ ul li ul:hover {
     <td> {{ $pedido->fecha_entrega }}</td>
     <td> {{ $pedido->agencia }}</td>
     <td> {{ $pedido->repartidor }}</td>
-    <td >
+    <td class="opciones">
     
     
   
