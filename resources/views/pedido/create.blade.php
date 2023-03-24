@@ -284,9 +284,9 @@ function myFunction() {
 <label for="" class="col-sm-8 col-form-label">Estado del envio</label>
 <div class="input-group mb-3">
 
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
-  </div>
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
+    </div>
   <select id="estado" name="estado" class="form-control">
       
        <option value="Creado" >Creado</option>
@@ -304,7 +304,7 @@ function myFunction() {
        <option value="Casillero San Miguel">Casillero San Miguel</option>
        <option value="Casillero Santa Ana">Casillero Santa Ana</option>
        </select>
-</div>
+  </div>
 </div>
 
 
@@ -324,19 +324,19 @@ function myFunction() {
 </div>
 </div>
 
-
+</div>
 <div class="row">
 
-<div class="col-sm-4">
-<label for="" class="col-sm-8 col-form-label">Precio del paquete</label>
-<div class="input-group mb-3">
+    <div class="col-sm-4">
+      <label for="" class="col-sm-8 col-form-label">Precio del paquete</label>
+    <div class="input-group mb-3">
 
-<div class="input-group-prepend">
-<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
-</div>
-<input type="text" id="precio" name="precio" class="form-control" placeholder="Precio" aria-label="Username" aria-describedby="basic-addon1">
-</div>
-</div>
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+    </div>
+      <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio"  >
+  </div>
+  </div>
 
 
 
@@ -347,7 +347,7 @@ function myFunction() {
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
 </div>
-<input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" >
 </div>
 </div>
 
@@ -365,6 +365,7 @@ function myFunction() {
 
 
 </div>
+
 
 </div>
 
@@ -484,15 +485,16 @@ function myFunction() {
     </div>
 
 </div>
+
 <div class="row">
   
-<div class="row mb-3">
+
     <label for="inputEmail3" class="col-sm-12 col-form-label">Foto del paquete</label>
 
     <div class="col-sm-12">
     <input type="file" name="foto" class="form-control" >
     </div>
-    </div>
+    
     <br>
 </div>
 
