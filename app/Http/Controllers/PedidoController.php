@@ -73,6 +73,25 @@ class PedidoController extends Controller
         //return view('pedido.create')->with('vendedores', $vendedores);
     }
 
+    public function desdeenvio()
+    {
+        $lastid = Pedido::latest('id')->first();
+        $uid= $lastid->id + 1;
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+        $tipos = Tipo::all();
+        $rutas = Ruta::all();
+        $estados = Estado::all();
+        $repartidores = Repartidor::all();
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+
+        return view('pedido.denvio')->with(['vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+
+        //return view('pedido.create')->with('vendedores', $vendedores);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -116,6 +135,7 @@ class PedidoController extends Controller
        //return redirect('/pedido/etiqueta')->with('id', $pedidos->id);
 
     }
+
 
     /**
      * Display the specified resource.

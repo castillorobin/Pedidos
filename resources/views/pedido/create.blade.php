@@ -114,7 +114,7 @@ function myFunction() {
 
 <div class="row">
 
-<div class="col-12">
+<div class="col-10">
     <label for="" class="col-12 col-form-label">Nombre de comercio / Tienda *</label>
     <select id="comer" name="comer" class="form-control">
        <option >-Seleccionar comercio-</option>
@@ -123,12 +123,12 @@ function myFunction() {
        <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
        @endforeach
        </select>
-
+       
     </div>
-
+    <div class="col-2" style="display: flex; align-items: center;">
+    <a href="/pedido/desdeenvio">Nuevo comercio</a>
 </div>
-
-
+</div>
 
 
 
@@ -251,14 +251,11 @@ function myFunction() {
        <option value="Casillero San Salvador">Casillero San Salvador</option>
        <option value="Casillero San Miguel">Casillero San Miguel</option>
        <option value="Casillero Santa Ana">Casillero Santa Ana</option>
+       <option value="Casillero centro logístico">Casillero centro logístico</option>
        </select>
 </div>
     </div>                                      
     </div>
-
-
-
-
 
 <div class="row">
 
@@ -501,8 +498,8 @@ function myFunction() {
 <p></p>
 <div class="row">
 <div class="modal-footer">
-        <a href="/vendedores/create" class="btn btn-primary">Registrar nuevo comercio</a>
-        &nbsp; &nbsp;
+        
+       
       <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
       &nbsp; &nbsp;
         <button type="submit" class="btn btn-primary">Guardar</button>

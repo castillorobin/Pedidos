@@ -36,7 +36,7 @@ Route::resource('remunerars', 'App\Http\Controllers\RemunerarController');
 Route::resource('repartidores', 'App\Http\Controllers\RepartidorController');
 
 Route::resource('ruteros', 'App\Http\Controllers\RuteroController');
-
+ 
 Route::resource('pagos', 'App\Http\Controllers\PagoController');
 
 Route::resource('recolectas', 'App\Http\Controllers\RecolectaController');
@@ -51,9 +51,12 @@ Route::get('repartidor/{id}/edit', [App\Http\Controllers\RepartidorController::c
 
 Route::get('pedido/guardar', [App\Http\Controllers\PedidoController::class, 'guardar'] )->name('guardar') ;
 
-Route::get('recolecta/guardar', [App\Http\Controllers\RecolectaController::class, 'guardar'] )->name('guardar') ;
+Route::get('pedido/desdeenvio', [App\Http\Controllers\PedidoController::class, 'desdeenvio'] )->name('desdeenvio') ;
 
+Route::get('recolecta/guardar', [App\Http\Controllers\RecolectaController::class, 'guardar'] )->name('guardar') ;
+ 
 Route::get('comercio/guardar', [App\Http\Controllers\VendedorController::class, 'guardar'] )->name('guardar') ;
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
