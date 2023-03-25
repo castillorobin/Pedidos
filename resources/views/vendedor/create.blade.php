@@ -415,7 +415,7 @@ function myFunction() {
 </div><!-- termina fila  -->
 
 <div class="modal-footer px-4">
-        
+<a href="/vendedores" class="btn btn-primary">Cancelar</a>
         &nbsp; &nbsp;
         <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
       &nbsp; &nbsp;

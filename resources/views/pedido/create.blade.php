@@ -125,8 +125,8 @@ function myFunction() {
        </select>
        
     </div>
-    <div class="col-2" style="display: flex; align-items: center;">
-    <a href="/pedido/desdeenvio">Nuevo comercio</a>
+    <div class="col-2 pt-4" style="display: flex; align-items: center; ">
+    <a href="/pedido/desdeenvio">+ Crear</a>
 </div>
 </div>
 
@@ -498,8 +498,9 @@ function myFunction() {
 <p></p>
 <div class="row">
 <div class="modal-footer">
-        
-       
+
+        <a href="/pedidos" class="btn btn-primary">Cancelar</a>
+        &nbsp; &nbsp;
       <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
       &nbsp; &nbsp;
         <button type="submit" class="btn btn-primary">Guardar</button>

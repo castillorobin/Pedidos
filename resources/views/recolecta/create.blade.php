@@ -186,7 +186,9 @@ function myFunction() {
      
 <br>
 <div class="modal-footer" >
-&nbsp; &nbsp;
+<a href="/recolectas" class="btn btn-primary">Cancelar</a>
+        &nbsp; &nbsp;
+
         <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
       &nbsp; &nbsp;
 <button type="submit" class="btn btn-primary">Guardar</button>
