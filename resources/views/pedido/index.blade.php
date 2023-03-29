@@ -92,6 +92,7 @@ ul li ul:hover {
         <th scope="col">Fecha de entrega</th>
         <th scope="col">Agencia</th>
         <th scope="col">Repartidor</th>
+        <th scope="col">Ruta</th>
         <th scope="col">Opciones</th>
     </tr>
 </thead>
@@ -107,6 +108,7 @@ ul li ul:hover {
     <td> {{ $pedido->fecha_entrega }}</td>
     <td> {{ $pedido->agencia }}</td>
     <td> {{ $pedido->repartidor }}</td>
+    <td> {{ $pedido->ruta }}</td>
     <td class="opciones">
     
     

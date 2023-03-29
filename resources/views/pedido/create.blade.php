@@ -8,9 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 @stop
 
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 <style>
 body {
   font-family: 'Roboto', sans-serif;
@@ -34,13 +39,20 @@ tenvio.addEventListener("change", (e) => {
 });
 
 </script>
+
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script>
+   $('.js-example-basic-single').select2({
+ placeholder: "Busca alguno de tus lugares",
+ });
+</script>
+<script>
+
 function myFunction() {
   document.getElementById("myForm").reset();
 }
-
-
  $(document).ready(function() {
    					$("#envio").change(function() {
        												 //alert($(this).val());
@@ -60,12 +72,11 @@ function myFunction() {
 														//document.getElementById("ptotal").value = castot ; 
 
     				});
-                                                
+              
                                             });
+  
+  
 </script>
-
-
-
 
 
 
@@ -116,14 +127,17 @@ function myFunction() {
 
 <div class="col-10">
     <label for="" class="col-12 col-form-label">Nombre de comercio / Tienda *</label>
-    <select id="comer" name="comer" class="form-control">
+
+
+     
+    <select id="comer" name="comer" class="form-control js-example-basic-single" data-placeholder="Please select...">
        <option >-Seleccionar comercio-</option>
        
         @foreach($vendedores as $vendedor)
        <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
        @endforeach
        </select>
-       
+                                        
     </div>
     <div class="col-2 pt-4" style="display: flex; align-items: center; ">
     <a href="/pedido/desdeenvio">+ Crear</a>
@@ -447,11 +461,11 @@ function myFunction() {
     <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
   </div>
   <select id="ruta" name="ruta" class="form-control">
-       <option value="RUTA 1">RUTA 1</option>
-       <option value="RUTA 2">RUTA 2</option>
-       <option value="RUTA 3">RUTA 3</option>
-       <option value="RUTA 4">RUTA 4</option>
-       <option value="RUTA 5">RUTA 5</option>
+       <option value="Ruta 1">Ruta 1</option>
+       <option value="Ruta 2">Ruta 2</option>
+       <option value="Ruta 3">Ruta 3</option>
+       <option value="Ruta 4">Ruta 4</option>
+       <option value="Ruta 5">Ruta 5</option>
        </select>
 </div>
     </div>
@@ -525,15 +539,17 @@ function myFunction() {
 
 
 
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 @endsection
 
 
 @section('css')
+
     <link rel="stylesheet" href="/css/admin_custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @stop
