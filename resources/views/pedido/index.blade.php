@@ -66,12 +66,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     bottom: 0;
     color: transparent;
     cursor: pointer;
-    height: auto;
+    
     left: 0;
     position: absolute;
-    right: 0;
+    right: 50px;
     top: 0;
-    width: auto;
+    border-radius: 0px;
+   
 }
 
 </style>
@@ -94,14 +95,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @csrf
     @method('GET')
 <label for="" class="col-sm-6 col-form-label">Filtrar por dia:</label>
-<div class="input-group mb-3">
+<div class="input-group mb-2">
 
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
+  <div class="input-group-prepend ">
+    <span class="input-group-text" id="basic-addon1" style="height:40px ">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
   </div>
-  <input type="date" name="filtrodia" id="filtrodia" style="width: 100px; "  class="form-control" > 
-  <button type="submit" class="btn btn-primary " style="width: 150px;"> <i class="fas fa-search"></i> Consultar</button>
+  <div class="input-group-prepend ">
+  <input type="date" name="filtrodia" id="filtrodia" style="width: 200px; height:40px; border-radius: 0px;"  class="form-control" > 
+  </div>
+  
+  &nbsp; &nbsp;
+  <button type="submit" class="btn btn-primary " style="width: 150px; height:40px"> <i class="fas fa-search"></i> Consultar</button>
 </div>
+
     </div>
 
 
