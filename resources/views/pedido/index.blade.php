@@ -4,7 +4,7 @@
 @section('title', 'Melo Express')
 
 @section('content_header')
-    <h6 ><i class="fas fa-home"></i> Inicio / Almacen / Envíos</h6>
+    
     
 @stop
 
@@ -76,10 +76,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 </style>
-
-<div class="row">
+<div class="row" > <br></div>
+<div class="row mx-3 " style="background-color: white;">
+<h6 ><i class="fas fa-home"></i> Inicio / Almacen / Envíos</h6>
+<div class="row " style="background-color: white;">
     <hr>
-<div class="  col-sm-6">
+<div class="  col-sm-6" >
 <h3>Envíos del día</h3>
 </div>
 <div class="col-sm-6">
@@ -88,7 +90,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 <hr>
 </div>
 
-<div class="row">
+<div class="row" style="background-color: white;">
 
 <div class="col-sm-3 ">
 <form action="/pedido/filtrar" method="GET" >
@@ -116,7 +118,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 </div>
-
+<div class="row" style="background-color: white;">
 
 <br>
 <table id="tpedido" class="table shadow-lg mt-4 responsive">
@@ -195,6 +197,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 </tbody>
 </table>
 
+
+</div>
+
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" defer></script>
