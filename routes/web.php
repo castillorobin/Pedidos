@@ -53,6 +53,8 @@ Route::get('pedido/guardar', [App\Http\Controllers\PedidoController::class, 'gua
 
 Route::get('pedido/desdeenvio', [App\Http\Controllers\PedidoController::class, 'desdeenvio'] )->name('desdeenvio') ;
 
+Route::get('pedido/filtrar', [App\Http\Controllers\PedidoController::class, 'filtrar'] )->name('filtrar') ;
+
 Route::get('recolecta/guardar', [App\Http\Controllers\RecolectaController::class, 'guardar'] )->name('guardar') ;
  
 Route::get('comercio/guardar', [App\Http\Controllers\VendedorController::class, 'guardar'] )->name('guardar') ;

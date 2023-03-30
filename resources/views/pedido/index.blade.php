@@ -69,13 +69,29 @@ ul li ul:hover {
 <div class="  col-sm-6">
 <h3>Envíos del día</h3>
 </div>
-<div class="  col-sm-6">
+<div class="col-sm-6">
 <a href="/pedidos/create" class="btn btn-primary float-right" ><i class="fas fa-database"></i> Agregar Envio</a>
 </div>
 <hr>
 </div>
 
- 
+<div class="row">
+
+<div class="col-sm-1">
+Filtrar por dia: 
+</div>
+<div class="col-sm-1">
+<form action="/pedido/filtrar" method="GET" >
+@csrf
+    @method('GET')
+<input type="date" name="filtrodia" id="filtrodia" style="width: 150px;"> 
+</div>
+<div class="col-sm-2 ">
+    <button type="submit" class="btn btn-primary " > <i class="fas fa-search"></i> Consultar</button>
+</form>
+
+</div>
+</div>
 
 
 <br>
