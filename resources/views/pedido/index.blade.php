@@ -61,6 +61,18 @@ ul li ul:hover {
      
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
 
 </style>
 
@@ -77,20 +89,26 @@ ul li ul:hover {
 
 <div class="row">
 
-<div class="col-sm-1">
-Filtrar por dia: 
-</div>
-<div class="col-sm-1">
+<div class="col-sm-3 ">
 <form action="/pedido/filtrar" method="GET" >
 @csrf
     @method('GET')
-<input type="date" name="filtrodia" id="filtrodia" style="width: 150px;"> 
+<label for="" class="col-sm-6 col-form-label">Filtrar por dia:</label>
+<div class="input-group mb-3">
+
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
+  </div>
+  <input type="date" name="filtrodia" id="filtrodia" style="width: 100px; "  class="form-control" > 
+  <button type="submit" class="btn btn-primary " style="width: 150px;"> <i class="fas fa-search"></i> Consultar</button>
 </div>
-<div class="col-sm-2 ">
-    <button type="submit" class="btn btn-primary " > <i class="fas fa-search"></i> Consultar</button>
+    </div>
+
+
+
 </form>
 
-</div>
+
 </div>
 
 
