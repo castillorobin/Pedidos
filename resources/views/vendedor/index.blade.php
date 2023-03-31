@@ -7,7 +7,7 @@
 <h5 ><i class="fas fa-home"></i> Inicio / Almacen / Comercios</h5>
     
 @stop
- 
+  
 @section('content')
 <style>
     .dropdown-menu-center {
@@ -29,6 +29,36 @@
      
 }
 
+.opciones li {
+ display: block;
+ transition-duration: 0.5s;
+text-align: left;
+ 
+}
+
+.opciones li:hover {
+  cursor: pointer;
+  background:#b2b2b2;
+}
+
+.opciones ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+  
+}
+
+.opciones ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  
+}
 
 </style>
 
@@ -73,21 +103,44 @@
     <td>{{ $vendedor->estado }}</td>
     <td>{{  date("d/m/Y", strtotime($vendedor->created_at))  }}</td>
     <td>{{ $vendedor->tipovende }}</td>
-    <td style="text-align:center;">
+    <td class="opciones">
     
-    <div class="container text-center" id="cssmenu">
-  
-  <div class="dropdown text-center">
-    
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-    <i class="fas fa-stream"></i></a>
-    <ul class="dropdown-menu dropdown-menu-center text-center">
-    <li><a href="#"><i class="fas fa-pencil-alt"  style="position:absolute; left: 30px; top: 4px;" ></i> Editar</a></li>
-	<li><a href="#"><i class="fas fa-eye" style="position:absolute; left: 30px; top: 4px;"></i> Ver</a></li>
-    <li><a href="#"><i class="fas fa-trash-alt" style="position:absolute; left: 30px; top: 4px;"></i> Eliminar</a></li>
+   
+   
+ 
+    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+
+    <i class="fas fa-list"></i></a>
+    <ul class="dropdown-menu">
+     <div class="botones"> 
+    <li class="botones">
+    &nbsp;
+    <i class="fas fa-edit"></i>
+    &nbsp;&nbsp;
+    <a href="/vendedores/{{ $vendedor->id }}/edit" ><button>Editar</button></a></li> 
+    </div>  
+	<li class="botones">
+    <form action="" method="POST">
+    @csrf
+    @method('GET')
+    &nbsp;
+    <i class="fas fa-eye"></i>
+    &nbsp;&nbsp;
+    <button>Ver</button>
+</form>
+</li>
+<li class="botones">
+    <form action="" method="POST">
+        @csrf
+        @method('DELETE')
+        &nbsp;
+        <i class="fas fa-trash-alt"></i> 
+        &nbsp;&nbsp;
+        <button >Eliminar</button>
+        </form>
+        </li>
     </ul>
-  </div>
-</div>
+ 
    
         
     </td>

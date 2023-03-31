@@ -9,11 +9,55 @@
 
 @section('content')
 
-<h2>Editar Comercio</h2>
+    
+    <form action="/vendedores/{{$vendedor->id}}" method="POST">
+    @csrf
+    @method('PUT')   
+    
+   
+    <div class="row mx-5" >
+    <h3>Editar envio</h3>
+      <div class="alert alert-danger" role="alert">
+      <i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
+      </div>
+    </div>
+  <br>
 
-<form action="/vendedores/{{$vendedor->id}}" method="POST">
-@csrf
-    @method('PUT')
+
+
+  <div class="row mx-5" >
+    <h4>Datos del Comercio</h4>
+    </div>
+
+    <div class="row border mx-5 py-4" style="background-color: white;" >
+    <div class="row">
+
+    <div class="row">
+
+
+<div class="col-sm-4">
+<label for="" class="col-sm-6 col-form-label">ID Comercio</label>
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+  <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/fluency-systems-regular/48/null/checked-identification-documents.png" width="25" /></span>
+</div>
+<input type="text" class="form-control" placeholder="{{ $uid }}" aria-label="Username" aria-describedby="basic-addon1" disabled>
+</div>
+</div>
+
+
+
+</div><!-- termina fila  -->
+
+
+
+
+
+
+
+
+
     <div class="mb-3 col-6" >
         <label for="" class="form-label">Nombre</label>
         <input type="text" id="nombre" name="nombre" class="form-control" tabindex="1"  value=" {{$vendedor->nombre }} ">
@@ -26,7 +70,7 @@
         <label for="" class="form-label">Telefono</label>
         <input type="text" id="tele" name="tele" class="form-control" tabindex="3" value=" {{$vendedor->telefono }} ">
     </div>
-
+ 
     <div class="mb-3 col-3">
         <label for="" class="form-label">Fecha de ingreso</label>
         <input type="text" id="fech" name="fech" class="form-control" tabindex="4" value=" {{$vendedor->fecha_ingreso }} ">

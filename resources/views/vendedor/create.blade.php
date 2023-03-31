@@ -362,7 +362,7 @@ function myFunction() {
 
 <div class="row">
 
-<div class="col-sm-4">
+<div class="col-sm-4"> 
 <label for="" class="col-sm-8 col-form-label">Número de (DUI)</label>
 <div class="input-group mb-3">
 

@@ -77,49 +77,115 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 </style>
 <div class="row" > <br></div>
-<div class="row mx-3 " style="background-color: white;">
-<h6 ><i class="fas fa-home"></i> Inicio / Almacen / Envíos</h6>
-<div class="row " style="background-color: white;">
+    <div class="row mx-3 " style="background-color: white;">
+    <h6 ><i class="fas fa-home"></i> Inicio / Almacen / Envíos</h6>
+    <div class="row " style="background-color: white;">
     <hr>
-<div class="  col-sm-6" >
-<h3>Envíos del día</h3>
-</div>
-<div class="col-sm-6">
-<a href="/pedidos/create" class="btn btn-primary float-right" ><i class="fas fa-database"></i> Agregar Envio</a>
-</div>
+        <div class="  col-sm-6" >
+        <h3>Envíos del día</h3>
+        </div>
+    <div class="col-sm-5">
+    
+    </div>
 <hr>
 </div>
 
 <div class="row" style="background-color: white;">
 
-<div class="col-sm-3 ">
-<form action="/pedido/filtrar" method="GET" >
-@csrf
-    @method('GET')
-<label for="" class="col-sm-6 col-form-label">Filtrar por dia:</label>
-<div class="input-group mb-2">
+    <div class="col-2 ">
+        <form action="/pedido/filtrar" method="GET" >
+        @csrf
+        @method('GET')
+        
+        <div class="input-group mb-2">
 
-  <div class="input-group-prepend ">
-    <span class="input-group-text" id="basic-addon1" style="height:40px ">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
-  </div>
-  <div class="input-group-prepend ">
-  <input type="date" name="filtrodia" id="filtrodia" style="width: 200px; height:40px; border-radius: 0px;"  class="form-control" > 
-  </div>
-  
+            <div class="input-group-prepend ">
+            <span class="input-group-text" id="basic-addon1" style="height:40px ">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
+            </div>
+      
+
+    <input type="date" name="filtrodia" id="filtrodia" style="width: 200px; height:40px; border-radius: 0px;"  class="form-control" > 
+        </div>
+    </div>
   &nbsp; &nbsp;
-  <button type="submit" class="btn btn-primary " style="width: 150px; height:40px"> <i class="fas fa-search"></i> Consultar</button>
-</div>
 
+  <div class="col-2 ">
+        <form action="/pedido/filtrar" method="GET" >
+        @csrf
+        @method('GET')
+        
+        <div class="input-group mb-2">
+
+            <div class="input-group-prepend ">
+            <span class="input-group-text" id="basic-addon1" style="height:40px "> <i class="fas fa-route"></i></span>
+            </div>
+      
+
+    <input type="text" name="route" id="route" style="width: 200px; height:40px; border-radius: 0px;"  class="form-control" > 
+        </div>
     </div>
 
 
 
-</form>
+
+    <div class="col-3">
+        <button type="submit" class="btn btn-primary " style="width: 150px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i> Consultar</button>      
+    </div>
+
+    
+    <div class="col-4 d-flex justify-content-end">
+    
+    <div class="opciones ">
+     
+    <a href="" class="dropdown-toggle btn btn-primary" data-toggle="dropdown" style="border-radius: 5px;">
+
+<i class="fas fa-list"></i>&nbsp;Opciones</a>
+<ul class="dropdown-menu">
+
+ <div class="botones"> 
+<li class="botones">
+&nbsp;
+<i class="fas fa-database"></i>
+&nbsp;&nbsp;
+<a href="/pedidos/create" ><button>Agregar Nuevo</button></a></li> 
+
+</div>  
+
+
+<li class="botones">
+<form action="" method="POST">
+    @csrf
+    @method('DELETE')
+    &nbsp;
+    <i class="fas fa-print"></i> 
+    &nbsp;
+    <button >Imprimir Reporte &nbsp;</button>
+    </form>
+    </li>
+</ul>
 
 
 </div>
-<div class="row" style="background-color: white;">
 
+
+
+    </div>
+  
+</div>
+
+    
+    
+
+ 
+</form>
+
+
+
+
+
+
+<div class="row" style="background-color: white;">
+<hr>
 <br>
 <table id="tpedido" class="table shadow-lg mt-4 responsive">
 <thead class="table-secondary">
@@ -226,7 +292,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
            
         },
         
-        dom: '<"cambiar" f><"cambiar2" l>trip',
+        dom: '<"cambiar" f>p<"cambiar2" l>trip',
         responsive: true
 
        

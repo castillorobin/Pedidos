@@ -9,7 +9,7 @@
 
 @section('content')
 
-
+ 
 <form action="/pedidos/{{$pedido->id}}" method="POST">
     @csrf
     @method('PUT')

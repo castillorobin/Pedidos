@@ -82,7 +82,7 @@ class VendedorController extends Controller
         return view('vendedor.index')->with(['vendedores'=>$vendedores, 'date'=>$date]);
     }
     public function guardar(Request $request)
-    { 
+    {  
         $vendedor = new Vendedor();
         $vendedor->nombre = $request->get('nombre');
         $vendedor->direccion = $request->get('direccion');
@@ -140,7 +140,10 @@ class VendedorController extends Controller
     public function edit($id)
     {
         $vendedor = Vendedor::find($id);
-        return view('vendedor.edit')->with('vendedor', $vendedor);
+
+        $lastid = Vendedor::latest('id')->first();
+        $uid= $lastid->id + 1;
+        return view('vendedor.edit')->with(['vendedor'=>$vendedor , 'uid'=>$uid]);
     }
 
     /**
