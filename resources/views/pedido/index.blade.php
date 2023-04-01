@@ -140,9 +140,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
   <div class="col-2 p-0">
-        <form action="/pedido/filtrar" method="GET" >
-        @csrf
-        @method('GET')
+      
         
         <div class="input-group mb-2">
 
@@ -150,8 +148,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             <span class="input-group-text" id="basic-addon1" style="height:40px "> <i class="fas fa-route"></i></span>
             </div>
       
-
-    <input type="text" name="route" id="route" style="width: 200px; height:40px; border-radius: 0px;"  class="form-control" > 
+            <select id="route" name="route" class="form-control">
+            <option value="seleccionar">Seleccionar ruta</option>
+       <option value="Ruta 1">Ruta 1</option>
+       <option value="Ruta 2">Ruta 2</option>
+       <option value="Ruta 3">Ruta 3</option>
+       <option value="Ruta 4">Ruta 4</option>
+       <option value="Ruta 5">Ruta 5</option>
+       </select>
+    
         </div>
     </div>
 
@@ -161,7 +166,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     <div class="col-3">
         <button type="submit" class="btn btn-primary " style="width: 150px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i> Consultar</button>      
     </div>
-
+</form>
     
     <div class="col-5 d-flex justify-content-end">
     

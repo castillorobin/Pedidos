@@ -143,12 +143,11 @@ class PedidoController extends Controller
         $lastid = Pedido::latest('id')->first();
         $uid= $lastid->id + 1;
         $pedido = $request->get('filtrodia');
+        $rutaf = $request->get('route');
         //$Agenda = Agenda::where('nombres','like',"%$nombre%")->paginate(5); Pedido::where('tipo','like',"%$pedido%");
         
         $pedidos = Pedido::whereDate('created_at', $pedido)->get();
         //Filter::make('By Creation date', 'created_at')->filterAs('date')->format('d/m/Y')->mask('00/00/0000'),
-
-
 
         setlocale(LC_TIME, "spanish");
         $vendedores = Vendedor::all();
