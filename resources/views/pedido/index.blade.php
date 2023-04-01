@@ -49,6 +49,10 @@ ul li ul:hover {
   display: block;
   
 }
+.opciones a:link, a:visited, a:active {
+            text-decoration:none;
+            color: black;
+        }
 .cambiar {
    
     float: left;
@@ -57,16 +61,17 @@ ul li ul:hover {
 
 .cambiar2 {
    
-   float: right;
-     
+    float: right;
+    margin-right: 170px;
+    margin-bottom: 15px; 
+    margin-top: -5px; 
 }
-
+/*
 input[type="date"]::-webkit-calendar-picker-indicator {
     background: transparent;
     bottom: 0;
     color: transparent;
     cursor: pointer;
-    
     left: 0;
     position: absolute;
     right: 50px;
@@ -75,22 +80,46 @@ input[type="date"]::-webkit-calendar-picker-indicator {
    
 }
 
-</style>
-<div class="row" > <br></div>
-    <div class="row mx-3 " style="background-color: white;">
-    <h6 ><i class="fas fa-home"></i> Inicio / Almacen / Envíos</h6>
-    <div class="row " style="background-color: white;">
-    <hr>
-        <div class="  col-sm-6" >
-        <h3>Envíos del día</h3>
-        </div>
-    <div class="col-sm-5">
-    
-    </div>
-<hr>
-</div>
 
-<div class="row" style="background-color: white;">
+::-webkit-calendar-picker-indicator {
+    display: none;
+}
+*/
+.pagina1{
+    margin-bottom: 30px;
+    margin-top: -30px;
+}
+.pagina2{
+    
+    margin-bottom: -25px;
+    padding-top: 10px
+}
+.pagina3{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    
+}
+
+</style>
+<br>
+
+    <div class="row  p-0" style="background-color: white; border: 1px solid;">
+            <h8 style="font-size:14px"><i class="fas fa-home"></i> Inicio / Almacen / Envíos</h8>
+            <div class="col-12">
+        <div class="row " style="background-color: white; " >
+    <hr>
+            <div class="  col-sm-6 " style="">
+                <h3>Envíos del día</h3>
+            </div>
+            <div class="col-sm-5">
+    
+            </div>
+        </div>
+        </div>
+<hr>
+
+<div class="col-12">
+<div class="row" style="background-color: white; p-0">
 
     <div class="col-2 ">
         <form action="/pedido/filtrar" method="GET" >
@@ -105,11 +134,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       
 
     <input type="date" name="filtrodia" id="filtrodia" style="width: 200px; height:40px; border-radius: 0px;"  class="form-control" > 
+
         </div>
     </div>
-  &nbsp; &nbsp;
 
-  <div class="col-2 ">
+
+  <div class="col-2 p-0">
         <form action="/pedido/filtrar" method="GET" >
         @csrf
         @method('GET')
@@ -125,7 +155,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         </div>
     </div>
 
-
+    
 
 
     <div class="col-3">
@@ -133,11 +163,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     </div>
 
     
-    <div class="col-4 d-flex justify-content-end">
+    <div class="col-5 d-flex justify-content-end">
     
     <div class="opciones ">
      
-    <a href="" class="dropdown-toggle btn btn-primary" data-toggle="dropdown" style="border-radius: 5px;">
+    <a href="" class="dropdown-toggle btn btn-primary" data-toggle="dropdown" style="border-radius: 5px; color:white;">
 
 <i class="fas fa-list"></i>&nbsp;Opciones</a>
 <ul class="dropdown-menu">
@@ -147,7 +177,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 &nbsp;
 <i class="fas fa-database"></i>
 &nbsp;&nbsp;
-<a href="/pedidos/create" ><button>Agregar Nuevo</button></a></li> 
+<a href="/pedidos/create" >Agregar Nuevo</a></li> 
 
 </div>  
 
@@ -173,7 +203,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   
 </div>
 
-    
+</div>   
     
 
  
@@ -182,7 +212,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 
-
+<div class="col-12">
 
 <div class="row" style="background-color: white;">
 <hr>
@@ -201,6 +231,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         <th scope="col">Agencia</th>
         <th scope="col">Repartidor</th>
         <th scope="col">Ruta</th>
+        <th scope="col">Nota</th>
         <th scope="col">Opciones</th>
     </tr>
 </thead>
@@ -217,6 +248,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     <td> {{ $pedido->agencia }}</td>
     <td> {{ $pedido->repartidor }}</td>
     <td> {{ $pedido->ruta }}</td>
+    <td> {{ $pedido->nota }}</td>
     <td class="opciones">
     
     
@@ -265,7 +297,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 </div>
-
+</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
@@ -292,7 +324,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
            
         },
         
-        dom: '<"cambiar" f>p<"cambiar2" l>trip',
+        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
         responsive: true
 
        

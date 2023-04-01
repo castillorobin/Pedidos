@@ -419,7 +419,7 @@ function myFunction() {
         &nbsp; &nbsp;
         <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
       &nbsp; &nbsp;
-        <button type="submit" class="btn btn-primary">Guardar y regregar</button>
+        <button type="submit" class="btn btn-primary">Guardar y cerrar</button>
       </div>
 
 
