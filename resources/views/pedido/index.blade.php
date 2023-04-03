@@ -121,7 +121,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 <div class="col-12">
 <div class="row" style="background-color: white; p-0">
 
-    <div class="col-2 ">
+    <div class="col-3 ">
         <form action="/pedido/filtrar" method="GET" >
         @csrf
         @method('GET')
@@ -168,7 +168,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     </div>
 </form>
     
-    <div class="col-5 d-flex justify-content-end">
+<div class="col-4 d-flex justify-content-end">
     
     <div class="opciones ">
      

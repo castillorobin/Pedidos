@@ -54,6 +54,7 @@ function myFunction() {
   document.getElementById("myForm").reset();
 }
  $(document).ready(function() {
+  
    					$("#envio").change(function() {
        												 //alert($(this).val());
           const tenv = document.getElementById("cenvio").value;
@@ -65,6 +66,25 @@ function myFunction() {
             document.getElementById("total").value = preci;
           }else{
             document.getElementById("total").value = preci - envi;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+
+            $("#precio").change(function() {
+       												 //alert($(this).val());
+          const tenv2 = document.getElementById("cenvio").value;
+					const envi2 = parseFloat(document.getElementById("envio").value);						                                                    
+          const preci2 =parseFloat($(this).val()); 
+          
+          if(tenv2=="Pagado")
+          {
+            document.getElementById("total").value = preci2;
+          }else{
+            document.getElementById("total").value = preci2 - envi2;
           }
                     
 
@@ -345,7 +365,7 @@ function myFunction() {
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
     </div>
-      <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio"  >
+      <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio"  value="0">
   </div>
   </div>
 
@@ -358,7 +378,7 @@ function myFunction() {
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
 </div>
-<input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" >
+<input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" value="0">
 </div>
 </div>
 
@@ -512,6 +532,7 @@ function myFunction() {
 <p></p>
 <div class="row">
 <div class="modal-footer">
+
 
         <a href="/pedidos" class="btn btn-primary">Cancelar</a>
         &nbsp; &nbsp;

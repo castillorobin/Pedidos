@@ -416,7 +416,9 @@ function myFunction() {
 
 <div class="modal-footer px-4">
         
+<a href="/pedidos/create" class="btn btn-primary">Cerrarr</a>
         &nbsp; &nbsp;
+        
         <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
       &nbsp; &nbsp;
         <button type="submit" class="btn btn-primary">Guardar y cerrar</button>
