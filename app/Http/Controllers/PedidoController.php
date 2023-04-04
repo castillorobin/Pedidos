@@ -72,7 +72,7 @@ class PedidoController extends Controller
 
         //return view('pedido.create')->with('vendedores', $vendedores);
     }
-
+ 
     public function desdeenvio()
     {
         $lastid = Pedido::latest('id')->first();
@@ -142,22 +142,37 @@ class PedidoController extends Controller
         
         $lastid = Pedido::latest('id')->first();
         $uid= $lastid->id + 1;
-        $pedido = $request->get('filtrodia');
+        $pedidofe = $request->get('filtrodia');
+        $pedido = date("Y/m/d", strtotime($pedidofe));
         $rutaf = $request->get('route');
         //$Agenda = Agenda::where('nombres','like',"%$nombre%")->paginate(5); Pedido::where('tipo','like',"%$pedido%");
-        
-        $pedidos = Pedido::whereDate('created_at', $pedido)->get();
+        //
+        //$pedidos = Pedido::whereDate('created_at', $pedido)->get();
+
+     //   $results = User::where($matchThese)
+ //   ->orWhere($orThose)
+ //   ->get();
+        if ($rutaf == 'seleccionar'){
+            $pedidos = Pedido::whereDate('created_at', $pedido)->get();
+        }elseif($pedido == '1970/01/01'){
+            $pedidos = Pedido::where('ruta', $rutaf)->get();
+        }else{
+            $pedidos = Pedido::whereDate('created_at', $pedido)->where('ruta', $rutaf)->get();
+        }
+
+        //$pedidos = Pedido::where('ruta', $rutaf)->get();
+
         //Filter::make('By Creation date', 'created_at')->filterAs('date')->format('d/m/Y')->mask('00/00/0000'),
 
-        setlocale(LC_TIME, "spanish");
+        //setlocale(LC_TIME, "spanish");
         $vendedores = Vendedor::all();
         $tipos = Tipo::all();
         $rutas = Ruta::all();
         $estados = Estado::all();
         $repartidores = Repartidor::all();
-        $date = Carbon::today();
+        $date = $pedido;
         //$date = $date->format('l jS F Y');
-        $date = strftime("%A %d de %B %Y");
+        //$date = strftime("%A %d de %B %Y");
         //return view('pedido.index')->with('pedidos', $pedidos);
 
         return view('pedido.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);

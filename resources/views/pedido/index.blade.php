@@ -100,6 +100,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     
 }
 
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+        display: block;
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+    }
+
+
+
 </style>
 <br>
 
@@ -148,7 +165,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             <span class="input-group-text" id="basic-addon1" style="height:40px "> <i class="fas fa-route"></i></span>
             </div>
       
-            <select id="route" name="route" class="form-control">
+            <select id="route" name="route" style="width: 200px; height:40px; border-radius: 0px;" >
             <option value="seleccionar">Seleccionar ruta</option>
        <option value="Ruta 1">Ruta 1</option>
        <option value="Ruta 2">Ruta 2</option>
@@ -165,6 +182,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
     <div class="col-3">
         <button type="submit" class="btn btn-primary " style="width: 150px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i> Consultar</button>      
+        
     </div>
 </form>
     
