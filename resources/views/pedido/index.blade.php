@@ -150,7 +150,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             </div>
       
 
-    <input type="date" name="filtrodia" id="filtrodia" style="width: 200px; height:40px; border-radius: 0px;"  class="form-control" > 
+    <input type="date" name="filtrodia" id="filtrodia" style="width: 180px; height:40px; border-radius: 0px;"  class="form-control" > 
 
         </div>
     </div>
@@ -208,7 +208,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 <li class="botones">
 
 
-<a href="/pedido/lista/{{ $pedidos }}" >
+<a href="/pedido/lista/{{ $pedidof }}/{{ $rutaf }}" >
 
     <i class="fas fa-print" style="margin-left: 10px;"></i> 
       

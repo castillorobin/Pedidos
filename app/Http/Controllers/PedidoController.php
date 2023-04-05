@@ -24,6 +24,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
+        $rutaf='seleccionar';
+        $pedidof='1970-01-01';
         $lastid = Pedido::latest('id')->first();
         $uid= $lastid->id + 1;
         $pedidos = Pedido::all();
@@ -38,7 +40,7 @@ class PedidoController extends Controller
         $date = strftime("%A %d de %B %Y");
         //return view('pedido.index')->with('pedidos', $pedidos);
 
-        return view('pedido.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+        return view('pedido.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf]);
   
     }
 
@@ -50,21 +52,27 @@ class PedidoController extends Controller
         
         return $pdf->stream();
     }
-    public function listadia($pedidos)
-    {
-       //$pedido;
-/*
-        $pedido = new Pedido();
 
-      foreach($pedidos as $pedido){
-      $pedidot = $pedido->ruta;
+    public function listadia($pedidof, $rutaf)
+    {
+    
+        
+      if ($rutaf == 'seleccionar'){
+        $pedidos = Pedido::whereDate('created_at', $pedidof)->get();
+    }elseif($pedidof == '1970-01-01'){
+        $pedidos = Pedido::where('ruta', $rutaf)->get();
+    }else{
+        $pedidos = Pedido::whereDate('created_at', $pedidof)->where('ruta', $rutaf)->get();
     }
-       */
-      $pedidost = Pedido::all();
-        $pdf = PDF::loadView('pedido.lista', ['pedidost'=>$pedidost]);
+
+    $repar=$pedidos[0]->repartidor;
+    $rutat=$pedidos[0]->ruta;
+    $cuantos= count($pedidos);
+        $pdf = PDF::loadView('pedido.lista', ['pedidos'=>$pedidos, 'repar'=>$repar, 'rutat'=>$rutat, 'cuantos'=>$cuantos]);
         //return view('pedido.etiqueta')->with('pedido', $pedido);
         $pdf->setPaper('letter', 'landscape');
         return $pdf->stream();
+
     }
     /**
      * Show the form for creating a new resource.
@@ -160,7 +168,7 @@ class PedidoController extends Controller
         $lastid = Pedido::latest('id')->first();
         $uid= $lastid->id + 1;
         $pedidofe = $request->get('filtrodia');
-        $pedido = date("Y/m/d", strtotime($pedidofe));
+        $pedidof = date("Y-m-d", strtotime($pedidofe));
         $rutaf = $request->get('route');
         //$Agenda = Agenda::where('nombres','like',"%$nombre%")->paginate(5); Pedido::where('tipo','like',"%$pedido%");
         //
@@ -169,14 +177,16 @@ class PedidoController extends Controller
      //   $results = User::where($matchThese)
  //   ->orWhere($orThose)
  //   ->get();
+ 
         if ($rutaf == 'seleccionar'){
-            $pedidos = Pedido::whereDate('created_at', $pedido)->get();
-        }elseif($pedido == '1970/01/01'){
+            $pedidos = Pedido::whereDate('created_at', $pedidof)->get();
+        }elseif($pedidof == '1970-01-01'){
             $pedidos = Pedido::where('ruta', $rutaf)->get();
         }else{
-            $pedidos = Pedido::whereDate('created_at', $pedido)->where('ruta', $rutaf)->get();
+            $pedidos = Pedido::whereDate('created_at', $pedidof)->where('ruta', $rutaf)->get();
         }
 
+        //$pedidof = '1970-01-01';
         //$pedidos = Pedido::where('ruta', $rutaf)->get();
 
         //Filter::make('By Creation date', 'created_at')->filterAs('date')->format('d/m/Y')->mask('00/00/0000'),
@@ -187,12 +197,12 @@ class PedidoController extends Controller
         $rutas = Ruta::all();
         $estados = Estado::all();
         $repartidores = Repartidor::all();
-        $date = $pedido;
+        $date = $pedidof;
         //$date = $date->format('l jS F Y');
         //$date = strftime("%A %d de %B %Y");
         //return view('pedido.index')->with('pedidos', $pedidos);
 
-        return view('pedido.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+        return view('pedido.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf]);
       // return view('pedido.index', compact('pedidos'));
     }
 

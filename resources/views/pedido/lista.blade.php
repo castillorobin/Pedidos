@@ -39,26 +39,26 @@
         <td class="columna"> $</td>
     </tr>
     <tr>
-        <td class="columna"><b> Repartidor: </b> </td>
+        <td class="columna"><b> Repartidor: </b>{{ $repar }} </td>
         <td class="columna">  <b> No entregados: </b>   </td>
         <td class="columna"> $</td>
     </tr>
     <tr>
-        <td class="columna"><b> Ruta: </b>   1 </td>
+        <td class="columna"><b> Ruta: </b>   {{ $rutat }} </td>
         <td class="columna">     </td>
         <td class="columna"> $</td>
     </tr>
     <tr>
-        <td class="columna"><b> Envios: </b>   1 </td>
+        <td class="columna"><b> Envios: </b>  {{ $cuantos }}   </td>
         <td class="columna">  Total   </td>
         <td class="columna"> $</td>
     </tr>
    </table>
 
    <br>
-<table class="table table-bordered shadow-lg mt-4">
+<table class="table table-bordered shadow-lg mt-4" style='id;'>
 <thead >
-    <tr >
+    <tr style='background: #223161; color:white; font-size:14px; text-align: center;'>
         
         <th scope="col">Comercio</th>
         <th scope="col">Destinatario</th>
@@ -71,12 +71,12 @@
         <th scope="col">Repartidor</th>
         <th scope="col">Ruta</th>
         <th scope="col">Nota</th>
-        <th scope="col">Opciones</th>
+        
     </tr>
 </thead>
 <tbody>
-    @foreach($pedidost as $pedido)
-    <tr >
+    @foreach($pedidos as $pedido)
+    <tr style='border-bottom: 1px solid;'>
     
     <td >{{ $pedido->vendedor }}</td>
     <td >{{ $pedido->destinatario }}</td>
@@ -88,7 +88,9 @@
     <td> {{ $pedido->repartidor }}</td>
     <td> {{ $pedido->ruta }}</td>
     <td> {{ $pedido->nota }}</td>
+    
 </tr>
+
     @endforeach
 </tbody>
 </table>
