@@ -165,7 +165,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             <span class="input-group-text" id="basic-addon1" style="height:40px "> <i class="fas fa-route"></i></span>
             </div>
       
-            <select id="route" name="route" style="width: 200px; height:40px; border-radius: 0px;" >
+            <select id="route" name="route" style="width: 170px; height:40px; border-radius: 0px;" >
             <option value="seleccionar">Seleccionar ruta</option>
        <option value="Ruta 1">Ruta 1</option>
        <option value="Ruta 2">Ruta 2</option>
