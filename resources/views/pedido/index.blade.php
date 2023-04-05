@@ -206,14 +206,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 <li class="botones">
-<form action="" method="POST">
-    @csrf
-    @method('DELETE')
-    &nbsp;
-    <i class="fas fa-print"></i> 
-    &nbsp;
-    <button >Imprimir Reporte &nbsp;</button>
-    </form>
+
+
+<a href="/pedido/lista/{{ $pedidos }}" >
+
+    <i class="fas fa-print" style="margin-left: 10px;"></i> 
+      
+<button style="padding: 0px;">Imprimir Reporte</button></a></li> 
+
+
     </li>
 </ul>
 
@@ -240,8 +241,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 <div class="row" style="background-color: white;">
 <hr>
 <br>
-<table id="tpedido" class="table shadow-lg mt-4 responsive">
-<thead class="table-secondary">
+<table id="tpedido" class="table table-bordered shadow-lg mt-4">
+<thead >
     <tr >
         
         <th scope="col">Comercio</th>

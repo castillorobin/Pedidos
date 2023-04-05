@@ -74,7 +74,7 @@ ul li ul:hover {
 <hr>
 </div>
 
-
+ 
 
 <br>
 <table id="tvendedor" class="table table-bordered shadow-lg mt-4">

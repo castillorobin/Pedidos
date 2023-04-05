@@ -47,6 +47,23 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
         $pdf = PDF::loadView('pedido.etiqueta', ['pedido'=>$pedido]);
         //return view('pedido.etiqueta')->with('pedido', $pedido);
+        
+        return $pdf->stream();
+    }
+    public function listadia($pedidos)
+    {
+       //$pedido;
+/*
+        $pedido = new Pedido();
+
+      foreach($pedidos as $pedido){
+      $pedidot = $pedido->ruta;
+    }
+       */
+      $pedidost = Pedido::all();
+        $pdf = PDF::loadView('pedido.lista', ['pedidost'=>$pedidost]);
+        //return view('pedido.etiqueta')->with('pedido', $pedido);
+        $pdf->setPaper('letter', 'landscape');
         return $pdf->stream();
     }
     /**
