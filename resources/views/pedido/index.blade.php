@@ -20,6 +20,7 @@
 }
 */
 .opciones li {
+    margin-right: 45px;
  display: block;
  transition-duration: 0.5s;
 text-align: left;
@@ -212,7 +213,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
     <i class="fas fa-print" style="margin-left: 10px;"></i> 
       
-<button style="padding: 0px;">Imprimir Reporte</button></a></li> 
+<button style="padding: 0px;">&nbsp; Imprimir Reporte</button></a></li> 
 
 
     </li>
