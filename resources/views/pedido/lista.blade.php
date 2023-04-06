@@ -17,6 +17,9 @@
 .columna{
     width:350px;
 }
+.columna2{
+    width:150px;
+}
 
     </style>
 </head>
@@ -30,31 +33,34 @@
    </div>
    <hr>
 <p></p>
-   <table>
+   <table >
     <tr>
-        <td class="columna"><b> Caja: </b>   1 </td>
-        <td class="columna">  <b> Entregados: </b> {{ $numentre }}   </td>
-        <td class="columna"> $ {{ $totalentre }}</td>
+        <td class="columna" ><b> Caja: </b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1  </td>
+   
+        <td class="columna">  <b> Entregados: </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{ $numentre }}   </td>
+        <td class="columna2"> $ {{ $totalentre }}</td>
     </tr>
     <tr>
-        <td class="columna"><b> Usuario: </b>   1 </td>
+        <td class="columna"><b> Usuario: </b> &nbsp;&nbsp; &nbsp; &nbsp; 1 </td>
         <td class="columna">  <b> Reprogramados: </b>  {{ $numrepro }} </td>
-        <td class="columna"> $ {{ $totalrepro }}</td>
+        <td class="columna2"> $ {{ $totalrepro }}</td>
     </tr>
     <tr>
         <td class="columna"><b> Repartidor: </b>{{ $repar }} </td>
-        <td class="columna">  <b> No entregados: </b>  0 </td>
-        <td class="columna"> $0</td>
+        <td class="columna">  <b> No entregados: </b> &nbsp; &nbsp;0 </td>
+        <td class="columna2"> $0 
+            
+        </td>
     </tr>
     <tr>
-        <td class="columna"><b> Ruta: </b>   {{ $rutat }} </td>
+        <td class="columna"><b> Ruta: </b>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{ $rutat }} </td>
         <td class="columna">     </td>
-        <td class="columna"> </td>
+        <td style="border-top: 1px solid;"> </td>
     </tr>
     <tr>
-        <td class="columna"><b> Envios: </b>  {{ $cuantos }}   </td>
+        <td class="columna"><b> Envios: </b> &nbsp; &nbsp; &nbsp; &nbsp; {{ $cuantos }}   </td>
         <td class="columna">  Total   </td>
-        <td class="columna"> $ {{ $totalentre - $totalrepro}}</td>
+        <td class="columna2"> $ {{ $totalentre - $totalrepro}}</td>
     </tr>
    </table>
 
