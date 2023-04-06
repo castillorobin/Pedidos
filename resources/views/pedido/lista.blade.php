@@ -30,28 +30,28 @@
    <table>
     <tr>
         <td class="columna"><b> Caja: </b>   1 </td>
-        <td class="columna">  <b> Entregados: </b>   </td>
-        <td class="columna"> $</td>
+        <td class="columna">  <b> Entregados: </b> {{ $numentre }}   </td>
+        <td class="columna"> $ {{ $totalentre }}</td>
     </tr>
     <tr>
         <td class="columna"><b> Usuario: </b>   1 </td>
-        <td class="columna">  <b> Reprogramados: </b>   </td>
-        <td class="columna"> $</td>
+        <td class="columna">  <b> Reprogramados: </b>  {{ $numrepro }} </td>
+        <td class="columna"> $ {{ $totalrepro }}</td>
     </tr>
     <tr>
         <td class="columna"><b> Repartidor: </b>{{ $repar }} </td>
-        <td class="columna">  <b> No entregados: </b>   </td>
-        <td class="columna"> $</td>
+        <td class="columna">  <b> No entregados: </b>  0 </td>
+        <td class="columna"> $0</td>
     </tr>
     <tr>
         <td class="columna"><b> Ruta: </b>   {{ $rutat }} </td>
         <td class="columna">     </td>
-        <td class="columna"> $</td>
+        <td class="columna"> </td>
     </tr>
     <tr>
         <td class="columna"><b> Envios: </b>  {{ $cuantos }}   </td>
         <td class="columna">  Total   </td>
-        <td class="columna"> $</td>
+        <td class="columna"> $ {{ $totalentre - $totalrepro}}</td>
     </tr>
    </table>
 

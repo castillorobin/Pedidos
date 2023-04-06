@@ -68,7 +68,22 @@ class PedidoController extends Controller
     $repar=$pedidos[0]->repartidor;
     $rutat=$pedidos[0]->ruta;
     $cuantos= count($pedidos);
-        $pdf = PDF::loadView('pedido.lista', ['pedidos'=>$pedidos, 'repar'=>$repar, 'rutat'=>$rutat, 'cuantos'=>$cuantos]);
+    $totalentre=0;
+    $numentre=0;
+    $totalrepro=0;
+    $numrepro=0;
+    foreach($pedidos as $pedido){
+        if($pedido->estado == 'Entregado'){
+            $totalentre = $totalentre + $pedido->precio;
+            $numentre = $numentre + 1;
+        }
+        if($pedido->estado == 'Reprogramado'){
+            $totalrepro = $totalrepro + $pedido->precio;
+            $numrepro = $numrepro + 1;
+        }
+    }
+
+        $pdf = PDF::loadView('pedido.lista', ['pedidos'=>$pedidos, 'repar'=>$repar, 'rutat'=>$rutat, 'cuantos'=>$cuantos, 'totalentre'=>$totalentre, 'numentre'=>$numentre, 'totalrepro'=>$totalrepro, 'numrepro'=>$numrepro]);
         //return view('pedido.etiqueta')->with('pedido', $pedido);
         $pdf->setPaper('letter', 'landscape');
         return $pdf->stream();
