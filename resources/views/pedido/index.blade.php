@@ -213,7 +213,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 &nbsp;
     <i class="fas fa-print" style="margin-left: 10px;"></i> 
       
-<button style="padding: 0px;">Imprimir Reporte &nbsp;</button></a></li> 
+<button style="padding: 0px;">Imprimir Reporte &nbsp; &nbsp;</button></a></li> 
 
 
     </li>
