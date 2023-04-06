@@ -18,10 +18,7 @@
 .columna{
     width:350px;
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-body {
-  font-family: 'Roboto', sans-serif;
-}
+
     </style>
 </head>
 
@@ -65,7 +62,7 @@ body {
    <br>
 <table class="table table-bordered shadow-lg mt-4" style='id;'>
 <thead >
-    <tr style='background: #223161; color:white; font-size:14px; text-align: center;'>
+    <tr style='background: #223161; color:white; font-size:13px; text-align: center;'>
         
         <th scope="col">Comercio</th>
         <th scope="col">Destinatario</th>
