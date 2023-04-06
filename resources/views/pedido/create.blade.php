@@ -263,7 +263,7 @@ function myFunction() {
   <select id="servicio" name="servicio" class="form-control" tabindex="4">
      
        <option value="Entrega">Entrega</option>
-       <option value="Entrega y recoelcta">Entrega y recoelcta</option>
+       <option value="Entrega y recolecta">Entrega y recolecta</option>
   
        </select>
 </div>

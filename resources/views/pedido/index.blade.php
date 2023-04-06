@@ -63,7 +63,7 @@ ul li ul:hover {
 .cambiar2 {
    
     float: right;
-    margin-right: 170px;
+    margin-right: 400px;
     margin-bottom: 15px; 
     margin-top: -5px; 
 }
@@ -326,14 +326,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" defer></script>
+
 
 
 	
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" defer></script>
-<script src="https://cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js" defer></script>
+<script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js" defer></script>
+
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js" ></script>
+
 
 
 

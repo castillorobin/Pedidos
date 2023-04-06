@@ -17,25 +17,29 @@
 
 
 <form action="/pedidos/{{$pedido->id}}" >
-    
-   
-<div class="row mx-5" style="background:#a8a8a8">
+
+<div class="row mx-5 mb-5" style="font-size:20px; background: white; border: 1px solid; ">
+   <div class="col-12" style="background:#d5d5d5">
+<div class="row mx-5" >
     <h3>Detalle del envio</h3>
       
     </div>
+    </div>
   <br>
+  <div class="col-12">
 
 
-
-<div class="row mx-5" style="font-size:20px;"> <!--  Inicia el row general  -->
-
+<div class="row mx-5" style="font-size:20px; background: white;"> <!--  Inicia el row general  -->
+<br>
 <div class="col-6"> <!--  Inicia la primera columna  -->
 
 <div class="row" >
     <div class="col-4"  >
+        <br>
         <label for="inputEmail3" class="">Id de envio</label>
     </div>
     <div class="col-6">
+    <br>
         <label for="inputEmail3" class="datos" >{{$pedido->id}}</label>
     </div>
 </div>
@@ -242,10 +246,10 @@
         </div>
 
 <br><p></p>
-
+</div>
 </div> <!--  Termina el row general  -->
 
-
+</div>
 
 </form>
 

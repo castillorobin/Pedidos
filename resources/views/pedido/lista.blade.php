@@ -19,6 +19,7 @@
 }
 .columna2{
     width:150px;
+    text-align: center;
 }
 
     </style>
@@ -48,7 +49,7 @@
     <tr>
         <td class="columna"><b> Repartidor: </b>{{ $repar }} </td>
         <td class="columna">  <b> No entregados: </b> &nbsp; &nbsp;0 </td>
-        <td class="columna2"> $0 
+        <td class="columna2">$ 0 
             
         </td>
     </tr>
