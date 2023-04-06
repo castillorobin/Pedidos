@@ -210,8 +210,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 <a href="/pedido/lista/{{ $pedidof }}/{{ $rutaf }}" >
-
-    <i class="fas fa-print" style="margin-left: 20px;"></i> 
+&nbsp;
+    <i class="fas fa-print" style="margin-left: 10px;"></i> 
       
 <button style="padding: 0px;">Imprimir Reporte</button></a></li> 
 
