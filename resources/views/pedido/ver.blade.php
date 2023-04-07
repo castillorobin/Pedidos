@@ -231,7 +231,7 @@
 
 <div class="col-6"> <!--  Inicia la segunda columna  -->
 
-
+<img src="/imgs/fotos/{{$pedido->foto}}" alt="" width="100%">
 
 </div> <!--  Fin de la segunda columna  -->
 <div class="row">

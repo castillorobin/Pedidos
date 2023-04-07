@@ -12,7 +12,7 @@ use App\Models\Tipo;
 use App\Models\Ruta;
 use App\Models\Estado;
 use App\Models\Repartidor;
- 
+use Illuminate\Support\Str;
 use PDF; 
 
 class PedidoController extends Controller
@@ -142,6 +142,8 @@ class PedidoController extends Controller
     {
         $lastid = Pedido::latest('id')->first();
         $uid= $lastid->id + 1;
+        $rutaf='seleccionar';
+        $pedidof='1970-01-01';
         $pedido = new Pedido();
         
         $pedido->vendedor = $request->get('comer');
@@ -162,6 +164,19 @@ class PedidoController extends Controller
         $pedido->repartidor = $request->get('repartidor');
         $pedido->ruta = $request->get('ruta');
         //$pedidos->foto = $request->get('foto');
+
+        if($request->hasFile('foto')){
+            
+            $imagen = $request->file("foto");
+            $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+            $pedido->foto = $nombreimagen;
+            $ruta = public_path("imgs/fotos/");
+            $imagen->move($ruta,$nombreimagen);
+
+        }
+
+
+
         $pedido->save();
   
         setlocale(LC_TIME, "spanish");
@@ -171,7 +186,7 @@ class PedidoController extends Controller
         $vendedores = Vendedor::all();
         $repartidores = Repartidor::all();
         $pedidos = Pedido::all();
-        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf]);
        //return redirect('/pedido/etiqueta')->with('id', $pedidos->id);
 
     }

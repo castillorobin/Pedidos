@@ -151,7 +151,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             </div>
       
 
-    <input type="date" name="filtrodia" id="filtrodia" style="width: 180px; height:40px; border-radius: 0px;"  class="form-control" > 
+    <input type="text" onfocus="(this.type='date')" name="filtrodia" id="filtrodia" style="width: 180px; height:40px; border-radius: 0px;"  class="form-control" placeholder="Seleccionar fecha"> 
 
         </div>
     </div>
