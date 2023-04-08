@@ -174,6 +174,15 @@ class PedidoController extends Controller
             $imagen->move($ruta,$nombreimagen);
 
         }
+        if($request->hasFile('foto2')){
+            
+            $imagen = $request->file("foto2");
+            $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+            $pedido->foto2 = $nombreimagen;
+            $ruta = public_path("imgs/fotos/");
+            $imagen->move($ruta,$nombreimagen);
+
+        }
 
 
 

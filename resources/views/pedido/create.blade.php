@@ -520,10 +520,13 @@ function myFunction() {
 <div class="row">
   
 
-    <label for="inputEmail3" class="col-sm-12 col-form-label">Foto del paquete</label>
+    <label for="inputEmail3" class="col-sm-12 col-form-label">Fotos del paquete</label>
 
-    <div class="col-sm-12">
+    <div class="col-sm-6">
     <input type="file" name="foto" class="form-control" >
+    </div>
+    <div class="col-sm-6">
+    <input type="file" name="foto2" class="form-control" >
     </div>
     
     <br>
