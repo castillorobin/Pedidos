@@ -443,7 +443,7 @@
 <div class="row">
 <div class="modal-footer">
         
-     
+<button type="submit" class="btn btn-primary">Cerrar</button> &nbsp; &nbsp;
         <button type="submit" class="btn btn-primary">Editar</button>
         </div>
 

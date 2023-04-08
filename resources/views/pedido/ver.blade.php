@@ -318,9 +318,7 @@
 <br> <p></p>
 <img id="myImg2" src="/imgs/fotos/{{$pedido->foto2}}"  style="width:100%;max-width:300px">
 <br><p></p>
-<img id="myImg3" src="/imgs/fotos/{{$pedido->foto3}}"  style="width:100%;max-width:300px">
-<br><p></p>
-<img id="myImg4" src="/imgs/fotos/{{$pedido->foto4}}"  style="width:100%;max-width:300px">
+
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
