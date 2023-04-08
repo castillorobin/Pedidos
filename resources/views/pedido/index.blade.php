@@ -63,9 +63,10 @@ ul li ul:hover {
 .cambiar2 {
    
     float: right;
-    margin-right: 400px;
+    margin-right: 300px;
     margin-bottom: 15px; 
-    margin-top: -5px; 
+    margin-top: -15px; 
+    
 }
 /*
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -207,21 +208,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 <li class="botones">
-
-
-<a href="/pedido/lista/{{ $pedidof }}/{{ $rutaf }}" >
 &nbsp;
-    <i class="fas fa-print" style="margin-left: 10px;"></i> 
-      
-<button style="padding: 0px; margin-right: 10px;">Imprimir Reporte &nbsp; &nbsp;</button></a></li> 
+<i class="fas fa-print" ></i> 
+
+<a href="/pedido/lista/{{ $pedidof }}/{{ $rutaf }}" >Imprimir Reporte</a></li> 
 
 
     </li>
-</ul>
+
 
 
 </div>
-
+</ul>
 
 
     </div>
@@ -274,7 +272,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     <td> {{ $pedido->repartidor }}</td>
     <td> {{ $pedido->ruta }}</td>
     <td> {{ $pedido->nota }}</td>
-    <td class="opciones">
+    <td class="opciones text-center" style="">
     
     
   
