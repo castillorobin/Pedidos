@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 @stop
@@ -16,6 +16,7 @@
 @section('content')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 body {
   font-family: 'Roboto', sans-serif;
@@ -102,7 +103,7 @@ function myFunction() {
 
 
 
-<form action="/pedidos" method="POST" id="myForm" enctype="multipart/form-data">
+<form action="/pedidos" method="POST" id="myForm" enctype="multipart/form-data"  class="was-validated">
     @csrf
 
        
@@ -150,14 +151,14 @@ function myFunction() {
 
 
      
-    <select id="comer" name="comer" class="form-control js-example-basic-single" data-placeholder="Please select...">
+    <select id="comer" name="comer" class="form-control js-example-basic-single" data-placeholder="Please select..." required>
        <option >-Seleccionar comercio-</option>
        
         @foreach($vendedores as $vendedor)
        <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
        @endforeach
        </select>
-                                        
+       <div class="invalid-feedback">Este dato es obligatorio.</div>                            
     </div>
     <div class="col-2 pt-4" style="display: flex; align-items: center; ">
     <a href="/pedido/desdeenvio">+ Crear</a>
@@ -178,7 +179,8 @@ function myFunction() {
     <div class="row">
     <div class="col-sm-6 ">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Destinatario *</label>
-    <input type="text" id="desti" name="desti" class="form-control" tabindex="1" placeholder="Ingrese el nombre del destinatario">
+    <input type="text" id="desti" name="desti" class="form-control" tabindex="1" placeholder="Ingrese el nombre del destinatario" required>
+    <div class="invalid-feedback">Este dato es obligatorio.</div>
     </div>
     
     <div class="col-sm-6">
@@ -237,7 +239,8 @@ function myFunction() {
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
   </div>
-  <input type="date" id="fentrega" name="fentrega" tabindex="4" class="form-control" placeholder="ENTREGA" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="date" id="fentrega" name="fentrega" tabindex="4" class="form-control" placeholder="ENTREGA" aria-label="Username" aria-describedby="basic-addon1" required>
+  <div class="invalid-feedback">Este dato es obligatorio.</div>                                          
 </div>
     </div>
       </div>        
