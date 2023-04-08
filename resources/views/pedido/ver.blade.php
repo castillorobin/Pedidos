@@ -313,11 +313,6 @@
 
 <div class="col-6"> <!--  Inicia la segunda columna  -->
 
-<img src="/imgs/fotos/{{$pedido->foto}}" alt="" class="img-thumbnail" width="200px">
-<br>
-<img src="/imgs/fotos/{{$pedido->foto2}}" alt="" class="img-thumbnail" width="200px">
-
-<hr>
 <!-- Trigger the Modal -->
 <img id="myImg" src="/imgs/fotos/{{$pedido->foto}}" style="width:100%;max-width:300px">
 <img id="myImg2" src="/imgs/fotos/{{$pedido->foto2}}"  style="width:100%;max-width:300px">
