@@ -104,11 +104,11 @@ class PedidoController extends Controller
         $rutas = Ruta::all();
         $estados = Estado::all();
         $repartidores = Repartidor::all();
-        $date = Carbon::today();
+        $fecha = Carbon::today();
         //$date = $date->format('l jS F Y');
-        $date = strftime("%A %d de %B %Y");
+        $fecha = strftime("%A %d de %B %Y");
 
-        return view('pedido.create')->with(['vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+        return view('pedido.create')->with(['vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'uid'=>$uid]);
 
         //return view('pedido.create')->with('vendedores', $vendedores);
     }
