@@ -10,7 +10,7 @@
 @section('content')
 
  
-<form action="/pedidos/{{$pedido->id}}" method="POST">
+<form action="/pedidos/{{$pedido->id}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     

@@ -33,6 +33,9 @@ class CreatePedidosTable extends Migration
             $table->string('ingresado')->nullable();
             $table->string('agencia')->nullable();
             $table->string('foto')->nullable();
+            $table->string('foto2')->nullable();
+            $table->string('foto3')->nullable();
+            $table->string('foto4')->nullable();
             $table->timestamps();
         });
     } 

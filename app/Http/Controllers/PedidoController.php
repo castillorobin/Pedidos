@@ -273,8 +273,9 @@ class PedidoController extends Controller
     {
         $lastid = Pedido::latest('id')->first();
         $uid= $lastid->id + 1;
-        $pedido = Pedido::find($id) ;
-        
+        $pedido = Pedido::find($id);
+        $rutaf='seleccionar';
+        $pedidof='1970-01-01';
         $pedido->vendedor = $request->get('comer');
         $pedido->destinatario = $request->get('desti');
         $pedido->telefono = $request->get('telefono');
@@ -293,14 +294,46 @@ class PedidoController extends Controller
         $pedido->repartidor = $request->get('repartidor');
         $pedido->ruta = $request->get('ruta');
 
-        $archivo = $request->file('foto');
-        //$nombre =  $archivo->getClientOriginalName();
+      
 
-        //$pedido->foto = $request->file('foto')->getClientOriginalName() ;
-        $fileName = $archivo->getClientOriginalName();
-        $pedido->foto = $fileName;
+        if($request->hasFile('foto')){
+           
+            if($pedido->foto==''){
+                $imagen = $request->file("foto");
+            $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+            $pedido->foto = $nombreimagen;
+            $ruta = public_path("imgs/fotos/");
+            $imagen->move($ruta,$nombreimagen);
+            }elseif($pedido->foto2==''){
+                $imagen = $request->file("foto");
+                $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+                $pedido->foto2 = $nombreimagen;
+                $ruta = public_path("imgs/fotos/");
+                $imagen->move($ruta,$nombreimagen);
+            }elseif($pedido->foto3==''){
+                $imagen = $request->file("foto");
+                $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+                $pedido->foto3 = $nombreimagen;
+                $ruta = public_path("imgs/fotos/");
+                $imagen->move($ruta,$nombreimagen);
+            }elseif($pedido->foto4==''){
+                $imagen = $request->file("foto");
+                $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+                $pedido->foto4 = $nombreimagen;
+                $ruta = public_path("imgs/fotos/");
+                $imagen->move($ruta,$nombreimagen);
+            }
+            
+            
+            
+            
 
-        //$request->file('foto')->store('public');
+        }
+
+
+
+
+
         $pedido->save();
   
         setlocale(LC_TIME, "spanish");
@@ -310,7 +343,7 @@ class PedidoController extends Controller
         $vendedores = Vendedor::all();
         $repartidores = Repartidor::all();
         $pedidos = Pedido::all();
-        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf]);
        //return redirect('/pedido/etiqueta')->with('id', $pedidos->id);
 
     }
