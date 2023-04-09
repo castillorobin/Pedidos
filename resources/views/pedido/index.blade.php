@@ -126,12 +126,9 @@ input[type="date"] {
 	color: #ffffff;
 }
 input[type="date"]:focus,
-input[type="date"]:valid {
-	color: #666666;
-}
-input[type="date"]:focus::before,
-input[type="date"]:valid::before {
-	content: "" !important;
+
+input[type="date"]:focus::before{
+    
 }
 
 </style>
