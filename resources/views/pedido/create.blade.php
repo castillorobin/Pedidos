@@ -21,6 +21,36 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+        display: block;
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+    }
+
+    input[type="date"]::before {
+	color: #999999;
+	content: attr(placeholder);
+}
+input[type="date"] {
+	color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
 </style>
 
 <script>
@@ -246,7 +276,7 @@ jQuery(document).ready(function($){
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
   </div>
-  <input type="date" id="fentrega" name="fentrega" tabindex="4" class="form-control" placeholder="ENTREGA" aria-label="Username" aria-describedby="basic-addon1" required>
+  <input type="date" id="fentrega" name="fentrega" tabindex="4" class="form-control" placeholder="Seleccionar Fecha" aria-label="Username" aria-describedby="basic-addon1" required>
   <div class="invalid-feedback">Este dato es obligatorio.</div>                                          
 </div>
     </div>

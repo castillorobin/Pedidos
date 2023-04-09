@@ -118,6 +118,21 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 
 
+    input[type="date"]::before {
+	color: #999999;
+	content: attr(placeholder);
+}
+input[type="date"] {
+	color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
 
 </style>
 <br>
@@ -151,8 +166,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             <span class="input-group-text" id="basic-addon1" style="height:40px ">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
             </div>
       
-
-    <input type="text" onfocus="(this.type='date')" name="filtrodia" id="filtrodia" style="width: 180px; height:40px; border-radius: 0px;"  class="form-control" placeholder="Seleccionar fecha"> 
+            
+            <input type="date" name="filtrodia" id="filtrodia" style="width: 180px; height:40px; border-radius: 0px;" class="form-control" placeholder="Ingrese Fecha" aria-describedby="basic-addon1" > 
 
         </div>
     </div>
