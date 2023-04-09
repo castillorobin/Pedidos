@@ -351,9 +351,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
            
         },
         
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
-        responsive: true
-
+        dom: 'B<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+        responsive: true,
+     
+    
        
 
         } /*hasata aqui*/
