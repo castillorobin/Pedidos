@@ -138,7 +138,7 @@ jQuery(document).ready(function($){
 });
 </script>
 
-<form action="/pedidos" method="POST" id="myForm" enctype="multipart/form-data"  class="was-validated">
+<form action="/pedidos" method="POST" id="myForm" enctype="multipart/form-data"  class="needs-validation" novalidate>
     @csrf
 
        
@@ -173,7 +173,7 @@ jQuery(document).ready(function($){
    
     <div class="col-sm-4 text-center">
     <label for="inputEmail3" class="col-sm-8 col-form-label">Codigo de barras</label>
-    <img width="110" src="vendor/adminlte/dist/img/barra.jpg" alt="" >
+
     </div>
 
     </div>
@@ -186,7 +186,7 @@ jQuery(document).ready(function($){
 
 
      
-    <select id="comer" name="comer" class="form-control mi-selector" data-placeholder="Please select..." required>
+    <select id="comer" name="comer" class="form-control mi-selector" data-placeholder="Please select..." required style="height: 50px;">
        <option >-Seleccionar comercio-</option>
        
         @foreach($vendedores as $vendedor)
@@ -212,7 +212,7 @@ jQuery(document).ready(function($){
 
   <div class="row border mx-5 py-4" style="background-color: white;" >
     <div class="row">
-    <div class="col-sm-6 ">
+    <div class="col-sm-6 has-validation">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Destinatario *</label>
     <input type="text" id="desti" name="desti" class="form-control" tabindex="1" placeholder="Ingrese el nombre del destinatario" required>
     <div class="invalid-feedback">Este dato es obligatorio.</div>
@@ -235,8 +235,9 @@ jQuery(document).ready(function($){
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
   </div>
-  <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección de entrega del destinatario
-" aria-label="Username" aria-describedby="basic-addon1" tabindex="3">
+  <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección de entrega del destinatario" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" required>
+  <div class="invalid-feedback">Este dato es obligatorio.</div>
+    </div>
 </div>
 
 </div>
@@ -280,6 +281,7 @@ jQuery(document).ready(function($){
   <div class="invalid-feedback">Este dato es obligatorio.</div>                                          
 </div>
     </div>
+   
       </div>        
       
 
@@ -300,7 +302,7 @@ jQuery(document).ready(function($){
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/online-support.png"/></span>
   </div>
-  <select id="servicio" name="servicio" class="form-control" tabindex="4">
+  <select id="servicio" name="servicio" class="form-control" tabindex="5">
      
        <option value="Entrega">Entrega</option>
        <option value="Entrega y recolecta">Entrega y recolecta</option>
@@ -316,7 +318,7 @@ jQuery(document).ready(function($){
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/25/null/external-delivery-logistic-delivery-kiranshastry-solid-kiranshastry.png"/></span>
   </div>
-  <select id="tenvio" name="tenvio" class="form-control" tabindex="5">
+  <select id="tenvio" name="tenvio" class="form-control" tabindex="6">
       
        <option value="Personalizado">Personalizado</option>
        <option value="Personalizado departamental">Personalizado departamental</option>
@@ -340,7 +342,7 @@ jQuery(document).ready(function($){
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
 </div>
-<select id="cenvio" name="cenvio" class="form-control" tabindex="6">
+<select id="cenvio" name="cenvio" class="form-control" tabindex="7">
        <option value="Pendiente">Pendiente</option>
        <option value="Pagado">Pagado</option>
     
@@ -358,7 +360,7 @@ jQuery(document).ready(function($){
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
     </div>
-  <select id="estado" name="estado" class="form-control" tabindex="7">
+  <select id="estado" name="estado" class="form-control" tabindex="8">
       
        <option value="Creado" >Creado</option>
        <option value="En ruta">En ruta</option>
@@ -386,7 +388,7 @@ jQuery(document).ready(function($){
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cash-in-hand.png"/></span>
   </div>
-  <select id="pagado" name="pagado" class="form-control" tabindex="8">
+  <select id="pagado" name="pagado" class="form-control" tabindex="9">
        <option value="Por pagar">Por pagar</option>
        <option value="Pagado">Pagado</option>
        <option value="Trans. a la empresa">Trans. a la empresa</option>
@@ -405,7 +407,7 @@ jQuery(document).ready(function($){
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
     </div>
-      <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio"  value="0" tabindex="9">
+      <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio"  value="0" tabindex="10">
   </div>
   </div>
 
@@ -418,7 +420,7 @@ jQuery(document).ready(function($){
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
 </div>
-<input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" value="0" tabindex="10">
+<input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" value="0" tabindex="11">
 </div>
 </div>
 
@@ -459,7 +461,7 @@ jQuery(document).ready(function($){
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-itim2101-lineal-itim2101/25/null/external-operator-logistics-and-delivery-itim2101-lineal-itim2101.png"/></span>
   </div>
-  <select id="ingresado" name="ingresado" class="form-control" tabindex="11">
+  <select id="ingresado" name="ingresado" class="form-control" tabindex="12">
        
        <option value="ERICK">Erick</option>
        <option value="KAREN">Karen</option>
@@ -477,7 +479,7 @@ jQuery(document).ready(function($){
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/ios-filled/25/null/online-store.png"/></span>
   </div>
-  <select id="agencia" name="agencia" class="form-control" tabindex="12">
+  <select id="agencia" name="agencia" class="form-control" tabindex="13">
        
        <option value="San Salvador">San Salvador</option>
        <option value="San Miguel">San Miguel</option>
@@ -503,7 +505,7 @@ jQuery(document).ready(function($){
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
   </div>
-  <select id="repartidor" name="repartidor" class="form-control" tabindex="13">
+  <select id="repartidor" name="repartidor" class="form-control" tabindex="14">
        <option >-Seleccionar repartidor-</option>
        @foreach($repartidores as $repartidor)
        <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
@@ -520,7 +522,7 @@ jQuery(document).ready(function($){
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
   </div>
-  <select id="ruta" name="ruta" class="form-control" tabindex="14"> 
+  <select id="ruta" name="ruta" class="form-control" tabindex="15"> 
        <option value="Ruta 1">Ruta 1</option>
        <option value="Ruta 2">Ruta 2</option>
        <option value="Ruta 3">Ruta 3</option>
@@ -601,7 +603,28 @@ jQuery(document).ready(function($){
 <br>
 <p></p>
 
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
 
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
 
 
 

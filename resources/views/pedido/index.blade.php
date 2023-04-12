@@ -67,6 +67,7 @@ ul li ul:hover {
     margin-bottom: 15px; 
     margin-top: -15px; 
     
+    
 }
 /*
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -90,18 +91,38 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .pagina1{
     margin-bottom: 30px;
     margin-top: -30px;
+    
 }
 .pagina2{
     
     margin-bottom: -25px;
-    padding-top: 10px
+    padding-top: 10px;
+    
 }
 .pagina3{
     margin-bottom: 0px;
     margin-top: 0px;
     
 }
+.pagination{
+    
+}
+.paginate_button {
+    border-radius: solid 3px;
+}
 
+.dataTables_length select {
+    display: block;
+        background: transparent;
+       
+       
+        cursor: pointer;
+       
+        
+       
+      
+        width: auto;
+}
 
 input[type="date"]::-webkit-calendar-picker-indicator {
         display: block;
