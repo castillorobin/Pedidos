@@ -51,6 +51,11 @@ input[type="date"]:focus::before,
 input[type="date"]:valid::before {
 	content: "" !important;
 }
+
+.select2-selection{
+  height: 35px !important;
+ 
+}
 </style>
 
 <script>
@@ -186,7 +191,7 @@ jQuery(document).ready(function($){
 
 
      
-    <select id="comer" name="comer" class="form-control mi-selector" data-placeholder="Please select..." required style="height: 50px;">
+    <select id="comer" name="comer" class="form-control mi-selector" data-placeholder="Please select..." required >
        <option >-Seleccionar comercio-</option>
        
         @foreach($vendedores as $vendedor)
