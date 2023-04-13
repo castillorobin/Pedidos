@@ -146,11 +146,13 @@ input[type="date"]:focus::before{
 </style>
 <br>
 
-    <div class="row  p-0" style="background-color: white; border: 1px solid;">
+    <div class="row " style="background-color: white; border: 1px solid; ">
             <h8 style="font-size:14px"><i class="fas fa-home"></i> Inicio / Almacen / Envíos</h8>
+        
             <div class="col-12">
-        <div class="row " style="background-color: white; " >
-    <hr>
+           
+        <div class="row " style="background-color: white; border-top: 1px solid; border-top-color:#bbb5bb; " >
+        
             <div class="  col-sm-6 " style="">
                 <h3>Envíos del día</h3>
             </div>
@@ -159,10 +161,10 @@ input[type="date"]:focus::before{
             </div>
         </div>
         </div>
-<hr>
+
 
 <div class="col-12">
-<div class="row" style="background-color: white; p-0">
+<div class="row pt-2" style="background-color: white; border-top: 1px solid; border-top-color:#bbb5bb;">
 
     <div class="col-3 ">
         <form action="/pedido/filtrar" method="GET" >
@@ -261,10 +263,10 @@ input[type="date"]:focus::before{
 
 <div class="col-12">
 
-<div class="row" style="background-color: white;">
-<hr>
+<div class="row pt-2" style="background-color: white; border-top: 1px solid; border-top-color:#bbb5bb;">
+
 <br>
-<table id="tpedido" class="table table-bordered shadow-lg mt-4">
+<table id="tpedido" class="table table-bordered shadow-lg mt-4 cell-border">
 <thead >
     <tr >
         
