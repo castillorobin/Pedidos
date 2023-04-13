@@ -131,6 +131,24 @@ jQuery(document).ready(function($){
     var value = $(this).val();
     if (value.length == 0) {
       $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+});
+
+$(document).ready(function() {
+  $("select").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
     } else {
       $(this).removeClass("is-invalid");
       $(this).addClass("is-valid");
@@ -193,13 +211,14 @@ jQuery(document).ready(function($){
           <label for="" class="col-10 col-form-label">Nombre de comercio / Tienda *</label>
    
           <select id="comer" name="comer" class="form-control mi-selector" data-placeholder="Please select..." required >
-            <option >-Seleccionar comercio-</option>
+            <option value="">-Seleccionar comercio-</option>
      
             @foreach($vendedores as $vendedor)
             <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
             @endforeach
           </select>
-       
+          <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
         </div>
 
         <div class="col-2 pt-4" style="display: flex; align-items: center; ">
@@ -221,13 +240,14 @@ jQuery(document).ready(function($){
       <div class="col-sm-6 ">
       <label for="inputEmail3" class="col-sm-4 col-form-label">Destinatario *</label>
       <input type="text" id="desti" name="desti" class="form-control" tabindex="1" placeholder="Ingrese el nombre del destinatario" required>
-      <div class="invalid-feedback">Este dato es obligatorio.</div>
-      <div class="valid-feedback">Dato correcto</div>
+      <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>      
       </div>
     
       <div class="col-sm-6">
       <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono</label>
      <input type="text" id="telefono" name="telefono" class="form-control" tabindex="2" placeholder="Ingrese teléfono del destinatario">
+     <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
       </div>
 
 
@@ -244,8 +264,8 @@ jQuery(document).ready(function($){
           <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
           </div>
           <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección de entrega del destinatario" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" required>
-          <div class="invalid-feedback">Este dato es obligatorio.</div>
-          <div class="valid-feedback">Dato correcto</div>
+          <div class="invalid-feedback">Este campo es obligatorio.</div>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>      
         </div>
       </div>
 
@@ -275,6 +295,7 @@ jQuery(document).ready(function($){
           </div>
   
           <input type="text" class="form-control" placeholder="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+          
           </div>
         
         </div>
@@ -287,7 +308,8 @@ jQuery(document).ready(function($){
               <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
             </div>
               <input type="date" id="fentrega" name="fentrega" tabindex="4" class="form-control" placeholder="Seleccionar Fecha" aria-label="Username" aria-describedby="basic-addon1" required>
-            <div class="invalid-feedback">Este dato es obligatorio.</div>                                          
+              <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>                                       
           </div>
 
         </div>
@@ -358,6 +380,7 @@ jQuery(document).ready(function($){
           <option value="Pendiente">Pendiente</option>
           <option value="Pagado">Pagado</option>
           </select>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
         </div>
       </div>
 
@@ -384,6 +407,7 @@ jQuery(document).ready(function($){
             <option value="Casillero San Miguel">Casillero San Miguel</option>
             <option value="Casillero Santa Ana">Casillero Santa Ana</option>
           </select>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
         </div>
       </div>
 
@@ -400,7 +424,9 @@ jQuery(document).ready(function($){
             <option value="Pagado">Pagado</option>
             <option value="Trans. a la empresa">Trans. a la empresa</option>
             <option value="Trans. al comercio">Trans. al comercio</option>
+            
           </select>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
         </div>
       </div>
 
@@ -422,6 +448,7 @@ jQuery(document).ready(function($){
       <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
     </div>
       <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio"  value="0" tabindex="10">
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
   </div>
   </div>
 
@@ -433,6 +460,7 @@ jQuery(document).ready(function($){
       <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
     </div>
       <input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" value="0" tabindex="11">
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
       </div>
   </div>
 
@@ -477,6 +505,7 @@ jQuery(document).ready(function($){
        <option value="GABI">Gabi</option>
      
         </select>
+        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
       </div>
     </div>
     
@@ -493,6 +522,7 @@ jQuery(document).ready(function($){
           <option value="San Miguel">San Miguel</option>
           <option value="Santa Ana">Santa Ana</option>
         </select>
+        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
       </div>
     </div>
 
@@ -519,6 +549,7 @@ jQuery(document).ready(function($){
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
             @endforeach
           </select>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
         </div>
       </div>
     
@@ -536,6 +567,7 @@ jQuery(document).ready(function($){
             <option value="Ruta 4">Ruta 4</option>
             <option value="Ruta 5">Ruta 5</option>
           </select>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
         </div>
       </div>
 
@@ -553,6 +585,7 @@ jQuery(document).ready(function($){
             <span class="input-group-text" id="basic-addon1"> <i class="fas fa-file-alt"></i> </span>
           </div>
           <input type="text" id="nota" name="nota" class="form-control" placeholder="Ingresar nota" aria-describedby="basic-addon1" tabindex="15">
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
         </div>
       </div>
 
@@ -563,6 +596,7 @@ jQuery(document).ready(function($){
           <span class="input-group-text" id="basic-addon1"> <i class="fas fa-barcode"></i> </span>
         </div>
         <input type="text" id="estante" name="estante" class="form-control" placeholder="Barras" aria-label="Username" aria-describedby="basic-addon1" tabindex="16">
+        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
         </div>
       </div>
 
