@@ -154,7 +154,7 @@ input[type="date"]:focus::before{
         <div class="row " style="background-color: white; border-top: 1px solid; border-top-color:#bbb5bb; " >
         
             <div class="  col-sm-6 " style="">
-                <h3>Envíos del día</h3>
+                <h3>Reporte de envíos</h3>
             </div>
             <div class="col-sm-5">
     
