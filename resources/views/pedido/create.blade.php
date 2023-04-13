@@ -112,6 +112,7 @@ function myFunction() {
               
                                             });
   
+
   
 </script>
 
@@ -123,6 +124,26 @@ jQuery(document).ready(function($){
     });
 });
 </script>
+
+<script>
+  $(document).ready(function() {
+  $("input").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+});
+</script>
+
+
 
 <form action="/pedidos" method="POST" id="myForm" enctype="multipart/form-data" >
     @csrf
@@ -197,10 +218,11 @@ jQuery(document).ready(function($){
   <div class="col-12">
   <div class="row border mx-5 py-4" style="background-color: white;" >
     <div class="row">
-      <div class="col-sm-6 has-validation">
+      <div class="col-sm-6 ">
       <label for="inputEmail3" class="col-sm-4 col-form-label">Destinatario *</label>
       <input type="text" id="desti" name="desti" class="form-control" tabindex="1" placeholder="Ingrese el nombre del destinatario" required>
       <div class="invalid-feedback">Este dato es obligatorio.</div>
+      <div class="valid-feedback">Dato correcto</div>
       </div>
     
       <div class="col-sm-6">
@@ -223,6 +245,7 @@ jQuery(document).ready(function($){
           </div>
           <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección de entrega del destinatario" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" required>
           <div class="invalid-feedback">Este dato es obligatorio.</div>
+          <div class="valid-feedback">Dato correcto</div>
         </div>
       </div>
 
