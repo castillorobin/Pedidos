@@ -45,8 +45,8 @@
 <input type="text" class="form-control" placeholder="{{ $uid }}" aria-label="Username" aria-describedby="basic-addon1" disabled>
 </div>
 </div>
-
-
+ 
+ 
 
 </div><!-- termina fila  -->
 
