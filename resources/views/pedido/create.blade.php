@@ -247,7 +247,8 @@ $(document).ready(function() {
       <div class="col-sm-6">
       <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono</label>
      <input type="text" id="telefono" name="telefono" class="form-control" tabindex="2" placeholder="Ingrese teléfono del destinatario">
-     <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+     <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>    
       </div>
 
 
@@ -294,8 +295,8 @@ $(document).ready(function() {
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
           </div>
   
-          <input type="text" class="form-control" placeholder="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
-          
+          <input type="text" class="form-control" value="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>   
           </div>
         
         </div>
@@ -337,6 +338,7 @@ $(document).ready(function() {
             <option value="Entrega y recolecta">Entrega y recolecta</option>
   
             </select>
+            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
           </div>
       </div>
      
@@ -358,6 +360,7 @@ $(document).ready(function() {
           <option value="Casillero Santa Ana">Casillero Santa Ana</option>
           <option value="Casillero centro logístico">Casillero centro logístico</option>
           </select>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
         </div>
       </div>                                      
     </div>
