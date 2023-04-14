@@ -547,7 +547,7 @@ $(document).ready(function() {
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
           </div>
           <select id="repartidor" name="repartidor" class="form-control" tabindex="14">
-            <option >-Seleccionar repartidor-</option>
+            <option value="">-Sin asignar-</option>
             @foreach($repartidores as $repartidor)
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
             @endforeach
@@ -614,10 +614,10 @@ $(document).ready(function() {
       <label for="inputEmail3" class="col-sm-12 col-form-label">Fotos del paquete</label>
 
       <div class="col-sm-6">
-      <input type="file" name="foto" class="form-control" >
+      <input type="file" name="foto" class="form-control" tabindex="17">
       </div>
       <div class="col-sm-6">
-      <input type="file" name="foto2" class="form-control" >
+      <input type="file" name="foto2" class="form-control" tabindex="18">
       </div>
       
       <br>
