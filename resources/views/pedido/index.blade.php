@@ -10,6 +10,11 @@
 
 @section('content')
 <style>
+    @media print{
+@page {
+size: landscape;
+}
+}
     /*
     .dropdown-menu-center {
   left: 2% !important;
@@ -143,6 +148,18 @@ input[type="date"]:focus::before{
     
 }
 
+.dt-buttons button {
+    background: #0275d8;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    float: right;
+}
+.imprimir{
+    float: right;
+    margin-top: -70px;
+    margin-right: -200px;
+}
 </style>
 <br>
 
@@ -162,7 +179,7 @@ input[type="date"]:focus::before{
         </div>
         </div>
 
-
+ 
 <div class="col-12">
 <div class="row pt-2" style="background-color: white; border-top: 1px solid; border-top-color:#bbb5bb;">
 
@@ -360,7 +377,17 @@ input[type="date"]:focus::before{
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
 \
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js" defer></script>
-   
+
+                 
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js" defer></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" defer></script>
+
+    
+    
+                 
 
     <!--
  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
@@ -382,11 +409,29 @@ input[type="date"]:focus::before{
            
         },
         
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
-     
-     
-    
-       
+        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l><"imprimir"B>tri<"pagina1" p>',
+        buttons: [
+            { extend: 'print', text: 'Imprimir reporte',
+                orientation: 'landscape',
+                
+                customize: function ( win ) {
+                    $(win.document.body)
+                        .css( 'font-size', '10pt' )
+                        .prepend(
+                            '<h2>probando sonido</h2>'
+                        );
+ 
+                    $(win.document.body).find( 'table' )
+                        .addClass( 'compact')
+                        .css( 'font-size', 'inherit', );
+                },
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+                }
+            
+            },
+           
+        ]
 
         } /*hasata aqui*/
     );
@@ -412,8 +457,9 @@ input[type="date"]:focus::before{
     
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" />
     
-
+                                                 
     <!--
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
