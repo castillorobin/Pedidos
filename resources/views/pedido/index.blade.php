@@ -132,6 +132,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         right: 0;
         top: 0;
         width: auto;
+        z-index: 1;
     }
 
 
@@ -160,6 +161,7 @@ input[type="date"]:focus::before{
     margin-top: -70px;
     margin-right: -200px;
 }
+
 </style>
 <br>
 
@@ -181,57 +183,69 @@ input[type="date"]:focus::before{
 
  
 <div class="col-12">
-<div class="row pt-2" style="background-color: white; border-top: 1px solid; border-top-color:#bbb5bb;">
-
-    <div class="col-3 ">
-        <form action="/pedido/filtrar" method="GET" >
+<form action="/pedido/filtrar" method="GET" >
         @csrf
         @method('GET')
         
+<table >
+    <tr>
+        <td style="width: 250px;">
+        <div class="input-group mb-2 " style="width: 250px;">
+
+<div class="input-group-prepend ">
+<span class="input-group-text" id="basic-addon1" style="height:40px ">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
+</div>
+
+
+<input type="date" name="filtrodia" id="filtrodia" style="height:40px; border-radius: 0px;" class="form-control" placeholder="Ingrese Fecha" aria-describedby="basic-addon1" > 
+
+</div>
+
+        </td>
+        <td style="width: 250px;">
+        <div class="input-group mb-2" style="width: 250px;">
+
+<div class="input-group-prepend ">
+<span class="input-group-text" id="basic-addon1" style="height:40px "> <i class="fas fa-route"></i></span>
+</div>
+
+<select id="route" name="route" style="width: 190px; height:40px; border-radius: 0px;" >
+<option value="seleccionar">Seleccionar ruta</option>
+<option value="Ruta 1">Ruta 1</option>
+<option value="Ruta 2">Ruta 2</option>
+<option value="Ruta 3">Ruta 3</option>
+<option value="Ruta 4">Ruta 4</option>
+<option value="Ruta 5">Ruta 5</option>
+</select>
+
+</div>
+</div>
+ 
+        </td>
+        <td style="width: 250px;">
         <div class="input-group mb-2">
 
-            <div class="input-group-prepend ">
-            <span class="input-group-text" id="basic-addon1" style="height:40px ">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
-            </div>
-      
-            
-            <input type="date" name="filtrodia" id="filtrodia" style="width: 180px; height:40px; border-radius: 0px;" class="form-control" placeholder="Ingrese Fecha" aria-describedby="basic-addon1" > 
+<div class="input-group-prepend ">
+<span class="input-group-text" id="basic-addon1" style="height:40px ">  <i class="fas fa-truck"></i></span>
+</div>
 
-        </div>
-    </div>
-
-
-  <div class="col-2 p-0">
-      
-        
-        <div class="input-group mb-2">
-
-            <div class="input-group-prepend ">
-            <span class="input-group-text" id="basic-addon1" style="height:40px "> <i class="fas fa-route"></i></span>
-            </div>
-      
-            <select id="route" name="route" style="width: 170px; height:40px; border-radius: 0px;" >
-            <option value="seleccionar">Seleccionar ruta</option>
-       <option value="Ruta 1">Ruta 1</option>
-       <option value="Ruta 2">Ruta 2</option>
-       <option value="Ruta 3">Ruta 3</option>
-       <option value="Ruta 4">Ruta 4</option>
-       <option value="Ruta 5">Ruta 5</option>
-       </select>
-    
-        </div>
-    </div>
-
-    
+<select id="filtrorepa" name="filtrorepa" class="form-control" tabindex="14">
+            <option value="">Sin asignar</option>
+            @foreach($repartidores as $repartidor)
+            <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
+            @endforeach
+          </select>
 
 
-    <div class="col-3">
+</div>
+        </td>
+        <td style="width: 250px;">
         <button type="submit" class="btn btn-primary " style="width: 150px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i> Consultar</button>      
-        
-    </div>
-</form>
-    
-<div class="col-4 d-flex justify-content-end">
+        </td>
+
+        <td align='right'>
+
+        <div class="col-4 d-flex justify-content-end">
     
     <div class="opciones ">
      
@@ -266,14 +280,23 @@ input[type="date"]:focus::before{
 
 
     </div>
-  
-</div>
+        </td>
+    </tr>
+</table>
 
-</div>   
+
+
+
+
+
+   
+
+   
+</form>
     
 
- 
-</form>
+  
+</div>
 
 
 
@@ -409,7 +432,7 @@ input[type="date"]:focus::before{
            
         },
         
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l><"imprimir"B>tri<"pagina1" p>',
+        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
         buttons: [
             { extend: 'print', text: 'Imprimir reporte',
                 orientation: 'landscape',

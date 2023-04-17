@@ -209,6 +209,7 @@ class PedidoController extends Controller
         $pedidofe = $request->get('filtrodia');
         $pedidof = date("Y-m-d", strtotime($pedidofe));
         $rutaf = $request->get('route');
+        $repaf = $request->get('filtrorepa');
         //$Agenda = Agenda::where('nombres','like',"%$nombre%")->paginate(5); Pedido::where('tipo','like',"%$pedido%");
         //
         //$pedidos = Pedido::whereDate('created_at', $pedido)->get();
@@ -217,12 +218,16 @@ class PedidoController extends Controller
  //   ->orWhere($orThose)
  //   ->get();
  
-        if ($rutaf == 'seleccionar'){
+        if ($rutaf == 'seleccionar' && $repaf ==''){
             $pedidos = Pedido::whereDate('created_at', $pedidof)->get();
-        }elseif($pedidof == '1970-01-01'){
+        }elseif($pedidof == '1970-01-01' && $repaf ==''){
             $pedidos = Pedido::where('ruta', $rutaf)->get();
-        }else{
-            $pedidos = Pedido::whereDate('created_at', $pedidof)->where('ruta', $rutaf)->get();
+        }elseif($pedidof == '1970-01-01' && $rutaf =='seleccionar')
+        {
+            $pedidos = Pedido::where('repartidor', $repaf)->get();
+        }
+        else{
+            $pedidos = Pedido::whereDate('created_at', $pedidof)->where('ruta', $rutaf)->where('repartidor', $repaf)->get();
         }
 
         //$pedidof = '1970-01-01';
