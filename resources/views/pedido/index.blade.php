@@ -77,25 +77,7 @@ ul li ul:hover {
     
     */
 }
-/*
-input[type="date"]::-webkit-calendar-picker-indicator {
-    background: transparent;
-    bottom: 0;
-    color: transparent;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 50px;
-    top: 0;
-    border-radius: 0px;
-   
-}
 
-
-::-webkit-calendar-picker-indicator {
-    display: none;
-}
-*/
 .pagina1{
     margin-bottom: 30px;
     margin-top: -30px;
@@ -117,9 +99,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background:#0d6efd !important;
     
 }
-
-
-
+ 
 input[type="date"]::-webkit-calendar-picker-indicator {
         display: block;
         background: transparent;
@@ -132,21 +112,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         right: 0;
         top: 0;
         width: auto;
-        z-index: 1;
     }
-
 
     input[type="date"]::before {
 	color: #999999;
-	content: attr(placeholder);
+	content: attr(placeholder) !important;
 }
 input[type="date"] {
 	color: #ffffff;
+    
 }
 input[type="date"]:focus,
-
-input[type="date"]:focus::before{
+input[type="date"]:valid {
+	color: #666666;
     
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
 }
 
 .dt-buttons button {
@@ -197,7 +180,7 @@ input[type="date"]:focus::before{
 </div>
 
 
-<input type="date" name="filtrodia" id="filtrodia" style="height:40px; border-radius: 0px;" class="form-control" placeholder="Ingrese Fecha" aria-describedby="basic-addon1" > 
+<input type="date" name="filtrodia" id="filtrodia" style="height:40px; border-radius: 0px;" class="form-control" placeholder="Seleccionar Fecha" aria-describedby="basic-addon1"> 
 
 </div>
 
@@ -223,13 +206,13 @@ input[type="date"]:focus::before{
  
         </td>
         <td style="width: 250px;">
-        <div class="input-group mb-2">
+        <div class="input-group mb-2" style="width: 250px;">
 
 <div class="input-group-prepend ">
 <span class="input-group-text" id="basic-addon1" style="height:40px ">  <i class="fas fa-truck"></i></span>
 </div>
 
-<select id="filtrorepa" name="filtrorepa" class="form-control" tabindex="14">
+<select id="filtrorepa" name="filtrorepa" style="width: 190px; height:40px; border-radius: 0px;">
             <option value="">Sin asignar</option>
             @foreach($repartidores as $repartidor)
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
