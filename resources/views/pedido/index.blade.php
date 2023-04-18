@@ -153,17 +153,17 @@ input[type="date"]:valid::before {
         
             <div class="col-12">
            
-        <div class="row " style="background-color: white; border-top: 1px solid; border-top-color:#bbb5bb; " >
+                <div class="row " style="background-color: white; border-top: 1px solid; border-top-color:#bbb5bb; " >
         
-            <div class="  col-sm-6 " style="">
-                <h3>Reporte de envíos</h3>
-            </div>
-            <div class="col-sm-5">
+                    <div class="  col-sm-6 " style="">
+                    <h3>Reporte de envíos</h3>
+                    </div>
+                    <div class="col-sm-5">
     
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-
+    
  
 <div class="col-12">
 <form action="/pedido/filtrar" method="GET" >
@@ -172,57 +172,62 @@ input[type="date"]:valid::before {
         
 <table >
     <tr>
-        <td style="width: 250px;">
+        <td style="width: 250px; float:left;">
         <div class="input-group mb-2 " style="width: 250px;">
 
-<div class="input-group-prepend ">
-<span class="input-group-text" id="basic-addon1" style="height:40px ">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
-</div>
+            <div class="input-group-prepend ">
+                <span class="input-group-text" id="basic-addon1" style="height:40px ">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
+            </div>
 
 
-<input type="date" name="filtrodia" id="filtrodia" style="height:40px; border-radius: 0px;" class="form-control" placeholder="Seleccionar Fecha" aria-describedby="basic-addon1"> 
+            <input type="date" name="filtrodia" id="filtrodia" style="height:40px; border-radius: 0px;" class="form-control" placeholder="Seleccionar Fecha" aria-describedby="basic-addon1"> 
 
-</div>
-
+        </div>
+&nbsp; &nbsp;
         </td>
-        <td style="width: 250px;">
+
+        <td style="width: 250px; float:left;">
+        
         <div class="input-group mb-2" style="width: 250px;">
+        &nbsp; &nbsp;
+            <div class="input-group-prepend ">
+                <span class="input-group-text" id="basic-addon1" style="height:40px "> <i class="fas fa-route"></i></span>
+            </div>
 
-<div class="input-group-prepend ">
-<span class="input-group-text" id="basic-addon1" style="height:40px "> <i class="fas fa-route"></i></span>
-</div>
+            <select id="route" name="route" style="width: 190px; height:40px; border-radius: 0px;" >
+                <option value="seleccionar">Seleccionar ruta</option>
+                <option value="Ruta 1">Ruta 1</option>
+                <option value="Ruta 2">Ruta 2</option>
+                <option value="Ruta 3">Ruta 3</option>
+                <option value="Ruta 4">Ruta 4</option>
+                <option value="Ruta 5">Ruta 5</option>
+            </select>
 
-<select id="route" name="route" style="width: 190px; height:40px; border-radius: 0px;" >
-<option value="seleccionar">Seleccionar ruta</option>
-<option value="Ruta 1">Ruta 1</option>
-<option value="Ruta 2">Ruta 2</option>
-<option value="Ruta 3">Ruta 3</option>
-<option value="Ruta 4">Ruta 4</option>
-<option value="Ruta 5">Ruta 5</option>
-</select>
+        </div>
 
-</div>
-</div>
  
         </td>
-        <td style="width: 250px;">
+        <td style="width: 250px; float:left;">
+        
         <div class="input-group mb-2" style="width: 250px;">
+        &nbsp;
+            <div class="input-group-prepend ">
+                <span class="input-group-text" id="basic-addon1" style="height:40px ">  <i class="fas fa-truck"></i></span>
+            </div>
 
-<div class="input-group-prepend ">
-<span class="input-group-text" id="basic-addon1" style="height:40px ">  <i class="fas fa-truck"></i></span>
-</div>
-
-<select id="filtrorepa" name="filtrorepa" style="width: 190px; height:40px; border-radius: 0px;">
-            <option value="seleccionar">Sin asignar</option>
-            @foreach($repartidores as $repartidor)
-            <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
-            @endforeach
-          </select>
+            <select id="filtrorepa" name="filtrorepa" style="width: 190px; height:40px; border-radius: 0px;">
+                <option value="seleccionar">Sin asignar</option>
+                @foreach($repartidores as $repartidor)
+                <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
+                @endforeach
+            </select>
 
 
-</div>
+        </div>
+
         </td>
-        <td style="width: 250px; padding-top:0px;">
+
+        <td style="width: 250px; float:left;">
         <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
         <a href="/pedidos" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>     
         
@@ -239,12 +244,12 @@ input[type="date"]:valid::before {
 <i class="fas fa-list"></i>&nbsp;Opciones</a>
 <ul class="dropdown-menu">
 
- <div class="botones"> 
+ <div class="botones" style="width:300px;"> 
 <li class="botones">
 &nbsp;
 <i class="fas fa-database"></i>
-&nbsp;&nbsp;
-<a href="/pedidos/create" >Agregar Nuevo</a></li> 
+&nbsp; &nbsp;
+<a href="/pedidos/create" > <span style="font-size:15px;"> Agregar Nuevo</span></a></li> 
 
 </div>  
 
@@ -253,7 +258,7 @@ input[type="date"]:valid::before {
 &nbsp;
 <i class="fas fa-print" ></i> 
 
-<a href="/pedido/lista/{{ $pedidof }}/{{ $rutaf }}/{{ $repaf }}" >Imprimir Reporte</a></li> 
+<a href="/pedido/lista/{{ $pedidof }}/{{ $rutaf }}/{{ $repaf }}" ><span style="font-size:15px;">Imprimir Reporte</span></a></li> 
 
 
     </li>
@@ -318,7 +323,7 @@ input[type="date"]:valid::before {
     <td style="font-weight: bolder; color: #484f55;">{{ $pedido->destinatario }}</td>
     <td>{{ $pedido->direccion }}</td>
     <td>{{ $pedido->tipo }}</td>
-    <td> {{ $pedido->estado }}</td>
+    <td style="background: #e3e8e7"> {{ $pedido->estado }}</td>
     <td> {{ $pedido->fecha_entrega }}</td>
     <td> {{ $pedido->agencia }}</td>
     <td> {{ $pedido->repartidor }}</td>
