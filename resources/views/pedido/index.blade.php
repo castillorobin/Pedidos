@@ -251,7 +251,7 @@ input[type="date"]:valid::before {
 &nbsp;
 <i class="fas fa-print" ></i> 
 
-<a href="/pedido/lista/{{ $pedidof }}/{{ $rutaf }}" >Imprimir Reporte</a></li> 
+<a href="/pedido/lista/{{ $pedidof }}/{{ $rutaf }}/{{ $repaf }}" >Imprimir Reporte</a></li> 
 
 
     </li>
