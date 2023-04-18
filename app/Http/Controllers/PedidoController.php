@@ -26,6 +26,7 @@ class PedidoController extends Controller
     {
         $rutaf='seleccionar';
         $pedidof='1970-01-01';
+        $repaf='';
         $lastid = Pedido::latest('id')->first();
         $uid= $lastid->id + 1;
         $pedidos = Pedido::all();
@@ -40,7 +41,7 @@ class PedidoController extends Controller
         $date = strftime("%A %d de %B %Y");
         //return view('pedido.index')->with('pedidos', $pedidos);
 
-        return view('pedido.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf]);
+        return view('pedido.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'tipos'=>$tipos, 'rutas'=>$rutas, 'estados'=>$estados, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf]);
   
     }
 
@@ -56,19 +57,44 @@ class PedidoController extends Controller
     public function listadia($pedidof, $rutaf, $repaf)
     {
     
-        
-        if ($rutaf == 'seleccionar' && $repaf ==''){
+        $pedidos = Pedido::whereDate('created_at', $pedidof)->get();
+
+        if ($rutaf == 'seleccionar' && $repaf =='seleccionar' && $pedidof != '1970-01-01'){
             $pedidos = Pedido::whereDate('created_at', $pedidof)->get();
-        }elseif($pedidof == '1970-01-01' && $repaf ==''){
-            $pedidos = Pedido::where('ruta', $rutaf)->get();
-        }elseif($pedidof == '1970-01-01' && $rutaf =='seleccionar')
-        {
+        }
+        
+        elseif($rutaf != 'seleccionar' && $repaf =='seleccionar' && $pedidof != '1970-01-01'){
+            $pedidos = Pedido::whereDate('created_at', $pedidof)->where('ruta', $rutaf)->get();
+        }
+        
+        elseif($rutaf == 'seleccionar' && $repaf !='seleccionar' && $pedidof != '1970-01-01'){
+            $pedidos = Pedido::whereDate('created_at', $pedidof)->where('repartidor', $repaf)->get();
+            
+        }
+        
+        elseif($pedidof == '1970-01-01' && $repaf =='seleccionar' && $rutaf != 'seleccionar'){
+           // $pedidos = Pedido::where('ruta', $rutaf)->get();
+           $pedidos = Pedido::where('ruta', $rutaf)->get();
+        }
+        
+        elseif($pedidof == '1970-01-01' && $repaf !='seleccionar' && $rutaf != 'seleccionar'){
+            $pedidos = Pedido::where('ruta', $rutaf)->where('repartidor', $repaf)->get();
+        }
+        
+        elseif($pedidof != '1970-01-01' && $repaf =='seleccionar' && $rutaf != 'seleccionar'){
+            $pedidos = Pedido::whereDate('created_at', $pedidof)->where('ruta', $rutaf);
+        
+        }elseif($pedidof == '1970-01-01' && $rutaf =='seleccionar' && $repaf !='seleccionar'){
             $pedidos = Pedido::where('repartidor', $repaf)->get();
         }
+
+        
+        
+        
+        
         else{
             $pedidos = Pedido::whereDate('created_at', $pedidof)->where('ruta', $rutaf)->where('repartidor', $repaf)->get();
         }
-
 
     $repar=$pedidos[0]->repartidor;
     $rutat=$pedidos[0]->ruta;
@@ -149,6 +175,7 @@ class PedidoController extends Controller
         $uid= $lastid->id + 1;
         $rutaf='seleccionar';
         $pedidof='1970-01-01';
+        $repaf='';
         $pedido = new Pedido();
         
         $pedido->vendedor = $request->get('comer');
@@ -200,7 +227,7 @@ class PedidoController extends Controller
         $vendedores = Vendedor::all();
         $repartidores = Repartidor::all();
         $pedidos = Pedido::all();
-        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf]);
+        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf]);
        //return redirect('/pedido/etiqueta')->with('id', $pedidos->id);
 
     }
@@ -223,14 +250,39 @@ class PedidoController extends Controller
  //   ->orWhere($orThose)
  //   ->get();
  
-        if ($rutaf == 'seleccionar' && $repaf ==''){
+        if ($rutaf == 'seleccionar' && $repaf =='seleccionar' && $pedidof != '1970-01-01'){
             $pedidos = Pedido::whereDate('created_at', $pedidof)->get();
-        }elseif($pedidof == '1970-01-01' && $repaf ==''){
-            $pedidos = Pedido::where('ruta', $rutaf)->get();
-        }elseif($pedidof == '1970-01-01' && $rutaf =='seleccionar')
-        {
+        }
+        
+        elseif($rutaf != 'seleccionar' && $repaf =='seleccionar' && $pedidof != '1970-01-01'){
+            $pedidos = Pedido::whereDate('created_at', $pedidof)->where('ruta', $rutaf)->get();
+        }
+        
+        elseif($rutaf == 'seleccionar' && $repaf !='seleccionar' && $pedidof != '1970-01-01'){
+            $pedidos = Pedido::whereDate('created_at', $pedidof)->where('repartidor', $repaf)->get();
+            
+        }
+        
+        elseif($pedidof == '1970-01-01' && $repaf =='seleccionar' && $rutaf != 'seleccionar'){
+           // $pedidos = Pedido::where('ruta', $rutaf)->get();
+           $pedidos = Pedido::where('ruta', $rutaf)->get();
+        }
+        
+        elseif($pedidof == '1970-01-01' && $repaf !='seleccionar' && $rutaf != 'seleccionar'){
+            $pedidos = Pedido::where('ruta', $rutaf)->where('repartidor', $repaf)->get();
+        }
+        
+        elseif($pedidof != '1970-01-01' && $repaf =='seleccionar' && $rutaf != 'seleccionar'){
+            $pedidos = Pedido::whereDate('created_at', $pedidof)->where('ruta', $rutaf);
+        
+        }elseif($pedidof == '1970-01-01' && $rutaf =='seleccionar' && $repaf !='seleccionar'){
             $pedidos = Pedido::where('repartidor', $repaf)->get();
         }
+
+        
+        
+        
+        
         else{
             $pedidos = Pedido::whereDate('created_at', $pedidof)->where('ruta', $rutaf)->where('repartidor', $repaf)->get();
         }
@@ -295,6 +347,7 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
         $rutaf='seleccionar';
         $pedidof='1970-01-01';
+        $repaf='';
         $pedido->vendedor = $request->get('comer');
         $pedido->destinatario = $request->get('desti');
         $pedido->telefono = $request->get('telefono');
@@ -362,7 +415,7 @@ class PedidoController extends Controller
         $vendedores = Vendedor::all();
         $repartidores = Repartidor::all();
         $pedidos = Pedido::all();
-        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf]);
+        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf]);
        //return redirect('/pedido/etiqueta')->with('id', $pedidos->id);
 
     }

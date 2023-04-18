@@ -213,7 +213,7 @@ input[type="date"]:valid::before {
 </div>
 
 <select id="filtrorepa" name="filtrorepa" style="width: 190px; height:40px; border-radius: 0px;">
-            <option value="">Sin asignar</option>
+            <option value="seleccionar">Sin asignar</option>
             @foreach($repartidores as $repartidor)
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
             @endforeach
@@ -222,8 +222,10 @@ input[type="date"]:valid::before {
 
 </div>
         </td>
-        <td style="width: 250px;">
-        <button type="submit" class="btn btn-primary " style="width: 150px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i> Consultar</button>      
+        <td style="width: 250px; padding-top:0px;">
+        <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
+        <a href="/pedidos" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>     
+        <span>{{ $pedidof }} ruta:{{ $rutaf }} repartidor: {{ $repaf }}  </span>
         </td>
 
         <td align='right'>
