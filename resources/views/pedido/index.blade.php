@@ -225,7 +225,7 @@ input[type="date"]:valid::before {
         <td style="width: 250px; padding-top:0px;">
         <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
         <a href="/pedidos" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>     
-        <span>{{ $pedidof }} ruta:{{ $rutaf }} repartidor: {{ $repaf }}  </span>
+        
         </td>
 
         <td align='right'>
