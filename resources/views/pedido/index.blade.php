@@ -295,6 +295,7 @@ input[type="date"]:valid::before {
 <thead >
     <tr >
         
+        <th scope="col">ID</th>
         <th scope="col">Comercio</th>
         <th scope="col">Destinatario</th>
         <th scope="col">Direccion</th>
@@ -312,7 +313,7 @@ input[type="date"]:valid::before {
 <tbody>
     @foreach ($pedidos as $pedido)
     <tr >
-    
+    <td style="font-weight: bolder; color: #484f55;">{{ $pedido->id }}</td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedido->vendedor }}</td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedido->destinatario }}</td>
     <td>{{ $pedido->direccion }}</td>
