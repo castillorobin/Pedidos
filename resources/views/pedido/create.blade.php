@@ -109,6 +109,26 @@ function myFunction() {
 														//document.getElementById("ptotal").value = castot ; 
 
     				});
+
+
+            $("#cenvio").change(function() {
+       												 //alert($(this).val());
+          const tenv3 = document.getElementById("precio").value;
+					const envi3 = parseFloat(document.getElementById("envio").value);						                                                    
+          const preci3 =document.getElementById("cenvio").value; 
+          
+          if(preci3=="Pagado")
+          {
+            document.getElementById("total").value = tenv3;
+          }else{
+            document.getElementById("total").value = tenv3 - envi3;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+
+    				});
               
                                             });
   
