@@ -653,7 +653,10 @@ $(document).ready(function() {
 
         <a href="/pedidos" class="btn btn-primary">Cancelar</a>
         &nbsp; &nbsp;
+        <!--
       <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
+-->
+<a href="/pedidos/create" class="btn btn-primary">Limpiar</a>
       &nbsp; &nbsp;
         <button type="submit" class="btn btn-primary">Guardar</button>
     </div>
