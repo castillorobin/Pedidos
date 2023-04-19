@@ -4,7 +4,7 @@
 @section('title', 'Melo Express')
 
 @section('content_header')
-<h5 ><i class="fas fa-home"></i> Inicio / Almacen / Comercios</h5>
+
     
 @stop
   
@@ -28,7 +28,17 @@
    float: right;
      
 }
-
+.pagina1{
+    margin-bottom: 30px;
+    margin-top: -30px;
+    
+}
+.pagina2{
+    
+    margin-bottom: 5px;
+    padding-top: 15px;
+    
+}
 .opciones li {
  display: block;
  transition-duration: 0.5s;
@@ -60,25 +70,41 @@ ul li ul:hover {
   
 }
 
+.dataTables_paginate a:hover {
+    color: white !important;
+    background:#0d6efd !important;
+    
+}
+
+
+.dt-buttons button {
+    background: #0275d8;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    float: right;
+}
+
 </style>
 
   
-<div class="row">
+<div class="row" style="background-color: white; border: 1px solid; ">
+<h8 style="font-size:14px" ><i class="fas fa-home"></i> Inicio / Almacen / Comercios</h8>
     <hr>
-<div class="  col-sm-6">
-<h3>Listado de Comercios</h3>
-</div>
-<div class="  col-sm-6">
-<a href="/vendedores/create" class="btn btn-primary float-right" ><i class="fas fa-database"></i> Agregar Comercio</a>
+    <div class="  col-sm-6">
+        <h3>Listado de Comercios</h3>
+    </div>
+    <div class="  col-sm-6">
+    <a href="/vendedores/create" class="btn btn-primary float-right" ><i class="fas fa-database"></i> Agregar Comercio</a>
 </div>
 <hr>
-</div>
+
 
  
 
 <br>
-<table id="tvendedor" class="table table-bordered shadow-lg mt-4">
-<thead>
+    <table id="tvendedor" class="table table-bordered shadow-lg mt-4 cell-border">
+        <thead>
     <tr >
         
         <th scope="col">Comercio</th>
@@ -91,8 +117,8 @@ ul li ul:hover {
         
         <th scope="col">Opciones</th>
     </tr>
-</thead>
-<tbody>
+        </thead>
+    <tbody>
     @foreach ($vendedores as $vendedor)
     <tr>
     
@@ -103,7 +129,7 @@ ul li ul:hover {
     <td>{{ $vendedor->estado }}</td>
     <td>{{  date("d/m/Y", strtotime($vendedor->created_at))  }}</td>
     <td>{{ $vendedor->tipovende }}</td>
-    <td class="opciones">
+    <td class="opciones text-center">
     
    
    
@@ -127,9 +153,9 @@ ul li ul:hover {
     <i class="fas fa-eye"></i>
     &nbsp;&nbsp;
     <button>Ver</button>
-</form>
-</li>
-<li class="botones">
+    </form>
+            </li>
+        <li class="botones">
     <form action="" method="POST">
         @csrf
         @method('DELETE')
@@ -146,8 +172,11 @@ ul li ul:hover {
     </td>
     </tr>
     @endforeach
-</tbody>
-</table>
+    </tbody>
+    </table>
+
+
+    </div>
 
 <script src="https://cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"></script>
 
@@ -163,28 +192,25 @@ ul li ul:hover {
 
 
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
-\
+
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js" defer></script>
 
 <script>
        
 
 
-        $(document).ready(function () {
+       $(document).ready(function () {
     $('#tvendedor').DataTable(
         {
-           
             language: {
             "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
            
         },
         
-        dom: '<"cambiar" f><"cambiar2" l>trip',
-        responsive: true
+        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+       
 
-
-
-        }
+        } /*hasata aqui*/
     );
 });
 
@@ -197,16 +223,18 @@ ul li ul:hover {
 
 
 @section('css')
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css" /> 
 
 <link rel="stylesheet" href="vendor/adminlte/dist/css/core.css">
     <link rel="stylesheet" href="vendor/adminlte/dist/css/admin_custom.css">
-    <link rel="stylesheet" href="/css/admin_custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" />
+    
    
 @stop

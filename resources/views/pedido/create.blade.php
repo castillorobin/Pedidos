@@ -266,8 +266,8 @@ $(document).ready(function() {
     
       <div class="col-sm-6">
       <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono</label>
-     <input type="text" id="telefono" name="telefono" class="form-control" tabindex="3" placeholder="Ingrese teléfono del destinatario">
-     <div class="invalid-feedback">Este campo es obligatorio.</div>
+     <input type="text" id="telefono" name="telefono" class="form-control" tabindex="3" placeholder="Ingrese teléfono del destinatario" aria-describedby="basic-addon1" data-inputmask="'mask': '9999-9999'">
+     
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>    
       </div>
 
@@ -708,6 +708,14 @@ $(document).ready(function() {
 </script>
 
 -->
+
+<script>
+  $(document).ready(function(){
+  
+ /* $(":input").inputmask();*/
+ Inputmask().mask(document.querySelectorAll("input"));
+});
+</script>
 
 @endsection
 
