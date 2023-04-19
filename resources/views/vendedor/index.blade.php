@@ -88,20 +88,20 @@ ul li ul:hover {
 </style>
 
   
-<div class="row" style="background-color: white; border: 1px solid; ">
+<div class="row" style="background-color: white; border: 1px solid;">
 <h8 style="font-size:14px" ><i class="fas fa-home"></i> Inicio / Almacen / Comercios</h8>
-    <hr>
-    <div class="  col-sm-6">
+   
+    <div class="  col-sm-6 py-3" style="border-top: 1px solid; border-top-color:#bbb5bb; ">
         <h3>Listado de Comercios</h3>
     </div>
-    <div class="  col-sm-6">
+    <div class="  col-sm-6 py-3" style="border-top: 1px solid; border-top-color:#bbb5bb; ">
     <a href="/vendedores/create" class="btn btn-primary float-right" ><i class="fas fa-database"></i> Agregar Comercio</a>
 </div>
-<hr>
 
 
- 
 
+
+<div class="col-12" style="border-top: 1px solid; border-top-color:#bbb5bb; ">
 <br>
     <table id="tvendedor" class="table table-bordered shadow-lg mt-4 cell-border">
         <thead>
@@ -174,7 +174,8 @@ ul li ul:hover {
     @endforeach
     </tbody>
     </table>
-
+    </div>
+    
 
     </div>
 
