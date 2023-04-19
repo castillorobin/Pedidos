@@ -518,7 +518,7 @@ $(document).ready(function() {
 <div class="modal-footer px-4">
 <a href="/vendedores" class="btn btn-primary">Cancelar</a>
         &nbsp; &nbsp;
-        <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
+        <a href="/vendedores/create" class="btn btn-primary">Limpiar</a>
       &nbsp; &nbsp;
         <button type="submit" class="btn btn-primary">Guardar</button>
       </div>
