@@ -35,6 +35,9 @@ class CreateVendedorsTable extends Migration
             $table->string('niva')->nullable();
             $table->string('nrc')->nullable();
             $table->string('estado')->nullable();
+            $table->string('agencia')->nullable();
+            $table->date('fecha_ingreso')->nullable();
+            
             $table->timestamps();
         });
     }

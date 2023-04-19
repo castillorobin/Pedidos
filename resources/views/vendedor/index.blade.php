@@ -69,6 +69,11 @@ ul li ul:hover {
   display: block;
   
 }
+.nocolor a:link, a:visited, a:active {
+    text-decoration:none; 
+    color:black;
+            
+        }
 
 .dataTables_paginate a:hover {
     color: white !important;
@@ -95,7 +100,7 @@ ul li ul:hover {
         <h3>Listado de Comercios</h3>
     </div>
     <div class="  col-sm-6 py-3" style="border-top: 1px solid; border-top-color:#bbb5bb; ">
-    <a href="/vendedores/create" class="btn btn-primary float-right" ><i class="fas fa-database"></i> Agregar Comercio</a>
+    <a href="/vendedores/create" class="btn btn-primary float-right" style="color:white;"><i class="fas fa-database"></i> Agregar Comercio</a>
 </div>
 
 
@@ -110,6 +115,7 @@ ul li ul:hover {
         <th scope="col">Comercio</th>
         <th scope="col">Direccion</th>
         <th scope="col">Teléfono</th>
+        <th scope="col">Whatsapp</th>
         <th scope="col">Tipo de comercio</th>
         <th scope="col">Estado del comercio</th>
         <th scope="col">Fecha de alta</th>
@@ -125,11 +131,12 @@ ul li ul:hover {
     <td>{{ $vendedor->nombre }}</td>
     <td>{{ $vendedor->direccion }}</td>
     <td>{{ $vendedor->telefono }}</td>
+    <td>{{ $vendedor->whatsapp }}</td>
     <td>{{ $vendedor->tipovende }}</td>
     <td>{{ $vendedor->estado }}</td>
     <td>{{  date("d/m/Y", strtotime($vendedor->created_at))  }}</td>
-    <td>{{ $vendedor->tipovende }}</td>
-    <td class="opciones text-center">
+    <td>{{ $vendedor->agencia }}</td>
+    <td class="opciones text-center" style="">
     
    
    
@@ -156,7 +163,7 @@ ul li ul:hover {
     </form>
             </li>
         <li class="botones">
-    <form action="" method="POST">
+    <form action="{{ route ('vendedores.destroy', $vendedor->id)}}" method="POST">
         @csrf
         @method('DELETE')
         &nbsp;

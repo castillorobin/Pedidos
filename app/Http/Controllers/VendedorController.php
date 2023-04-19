@@ -102,7 +102,8 @@ class VendedorController extends Controller
         $vendedor->giro = $request->get('giro');
         $vendedor->dui = $request->get('dui');
         $vendedor->niva = $request->get('niva');
-
+        $vendedor->agencia = $request->get('agenr');
+       
         $vendedor->nrc = $request->get('nrc');
         $vendedor->estado = $request->get('estado');
         
@@ -130,7 +131,7 @@ class VendedorController extends Controller
     {
         //
     }
- 
+  
     /**
      * Show the form for editing the specified resource.
      *
