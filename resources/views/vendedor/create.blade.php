@@ -114,7 +114,8 @@ const tele = document.getElementById("telefono").value;
 //document.getElementById("whatsapp").value = "71902023";
 if(document.getElementById("flexs").checked)
 {
- document.getElementById("whatsapp").value = tele;
+  document.getElementById("whatsapp").value = tele;
+ 
 }else{
   document.getElementById("whatsapp").value = ' ';
 }
@@ -221,7 +222,7 @@ if(document.getElementById("flexs").checked)
   
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
 </div>
-<div class="form-check form-switch" style="font-size:12px; float: right;">
+<div class="form-check form-switch" style="font-size:12px; float: right; margin-top: -12px;" >
         
       Activa si el telefono es igual al whatsapp  &nbsp; &nbsp; &nbsp; &nbsp;   <input class="form-check-input" type="checkbox" role="switch" id="flexs" name="flexs">
   

@@ -92,7 +92,8 @@ ul li ul:hover {
 .headt td {
   height: 10px !important;
   padding: 0px;
- 
+ font-size: 14px;
+ background: #ffffff;
 }
 </style>
 
@@ -151,7 +152,7 @@ ul li ul:hover {
     <span hidden id="chivo{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->chivo }}</span>
     <span hidden id="tmoney{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->tmoney }}</span>
     <span hidden id="empresa{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->empresa }}</span>
-    <span hidden id="giro{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->giro }}</span>\
+    <span hidden id="giro{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->giro }}</span>
     <span hidden id="dui{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->dui }}</span>
     <span hidden id="iva{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->niva }}</span>
     <span hidden id="nrc{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->nrc }}</span>
@@ -223,11 +224,11 @@ ul li ul:hover {
         <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></span>
       </div>
       <div class="modal-body">
-        <div class="row" style="border: solid 1px;">
+        <div class="row p-3 m-3" style="border: solid 1px;">
            
-            <table class="table table-borderless">
+            <table class="table table-borderless" >
                 <tr>
-                    <td  colspan="2"> <h3> Informacion del Comercio </h3>
+                    <td  colspan="2"><h4>Informacion del Comercio </h4>
                         <hr>
                     </td>
                     
@@ -278,7 +279,8 @@ ul li ul:hover {
                 </tr>
 
                 <tr class="headt">
-                    <td  colspan="2"> <h3> Datos Bancarios</h3>
+                    <br>
+                    <td  colspan="2" class="pt-2"> <h4> Datos Bancarios</h4>
                         <hr>
                     </td>
                     
@@ -308,7 +310,7 @@ ul li ul:hover {
                     <td> <label for="" id="tmoney"></label> </td>
                 </tr>
                 <tr class="headt">
-                    <td  colspan="2"> <h3>Información Fiscal</h3>
+                    <td  colspan="2" class="pt-2"> <h4>Información Fiscal</h4>
                         <hr>
                     </td>
                 </tr>
@@ -324,9 +326,9 @@ ul li ul:hover {
                     <td width="200px">Numero de DUI </td>
                     <td> <label for="" id="dui"></label> </td>
                 </tr>
-                <tr>
+                <tr tr class="headt">
                     <td width="200px">Numero de IVA </td>
-                    <td> <label for="" id="iva"></label> </td>
+                    <td><label for="" id="iva"></label> </td>
                 </tr>
                 <tr class="headt">
                     <td width="200px">Numero de NRC </td>
