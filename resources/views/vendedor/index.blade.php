@@ -89,7 +89,11 @@ ul li ul:hover {
     font-size: 16px;
     float: right;
 }
-
+.headt td {
+  height: 10px !important;
+  padding: 0px;
+ 
+}
 </style>
 
   
@@ -119,23 +123,41 @@ ul li ul:hover {
         <th scope="col">Tipo de comercio</th>
         <th scope="col">Estado del comercio</th>
         <th scope="col">Fecha de alta</th>
+        <th scope="col">Fecha de baja</th>
         <th scope="col">Agencia</th>
         
         <th scope="col">Opciones</th>
     </tr>
         </thead>
     <tbody>
-    @foreach ($vendedores as $vendedor)
+    @for ($i=0; $i< count($vendedores); $i++)
     <tr>
     
-    <td>{{ $vendedor->nombre }}</td>
-    <td>{{ $vendedor->direccion }}</td>
-    <td>{{ $vendedor->telefono }}</td>
-    <td>{{ $vendedor->whatsapp }}</td>
-    <td>{{ $vendedor->tipovende }}</td>
-    <td>{{ $vendedor->estado }}</td>
-    <td>{{  date("d/m/Y", strtotime($vendedor->created_at))  }}</td>
-    <td>{{ $vendedor->agencia }}</td>
+    <td><span id="firstname{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->nombre }} </span></td>
+    <td><span id="dire{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->direccion }}</span></td>
+    <td><span id="tele{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->telefono }}</span></td>
+    <td><span id="what{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->whatsapp }}</span></td>
+    <td><span id="tipo{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->tipovende }}</span></td>
+    <td><span id="estado{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->estado }}</span></td>
+    <td><span id="alta{{ $vendedores[$i]->id }}">{{  date("d/m/Y", strtotime($vendedores[$i]->created_at))  }} </span></td>
+    <td><span id="baja{{ $vendedores[$i]->id }}">{{  date("d/m/Y", strtotime($vendedores[$i]->fbaja))  }}</span></td>
+    <td><span id="agen{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->agencia }}</span></td>
+    
+    <span hidden id="correo{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->correo }}</span>
+    <span hidden id="titular{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->titular }}</span>
+    <span hidden id="banco{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->banco }}</span>
+    <span hidden id="cuenta{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->cuenta }}</span>
+    <span hidden id="tcuenta{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->tcuenta }}</span>
+    <span hidden id="chivo{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->chivo }}</span>
+    <span hidden id="tmoney{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->tmoney }}</span>
+    <span hidden id="empresa{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->empresa }}</span>
+    <span hidden id="giro{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->giro }}</span>\
+    <span hidden id="dui{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->dui }}</span>
+    <span hidden id="iva{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->niva }}</span>
+    <span hidden id="nrc{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->nrc }}</span>
+
+
+
     <td class="opciones text-center" style="">
     
    
@@ -150,20 +172,21 @@ ul li ul:hover {
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
-    <a href="/vendedores/{{ $vendedor->id }}/edit" ><button>Editar</button></a></li> 
+    <a href="/vendedores/{{ $vendedores[$i]->id }}/edit" ><button>Editar</button></a></li> 
     </div>  
 	<li class="botones">
-    <form action="" method="POST">
-    @csrf
-    @method('GET')
+    <form >
+   
     &nbsp;
     <i class="fas fa-eye"></i>
     &nbsp;&nbsp;
-    <button>Ver</button>
+    <button type="button" class="edit" data-bs-toggle="modal" value="{{ $vendedores[$i]->id }}" data-bs-target="#exampleModal">Ver</button>
+ 
+    
     </form>
             </li>
         <li class="botones">
-    <form action="{{ route ('vendedores.destroy', $vendedor->id)}}" method="POST">
+    <form action="{{ route ('vendedores.destroy', $vendedores[$i]->id)}}" method="POST">
         @csrf
         @method('DELETE')
         &nbsp;
@@ -178,13 +201,162 @@ ul li ul:hover {
         
     </td>
     </tr>
-    @endforeach
+    @endfor
     </tbody>
     </table>
     </div>
-    
+   
 
     </div>
+
+
+
+
+
+<!-- Inicio Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" style="float: left;"></h1> &nbsp; &nbsp; &nbsp;
+        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></span>
+      </div>
+      <div class="modal-body">
+        <div class="row" style="border: solid 1px;">
+           
+            <table class="table table-borderless">
+                <tr>
+                    <td  colspan="2"> <h3> Informacion del Comercio </h3>
+                        <hr>
+                    </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Comercio / tienda </td>
+                    <td> <span ></span> <label for="" id="efirstname"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Dirección </td>
+                    <td> <span ></span> <label for="" id="dire"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Teléfono </td>
+                    <td> <span ></span> <label for="" id="tele"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Whatsapp</td>
+                    <td> <span ></span> <label for="" id="what"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Fecha de Alta</td>
+                    <td> <span ></span> <label for="" id="alta"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Fecha de Baja</td>
+                    <td> <span ></span> <label for="" id="baja"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Tipo de Comercio</td>
+                    <td> <span ></span> <label for="" id="tipo"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Correo</td>
+                    <td> <label for="" id="corre"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Estado del comercio </td>
+                    <td> <label for="" id="estado"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Agencia </td>
+                    <td> <label for="" id="agenci"></label> </td>
+                </tr>
+
+                <tr class="headt">
+                    <td  colspan="2"> <h3> Datos Bancarios</h3>
+                        <hr>
+                    </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Nombre del titular de la cuenta </td>
+                    <td> <label for="" id="titul"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Nombre del Banco </td>
+                    <td> <label for="" id="banco"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Número de cuenta </td>
+                    <td> <label for="" id="cuenta"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Tipo de cuenta </td>
+                    <td> <label for="" id="tcuenta"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Numero de Chivo Wallet </td>
+                    <td> <label for="" id="chivo"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Numero de Tigo Money </td>
+                    <td> <label for="" id="tmoney"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td  colspan="2"> <h3>Información Fiscal</h3>
+                        <hr>
+                    </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Nombre de la empresa</td>
+                    <td> <label for="" id="empresa"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Giro</td>
+                    <td> <label for="" id="giro"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Numero de DUI </td>
+                    <td> <label for="" id="dui"></label> </td>
+                </tr>
+                <tr>
+                    <td width="200px">Numero de IVA </td>
+                    <td> <label for="" id="iva"></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Numero de NRC </td>
+                    <td> <label for="" id="nrc"></label> </td>
+                </tr>
+
+
+            </table>
+
+
+        </div>
+
+
+
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times" style="color: #ffffff;"></i> &nbsp; Cerrar</button>
+        <button type="button" class="btn btn-primary"><i class="fas fa-print"></i> &nbsp; Imprimir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Termina Modal -->
+
+
+
+
 
 <script src="https://cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"></script>
 
@@ -223,6 +395,59 @@ ul li ul:hover {
 });
 
 
+
+  
+$(document).ready(function(){
+	$(document).on('click', '.edit', function(){
+		var id=$(this).val();
+		var first=$('#firstname'+id).text();
+        var direc=$('#dire'+id).text();
+        var telef=$('#tele'+id).text();
+        var whats=$('#what'+id).text();
+        var alt=$('#alta'+id).text();
+        var baj=$('#baja'+id).text();
+        var tip=$('#tipo'+id).text();
+        var email=$('#correo'+id).text();
+        var esta=$('#estado'+id).text();
+        var agenc=$('#agen'+id).text();
+        var titu=$('#titular'+id).text();
+        var banc=$('#banco'+id).text();
+        var cuent=$('#cuenta'+id).text();
+        var tcuent=$('#tcuenta'+id).text();
+        var chiv=$('#chivo'+id).text();
+        var tmon=$('#tmoney'+id).text();
+        var empre=$('#empresa'+id).text();
+        var gir=$('#giro'+id).text();
+        var du=$('#dui'+id).text();
+        var iv=$('#iva'+id).text();
+        var nr=$('#nrc'+id).text();
+		
+	
+		$('#edit').modal('show');
+		$('#efirstname').text(first);
+        $('#dire').text(direc);
+        $('#tele').text(telef);
+        $('#what').text(whats);
+        $('#alta').text(alt);
+        $('#baja').text(baj);
+        $('#tipo').text(tip);
+        $('#corre').text(email);
+        $('#estado').text(esta);
+        $('#agenci').text(agenc);
+        $('#titul').text(titu);
+        $('#banco').text(banc);
+        $('#cuenta').text(cuent);
+        $('#tcuenta').text(tcuent);
+        $('#chivo').text(chiv);
+        $('#tmoney').text(tmon);
+        $('#empresa').text(empre);
+        $('#giro').text(gir);
+        $('#dui').text(du);
+        $('#iva').text(iv);
+        $('#nrc').text(nr);
+		
+	});
+});
 
 
     </script>

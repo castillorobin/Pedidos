@@ -203,11 +203,7 @@ if(document.getElementById("flexs").checked)
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/phone--v1.png"/></span>
   </div>
   <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Ingrese telefono" aria-label="Username" aria-describedby="basic-addon1" data-inputmask="'mask': '9999-9999'" required>
-  <div class="form-check form-switch">
-        &nbsp; &nbsp; 
-  <input class="form-check-input mt-2" type="checkbox" role="switch" id="flexs" name="flexs">
-  
-</div>
+ 
   <div class="invalid-feedback">Este campo es obligatorio.</div>
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
       
@@ -224,6 +220,11 @@ if(document.getElementById("flexs").checked)
   <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="Ingrese whatsapp" aria-label="Username" aria-describedby="basic-addon1" data-inputmask="'mask': '9999-9999'">
   
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+</div>
+<div class="form-check form-switch" style="font-size:12px; float: right;">
+        
+      Activa si el telefono es igual al whatsapp  &nbsp; &nbsp; &nbsp; &nbsp;   <input class="form-check-input" type="checkbox" role="switch" id="flexs" name="flexs">
+  
 </div>
     </div>
   </div><!-- termina fila  -->
@@ -565,6 +566,10 @@ if(document.getElementById("flexs").checked)
 
 
 </form>
+
+
+
+
 
 
 <!-- JQUERY-->
