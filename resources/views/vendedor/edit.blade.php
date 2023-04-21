@@ -58,11 +58,11 @@
 
 
 
-    <div class="mb-3 col-6" >
+    <div class="mb-3 col-12" >
         <label for="" class="form-label">Nombre</label>
         <input type="text" id="nombre" name="nombre" class="form-control" tabindex="1"  value=" {{$vendedor->nombre }} ">
     </div>
-    <div class="mb-3 col-6">
+    <div class="mb-3 col-12">
         <label for="" class="form-label">Direccion</label>
         <input type="text" id="dire" name="dire" class="form-control" tabindex="2" value=" {{$vendedor->direccion }} ">
     </div>
@@ -70,8 +70,12 @@
         <label for="" class="form-label">Telefono</label>
         <input type="text" id="tele" name="tele" class="form-control" tabindex="3" value=" {{$vendedor->telefono }} ">
     </div>
+    <div class="mb-3 col-6">
+        <label for="" class="form-label">Whatsapp</label>
+        <input type="text" id="tele" name="tele" class="form-control" tabindex="3" value=" {{$vendedor->whatsapp }} ">
+    </div>
  
-    <div class="mb-3 col-3">
+    <div class="mb-3 col-6">
         <label for="" class="form-label">Fecha de ingreso</label>
         <input type="text" id="fech" name="fech" class="form-control" tabindex="4" value=" {{$vendedor->fecha_ingreso }} ">
     </div>
