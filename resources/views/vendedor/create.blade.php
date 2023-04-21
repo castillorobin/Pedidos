@@ -545,7 +545,7 @@ if(document.getElementById("flexs").checked)
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/shop-department.png"/></span>
 </div>
-<input type="text" id="empresa" name="empresa" class="form-control" placeholder="Ingrese la dirección fiscal de la empresa" aria-label="Username" aria-describedby="basic-addon1" >
+<input type="text" id="dfiscal" name="dfiscal" class="form-control" placeholder="Ingrese la dirección fiscal de la empresa" aria-label="Username" aria-describedby="basic-addon1" >
 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
 </div>
     </div>

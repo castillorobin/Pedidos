@@ -283,7 +283,7 @@ ul li ul:hover {
                     <td  colspan="2" class="pt-2"> <h4> Datos Bancarios</h4>
                         <hr>
                     </td>
-                    
+                     
                 </tr>
                 <tr class="headt">
                     <td width="230px">Nombre del titular de la cuenta </td>
