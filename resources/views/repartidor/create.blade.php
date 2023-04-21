@@ -179,7 +179,7 @@ $(document).ready(function() {
          <i class="fa-sharp fa-solid fa-phone"></i>
        </span>
      </div>
-     <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" maxlength="9" tabindex="3" required>
+     <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" maxlength="9" tabindex="3" data-inputmask="'mask': '9999-9999'" required>
      <div class="invalid-feedback">Este campo es obligatorio.</div>
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
    </div>
@@ -188,9 +188,25 @@ $(document).ready(function() {
 </div><!-- termina fila  -->
 
 <div class="row">
-
+<div class="col-4 ">
+               {{-- Input de dui  --}}
+               <div class="form-group">
+               <label for="inputEmail3" class="col-sm-4 col-form-label">Correo Electronico</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fa-solid fa-id-card"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" id="correo" name="correo" placeholder="E-mail" tabindex="4" data-inputmask-alias="email">
+                  
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+                </div>
+              </div>
   
-<div class="col-6 ">
+              </div>
+  
+<div class="col-4 ">
                {{-- Input de dui  --}}
                <div class="form-group">
                <label for="inputEmail3" class="col-sm-4 col-form-label">Numero de DUI *</label>
@@ -200,7 +216,7 @@ $(document).ready(function() {
                       <i class="fa-solid fa-id-card"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" id="dui" name="dui" placeholder="DUI" tabindex="4" required>
+                  <input type="text" class="form-control" id="dui" name="dui" placeholder="DUI" tabindex="5" data-inputmask="'mask': '99999999-9'" required>
                   <div class="invalid-feedback">Este campo es obligatorio.</div>
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
@@ -208,7 +224,7 @@ $(document).ready(function() {
   
               </div>
   
-              <div class="col-6">
+              <div class="col-4">
         {{-- Input de tipo de NIT  --}}
                 <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 col-form-label">Numero de NIT *</label>
@@ -218,7 +234,7 @@ $(document).ready(function() {
                         <i class="fa-regular fa-id-card"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control " id="nit" name="nit" placeholder="NIT" tabindex="5" required>
+                    <input type="text" class="form-control " id="nit" name="nit" placeholder="NIT" tabindex="6" data-inputmask="'mask': '9999-999999-999-9'" required>
                     <div class="invalid-feedback">Este campo es obligatorio.</div>
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                   </div>
@@ -240,7 +256,7 @@ $(document).ready(function() {
           <i class="fa-solid fa-building"></i>
         </span>
       </div>
-      <input type="text" class="form-control " id="tipo_contrato" name="tipo_contrato" placeholder="tipo de contrato:" tabindex="6">
+      <input type="text" class="form-control " id="tipo_contrato" name="tipo_contrato" placeholder="tipo de contrato:" tabindex="7">
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
     </div>
   </div> 
@@ -526,7 +542,7 @@ $(document).ready(function() {
                 </span>
               </div>
               <input type="text" class="form-control " id="num_licencia" 
-                     name="num_licencia" placeholder="Licencia de conducir:" tabindex="19">
+                     name="num_licencia" placeholder="Licencia de conducir:" tabindex="19" data-inputmask="'mask': '9999-999999-999-9'">
                      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                     </div>
           </div>                       
@@ -595,7 +611,18 @@ $(document).ready(function() {
 <script src="https://kit.fontawesome.com/b64093b700.js" crossorigin="anonymous"></script> 
 
    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.3/jquery.inputmask.bundle.min.js"></script>
+
+
+   
+ 
+<script>
+  $(document).ready(function(){
   
+ /* $(":input").inputmask();*/
+ Inputmask().mask(document.querySelectorAll("input"));
+});
+</script>
 
 
 @endsection
