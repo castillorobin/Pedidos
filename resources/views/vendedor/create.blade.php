@@ -537,7 +537,7 @@ if(document.getElementById("flexs").checked)
 </div><!-- termina fila  -->
 
 <div class="row">
-
+ 
 <div class="col-sm-12 ">
     <label for="inputEmail3" class="col-sm-8 col-form-label">Dirección fiscal</label>
     <div class="input-group mb-3">

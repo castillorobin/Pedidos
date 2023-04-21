@@ -17,18 +17,96 @@
 @stop
 
 @section('content')
-
+ 
 <style>
   body {
   font-family: 'Roboto', sans-serif;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+        display: block;
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+    }
+
+    input[type="date"]::before {
+	color: #999999;
+	content: attr(placeholder);
+}
+input[type="date"] {
+	color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
 </style>
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
 <script>
 function myFunction() {
   document.getElementById("myForm").reset();
 }
+
+</script>
+
+
+
+<script>
+  $(document).ready(function() {
+  $("input").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+});
+
+$(document).ready(function() {
+  $("select").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+
+  
+
+});
+
+
+
 
 
 </script>
@@ -64,7 +142,9 @@ function myFunction() {
                           <i class="fas fa-user"></i>
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">  
+                      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" tabindex="1" required>  
+                      <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                     </div>
                   </div>
       
@@ -82,8 +162,9 @@ function myFunction() {
                     <i class="fa-sharp fa-solid fa-house"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
-                
+                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" tabindex="2" required>
+                <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
               </div>
             </div> 
             </div>
@@ -98,8 +179,9 @@ function myFunction() {
          <i class="fa-sharp fa-solid fa-phone"></i>
        </span>
      </div>
-     <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" maxlength="9">
-     
+     <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" maxlength="9" tabindex="3" required>
+     <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
    </div>
  </div>
      </div>
@@ -118,8 +200,9 @@ function myFunction() {
                       <i class="fa-solid fa-id-card"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" id="dui" name="dui" placeholder="DUI">
-                
+                  <input type="text" class="form-control" id="dui" name="dui" placeholder="DUI" tabindex="4" required>
+                  <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
               </div>
   
@@ -135,8 +218,9 @@ function myFunction() {
                         <i class="fa-regular fa-id-card"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control " id="nit" name="nit" placeholder="NIT">
-                   
+                    <input type="text" class="form-control " id="nit" name="nit" placeholder="NIT" tabindex="5" required>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                   </div>
                 </div>
   
@@ -156,8 +240,8 @@ function myFunction() {
           <i class="fa-solid fa-building"></i>
         </span>
       </div>
-      <input type="text" class="form-control " id="tipo_contrato" name="tipo_contrato" placeholder="tipo de contrato:">
-     
+      <input type="text" class="form-control " id="tipo_contrato" name="tipo_contrato" placeholder="tipo de contrato:" tabindex="6">
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
     </div>
   </div> 
    {{--FIN Input de tipo de contrato  --}}
@@ -168,12 +252,13 @@ function myFunction() {
   <label for="inputEmail3" class="col-sm-4 col-form-label">Agencia</label>
   <div class="input-group">
 
-    <select class="form-select " id="agencia" name="agencia" >
+    <select class="form-select " id="agencia" name="agencia" tabindex="7">
       <option selected>Agencia</option>
       <option value="San Salvador">San Salvador</option>
       <option value="San Miguel">San Miguel</option>
       <option value="Santa Ana">Santa Ana</option>
     </select>
+    <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
   </div>
   
   {{-- FIN Input de agencia  --}}
@@ -194,8 +279,8 @@ function myFunction() {
         <i class="fa-regular fa-id-card"></i>
       </span>
     </div>
-    <input type="text" class="form-control" id="num_seguro" name="num_seguro" placeholder="Numero de Seguro">
-   
+    <input type="text" class="form-control" id="num_seguro" name="num_seguro" placeholder="Numero de Seguro" tabindex="8">
+    <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
   </div>
 </div>
 
@@ -213,8 +298,8 @@ function myFunction() {
         <i class="fa-solid fa-id-card-clip"></i>
       </span>
     </div>
-    <input type="text" class="form-control " id="num_afp" name="num_afp" placeholder="Numero de AFP:">
-    
+    <input type="text" class="form-control " id="num_afp" name="num_afp" placeholder="Numero de AFP:" tabindex="9">
+    <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
   </div>
 </div>
             
@@ -232,7 +317,7 @@ function myFunction() {
 <i class="fa-sharp fa-solid fa-house"></i>
 </span>
 </div>
-<select class="form-select " id="cargo" name="cargo" >
+<select class="form-select " id="cargo" name="cargo" tabindex="10" required>
     <option selected>Ceo</option>
     <option value="Gerente general">Gerente General</option>
     <option value="gerente">Gerente</option>
@@ -246,7 +331,8 @@ function myFunction() {
     <option value="Oficios Varios">Oficios varios</option>
     <option value="Seguridad">Seguridad</option>
   </select>
-
+  <div class="invalid-feedback">Este campo es obligatorio.</div>
+      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>   
 
 </div>
 </div>
@@ -269,8 +355,8 @@ function myFunction() {
                 </span>
               </div>
               <input  class="form-control " id="fecha_de_alta" 
-                      name="fecha_de_alta" type="date" />
-                      
+                      name="fecha_de_alta" type="date" tabindex="11"/>
+                      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
             </div>
           </div>
                               
@@ -291,8 +377,8 @@ function myFunction() {
                             </span>
                           </div>
                           <input type="text" class="form-control"
-                                 id="salario" name="salario" placeholder="Salario">
-                                
+                                 id="salario" name="salario" placeholder="Salario" tabindex="12">
+                                 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                                 </div>
                       </div>
                             </div>{{-- FIN COL  --}}
@@ -311,8 +397,8 @@ function myFunction() {
                 </span>
               </div>
               <input class="form-control "
-                     id="fecha_de_baja" name="fecha_de_baja" type="date" />
-                   
+                     id="fecha_de_baja" name="fecha_de_baja" type="date" tabindex="13"/>
+                     <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
             </div>
           </div>
 
@@ -333,7 +419,8 @@ function myFunction() {
                       <i class="fa-regular fa-note-sticky"></i>
                     </span>
                   </div>
-                  <textarea class="form-control" id="nota" name="nota" placeholder="Escribe tu nota aqui." rows="3"></textarea>
+                  <textarea class="form-control" id="nota" name="nota" placeholder="Escribe tu nota aqui." rows="3" tabindex="14"></textarea>
+                  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
               </div>
 
@@ -356,13 +443,13 @@ function myFunction() {
                               {{-- Input de tipo de vehiculo  --}}
                               <div class="input-group">
                               
-                                <select class="form-select " id="tipo_vehiculo" name="tipo_vehiculo" >
+                                <select class="form-select " id="tipo_vehiculo" name="tipo_vehiculo" tabindex="15" >
                                   <option value="" selected>Tipo de vehiculo</option>
                                   <option value="Motocicleta">Motocicleta</option>
                                   <option value="Vehiculo">Vehiculo</option>
                                   <option value="Camion">Camion</option>
                                 </select>
-                                
+                                <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                               </div>
                 
                                     
@@ -375,13 +462,13 @@ function myFunction() {
                 {{-- Input de numero de seguro  --}}
                 <div class="input-group">
                 
-                  <select class="form-select" id="asigno_unidad" name="asigno_unidad" >
+                  <select class="form-select" id="asigno_unidad" name="asigno_unidad" tabindex="16">
                     <option value="" selected>Asigno unidad</option>
                     <option value="Si">Si</option>
                     <option value="No">No</option>
                     
                   </select>
-                 
+                  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
                       
                       
@@ -401,8 +488,8 @@ function myFunction() {
                   <i class="fa-solid fa-car-side"></i>
                 </span>
               </div>
-              <input type="text" class="form-control"  id="num_placa" name="num_placa" placeholder="Numero de Placa:">
-              
+              <input type="text" class="form-control"  id="num_placa" name="num_placa" placeholder="Numero de Placa:" tabindex="17">
+              <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
             </div>
           </div>
                                 </div>{{-- FIN COL  --}}
@@ -421,8 +508,8 @@ function myFunction() {
                 </span>
               </div>
               <input type="text" class="form-control " id="num_tarjeta" 
-                     name="num_tarjeta" placeholder="Numero de tarjeta:">
-             
+                     name="num_tarjeta" placeholder="Numero de tarjeta:" tabindex="18">
+                     <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                     </div>
           </div>
 
@@ -439,8 +526,8 @@ function myFunction() {
                 </span>
               </div>
               <input type="text" class="form-control " id="num_licencia" 
-                     name="num_licencia" placeholder="Licencia de conducir:">
-                     
+                     name="num_licencia" placeholder="Licencia de conducir:" tabindex="19">
+                     <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                     </div>
           </div>                       
           </div>{{-- FIN COL  --}}
@@ -457,9 +544,9 @@ function myFunction() {
           <span class="input-group-text"><i class="fa-solid fa-image"></i></span>
         </div>
         <div class="custom-file">
-          <input type="file" class="custom-file-input " id="foto" name="foto">
+          <input type="file" class="custom-file-input " id="foto" name="foto" tabindex="20">
           <label class="custom-file-label" for="foto">seleccionar la foto....</label>
-          
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
         </div>
       </div>
 
@@ -469,7 +556,7 @@ function myFunction() {
         &nbsp; &nbsp;
         <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
       &nbsp; &nbsp;
-<button type="submit" class="btn btn-primary">Guardar</button>
+<button type="submit" class="btn btn-primary" tabindex="21">Guardar</button>
 
       </div>
 </div><!-- termina fila  -->
