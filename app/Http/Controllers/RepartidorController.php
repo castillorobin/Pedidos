@@ -20,7 +20,7 @@ class RepartidorController extends Controller
            return view('repartidor.index',compact('repartidores'))->with('exito','ok');
 
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -61,11 +61,12 @@ class RepartidorController extends Controller
         $repartidores->num_placa     = $request->num_placa;
         $repartidores->num_tarjeta   = $request->num_tarjeta;
         $repartidores->num_licencia  = $request->num_licencia;
-        
+        $repartidores->correo  = $request->correo;
+       /* 
         if ($request->hasFile('foto')) {
             $repartidores->foto = $request->file('foto')->store('uploads','public');
         }
-        
+        */
         $repartidores->save();
 
         return redirect('/repartidores');
