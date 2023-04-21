@@ -160,12 +160,25 @@ class VendedorController extends Controller
         $vendedor->nombre = $request->get('nombre');
         $vendedor->direccion = $request->get('dire');
         $vendedor->telefono = $request->get('tele');
-        $vendedor->fecha_ingreso = $request->get('fech');
-        $vendedor->tipovende = $request->get('tipov');
+        $vendedor->whatsapp = $request->get('what');
+        $vendedor->falta = $request->get('falta');
+        $vendedor->fbaja = $request->get('fbaja');
+        $vendedor->tipovende = $request->get('tvende');
+        $vendedor->correo = $request->get('correo');
+        $vendedor->estado = $request->get('estado');
+        $vendedor->agencia = $request->get('agen');
         $vendedor->titular = $request->get('titular');
-        $vendedor->cuenta = $request->get('cuenta');
         $vendedor->banco = $request->get('banco');
+        $vendedor->cuenta = $request->get('cuenta');
         $vendedor->tcuenta = $request->get('tcuenta');
+        $vendedor->chivo = $request->get('chivo');
+        $vendedor->tmoney = $request->get('money');
+        $vendedor->empresa = $request->get('empresa');
+        $vendedor->giro = $request->get('giro');
+        $vendedor->dui = $request->get('dui');
+        $vendedor->niva = $request->get('iva');
+        $vendedor->nrc = $request->get('nrc');
+
         $vendedor->save();
         return redirect('/vendedores');
     }

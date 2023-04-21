@@ -72,19 +72,19 @@
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Whatsapp</label>
-        <input type="text" id="tele" name="tele" class="form-control" tabindex="3" value=" {{$vendedor->whatsapp }} ">
+        <input type="text" id="what" name="what" class="form-control" tabindex="3" value=" {{$vendedor->whatsapp }} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Fecha de alta</label>
-        <input type="text" id="fech" name="fech" class="form-control" tabindex="4" value=" {{  date('d/m/Y', strtotime($vendedor->created_at))  }} ">
+        <input type="text" id="falta" name="falta" class="form-control" tabindex="4" value=" {{  date('d/m/Y', strtotime($vendedor->created_at))  }} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Fecha de baja</label>
-        <input type="text" id="fech" name="fech" class="form-control" tabindex="4" value=" {{  date('d/m/Y', strtotime($vendedor->fbaja))  }} ">
+        <input type="text" id="fbaja" name="fbaja" class="form-control" tabindex="4" value=" {{  date('d/m/Y', strtotime($vendedor->fbaja))  }} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Tipo de Comercio</label>
-        <select id="pagado" name="pagado" class="form-control">
+        <select id="tvende" name="tvende" class="form-control">
         <option value="{{$vendedor->tipovende }}" selected >{{$vendedor->tipovende }}</option>
        <option value="Pequeño">Pequeño</option>
        <option value="Mediano">Mediano</option>
@@ -95,7 +95,7 @@
 
     <div class="mb-3 col-8">
         <label for="" class="form-label">Correo</label>
-        <input type="text" id="tipov" name="tipov" class="form-control" tabindex="7" value=" {{$vendedor->correo }} ">
+        <input type="text" id="correo" name="correo" class="form-control" tabindex="7" value=" {{$vendedor->correo }} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Estado del Comercio</label>
@@ -115,7 +115,7 @@
     <div class="mb-3 col-4">
         <label for="" class="form-label">Agencia de registro</label>
         
-        <select id="agenr" name="agenr" class="form-control">
+        <select id="agen" name="agen" class="form-control">
         <option value="{{$vendedor->agencia }}" selected >{{$vendedor->agencia }}</option>
        <option value="San Salvador">San Salvador</option>
        <option value="San Miguel">San Miguel</option>
@@ -156,11 +156,11 @@
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label"># de chivo</label>
-        <input type="text" id="tcuenta" name="tcuenta" class="form-control" tabindex="7" value=" {{$vendedor->chivo }} ">
+        <input type="text" id="chivo" name="chivo" class="form-control" tabindex="7" value=" {{$vendedor->chivo }} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label"># de tigo money</label>
-        <input type="text" id="tcuenta" name="tcuenta" class="form-control" tabindex="7" value=" {{$vendedor->tmoney }} ">
+        <input type="text" id="money" name="money" class="form-control" tabindex="7" value=" {{$vendedor->tmoney }} ">
     </div>
 
 
@@ -182,7 +182,7 @@
     
     <div class="mb-3 col-12">
         <label for="" class="form-label">Nombre de la empresa</label>
-        <input type="text" id="tcuenta" name="tcuenta" class="form-control" tabindex="7" value=" {{$vendedor->empresa }} ">
+        <input type="text" id="empresa" name="empresa" class="form-control" tabindex="7" value=" {{$vendedor->empresa }} ">
     </div>
 
     <div class="mb-3 col-8">
@@ -192,7 +192,7 @@
     <div class="mb-3 col-4">
         <label for="" class="form-label">Tipo de contribuyente</label>
         
-        <select id="agenr" name="agenr" class="form-control">
+        <select id="contri" name="contri" class="form-control">
         
        <option value="Pequeño">Pequeño</option>
        <option value="Mediano">Mediano</option>
@@ -203,20 +203,20 @@
 
     <div class="mb-3 col-4">
         <label for="" class="form-label">Número de (DUI)</label>
-        <input type="text" id="tcuenta" name="tcuenta" class="form-control" tabindex="7" value=" {{$vendedor->dui }} ">
+        <input type="text" id="dui" name="dui" class="form-control" tabindex="7" value=" {{$vendedor->dui }} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Número de (IVA)</label>
-        <input type="text" id="tcuenta" name="tcuenta" class="form-control" tabindex="7" value=" {{$vendedor->niva }} ">
+        <input type="text" id="iva" name="iva" class="form-control" tabindex="7" value=" {{$vendedor->niva }} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Número de registro (NRC)</label>
-        <input type="text" id="tcuenta" name="tcuenta" class="form-control" tabindex="7" value=" {{$vendedor->nrc }} ">
+        <input type="text" id="nrc" name="nrc" class="form-control" tabindex="7" value=" {{$vendedor->nrc }} ">
     </div>
 
     <div class="mb-3 col-12">
         <label for="" class="form-label">Dirección fiscal</label>
-        <input type="text" id="tcuenta" name="tcuenta" class="form-control" tabindex="7" value="  ">
+        <input type="text" id="dfiscal" name="dfiscal" class="form-control" tabindex="7" value="  ">
     </div>
 
 
