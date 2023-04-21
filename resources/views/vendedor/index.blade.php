@@ -90,7 +90,7 @@ ul li ul:hover {
     float: right;
 }
 .headt td {
-  height: 10px !important;
+  height: 15px !important;
   padding: 0px;
  font-size: 14px;
  background: #ffffff;
@@ -234,12 +234,12 @@ ul li ul:hover {
                     
                 </tr>
                 <tr class="headt">
-                    <td width="200px">Comercio / tienda </td>
+                    <td width="230px">Comercio / tienda </td>
                     <td> <span ></span> <label for="" id="efirstname"></label> </td>
                     
                 </tr>
                 <tr class="headt">
-                    <td width="200px">Dirección </td>
+                    <td width="230px">Dirección </td>
                     <td> <span ></span> <label for="" id="dire"></label> </td>
                     
                 </tr>
@@ -286,7 +286,7 @@ ul li ul:hover {
                     
                 </tr>
                 <tr class="headt">
-                    <td width="200px">Nombre del titular de la cuenta </td>
+                    <td width="230px">Nombre del titular de la cuenta </td>
                     <td> <label for="" id="titul"></label> </td>
                 </tr>
                 <tr class="headt">
