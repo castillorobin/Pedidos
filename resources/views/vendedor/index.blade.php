@@ -126,7 +126,7 @@ ul li ul:hover {
         <th scope="col">Fecha de alta</th>
         <th scope="col">Fecha de baja</th>
         <th scope="col">Agencia</th>
-        
+        <th scope="col">Nota</th>
         <th scope="col">Opciones</th>
     </tr>
         </thead>
@@ -143,6 +143,7 @@ ul li ul:hover {
     <td><span id="alta{{ $vendedores[$i]->id }}">{{  date("d/m/Y", strtotime($vendedores[$i]->created_at))  }} </span></td>
     <td><span id="baja{{ $vendedores[$i]->id }}">{{  date("d/m/Y", strtotime($vendedores[$i]->fbaja))  }}</span></td>
     <td><span id="agen{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->agencia }}</span></td>
+    <td><span id="ag">{{ $vendedores[$i]->nota }}</span></td>
     
     <span hidden id="correo{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->correo }}</span>
     <span hidden id="titular{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->titular }}</span>
@@ -379,25 +380,6 @@ ul li ul:hover {
 
 <script>
        
-
-
-       $(document).ready(function () {
-    $('#tvendedor').DataTable(
-        {
-            language: {
-            "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
-           
-        },
-        
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
-       
-
-        } /*hasata aqui*/
-    );
-});
-
-
-
   
 $(document).ready(function(){
 	$(document).on('click', '.edit', function(){
@@ -450,6 +432,25 @@ $(document).ready(function(){
 		
 	});
 });
+
+
+       $(document).ready(function () {
+    $('#tvendedor').DataTable(
+        {
+            language: {
+            "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+           
+        },
+        
+        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+       
+
+        } /*hasata aqui*/
+    );
+});
+
+
+
 
 
     </script>
