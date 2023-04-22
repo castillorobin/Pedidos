@@ -121,53 +121,74 @@ $(document).ready(function() {
 <div class="row border mx-5 py-4" style="background-color: white;" >
   <div class="row">
 
-  <div class="col-sm-12">
-<label for="" class="col-sm-4 col-form-label">Comercio / tienda *</label>
-<div class="input-group mb-3">
+  <div class="col-sm-10">
+      <label for="" class="col-sm-4 col-form-label">Comercio / tienda *</label>
+      <div class="input-group mb-3">
 
-<div class="input-group-prepend">
-<span class="input-group-text" id="basic-addon1"> <i class="fas fa-user"></i> </span>
-</div>
-<select id="nombre" name="nombre" class="form-control" tabindex="1" required>
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"> <i class="fas fa-user"></i> </span>
+        </div>
+      <select id="nombre" name="nombre" class="form-control" tabindex="1" required>
        <option >-Seleccionar comercio-</option>
        
        @foreach($vendedores as $vendedor)
-       <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
+       <option value="    {{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
        @endforeach
        </select>
        <div class="invalid-feedback">Este campo es obligatorio.</div>
-  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+
+        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+      </div>
+
+  
 </div>
-</div>
+<div class="col-sm-2 pt-5" >
+      <a href="/pedido/desdeenvio">+ Crear</a>
+  </div>
   </div><!-- termina fila  -->
 
   <div class="row">
     
-<div class="col-sm-7 ">
+<div class="col-sm-12 ">
     <label for="inputEmail3" class="col-sm-6 col-form-label">Dirección de recolecta</label>
     <div class="input-group mb-3">
 
   <div class="input-group-prepend">
   <span class="input-group-text" id="basic-addon1"> <i class="fas fa-map-marker-alt"></i> </span>
   </div>
-  <input type="text" class="form-control" name="direccion" placeholder="Ingrese la dirección de recolecta" aria-label="Username" aria-describedby="basic-addon1" tabindex="2">
+  <input type="text" class="form-control" name="direccion" value="{{ $vendedores[0]->direccion }}" aria-label="Username" aria-describedby="basic-addon1" tabindex="2">
   <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
     </div>
     
-    <div class="col-sm-5">
+    <div class="col-sm-6">
     <label for="inputEmail3" class="col-sm-6 col-form-label">Teléfono</label>
-    <div class="input-group mb-3">
+      <div class="input-group mb-3">
 
-  <div class="input-group-prepend">
-  <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-square-alt"></i> </span>
-  </div>
-  <input type="text" class="form-control" name="telefono" placeholder="Ingrese teléfono del comercio" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" data-inputmask="'mask': '9999-9999'">
-  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+        <div class="input-group-prepend">
+         <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-square-alt"></i> </span>
+        </div>
+          <input type="text" class="form-control" name="telefono" placeholder="Ingrese teléfono del comercio" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" data-inputmask="'mask': '9999-9999'">
+        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+
+</div>
+    </div>
+
+    <div class="col-sm-6">
+    <label for="inputEmail3" class="col-sm-6 col-form-label">Whatsapp</label>
+      <div class="input-group mb-3">
+
+        <div class="input-group-prepend">
+         <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-square-alt"></i> </span>
+        </div>
+          <input type="text" class="form-control" name="telefono" placeholder="Ingrese teléfono del comercio" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" data-inputmask="'mask': '9999-9999'">
+        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+
 </div>
     </div>
   </div><!-- termina fila  -->
 
+  
   <div class="row">
     
 <div class="col-sm-6">
@@ -177,7 +198,7 @@ $(document).ready(function() {
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-dolly"></i> </span>
 </div>
-<input type="text" class="form-control" placeholder="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly tabindex="4">
+<input type="date" class="form-control" name="fechare" placeholder="" aria-label="Username" aria-describedby="basic-addon1" tabindex="4">
 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
 </div>
@@ -249,7 +270,7 @@ $(document).ready(function() {
 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
 </div>
-
+ 
 
 <div class="col-sm-4">
 <label for="" class="col-sm-4 col-form-label">Agencia</label>

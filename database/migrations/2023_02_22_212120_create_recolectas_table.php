@@ -16,13 +16,14 @@ class CreateRecolectasTable extends Migration
         Schema::create('recolectas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('direccion');
-            $table->date('fechaent');
-            $table->string('telefono');
-            $table->string('repartidor');
-            $table->string('estado');
-            $table->string('nota');
-            $table->string('agencia');
+            $table->string('direccion')->nullable();
+            $table->date('fechaent')->nullable();
+            $table->string('telefono')->nullable();
+            $table->string('whatsapp')->nullable();
+            $table->string('repartidor')->nullable();
+            $table->string('estado')->nullable();
+            $table->string('nota')->nullable();
+            $table->string('agencia')->nullable();
             $table->timestamps();
         });
     }

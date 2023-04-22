@@ -136,7 +136,7 @@ ul li ul:hover {
         <th scope="col">Teléfono</th>
         <th scope="col">Fecha de recolecta</th>
         <th scope="col">Fecha de entrega</th>
-        <th scope="col">Estado de recoelecta</th>
+        <th scope="col" >Estado de recolecta</th>
         <th scope="col">Agencia</th>
         <th scope="col">Opciones</th>
     </tr>
@@ -150,7 +150,7 @@ ul li ul:hover {
     <td>{{ $recolectas[$i]->telefono }}</td>
     <td>{{  date('d/m/Y', strtotime($recolectas[$i]->created_at))  }} </td>
     <td>{{  date('d/m/Y', strtotime($recolectas[$i]->fechaent))  }}</td>
-    <td>{{ $recolectas[$i]->estado }}</td>
+    <td style="background: #e3e8e7">{{ $recolectas[$i]->estado }}</td>
     <td>{{ $recolectas[$i]->agencia }}</td>
 
     
