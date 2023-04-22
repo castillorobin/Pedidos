@@ -153,7 +153,7 @@ ul li ul:hover {
     <td>{{ $recolectas[$i]->estado }}</td>
     <td>{{ $recolectas[$i]->agencia }}</td>
 
-   
+    
 
     <td class="opciones text-center" style="">
     

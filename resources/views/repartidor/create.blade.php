@@ -52,6 +52,8 @@ input[type="date"]:focus::before,
 input[type="date"]:valid::before {
 	content: "" !important;
 }
+
+
 </style>
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -191,7 +193,7 @@ $(document).ready(function() {
 <div class="col-4 ">
                {{-- Input de dui  --}}
                <div class="form-group">
-               <label for="inputEmail3" class="col-sm-4 col-form-label">Correo Electronico</label>
+               <label for="inputEmail3" class="col-sm-8 col-form-label">Correo Electronico</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -209,7 +211,7 @@ $(document).ready(function() {
 <div class="col-4 ">
                {{-- Input de dui  --}}
                <div class="form-group">
-               <label for="inputEmail3" class="col-sm-4 col-form-label">Numero de DUI *</label>
+               <label for="inputEmail3" class="col-sm-8 col-form-label">Numero de DUI *</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -227,7 +229,7 @@ $(document).ready(function() {
               <div class="col-4">
         {{-- Input de tipo de NIT  --}}
                 <div class="form-group">
-                <label for="inputEmail3" class="col-sm-4 col-form-label">Numero de NIT *</label>
+                <label for="inputEmail3" class="col-sm-8 col-form-label">Numero de NIT *</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">
@@ -334,7 +336,8 @@ $(document).ready(function() {
 </span>
 </div>
 <select class="form-select " id="cargo" name="cargo" tabindex="10" required>
-    <option selected>Ceo</option>
+    <option selected>Sin Asignar</option>
+    <option value="Ceo">Ceo</option>
     <option value="Gerente general">Gerente General</option>
     <option value="gerente">Gerente</option>
     <option value="Supervisor">Supervisor</option>

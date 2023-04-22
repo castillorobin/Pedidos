@@ -103,6 +103,12 @@ ul li ul:hover {
     font-size: 16px;
     float: right;
 }
+.headt td {
+  height: 15px !important;
+  padding: 0px;
+ font-size: 14px;
+ background: #ffffff;
+}
 </style>
 
 <style> 
@@ -149,7 +155,7 @@ ul li ul:hover {
 <tbody>
 @for ($i=0; $i< count($repartidores); $i++)
     
-        
+         
     <td><span id="nombre{{$repartidores[$i]->id}}">{{ $repartidores[$i]->nombre }}</span></td>
     <td><span id="tele{{$repartidores[$i]->id}}">{{ $repartidores[$i]->telefono }}</span></td>
     <td><span id="dire{{$repartidores[$i]->id}}">{{ $repartidores[$i]->direccion }}</span></td>
@@ -317,7 +323,7 @@ ul li ul:hover {
                     <td  colspan="2" class="pt-2"> <h4> Datos del vehiculo</h4>
                         <hr>
                     </td>
-                     
+                      
                 </tr>
                 <tr class="headt">
                     <td width="200px">Tipo de Vehiculo </td>

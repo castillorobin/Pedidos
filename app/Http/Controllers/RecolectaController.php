@@ -114,6 +114,8 @@ class RecolectaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pedido = Recolecta::find($id);
+        $pedido->delete();
+        return redirect('/recolectas');
     }
 }
