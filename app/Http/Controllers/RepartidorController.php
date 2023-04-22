@@ -96,8 +96,8 @@ class RepartidorController extends Controller
      */
     public function edit($id)
     {
-        $repartidores = Repartidor::all();
-        return view('repartidor.create');
+        $repartidor = Repartidor::find($id);
+        return view('repartidor.edit')->with(['repartidor'=>$repartidor]);
     }
 
     /**
@@ -116,6 +116,7 @@ class RepartidorController extends Controller
         $repartidor->direccion     = $request->dire;
         $repartidor->telefono      = $request->tele;
         $repartidor->dui           = $request->dui;
+        $repartidor->correo        = $request->correo;
         $repartidor->nit           = $request->nit;
         $repartidor->tipo_contrato = $request->tipo_contrato;
         $repartidor->agencia       = $request->agencia;
@@ -131,7 +132,7 @@ class RepartidorController extends Controller
         $repartidor->num_placa     = $request->num_placa;
         $repartidor->num_tarjeta   = $request->num_tarjeta;
         $repartidor->num_licencia  = $request->num_licencia;
-        $repartidor->foto          = $request->foto;
+        //$repartidor->foto          = $request->foto;
         $repartidor->save();
 
         return redirect('/repartidores');
