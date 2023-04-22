@@ -146,7 +146,7 @@ if(document.getElementById("flexs").checked)
 
 
   <div class="col-sm-4">
-<label for="" class="col-sm-6 col-form-label">ID Comercio</label>
+<label for="" class="col-sm-6 col-form-label">ID Comercio *</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
@@ -171,7 +171,7 @@ if(document.getElementById("flexs").checked)
   </div>
   <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese nombre del comercio" aria-label="Username" aria-describedby="basic-addon1" required>
   <div class="invalid-feedback">Este campo es obligatorio.</div>
-      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
 </div>
 </div>
 
@@ -520,7 +520,7 @@ if(document.getElementById("flexs").checked)
 <input type="text" id="niva" name="niva" class="form-control" placeholder="Ingrese el NIT de la empresa" aria-label="Username" aria-describedby="basic-addon1"  data-inputmask="'mask': '9999-999999-999-9'">
 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
 </div>
-</div>
+</div> 
 
 
 <div class="col-sm-4">
