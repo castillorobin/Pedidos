@@ -15,20 +15,96 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+        display: block;
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+    }
+
+    input[type="date"]::before {
+	color: #999999;
+	content: attr(placeholder);
+}
+input[type="date"] {
+	color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
 </style>
 
 <script>
 
 </script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
 <script>
 function myFunction() {
   document.getElementById("myForm").reset();
 }
 
-
 </script>
 
+
+
+<script>
+  $(document).ready(function() {
+  $("input").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+});
+
+$(document).ready(function() {
+  $("select").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+
+  
+
+});
+
+
+
+
+
+</script>
 
 
       <form action="/recolectas" method="POST" id="myForm">
@@ -46,19 +122,21 @@ function myFunction() {
   <div class="row">
 
   <div class="col-sm-12">
-<label for="" class="col-sm-4 col-form-label">Comercio / tienda</label>
+<label for="" class="col-sm-4 col-form-label">Comercio / tienda *</label>
 <div class="input-group mb-3">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-user"></i> </span>
 </div>
-<select id="nombre" name="nombre" class="form-control">
+<select id="nombre" name="nombre" class="form-control" tabindex="1" required>
        <option >-Seleccionar comercio-</option>
        
        @foreach($vendedores as $vendedor)
        <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
        @endforeach
        </select>
+       <div class="invalid-feedback">Este campo es obligatorio.</div>
+  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
 </div>
 </div>
   </div><!-- termina fila  -->
@@ -72,7 +150,8 @@ function myFunction() {
   <div class="input-group-prepend">
   <span class="input-group-text" id="basic-addon1"> <i class="fas fa-map-marker-alt"></i> </span>
   </div>
-  <input type="text" class="form-control" name="direccion" placeholder="Ingrese la dirección de recolecta" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" name="direccion" placeholder="Ingrese la dirección de recolecta" aria-label="Username" aria-describedby="basic-addon1" tabindex="2">
+  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
     </div>
     
@@ -83,7 +162,8 @@ function myFunction() {
   <div class="input-group-prepend">
   <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-square-alt"></i> </span>
   </div>
-  <input type="text" class="form-control" name="telefono" placeholder="Ingrese teléfono del comercio" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" name="telefono" placeholder="Ingrese teléfono del comercio" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" data-inputmask="'mask': '9999-9999'">
+  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
     </div>
   </div><!-- termina fila  -->
@@ -97,7 +177,8 @@ function myFunction() {
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-dolly"></i> </span>
 </div>
-<input type="text" class="form-control" placeholder="{{ $date }}" aria-label="Username" aria-describedby="basic-addon1" disabled>
+<input type="text" class="form-control" placeholder="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly tabindex="4">
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
 </div>
 
@@ -109,7 +190,8 @@ function myFunction() {
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-archive"></i> </span>
 </div>
-<input type="date" class="form-control" name="fechaen" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+<input type="date" class="form-control" name="fechaen" placeholder="" aria-label="Username" aria-describedby="basic-addon1" tabindex="5">
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
 </div>
   </div><!-- termina fila  -->
@@ -123,13 +205,14 @@ function myFunction() {
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-dolly"></i> </span>
 </div>
-<select id="repartidor" name="repartidor" class="form-control">
+<select id="repartidor" name="repartidor" class="form-control" tabindex="6">
 <option >-Seleccionar repartidor-</option>
        @foreach($repartidores as $repartidor)
        <option value="{{ $repartidor->id }}">{{ $repartidor->nombre }}</option>
        @endforeach
      
        </select>
+       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
 </div>
 
@@ -141,13 +224,14 @@ function myFunction() {
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-archive"></i> </span>
 </div>
-<select id="estado" name="estado" class="form-control">
+<select id="estado" name="estado" class="form-control" tabindex="7">
        <option value="Creada">Creada</option>
        <option value="Recolectada">Recolectada</option>
        <option value="Reprogramada">Reprogramada</option>
         
        <option value="No recolectada">No recolectada</option>
        </select>
+       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
 </div>
   </div><!-- termina fila  -->
@@ -161,7 +245,8 @@ function myFunction() {
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-book"></i> </span>
 </div>
-<input type="text" class="form-control" name="nota" placeholder="Ingrese nota, indicación, etc." aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" class="form-control" name="nota" placeholder="Ingrese nota, indicación, etc." aria-label="Username" aria-describedby="basic-addon1" tabindex="8">
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
 </div>
 
@@ -173,11 +258,12 @@ function myFunction() {
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-book"></i> </span>
 </div>
-<select id="agencia" name="agencia" class="form-control">
+<select id="agencia" name="agencia" class="form-control" tabindex="9">
        <option value="San Salvador">San Salvador</option>
        <option value="San Miguel">San Miguel</option>
        <option value="Santa Ana">Santa Ana</option>
        </select>
+       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
 </div>
   </div><!-- termina fila  -->
@@ -189,9 +275,9 @@ function myFunction() {
 <a href="/recolectas" class="btn btn-primary">Cancelar</a>
         &nbsp; &nbsp;
 
-        <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
+        <a href="/recolectas/create" class="btn btn-primary">Limpiar</a>
       &nbsp; &nbsp;
-<button type="submit" class="btn btn-primary">Guardar</button>
+<button type="submit" class="btn btn-primary" tabindex="10">Guardar</button>
 
 </div>
   </div><!-- termina fila  -->
@@ -201,7 +287,7 @@ function myFunction() {
   </div><!--termina row general  -->
 
 
-
+ 
 
 
 
@@ -212,7 +298,18 @@ function myFunction() {
 
 </form>
 
+<!-- JQUERY-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- INPUT MASK-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.3/jquery.inputmask.bundle.min.js"></script>
 
+<script>
+  $(document).ready(function(){
+  
+ /* $(":input").inputmask();*/
+ Inputmask().mask(document.querySelectorAll("input"));
+});
+</script>
 @endsection
 
 
