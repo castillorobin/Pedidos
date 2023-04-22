@@ -186,7 +186,7 @@ $(document).ready(function() {
  </div>
      </div>
 </div><!-- termina fila  -->
-
+ 
 <div class="row">
 <div class="col-4 ">
                {{-- Input de dui  --}}
