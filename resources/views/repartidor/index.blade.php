@@ -13,6 +13,7 @@
 @stop
 
 @section('content')
+
 <style>
     .dropdown-menu-center {
   left: 50% !important;
@@ -200,7 +201,7 @@ ul li ul:hover {
     <i class="fas fa-eye"></i>
     &nbsp;&nbsp;
     <button type="button" class="edit" data-bs-toggle="modal" value="{{ $repartidores[$i]->id }}" data-bs-target="#exampleModal">Ver</button>
- 
+  
     
     </form>
             </li>

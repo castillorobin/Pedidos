@@ -63,7 +63,7 @@ class RecolectaController extends Controller
         $date = strftime("%A %d de %B %Y");
         return view('recolecta.index')->with(['recolectas'=>$recolectas, 'date'=>$date , 'repartidores'=>$repartidores, 'vendedores'=>$vendedores  ]);
 
-    }
+    } 
     /**
      * Store a newly created resource in storage.
      *
