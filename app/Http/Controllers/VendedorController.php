@@ -30,12 +30,19 @@ class VendedorController extends Controller
     public function create()
     {
         $last = Vendedor::latest('id')->first();
-        $lastid = $last->id;
+        $lastid = 0;
         $uid=0;
-        if($lastid < 1){
+        try{
+            $lastid = $last->id;
+            $uid=0;
+            if($lastid < 1){
+                $uid=1;
+            }else{
+                $uid= $lastid + 1;
+            }
+            
+        } catch(Throwable $e){
             $uid=1;
-        }else{
-            $uid= $lastid + 1;
         }
 
         $vendedores = Vendedor::all();
