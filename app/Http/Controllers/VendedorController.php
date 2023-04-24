@@ -29,7 +29,7 @@ class VendedorController extends Controller
      */
     public function create()
     {
-        $last= Vendedor();
+        
         $last = Vendedor::latest('id')->first();
         $lastid = $last;
         $uid=0;
