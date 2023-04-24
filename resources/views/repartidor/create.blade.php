@@ -110,7 +110,7 @@ $(document).ready(function() {
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-<form action="/repartidores" method="POST" id="myForm">
+<form action="/repartidores" method="POST" id="myForm" enctype="multipart/form-data">
     @csrf
 
 <div class="row mx-5" >

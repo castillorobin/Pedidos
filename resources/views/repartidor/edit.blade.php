@@ -10,7 +10,7 @@
 @section('content')
 
     
-    <form action="/repartidores/{{$repartidor->id}}" method="POST">
+    <form action="/repartidores/{{$repartidor->id}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')   
      
@@ -185,6 +185,10 @@
         <input type="text" id="num_licencia" name="num_licencia" class="form-control" tabindex="2" value=" {{$repartidor->num_licencia}} ">
     </div>
 
+    <div class="mb-3 col-4">
+        <label for="" class="form-label">Foto</label>
+        <input type="file" id="foto" name="foto" class="form-control" tabindex="2" >
+    </div>
  
 
 

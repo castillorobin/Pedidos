@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Repartidor;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
 class RepartidorController extends Controller
 {
     /**
@@ -67,6 +67,16 @@ class RepartidorController extends Controller
             $repartidores->foto = $request->file('foto')->store('uploads','public');
         }
         */
+        if($request->hasFile('foto')){
+            
+            $imagen = $request->file("foto");
+            $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+            $repartidores->foto = $nombreimagen;
+            $ruta = public_path("imgs/fotos/");
+            $imagen->move($ruta,$nombreimagen);
+
+        }
+
         $repartidores->save();
 
         return redirect('/repartidores');
@@ -110,7 +120,7 @@ class RepartidorController extends Controller
     public function update(Request $request, $id)
     {
         
-        
+         
         $repartidor = Repartidor::find($id);
         $repartidor->nombre        = $request->nombre;
         $repartidor->direccion     = $request->dire;
@@ -133,6 +143,15 @@ class RepartidorController extends Controller
         $repartidor->num_tarjeta   = $request->num_tarjeta;
         $repartidor->num_licencia  = $request->num_licencia;
         //$repartidor->foto          = $request->foto;
+        if($request->hasFile('foto')){
+            
+            $imagen = $request->file("foto");
+            $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+            $repartidor->foto = $nombreimagen;
+            $ruta = public_path("imgs/fotos/");
+            $imagen->move($ruta,$nombreimagen);
+
+        }
         $repartidor->save();
         $repartidores = Repartidor::all();
         //return redirect('/repartidores');

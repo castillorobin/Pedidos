@@ -181,6 +181,7 @@ ul li ul:hover {
     <span hidden id="placa{{ $repartidores[$i]->id }}"> {{ $repartidores[$i]->num_placa }}</span>
     <span hidden id="tarjeta{{ $repartidores[$i]->id }}"> {{ $repartidores[$i]->num_tarjeta }}</span>
     <span hidden id="licencia{{ $repartidores[$i]->id }}"> {{ $repartidores[$i]->num_licencia }}</span>
+    <span hidden id="foto{{ $repartidores[$i]->id }}"> /imgs/fotos/{{ $repartidores[$i]->foto }}</span>
 
 
 
@@ -256,7 +257,7 @@ ul li ul:hover {
                 <tr class="headt">
                     <td width="230px">Nombre del empleado </td>
                     <td> <span ></span> <label for="" id="efirstname"></label> </td>
-                    
+                    <td rowspan="8"> <span ></span> <label for="" > </label> <img  alt="" id="fotos" width="250"> </td>
                 </tr>
                 <tr class="headt">
                     <td width="230px">Dirección </td>
@@ -440,6 +441,8 @@ $(document).ready(function(){
         var gir=$('#tarjeta'+id).text();
 
         var nr=$('#licencia'+id).text();
+        //foti= '/imgs/fotos/';
+        var fot=$('#foto'+id).text();
 		
 	
 		$('#edit').modal('show');
@@ -464,7 +467,8 @@ $(document).ready(function(){
         $('#giro').text(gir);   
 
         $('#nrc').text(nr);
-		
+        //$('#fotos').src(fot);
+		$('#fotos').attr("src", fot);
 	});
 });
        
