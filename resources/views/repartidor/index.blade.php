@@ -154,7 +154,7 @@ ul li ul:hover {
 </thead>
 <tbody>
 @for ($i=0; $i< count($repartidores); $i++)
-    
+     
          
     <td><span id="nombre{{$repartidores[$i]->id}}">{{ $repartidores[$i]->nombre }}</span></td>
     <td><span id="tele{{$repartidores[$i]->id}}">{{ $repartidores[$i]->telefono }}</span></td>

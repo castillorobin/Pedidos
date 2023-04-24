@@ -100,6 +100,25 @@ $(document).ready(function() {
 
 });
 
+$("#nombre").change(function() {
+       												 //alert($(this).val());
+                               /*
+          const tenv2 = document.getElementById("cenvio").value;
+					const envi2 = parseFloat(document.getElementById("envio").value);						                                                    
+          const preci2 =parseFloat($(this).val()); 
+          
+          if(tenv2=="Pagado")
+          {
+            document.getElementById("total").value = preci2;
+          }else{
+            document.getElementById("total").value = preci2 - envi2;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+*/
+    				});
 
 
 
@@ -131,9 +150,10 @@ $(document).ready(function() {
       <select id="nombre" name="nombre" class="form-control" tabindex="1" required>
        <option >-Seleccionar comercio-</option>
        
-       @foreach($vendedores as $vendedor)
-       <option value="    {{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
-       @endforeach
+       @for($i=0;  $i< count($vendedores); $i++ )
+       <option value="    {{ $vendedores[$i]->nombre }}">{{ $vendedores[$i]->nombre }}</option>
+       <span hidden id="correo{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->id }}</span>
+       @endfor
        </select>
        <div class="invalid-feedback">Este campo es obligatorio.</div>
 
