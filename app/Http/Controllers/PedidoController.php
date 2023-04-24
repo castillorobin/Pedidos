@@ -28,7 +28,7 @@ class PedidoController extends Controller
         $pedidof='1970-01-01';
         $repaf='';
          $last = Pedido::latest('id')->first();
-        $lastid = $last->id;
+        $lastid = $last;
         $uid=0;
         if($lastid < 1){
             $uid=1;
@@ -134,7 +134,7 @@ class PedidoController extends Controller
     public function create()
     {
         $last = Pedido::latest('id')->first();
-        $lastid = $last->id;
+        $lastid = $last;
         $uid=0;
         if($lastid < 1){
             $uid=1;
@@ -160,7 +160,7 @@ class PedidoController extends Controller
     public function desdeenvio()
     {
         $last = Pedido::latest('id')->first();
-        $lastid = $last->id;
+        $lastid = $last;
         $uid=0;
         if($lastid < 1){
             $uid=1;
@@ -191,7 +191,7 @@ class PedidoController extends Controller
     public function store(Request $request)
     {
         $last = Pedido::latest('id')->first();
-        $lastid =$last->id;
+        $lastid =$last;
         $uid=0;
         if($lastid < 1){
             $uid=1;
@@ -262,7 +262,7 @@ class PedidoController extends Controller
     {
         
         $last = Pedido::latest('id')->first();
-        $lastid = $last->id;
+        $lastid = $last;
         $uid=0;
         if($lastid < 1){
             $uid=1;
@@ -374,7 +374,7 @@ class PedidoController extends Controller
     public function update(Request $request, $id)
     {
         $last = Pedido::latest('id')->first();
-        $lastid = $last->id;
+        $lastid = $last;
         $uid=0;
         if($lastid < 1){
             $uid=1;
