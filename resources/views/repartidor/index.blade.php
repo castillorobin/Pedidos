@@ -159,7 +159,7 @@ ul li ul:hover {
     <td><span id="nombre{{$repartidores[$i]->id}}">{{ $repartidores[$i]->nombre }}</span></td>
     <td><span id="tele{{$repartidores[$i]->id}}">{{ $repartidores[$i]->telefono }}</span></td>
     <td><span id="dire{{$repartidores[$i]->id}}">{{ $repartidores[$i]->direccion }}</span></td>
-    <td>{{ $repartidores[$i]->fecha_de_alta }}</td>
+    <td>{{ date("d/m/Y", strtotime($repartidores[$i]->fecha_de_alta)) }}</td>
     <td>{{ $repartidores[$i]->cargo }}</td>
    
     <td>{{ $repartidores[$i]->agencia }}</td>

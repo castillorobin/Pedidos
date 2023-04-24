@@ -28,7 +28,12 @@ class PedidoController extends Controller
         $pedidof='1970-01-01';
         $repaf='';
         $lastid = Pedido::latest('id')->first();
-        $uid= $lastid->id + 1;
+        $uid=0;
+        if($lastid<1){
+            $uid=1;
+        }else{
+            $uid= $lastid->id + 1;
+        }
         $pedidos = Pedido::all();
         setlocale(LC_TIME, "spanish");
         $vendedores = Vendedor::all();
@@ -128,7 +133,14 @@ class PedidoController extends Controller
     public function create()
     {
         $lastid = Pedido::latest('id')->first();
-        $uid= $lastid->id + 1;
+        $uid=0;
+        if($lastid<1){
+            $uid=1;
+        }else{
+            $uid= $lastid->id + 1;
+        }
+
+       
         setlocale(LC_TIME, "spanish");
         $vendedores = Vendedor::all();
         $tipos = Tipo::all();
@@ -147,7 +159,12 @@ class PedidoController extends Controller
     public function desdeenvio()
     {
         $lastid = Pedido::latest('id')->first();
-        $uid= $lastid->id + 1;
+        $uid=0;
+        if($lastid<1){
+            $uid=1;
+        }else{
+            $uid= $lastid->id + 1;
+        }
         setlocale(LC_TIME, "spanish");
         $vendedores = Vendedor::all();
         $tipos = Tipo::all();
@@ -172,7 +189,12 @@ class PedidoController extends Controller
     public function store(Request $request)
     {
         $lastid = Pedido::latest('id')->first();
-        $uid= $lastid->id + 1;
+        $uid=0;
+        if($lastid<1){
+            $uid=1;
+        }else{
+            $uid= $lastid->id + 1;
+        }
         $rutaf='seleccionar';
         $pedidof='1970-01-01';
         $repaf='';
@@ -237,7 +259,12 @@ class PedidoController extends Controller
     {
         
         $lastid = Pedido::latest('id')->first();
-        $uid= $lastid->id + 1;
+        $uid=0;
+        if($lastid<1){
+            $uid=1;
+        }else{
+            $uid= $lastid->id + 1;
+        }
         $pedidofe = $request->get('filtrodia');
         $pedidof = date("Y-m-d", strtotime($pedidofe));
         $rutaf = $request->get('route');
@@ -343,7 +370,12 @@ class PedidoController extends Controller
     public function update(Request $request, $id)
     {
         $lastid = Pedido::latest('id')->first();
-        $uid= $lastid->id + 1;
+        $uid=0;
+        if($lastid<1){
+            $uid=1;
+        }else{
+            $uid= $lastid->id + 1;
+        }
         $pedido = Pedido::find($id);
         $rutaf='seleccionar';
         $pedidof='1970-01-01';

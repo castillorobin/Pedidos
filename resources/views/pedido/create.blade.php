@@ -709,6 +709,11 @@ $(document).ready(function() {
 
 -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.3/jquery.inputmask.bundle.min.js"></script>
+
+
+   
+ 
 <script>
   $(document).ready(function(){
   
@@ -716,7 +721,6 @@ $(document).ready(function() {
  Inputmask().mask(document.querySelectorAll("input"));
 });
 </script>
-
 @endsection
 
 
