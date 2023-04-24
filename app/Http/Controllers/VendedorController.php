@@ -31,7 +31,7 @@ class VendedorController extends Controller
     {
         $lastid = Pedido::latest('id')->first();
         $uid=0;
-        if($lastid<1){
+        if($lastid->id<1){
             $uid=1;
         }else{
             $uid= $lastid->id + 1;
@@ -150,7 +150,7 @@ class VendedorController extends Controller
 
         $lastid = Vendedor::latest('id')->first();
         $uid=0;
-        if($lastid<1){
+        if($lastid->id<1){
             $uid=1;
         }else{
             $uid= $lastid->id + 1;
