@@ -149,7 +149,7 @@ class VendedorController extends Controller
     {
         $vendedor = Vendedor::find($id);
         $last = Vendedor::latest('id')->first();
-        $lastid = $last;
+        $lastid = $last->id;
         $uid=0;
         if($lastid < 1){
             $uid=1;
