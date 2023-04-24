@@ -29,12 +29,13 @@ class VendedorController extends Controller
      */
     public function create()
     {
-        $lastid = Pedido::latest('id')->first();
+        $last = Vendedor::latest('id')->first();
+        $lastid = $last->id;
         $uid=0;
-        if($lastid->id<1){
+        if($lastid < 1){
             $uid=1;
         }else{
-            $uid= $lastid->id + 1;
+            $uid= $lastid + 1;
         }
 
         $vendedores = Vendedor::all();
@@ -148,12 +149,14 @@ class VendedorController extends Controller
     {
         $vendedor = Vendedor::find($id);
 
-        $lastid = Vendedor::latest('id')->first();
+        
+        $last = Vendedor::latest('id')->first();
+        $lastid = $last->id;
         $uid=0;
-        if($lastid->id<1){
+        if($lastid < 1){
             $uid=1;
         }else{
-            $uid= $lastid->id + 1;
+            $uid= $lastid + 1;
         }
 
         return view('vendedor.edit')->with(['vendedor'=>$vendedor , 'uid'=>$uid]);
