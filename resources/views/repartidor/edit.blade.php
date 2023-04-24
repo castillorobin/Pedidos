@@ -60,7 +60,7 @@
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Telefono*</label>
-        <input type="text" id="dire" name="dire" class="form-control" tabindex="2" value=" {{$repartidor->telefono}} ">
+        <input type="text" id="tele" name="tele" class="form-control" tabindex="2" value=" {{$repartidor->telefono}} ">
     </div>
     <div class="mb-3 col-4" >
         <label for="" class="form-label">Correo Electronico</label>
@@ -72,7 +72,7 @@
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Numero de NIT</label>
-        <input type="text" id="dire" name="dire" class="form-control" tabindex="2" value=" {{$repartidor->nit}} ">
+        <input type="text" id="nit" name="nit" class="form-control" tabindex="2" value=" {{$repartidor->nit}} ">
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Tipo de contrato</label>
@@ -115,11 +115,11 @@
     <option value="Oficios Varios">Oficios varios</option>
     <option value="Seguridad">Seguridad</option>
   </select>
-    </div>
+    </div> 
 
     <div class="mb-3 col-4" >
         <label for="" class="form-label">Fecha de Alta</label>
-        <input type="text" id="fecha_de_alta" name="fecha_de_alta" class="form-control" tabindex="1"  value=" {{$repartidor->fecha_de_alta}} ">
+        <input type="text" id="fecha_de_alta" name="fecha_de_alta" class="form-control" tabindex="1"  value=" {{ date('d/m/Y', strtotime($repartidor->fecha_de_alta))}} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Salario</label>
@@ -174,7 +174,7 @@
     
     <div class="mb-3 col-4" >
         <label for="" class="form-label">Numero de placa</label>
-        <input type="text" id="num_placa" name=num_placa" class="form-control" tabindex="1"  value=" {{$repartidor->num_placa}} ">
+        <input type="text" id="num_placa" name="num_placa" class="form-control" tabindex="1"  value=" {{$repartidor->num_placa}} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Numero de tarjeta</label>
@@ -206,7 +206,7 @@
     <button type="submit" class="btn btn-primary">Editar</button>
   </div>
 
-
+  
 
 </div>
 

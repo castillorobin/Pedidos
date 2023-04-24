@@ -86,7 +86,7 @@ class RepartidorController extends Controller
 
         return response()->json($repartidor);
 
-    }
+    } 
 
     /**
      * Show the form for editing the specified resource.
@@ -111,7 +111,7 @@ class RepartidorController extends Controller
     {
         
         
-        $repartidor = Repartidor::findOrFail($request->id);
+        $repartidor = Repartidor::find($id);
         $repartidor->nombre        = $request->nombre;
         $repartidor->direccion     = $request->dire;
         $repartidor->telefono      = $request->tele;
@@ -123,9 +123,9 @@ class RepartidorController extends Controller
         $repartidor->num_seguro    = $request->num_seguro;
         $repartidor->num_afp       = $request->num_afp;
         $repartidor->cargo         = $request->cargo;
-        $repartidor->fecha_de_alta = $request->fecha_de_alta;
+        $repartidor->fecha_de_alta =  date('Y/m/d', strtotime($request->fecha_de_alta));
         $repartidor->salario       = $request->salario;
-        $repartidor->fecha_de_baja = $request->fecha_de_baja;
+        $repartidor->fecha_de_baja =  date('Y/m/d', strtotime($request->fecha_de_baja));
         $repartidor->nota          = $request->nota;
         $repartidor->tipo_vehiculo = $request->tipo_vehiculo;
         $repartidor->asigno_unidad = $request->asigno_unidad;
@@ -134,8 +134,9 @@ class RepartidorController extends Controller
         $repartidor->num_licencia  = $request->num_licencia;
         //$repartidor->foto          = $request->foto;
         $repartidor->save();
-
-        return redirect('/repartidores');
+        $repartidores = Repartidor::all();
+        //return redirect('/repartidores');
+        return view('repartidor.index')->with(['repartidores'=>$repartidores]);
     }
 
     /**

@@ -191,7 +191,7 @@ class PedidoController extends Controller
     public function store(Request $request)
     {
         $last = Pedido::latest('id')->first();
-        $lastid = $last;
+        $lastid =$last;
         $uid=0;
         if($lastid < 1){
             $uid=1;

@@ -31,7 +31,7 @@ class VendedorController extends Controller
     {
         
         $last = Vendedor::latest('id')->first();
-        $lastid = $last;
+        $lastid =$last;
         $uid=0;
         if($lastid < 1){
             $uid=1;
@@ -148,8 +148,6 @@ class VendedorController extends Controller
     public function edit($id)
     {
         $vendedor = Vendedor::find($id);
-
-        
         $last = Vendedor::latest('id')->first();
         $lastid = $last;
         $uid=0;
@@ -175,8 +173,8 @@ class VendedorController extends Controller
         $vendedor->direccion = $request->get('dire');
         $vendedor->telefono = $request->get('tele');
         $vendedor->whatsapp = $request->get('what');
-        $vendedor->falta = $request->get('falta');
-        $vendedor->fbaja = $request->get('fbaja');
+        $vendedor->falta =  date('Y/m/d', strtotime($request->get('falta')));
+        $vendedor->fbaja = date('Y/m/d', strtotime($request->get('fbaja')));
         $vendedor->tipovende = $request->get('tvende');
         $vendedor->correo = $request->get('correo');
         $vendedor->estado = $request->get('estado');
@@ -194,7 +192,9 @@ class VendedorController extends Controller
         $vendedor->nrc = $request->get('nrc');
 
         $vendedor->save();
-        return redirect('/vendedores');
+        //return redirect('/vendedores');
+        $vendedores = Vendedor::all();
+        return view('vendedor.index')->with(['vendedores'=>$vendedores]);
     }
 
     /**
@@ -208,5 +208,6 @@ class VendedorController extends Controller
         $vendedor = Vendedor::find($id);
         $vendedor->delete();
         return redirect('/vendedores');
+        
     }
 }
