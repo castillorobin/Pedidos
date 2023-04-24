@@ -13,7 +13,7 @@
     <form action="/repartidores/{{$repartidor->id}}" method="POST">
     @csrf
     @method('PUT')   
-    
+     
    
     <div class="row mx-5" >
     <h3>Editar Empleado</h3>
