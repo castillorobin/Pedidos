@@ -30,7 +30,13 @@ class VendedorController extends Controller
     public function create()
     {
         $lastid = Pedido::latest('id')->first();
-        $uid= $lastid->id + 1;
+        $uid=0;
+        if($lastid<1){
+            $uid=1;
+        }else{
+            $uid= $lastid->id + 1;
+        }
+
         $vendedores = Vendedor::all();
         setlocale(LC_TIME, "spanish");
         $date = Carbon::today();
@@ -143,7 +149,13 @@ class VendedorController extends Controller
         $vendedor = Vendedor::find($id);
 
         $lastid = Vendedor::latest('id')->first();
-        $uid= $lastid->id + 1;
+        $uid=0;
+        if($lastid<1){
+            $uid=1;
+        }else{
+            $uid= $lastid->id + 1;
+        }
+
         return view('vendedor.edit')->with(['vendedor'=>$vendedor , 'uid'=>$uid]);
     }
 
