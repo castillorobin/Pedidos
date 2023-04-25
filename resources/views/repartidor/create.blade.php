@@ -373,8 +373,7 @@ $(document).ready(function() {
                   &nbsp;&nbsp;&nbsp; Fecha de Alta
                 </span>
               </div>
-              <input  class="form-control " id="fecha_de_alta" 
-                      name="fecha_de_alta" type="date" tabindex="11"/>
+              <input  class="form-control " id="fecha_de_alta" value="{{ date('Y-m-d') }}" name="fecha_de_alta" type="date" tabindex="11"/>
                       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
             </div>
           </div>
