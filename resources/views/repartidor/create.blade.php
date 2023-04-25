@@ -555,20 +555,15 @@ $(document).ready(function() {
 
 <div class="row">
 <br>
-<div class="col">{{-- INICIO COL  --}}
+<div class="col-12">{{-- INICIO COL  --}}
       
       <div class="input-group mb-3">
-      <label for="inputEmail3" class="col-sm-3 col-form-label">Fotografia del Equipo</label>
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fa-solid fa-image"></i></span>
-        </div>
-        <div class="custom-file">
-          <input type="file" class="custom-file-input " id="foto" name="foto" tabindex="20">
-          <label class="custom-file-label" for="foto">seleccionar la foto....</label>
-          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
-        </div>
+      <label for="inputEmail3" class="col-sm-12 col-form-label">Fotografia del equipo</label>
+        
+      <input type="file" name="foto" class="form-control" tabindex="19">
       </div>
 
+      
     </div>{{-- FIN COL  --}}
     <div class="modal-footer">
     <a href="/repartidores" class="btn btn-primary">Cancelar</a>
