@@ -134,7 +134,7 @@ $(document).ready(function() {
        
        @for($i=0;  $i< count($vendedores); $i++ )
        <option value="{{$i}}">{{ $vendedores[$i]->nombre }} 
-       <span id="dire{{$i}}" >{{ $vendedores[$i]->direccion }} </span>
+       <input hidden id="direc" value="{{ $vendedores[$i]->direccion }} ">
        </option>
        
        @endfor
@@ -340,18 +340,18 @@ $(document).ready(function() {
        												 //alert($(this).val());
           var id=$(this).val();       
          //var direc = document.getElementById("dire").textContent;
-         var first=$('#dire'+id).text();
+         var first=$('#direc').val();
           //var direc=$('#dire').text();
           //const direc = 'HOla direci';
 
           //document.getElementById("direccion").value = first;
-          
+          document.getElementById("direccion").value = first;
 
-          for(let i=0; i< '{{ count($vendedores) }}'; i++){
-            if (i == id){
-              document.getElementById("direccion").value = i;
-            }
-          }
+          //for(let i=0; i< '{{ count($vendedores) }}'; i++){
+            //if (i == id){
+              
+            //}
+         // }
           /*
 					const envi2 = parseFloat(document.getElementById("envio").value);						                                                    
           const preci2 =parseFloat($(this).val()); 
