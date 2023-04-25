@@ -134,11 +134,19 @@ $(document).ready(function() {
        
        @for($i=0;  $i< count($vendedores); $i++ )
        <option value="{{$i}}">{{ $vendedores[$i]->nombre }} 
-       <input hidden id="direc" value="{{ $vendedores[$i]->direccion }} ">
+       
        </option>
        
        @endfor
        </select>
+       @for($i=0;  $i< count($vendedores); $i++ )
+       
+       <input hidden id="direc{{$i}}" value="{{ $vendedores[$i]->direccion }} ">
+       <input hidden id="tele{{$i}}" value="{{ $vendedores[$i]->telefono }} ">
+       <input hidden id="what{{$i}}" value="{{ $vendedores[$i]->whatsapp }} ">
+       
+       
+       @endfor
        <div class="invalid-feedback">Este campo es obligatorio.</div>
 
         <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
@@ -172,7 +180,7 @@ $(document).ready(function() {
         <div class="input-group-prepend">
          <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-square-alt"></i> </span>
         </div>
-          <input type="text" class="form-control" name="telefono" placeholder="Ingrese teléfono del comercio" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" data-inputmask="'mask': '9999-9999'">
+          <input type="text" class="form-control" name="telefono" id="telefono" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" data-inputmask="'mask': '9999-9999'">
         <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 
 </div>
@@ -185,7 +193,7 @@ $(document).ready(function() {
         <div class="input-group-prepend">
          <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-square-alt"></i> </span>
         </div>
-          <input type="text" class="form-control" name="telefono" placeholder="Ingrese teléfono del comercio" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" data-inputmask="'mask': '9999-9999'">
+          <input type="text" class="form-control" name="whatsapp" id="whatsapp" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" data-inputmask="'mask': '9999-9999'">
         <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 
 </div>
@@ -237,6 +245,7 @@ $(document).ready(function() {
        @endforeach
      
        </select>
+
        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
 </div>
@@ -340,12 +349,16 @@ $(document).ready(function() {
        												 //alert($(this).val());
           var id=$(this).val();       
          //var direc = document.getElementById("dire").textContent;
-         var first=$('#direc').val();
+         var first=$('#direc'+id).val();
+         var tel=$('#tele'+id).val();
+         var wha=$('#what'+id).val();
           //var direc=$('#dire').text();
           //const direc = 'HOla direci';
 
           //document.getElementById("direccion").value = first;
           document.getElementById("direccion").value = first;
+          document.getElementById("telefono").value = tel;
+          document.getElementById("whatsapp").value = wha;
 
           //for(let i=0; i< '{{ count($vendedores) }}'; i++){
             //if (i == id){
