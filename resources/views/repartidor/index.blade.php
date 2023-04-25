@@ -249,7 +249,7 @@ ul li ul:hover {
            
             <table class="table table-borderless" >
                 <tr>
-                    <td  colspan="2"><h4>Informacion del empleado </h4>
+                    <td  colspan="3"><h4>Informacion del empleado </h4>
                         <hr>
                     </td>
                     
@@ -257,7 +257,7 @@ ul li ul:hover {
                 <tr class="headt">
                     <td width="230px">Nombre del empleado </td>
                     <td> <span ></span> <label for="" id="efirstname"></label> </td>
-                    <td rowspan="8"> <span ></span> <label for="" > </label> <img  alt="" id="fotos" width="250"> </td>
+                    <td rowspan="15"> <span ></span> <label for="" > </label> <img  alt="" id="fotos" width="250"> </td>
                 </tr>
                 <tr class="headt">
                     <td width="230px">Dirección </td>
@@ -321,7 +321,7 @@ ul li ul:hover {
 
                 <tr class="headt">
                     <br>
-                    <td  colspan="2" class="pt-2"> <h4> Datos del vehiculo</h4>
+                    <td  colspan="3" class="pt-2"> <h4> Datos del vehiculo</h4>
                         <hr>
                     </td>
                       
