@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>    
 @stop
 
 @section('content')
@@ -45,6 +46,10 @@ input[type="date"]:focus::before,
 input[type="date"]:valid::before {
 	content: "" !important;
 }
+.select2-selection{
+  height: 35px !important;
+ 
+}
 </style>
 
 <script>
@@ -52,12 +57,22 @@ input[type="date"]:valid::before {
 </script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script>  
+jQuery(document).ready(function($){
+    $(document).ready(function() {
+        $('.mi-selector').select2();
+    });
+});
+</script>
 <script>
 function myFunction() {
   document.getElementById("myForm").reset();
 }
-
+$('#nombre').on('select2:change', function (e) {
+  window.alert("Bienvenido a nuestro sitio web");
+    document.getElementById("direccion").value = 'cambio esto';
+});
 </script>
 
 
@@ -139,7 +154,12 @@ $(document).ready(function() {
        
        @endfor
        </select>
-       @for($i=0;  $i< count($vendedores); $i++ )
+      
+       <div class="invalid-feedback">Este campo es obligatorio.</div>
+
+        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+      </div>
+      @for($i=0;  $i< count($vendedores); $i++ )
        
        <input hidden id="direc{{$i}}" value="{{ $vendedores[$i]->direccion }} ">
        <input hidden id="tele{{$i}}" value="{{ $vendedores[$i]->telefono }} ">
@@ -147,11 +167,6 @@ $(document).ready(function() {
        
        
        @endfor
-       <div class="invalid-feedback">Este campo es obligatorio.</div>
-
-        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
-      </div>
-
   
 </div>
 <div class="col-sm-2 pt-5" >
@@ -172,7 +187,7 @@ $(document).ready(function() {
   <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
     </div>
-    
+     
     <div class="col-sm-6">
     <label for="inputEmail3" class="col-sm-6 col-form-label">Teléfono</label>
       <div class="input-group mb-3">
@@ -210,7 +225,7 @@ $(document).ready(function() {
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-dolly"></i> </span>
 </div>
-<input type="date" class="form-control" name="fechare" placeholder="" aria-label="Username" aria-describedby="basic-addon1" tabindex="4">
+<input type="date" class="form-control" name="fechare" placeholder="" value="{{ date('Y-m-d') }}" aria-label="Username" aria-describedby="basic-addon1" tabindex="4">
 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
 </div>

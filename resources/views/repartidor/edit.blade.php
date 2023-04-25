@@ -42,7 +42,7 @@
 <div class="input-group-prepend">
   <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/fluency-systems-regular/48/null/checked-identification-documents.png" width="25" /></span>
 </div>
-<input type="text" class="form-control" placeholder="{{$repartidor->id}}" aria-label="Username" aria-describedby="basic-addon1" disabled>
+<input type="text" class="form-control" placeholder="{{$repartidor->id}}" aria-label="Username" aria-describedby="basic-addon1" disabled >
 </div>
 </div>
  
@@ -52,7 +52,7 @@
 
     <div class="mb-3 col-12" >
         <label for="" class="form-label">Nombre</label>
-        <input type="text" id="nombre" name="nombre" class="form-control" tabindex="1"  value=" {{$repartidor->nombre}} ">
+        <input type="text" id="nombre" name="nombre" class="form-control"   value=" {{$repartidor->nombre}} " tabindex="1" >
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Direccion</label>
@@ -60,28 +60,28 @@
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Telefono*</label>
-        <input type="text" id="tele" name="tele" class="form-control" tabindex="2" value=" {{$repartidor->telefono}} ">
+        <input type="text" id="tele" name="tele" class="form-control" tabindex="3" value=" {{$repartidor->telefono}} ">
     </div>
     <div class="mb-3 col-4" >
         <label for="" class="form-label">Correo Electronico</label>
-        <input type="text" id="correo" name="correo" class="form-control" tabindex="1"  value=" {{$repartidor->correo}} ">
+        <input type="text" id="correo" name="correo" class="form-control" tabindex="4"  value=" {{$repartidor->correo}} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Numero de DUI</label>
-        <input type="text" id="dui" name="dui" class="form-control" tabindex="2" value=" {{$repartidor->dui}} ">
+        <input type="text" id="dui" name="dui" class="form-control" tabindex="5" value=" {{$repartidor->dui}} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Numero de NIT</label>
-        <input type="text" id="nit" name="nit" class="form-control" tabindex="2" value=" {{$repartidor->nit}} ">
+        <input type="text" id="nit" name="nit" class="form-control" tabindex="6" value=" {{$repartidor->nit}} ">
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Tipo de contrato</label>
-        <input type="text" id="tipo_contrato" name="tipo_contrato" class="form-control" tabindex="2" value=" {{$repartidor->tipo_contrato}} ">
+        <input type="text" id="tipo_contrato" name="tipo_contrato" class="form-control" tabindex="7" value=" {{$repartidor->tipo_contrato}} ">
     </div>
     <div class="mb-3 col-6">
         <label for="" class="form-label">Agencia</label>
         
-        <select class="form-select " id="agencia" name="agencia" tabindex="7">
+        <select class="form-select " id="agencia" name="agencia" tabindex="8">
         <option value="{{$repartidor->agencia}}" selected >{{$repartidor->agencia}}</option>
         <option value="San Salvador">San Salvador</option>
       <option value="San Miguel">San Miguel</option>
@@ -91,16 +91,16 @@
 
     <div class="mb-3 col-4" >
         <label for="" class="form-label">Nº de ISSS</label>
-        <input type="text" id="num_seguro" name="num_seguro" class="form-control" tabindex="1"  value=" {{$repartidor->num_seguro}} ">
+        <input type="text" id="num_seguro" name="num_seguro" class="form-control" tabindex="9"  value=" {{$repartidor->num_seguro}} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Nº de AFP</label>
-        <input type="text" id="num_afp" name="num_afp" class="form-control" tabindex="2" value=" {{$repartidor->num_afp}} ">
+        <input type="text" id="num_afp" name="num_afp" class="form-control" tabindex="10" value=" {{$repartidor->num_afp}} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Cargo</label>
         
-        <select class="form-select " id="cargo" name="cargo" tabindex="10">
+        <select class="form-select " id="cargo" name="cargo" tabindex="11">
         <option value="{{$repartidor->cargo}}" selected >{{$repartidor->cargo}}</option>
     <option value="Ceo">Ceo</option>
     <option value="Gerente general">Gerente General</option>
@@ -119,20 +119,20 @@
 
     <div class="mb-3 col-4" >
         <label for="" class="form-label">Fecha de Alta</label>
-        <input type="text" id="fecha_de_alta" name="fecha_de_alta" class="form-control" tabindex="1"  value=" {{ date('d/m/Y', strtotime($repartidor->fecha_de_alta))}} ">
+        <input type="text" id="fecha_de_alta" name="fecha_de_alta" class="form-control" tabindex="12"  value=" {{ date('d/m/Y', strtotime($repartidor->fecha_de_alta))}} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Salario</label>
-        <input type="text" id="salario" name="salario" class="form-control" tabindex="2" value=" {{$repartidor->salario}} ">
+        <input type="text" id="salario" name="salario" class="form-control" tabindex="13" value=" {{$repartidor->salario}} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Fecha de Baja</label>
-        <input type="text" id="fecha_de_baja" name="fecha_de_baja" class="form-control" tabindex="2" value=" {{$repartidor->fecha_de_baja}} ">
+        <input type="text" id="fecha_de_baja" name="fecha_de_baja" class="form-control" tabindex="14" value=" {{$repartidor->fecha_de_baja}} ">
     </div>
 
     <div class="mb-3 col-12">
         <label for="" class="form-label">Nota</label>
-        <textarea rows="3" id="nota" name="nota" class="form-control" tabindex="2" >{{$repartidor->nota}}</textarea>
+        <textarea rows="3" id="nota" name="nota" class="form-control" tabindex="15" >{{$repartidor->nota}}</textarea>
     </div>
 
 
@@ -153,7 +153,7 @@
 
     <div class="mb-3 col-6">
         <label for="" class="form-label">Tipo de Vehiculo</label>
-        <select class="form-select " id="tipo_vehiculo" name="tipo_vehiculo" tabindex="15" >
+        <select class="form-select " id="tipo_vehiculo" name="tipo_vehiculo" tabindex="16" >
         <option value="{{$repartidor->tipo_vehiculo}}" selected >{{$repartidor->tipo_vehiculo}}</option>
                                   
                                   <option value="Motocicleta">Motocicleta</option>
@@ -164,7 +164,7 @@
 
     <div class="mb-3 col-6">
         <label for="" class="form-label">Equipo es asignado</label>
-        <select class="form-select" id="asigno_unidad" name="asigno_unidad" tabindex="16">
+        <select class="form-select" id="asigno_unidad" name="asigno_unidad" tabindex="17">
         <option value="{{$repartidor->asigno_unidad}}" selected >{{$repartidor->asigno_unidad}}</option>   
                     <option value="Si">Si</option>
                     <option value="No">No</option>
@@ -174,20 +174,20 @@
     
     <div class="mb-3 col-4" >
         <label for="" class="form-label">Numero de placa</label>
-        <input type="text" id="num_placa" name="num_placa" class="form-control" tabindex="1"  value=" {{$repartidor->num_placa}} ">
+        <input type="text" id="num_placa" name="num_placa" class="form-control" tabindex="18"  value=" {{$repartidor->num_placa}} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Numero de tarjeta</label>
-        <input type="text" id="num_tarjeta" name="num_tarjeta" class="form-control" tabindex="2" value=" {{$repartidor->num_tarjeta}} ">
+        <input type="text" id="num_tarjeta" name="num_tarjeta" class="form-control" tabindex="19" value=" {{$repartidor->num_tarjeta}} ">
     </div>
     <div class="mb-3 col-4">
         <label for="" class="form-label">Numero de licencia</label>
-        <input type="text" id="num_licencia" name="num_licencia" class="form-control" tabindex="2" value=" {{$repartidor->num_licencia}} ">
+        <input type="text" id="num_licencia" name="num_licencia" class="form-control" tabindex="20" value=" {{$repartidor->num_licencia}} ">
     </div>
 
     <div class="mb-3 col-4">
         <label for="" class="form-label">Foto</label>
-        <input type="file" id="foto" name="foto" class="form-control" tabindex="2" >
+        <input type="file" id="foto" name="foto" class="form-control" tabindex="21" >
     </div>
  
 
@@ -207,7 +207,7 @@
 <a href="/repartidores" class="btn btn-primary">Cancelar</a>
     
   &nbsp; &nbsp;
-    <button type="submit" class="btn btn-primary">Editar</button>
+    <button type="submit" class="btn btn-primary" tabindex="22">Editar</button>
   </div>
 
   

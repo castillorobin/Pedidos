@@ -371,7 +371,7 @@
   <select id="repartidor" name="repartidor" class="form-control">
   <option value="{{$pedido->repartidor}}" selected >{{$pedido->repartidor}}</option>
        @foreach($repartidores as $repartidor)
-       <option value="{{ $repartidor->id }}">{{ $repartidor->nombre }}</option>
+       <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
        @endforeach
      
        </select>

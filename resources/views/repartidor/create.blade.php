@@ -270,7 +270,7 @@ $(document).ready(function() {
           <i class="fa-solid fa-building"></i>
         </span>
       </div>
-    <select class="form-select " id="agencia" name="agencia" tabindex="7">
+    <select class="form-select " id="agencia" name="agencia" tabindex="8">
       <option selected>Sin asignar</option>
       <option value="San Salvador">San Salvador</option>
       <option value="San Miguel">San Miguel</option>
@@ -297,7 +297,7 @@ $(document).ready(function() {
         <i class="fa-regular fa-id-card"></i>
       </span>
     </div>
-    <input type="text" class="form-control" id="num_seguro" name="num_seguro" placeholder="Numero de Seguro" tabindex="8">
+    <input type="text" class="form-control" id="num_seguro" name="num_seguro" placeholder="Numero de Seguro" tabindex="9">
     <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
   </div>
 </div>
@@ -316,7 +316,7 @@ $(document).ready(function() {
         <i class="fa-solid fa-id-card-clip"></i>
       </span>
     </div>
-    <input type="text" class="form-control " id="num_afp" name="num_afp" placeholder="Numero de AFP:" tabindex="9">
+    <input type="text" class="form-control " id="num_afp" name="num_afp" placeholder="Numero de AFP:" tabindex="10">
     <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
   </div>
 </div>
@@ -335,7 +335,7 @@ $(document).ready(function() {
 <i class="fa-sharp fa-solid fa-house"></i>
 </span>
 </div>
-<select class="form-select " id="cargo" name="cargo" tabindex="10" required>
+<select class="form-select " id="cargo" name="cargo" tabindex="11" required>
     <option selected>Sin Asignar</option>
     <option value="Ceo">Ceo</option>
     <option value="Gerente general">Gerente General</option>
@@ -373,7 +373,7 @@ $(document).ready(function() {
                   &nbsp;&nbsp;&nbsp; Fecha de Alta
                 </span>
               </div>
-              <input  class="form-control " id="fecha_de_alta" value="{{ date('Y-m-d') }}" name="fecha_de_alta" type="date" tabindex="11"/>
+              <input  class="form-control " id="fecha_de_alta" value="{{ date('Y-m-d') }}" name="fecha_de_alta" type="date" tabindex="12"/>
                       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
             </div>
           </div>
@@ -395,7 +395,7 @@ $(document).ready(function() {
                             </span>
                           </div>
                           <input type="text" class="form-control"
-                                 id="salario" name="salario" placeholder="Salario" tabindex="12">
+                                 id="salario" name="salario" placeholder="Salario" tabindex="13">
                                  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                                 </div>
                       </div>
@@ -415,7 +415,7 @@ $(document).ready(function() {
                 </span>
               </div>
               <input class="form-control "
-                     id="fecha_de_baja" name="fecha_de_baja" type="date" tabindex="13"/>
+                     id="fecha_de_baja" name="fecha_de_baja" type="date" tabindex="14"/>
                      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
             </div>
           </div>
@@ -437,7 +437,7 @@ $(document).ready(function() {
                       <i class="fa-regular fa-note-sticky"></i>
                     </span>
                   </div>
-                  <textarea class="form-control" id="nota" name="nota" placeholder="Escribe tu nota aqui." rows="3" tabindex="14"></textarea>
+                  <textarea class="form-control" id="nota" name="nota" placeholder="Escribe tu nota aqui." rows="3" tabindex="15"></textarea>
                   <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
               </div>
@@ -461,7 +461,7 @@ $(document).ready(function() {
                               {{-- Input de tipo de vehiculo  --}}
                               <div class="input-group">
                               
-                                <select class="form-select " id="tipo_vehiculo" name="tipo_vehiculo" tabindex="15" >
+                                <select class="form-select " id="tipo_vehiculo" name="tipo_vehiculo" tabindex="16" >
                                   <option value="" selected>Tipo de vehiculo</option>
                                   <option value="Motocicleta">Motocicleta</option>
                                   <option value="Vehiculo">Vehiculo</option>
@@ -480,7 +480,7 @@ $(document).ready(function() {
                 {{-- Input de numero de seguro  --}}
                 <div class="input-group">
                 
-                  <select class="form-select" id="asigno_unidad" name="asigno_unidad" tabindex="16">
+                  <select class="form-select" id="asigno_unidad" name="asigno_unidad" tabindex="17">
                     <option value="" selected>Asigno unidad</option>
                     <option value="Si">Si</option>
                     <option value="No">No</option>
@@ -506,7 +506,7 @@ $(document).ready(function() {
                   <i class="fa-solid fa-car-side"></i>
                 </span>
               </div>
-              <input type="text" class="form-control"  id="num_placa" name="num_placa" placeholder="Numero de Placa:" tabindex="17">
+              <input type="text" class="form-control"  id="num_placa" name="num_placa" placeholder="Numero de Placa:" tabindex="18">
               <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
             </div>
           </div>
@@ -526,7 +526,7 @@ $(document).ready(function() {
                 </span>
               </div>
               <input type="text" class="form-control " id="num_tarjeta" 
-                     name="num_tarjeta" placeholder="Numero de tarjeta:" tabindex="18">
+                     name="num_tarjeta" placeholder="Numero de tarjeta:" tabindex="19">
                      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                     </div>
           </div>
@@ -544,7 +544,7 @@ $(document).ready(function() {
                 </span>
               </div>
               <input type="text" class="form-control " id="num_licencia" 
-                     name="num_licencia" placeholder="Licencia de conducir:" tabindex="19" data-inputmask="'mask': '9999-999999-999-9'">
+                     name="num_licencia" placeholder="Licencia de conducir:" tabindex="20" data-inputmask="'mask': '9999-999999-999-9'">
                      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                     </div>
           </div>                       
@@ -559,7 +559,7 @@ $(document).ready(function() {
       <div class="input-group mb-3">
       <label for="inputEmail3" class="col-sm-12 col-form-label">Fotografia del equipo</label>
         
-      <input type="file" name="foto" class="form-control" tabindex="19">
+      <input type="file" name="foto" class="form-control" tabindex="21">
       </div>
 
       
@@ -569,7 +569,7 @@ $(document).ready(function() {
         &nbsp; &nbsp;
         <a href="/repartidores/create" class="btn btn-primary">Limpiar</a>
       &nbsp; &nbsp;
-<button type="submit" class="btn btn-primary" tabindex="21">Guardar</button>
+<button type="submit" class="btn btn-primary" tabindex="22">Guardar</button>
 
       </div>
 </div><!-- termina fila  -->
