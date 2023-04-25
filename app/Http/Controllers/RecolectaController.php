@@ -43,7 +43,7 @@ class RecolectaController extends Controller
     } 
 
     public function store(Request $request)
-    { 
+    {  
         $repartidores = Repartidor::all();
         $vendedores = Vendedor::all();
         $recolecta = new Recolecta();

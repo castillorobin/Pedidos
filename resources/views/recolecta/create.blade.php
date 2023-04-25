@@ -100,27 +100,9 @@ $(document).ready(function() {
 
 });
 
-$("#nombre").change(function() {
-       												 //alert($(this).val());
-                               /*
-          const tenv2 = document.getElementById("cenvio").value;
-					const envi2 = parseFloat(document.getElementById("envio").value);						                                                    
-          const preci2 =parseFloat($(this).val()); 
-          
-          if(tenv2=="Pagado")
-          {
-            document.getElementById("total").value = preci2;
-          }else{
-            document.getElementById("total").value = preci2 - envi2;
-          }
-                    
-
-														//const castot = parseFloat(document.getElementById("totalc").value);
-														//document.getElementById("ptotal").value = castot ; 
-*/
-    				});
 
 
+ 
 
 
 </script>
@@ -151,8 +133,10 @@ $("#nombre").change(function() {
        <option >-Seleccionar comercio-</option>
        
        @for($i=0;  $i< count($vendedores); $i++ )
-       <option value="    {{ $vendedores[$i]->nombre }}">{{ $vendedores[$i]->nombre }}</option>
-       <span hidden id="correo{{ $vendedores[$i]->id }}"> {{ $vendedores[$i]->id }}</span>
+       <option value="{{$i}}">{{ $vendedores[$i]->nombre }} 
+       <span id="dire{{$i}}" >{{ $vendedores[$i]->direccion }} </span>
+       </option>
+       
        @endfor
        </select>
        <div class="invalid-feedback">Este campo es obligatorio.</div>
@@ -176,7 +160,7 @@ $("#nombre").change(function() {
   <div class="input-group-prepend">
   <span class="input-group-text" id="basic-addon1"> <i class="fas fa-map-marker-alt"></i> </span>
   </div>
-  <input type="text" class="form-control" name="direccion" value="{{ $vendedores[0]->direccion }}" aria-label="Username" aria-describedby="basic-addon1" tabindex="2">
+  <input type="text" class="form-control" id="direccion" name="direccion" aria-label="Username" aria-describedby="basic-addon1" tabindex="2" value="asd">
   <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
     </div>
@@ -350,6 +334,40 @@ $("#nombre").change(function() {
  /* $(":input").inputmask();*/
  Inputmask().mask(document.querySelectorAll("input"));
 });
+</script>
+<script>
+  $("#nombre").change(function() {
+       												 //alert($(this).val());
+          var id=$(this).val();       
+         //var direc = document.getElementById("dire").textContent;
+         var first=$('#dire'+id).text();
+          //var direc=$('#dire').text();
+          //const direc = 'HOla direci';
+
+          //document.getElementById("direccion").value = first;
+          
+
+          for(let i=0; i< '{{ count($vendedores) }}'; i++){
+            if (i == id){
+              document.getElementById("direccion").value = i;
+            }
+          }
+          /*
+					const envi2 = parseFloat(document.getElementById("envio").value);						                                                    
+          const preci2 =parseFloat($(this).val()); 
+          
+          if(tenv2=="Pagado")
+          {
+            document.getElementById("total").value = preci2;
+          }else{
+            document.getElementById("total").value = preci2 - envi2;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+*/
+    				});
 </script>
 @endsection
 
