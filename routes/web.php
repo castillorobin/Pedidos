@@ -61,6 +61,8 @@ Route::get('comercio/guardar', [App\Http\Controllers\VendedorController::class, 
 
 Route::get('pedido/lista/{pedidof}/{rutaf}/{repaf}', [App\Http\Controllers\PedidoController::class, 'listadia'] ) ;
 
+Route::get('repartidor/imprimir/{id}', [App\Http\Controllers\RepartidorController::class, 'imprimir'] )->name('pedido.imprimir') ;
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

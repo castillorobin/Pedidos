@@ -183,7 +183,7 @@ ul li ul:hover {
     <span hidden id="licencia{{ $repartidores[$i]->id }}"> {{ $repartidores[$i]->num_licencia }}</span>
     <span hidden id="foto{{ $repartidores[$i]->id }}"> /imgs/fotos/{{ $repartidores[$i]->foto }}</span>
 
-
+ 
 
     <td class="opciones text-center" style="">
     
@@ -361,7 +361,7 @@ ul li ul:hover {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times" style="color: #ffffff;"></i> &nbsp; Cerrar</button>
-        <button type="button" class="btn btn-primary"><i class="fas fa-print"></i> &nbsp; Imprimir</button>
+        <a id="impri" class="btn btn-primary" style="color: #ffffff;">Imprimir</a>
       </div>
     </div>
   </div>
@@ -468,7 +468,11 @@ $(document).ready(function(){
 
         $('#nrc').text(nr);
         //$('#fotos').src(fot);
+        var ide = '/repartidor/imprimir/'+id ;
 		$('#fotos').attr("src", fot);
+        //$('#impri a').prop("href", ide);
+        //$('.paginacion a').prop('href','http://nuevaUrl.com');
+        document.getElementById("impri").href = ide;
 	});
 });
        

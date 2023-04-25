@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Repartidor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use PDF;
 class RepartidorController extends Controller
 {
     /**
@@ -18,6 +19,16 @@ class RepartidorController extends Controller
 
         // return view('repartidor.index')->with('repartidores', $repartidores);
            return view('repartidor.index',compact('repartidores'))->with('exito','ok');
+
+    }
+    public function imprimir($id)
+    {
+        $repartidor = Repartidor::find($id);
+
+        $pdf = PDF::loadView('repartidor.imprimir', ['repartidor'=>$repartidor]);
+        //return view('pedido.etiqueta')->with('pedido', $pedido);
+        
+        return $pdf->stream();
 
     }
  
@@ -120,7 +131,7 @@ class RepartidorController extends Controller
     public function update(Request $request, $id)
     {
         
-         
+          
         $repartidor = Repartidor::find($id);
         $repartidor->nombre        = $request->nombre;
         $repartidor->direccion     = $request->dire;
