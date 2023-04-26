@@ -227,7 +227,7 @@ if(document.getElementById("flexs").checked)
 </div>
 <div class="form-check form-switch" style="font-size:12px; float: right; margin-top: -12px;" >
         
-      Activa si el telefono es igual al whatsapp  &nbsp; &nbsp; &nbsp; &nbsp;   <input class="form-check-input" type="checkbox" role="switch" id="flexs" name="flexs">
+      Activa si el telefono es igual al whatsapp  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  <input class="form-check-input" type="checkbox" role="switch" id="flexs" name="flexs">
   
 </div>
     </div>

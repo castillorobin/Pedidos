@@ -140,7 +140,7 @@ ul li ul:hover {
     <td><span id="what{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->whatsapp }}</span></td>
     <td><span id="tipo{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->tipovende }}</span></td>
     <td><span id="estado{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->estado }}</span></td>
-    <span hidden id="alta{{ $vendedores[$i]->id }}">{{  date("d/m/Y", strtotime($vendedores[$i]->created_at))  }} </span>
+    <span hidden id="alta{{ $vendedores[$i]->id }}">{{  date("d/m/Y", strtotime($vendedores[$i]->falta))  }} </span>
     <td><span id="baja{{ $vendedores[$i]->id }}">{{  date("d/m/Y", strtotime($vendedores[$i]->fbaja))  }}</span></td>
     <td><span id="agen{{ $vendedores[$i]->id }}">{{ $vendedores[$i]->agencia }}</span></td>
     <td><span id="ag">{{ $vendedores[$i]->nota }}</span></td>
