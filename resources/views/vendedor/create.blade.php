@@ -241,7 +241,7 @@ if(document.getElementById("flexs").checked)
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/upload-2--v1.png"/></span>
 </div>
-<input type="text" id="falta" name="falta" class="form-control" value="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" disabled>
+<input type="date" id="falta" name="falta" class="form-control" value="{{ date('Y-m-d') }}" aria-label="Username" aria-describedby="basic-addon1" >
 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
 </div>
 </div>
