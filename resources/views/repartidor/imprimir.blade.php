@@ -13,11 +13,12 @@
         }
         
         .headt td {
-  height: 15px !important;
+  height: 30px !important;
   padding: 0px;
- font-size: 24px;
+ font-size: 18px;
  background: #ffffff;
- width: 300px;
+ width: 200px;
+ padding-left:15px;
 }
     </style>
 
@@ -42,15 +43,15 @@
            
             <table class="table table-borderless" >
                 <tr>
-                    <td  colspan="2"><h3>Informacion del empleado </h3>
-                        <hr>
+                    <td  colspan="3"><h3>&nbsp; &nbsp; Informacion del empleado </h3>
+                        <hr style="color: #d7d7d7; background-color:  #d7d7d7; width:95%;">
                     </td>
                     
                 </tr>
                 <tr class="headt">
                     <td >Nombre del empleado </td>
                     <td> <span ></span> <label >{{ $repartidor->nombre }}</label> </td>
-                    
+                    <td rowspan="15"> <span ></span> <label for="" > </label> <img src="imgs/fotos/{{ $repartidor->foto }}"  width="200"> </td>
                 </tr>
                 <tr class="headt">
                     <td >Dirección </td>
@@ -112,8 +113,8 @@
                     <td> <label for="" id="tcuenta">{{ $repartidor->nota }}</label> </td>
                 </tr>
                 <tr>
-                    <td  colspan="2"><h3>Datos del vehiculo </h3>
-                        <hr>
+                    <td  colspan="3"><h3>&nbsp; &nbsp; Datos del vehiculo </h3>
+                        <hr style="color: #d7d7d7; background-color:  #d7d7d7; width:95%;">
                     </td>
                     
                 </tr>

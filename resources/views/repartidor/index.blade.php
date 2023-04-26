@@ -465,7 +465,7 @@ $(document).ready(function(){
         $('#tmoney').text(tmon);
         $('#empresa').text(empre);
         $('#giro').text(gir);   
-
+ 
         $('#nrc').text(nr);
         //$('#fotos').src(fot);
         var ide = '/repartidor/imprimir/'+id ;
