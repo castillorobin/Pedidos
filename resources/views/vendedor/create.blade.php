@@ -287,7 +287,7 @@ if(document.getElementById("flexs").checked)
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/metro/25/null/email.png"/></span>
   </div>
-  <input type="text" id="correo" name="correo" class="form-control" placeholder="Ingrese telefono" aria-label="Username" aria-describedby="basic-addon1" data-inputmask-alias="email">
+  <input type="text" id="correo" name="correo" class="form-control" placeholder="Ingrese telefono" aria-label="Username" aria-describedby="basic-addon1">
   <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
 </div>
     </div>
@@ -316,7 +316,7 @@ if(document.getElementById("flexs").checked)
     <div class="input-group mb-3">
 
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/metro/25/null/email.png"/></span>
+    <span class="input-group-text" id="basic-addon1"> <i class="fas fa-align-left"></i></span>
   </div>
   <input type="text" id="nota" name="nota" class="form-control" placeholder="Ingrese una nota" aria-label="Username" aria-describedby="basic-addon1">
   <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
@@ -328,7 +328,7 @@ if(document.getElementById("flexs").checked)
     <div class="input-group mb-3">
 
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/whatsapp--v1.png"/></span>
+    <span class="input-group-text" id="basic-addon1">  <i class="fas fa-building"></i></span>
   </div>
   <select id="agenr" name="agenr" class="form-control">
        <option value="San Salvador">San Salvador</option>
