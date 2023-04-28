@@ -513,7 +513,7 @@ if(document.getElementById("flexs").checked)
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/merchant-account.png"/></span>
 </div>
 <input type="text" id="dui" name="dui" class="form-control" tabindex="21" value=" {{$vendedor->dui }} ">
-<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div>
 
@@ -527,7 +527,7 @@ if(document.getElementById("flexs").checked)
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/bitcoin--v1.png"/></span>
 </div>
 <input type="text" id="iva" name="iva" class="form-control" tabindex="22" value=" {{$vendedor->niva }} ">
-<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div> 
 
@@ -540,7 +540,7 @@ if(document.getElementById("flexs").checked)
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/stack-of-money.png"/></span>
 </div>
 <input type="text" id="nrc" name="nrc" class="form-control" tabindex="23" value=" {{$vendedor->nrc }} ">
-<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div>
 
@@ -553,7 +553,7 @@ if(document.getElementById("flexs").checked)
 <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/shop-department.png"/></span>
 </div>
 <input type="text" id="dfiscal" name="dfiscal" class="form-control" tabindex="24" value="  ">
-<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
     </div>
 
