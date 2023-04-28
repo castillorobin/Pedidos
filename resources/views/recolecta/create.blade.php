@@ -256,7 +256,7 @@ $(document).ready(function() {
 <select id="repartidor" name="repartidor" class="form-control" tabindex="6">
 <option >-Seleccionar repartidor-</option>
        @foreach($repartidores as $repartidor)
-       <option value="{{ $repartidor->id }}">{{ $repartidor->nombre }}</option>
+       <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
        @endforeach
      
        </select>

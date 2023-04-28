@@ -147,7 +147,7 @@ input[type="date"]:valid::before {
 
 </style>
 <br>
-
+ 
     <div class="row " style="background-color: white; border: 1px solid; ">
             <h8 style="font-size:14px"><i class="fas fa-home"></i> Inicio / Almacen / Envíos</h8>
         

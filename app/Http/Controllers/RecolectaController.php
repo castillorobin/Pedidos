@@ -8,7 +8,7 @@ use App\Models\Vendedor;
 use App\Models\Repartidor;
 class RecolectaController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -25,6 +25,51 @@ class RecolectaController extends Controller
         return view('recolecta.index')->with(['recolectas'=>$recolectas, 'date'=>$date , 'repartidores'=>$repartidores, 'vendedores'=>$vendedores  ]);
     }
  
+    public function filtrar(Request $request)
+    {
+        
+        $last = Recolecta::latest('id')->first();
+        $lastid = $last->id;
+        $uid=0;
+        if($lastid < 1){
+            $uid=1;
+        }else{
+            $uid= $lastid + 1;
+        }
+        $pedidofe = $request->get('filtrodia');
+        $pedidof = date("Y-m-d", strtotime($pedidofe));
+        $repaf = $request->get('filtrorepa');
+       
+        if ($repaf =='seleccionar'){
+            $recoelctas = Recolecta::whereDate('created_at', $pedidof)->get();
+        }
+        
+        elseif($repaf !='seleccionar' && $pedidof == '1970-01-01'){
+            $recoelctas = Recolecta::where('repartidor', $repaf)->get();
+        }
+        
+        elseif($repaf !='seleccionar' && $pedidof != '1970-01-01'){
+            $recoelctas = Recolecta::whereDate('created_at', $pedidof)->where('repartidor', $repaf)->get();
+            
+        }
+        
+        //setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+        
+       
+       
+        $repartidores = Repartidor::all();
+        $date = $pedidof;
+        //$date = $date->format('l jS F Y');
+        //$date = strftime("%A %d de %B %Y");
+        //return view('pedido.index')->with('pedidos', $pedidos);
+
+        return view('recolecta.index')->with(['recolectas'=>$recoelctas, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'repaf'=>$repaf]);
+      // return view('pedido.index', compact('pedidos'));
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *

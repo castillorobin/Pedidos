@@ -11,6 +11,39 @@
 @section('content')
 
 <style>
+ 
+ input[type="date"]::-webkit-calendar-picker-indicator {
+        display: block;
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+    }
+
+    input[type="date"]::before {
+	color: #999999;
+	content: attr(placeholder) !important;
+}
+input[type="date"] {
+	color: #ffffff;
+    
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: #666666;
+    
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
+
     .dropdown-menu-center {
   left: 50% !important;
   /*right: auto !important;*/
@@ -114,14 +147,85 @@ ul li ul:hover {
     <div class="  col-sm-6 py-3" style="border-top: 1px solid; border-top-color:#bbb5bb; ">
         <h3>Listado de Recolectas</h3>
     </div>
-    <div class="  col-sm-6 py-3" style="border-top: 1px solid; border-top-color:#bbb5bb; ">
-    <a href="/recolectas/create" class="btn btn-primary float-right" style="color:white;"><i class="fas fa-database"></i> Agregar Recolecta</a>
+
+ 
+    <div class="col-12">
+<form action="/recolecta/filtrar" method="GET" >
+        @csrf
+        @method('GET')
+        
+<table >
+    <tr >
+        <td style="width: 250px; float:left;">
+            <div class="input-group mb-2 " style="width: 250px;">
+
+            <div class="input-group-prepend ">
+                <span class="input-group-text" id="basic-addon1" style="height:40px ">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
+            </div>
+
+
+            <input type="date" name="filtrodia" id="filtrodia" style="height:40px; border-radius: 0px;" class="form-control" placeholder="Seleccionar Fecha" aria-describedby="basic-addon1"> 
+
+            </div>
+                &nbsp; &nbsp;
+        </td>
+
+        
+        <td style="width: 250px; float:left;">
+        
+            <div class="input-group mb-2" style="width: 250px;">
+                &nbsp;
+                <div class="input-group-prepend ">
+                  <span class="input-group-text" id="basic-addon1" style="height:40px ">  <i class="fas fa-truck"></i></span>
+                </div>
+
+            <select id="filtrorepa" name="filtrorepa" style="width: 190px; height:40px; border-radius: 0px;">
+                <option value="seleccionar">Sin asignar</option>
+                @foreach($repartidores as $repartidor)
+                <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
+                @endforeach
+            </select>
+
+
+            </div>
+
+        </td>
+
+        <td style="width: 250px; float:left;">
+            <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
+            <a href="/recolectas" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>     
+        
+        </td>
+
+        <td align='right'>
+
+            <div class="d-flex justify-content-end">
+    
+            <div >
+                <a href="/recolectas/create" class="btn btn-primary float-right" style="color:white;"><i class="fas fa-database"></i> Agregar Recolecta</a>
+            </div>
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+   
+</form>
+    
+
+ 
 </div>
 
 
 
+   
 
 
+
+
+ 
 
 
   <div class="table-responsive" style="border-top: 1px solid; border-top-color:#bbb5bb; ">

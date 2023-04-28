@@ -60,7 +60,8 @@ Route::get('recolecta/guardar', [App\Http\Controllers\RecolectaController::class
 Route::get('comercio/guardar', [App\Http\Controllers\VendedorController::class, 'guardar'] )->name('guardar') ;
 
 Route::get('pedido/lista/{pedidof}/{rutaf}/{repaf}', [App\Http\Controllers\PedidoController::class, 'listadia'] ) ;
-
+//Route::get('recolecta/lista/{pedidof}/{repaf}', [App\Http\Controllers\RecoelctaController::class, 'listadia'] ) ;
+Route::get('recolecta/filtrar', [App\Http\Controllers\RecolectaController::class, 'filtrar'] )->name('filtrar') ;
 Route::get('repartidor/imprimir/{id}', [App\Http\Controllers\RepartidorController::class, 'imprimir'] )->name('pedido.imprimir') ;
 
 Route::middleware([
