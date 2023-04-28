@@ -75,7 +75,7 @@ $('#nombre').on('select2:change', function (e) {
 });
 </script>
 
-
+ 
 
 <script>
   $(document).ready(function() {
@@ -164,6 +164,7 @@ $(document).ready(function() {
        <input hidden id="direc{{$i}}" value="{{ $vendedores[$i]->direccion }} ">
        <input hidden id="tele{{$i}}" value="{{ $vendedores[$i]->telefono }} ">
        <input hidden id="what{{$i}}" value="{{ $vendedores[$i]->whatsapp }} ">
+       <input hidden id="nom2{{$i}}" value="{{ $vendedores[$i]->nombre }} ">
        
        
        @endfor
@@ -175,7 +176,7 @@ $(document).ready(function() {
   </div><!-- termina fila  -->
 
   <div class="row">
-    
+  <input hidden type="text" id="nombre2" name="nombre2" value=" ">
 <div class="col-sm-12 ">
     <label for="inputEmail3" class="col-sm-6 col-form-label">Dirección de recolecta</label>
     <div class="input-group mb-3">
@@ -367,6 +368,7 @@ $(document).ready(function() {
          var first=$('#direc'+id).val();
          var tel=$('#tele'+id).val();
          var wha=$('#what'+id).val();
+         var nom=$('#nom2'+id).val();
           //var direc=$('#dire').text();
           //const direc = 'HOla direci';
 
@@ -374,7 +376,7 @@ $(document).ready(function() {
           document.getElementById("direccion").value = first;
           document.getElementById("telefono").value = tel;
           document.getElementById("whatsapp").value = wha;
-
+          document.getElementById("nombre2").value = nom;
           //for(let i=0; i< '{{ count($vendedores) }}'; i++){
             //if (i == id){
               

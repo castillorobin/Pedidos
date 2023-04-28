@@ -92,8 +92,8 @@ class RecolectaController extends Controller
         $repartidores = Repartidor::all();
         $vendedores = Vendedor::all();
         $recolecta = new Recolecta();
-        $recolectas = Recolecta::all();
-        $recolecta->nombre = $request->get('nombre');
+        
+        $recolecta->nombre = $request->get('nombre2');
         $recolecta->direccion = $request->get('direccion');
         $recolecta->telefono = $request->get('telefono');
         $recolecta->fechaent = $request->get('fechaen');
@@ -102,6 +102,8 @@ class RecolectaController extends Controller
         $recolecta->nota = $request->get('nota');
         $recolecta->agencia = $request->get('agencia');
         $recolecta->save();
+
+        $recolectas = Recolecta::all();
         setlocale(LC_TIME, "spanish");
         $date = Carbon::today();
         //$date = $date->format('l jS F Y');
