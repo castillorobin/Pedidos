@@ -145,6 +145,12 @@ input[type="date"]:valid::before {
     margin-right: -200px;
 }
 
+.headt td {
+  height: 15px !important;
+  padding: 0px;
+ font-size: 14px;
+ background: #ffffff;
+}
 </style>
 <br>
  
@@ -316,19 +322,28 @@ input[type="date"]:valid::before {
     </tr>
 </thead>
 <tbody>
-    @foreach ($pedidos as $pedido)
+    
+    @for ($i=0; $i< count($pedidos); $i++)
     <tr >
-    <td style="font-weight: bolder; color: #484f55;">{{ $pedido->id }}</td>
-    <td style="font-weight: bolder; color: #484f55;">{{ $pedido->vendedor }}</td>
-    <td style="font-weight: bolder; color: #484f55;">{{ $pedido->destinatario }}</td>
-    <td>{{ $pedido->direccion }}</td>
-    <td>{{ $pedido->tipo }}</td>
-    <td style="background: #e3e8e7"> {{ $pedido->estado }}</td>
-    <td> {{ $pedido->fecha_entrega }}</td>
-    <td> {{ $pedido->agencia }}</td>
-    <td> {{ $pedido->repartidor }}</td>
-    <td> {{ $pedido->ruta }}</td>
-    <td> {{ $pedido->nota }}</td>
+    <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->id }}</td>
+    <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->vendedor }}</td>
+    <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
+    <td>{{ $pedidos[$i]->direccion }}</td>
+    <td>{{ $pedidos[$i]->tipo }}</td>
+    <td style="background: #e3e8e7"> {{ $pedidos[$i]->estado }}</td>
+    <td> {{ date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega)) }}</td>
+    <td> {{ $pedidos[$i]->agencia }}</td>
+    <td> {{ $pedidos[$i]->repartidor }}</td>
+    <td> {{ $pedidos[$i]->ruta }}</td>
+    <td> {{ $pedidos[$i]->nota }}</td>
+    <span hidden id="nom{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->vendedor }}</span>
+    <span hidden id="des{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->destinatario }}</span>
+    <span hidden id="tel{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->telefono }}</span>
+    <span hidden id="dir{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->direccion}}</span>
+    <span hidden id="fec{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->created_at))  }}</span>
+    <span hidden id="fece{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega))}}</span>
+    <span hidden id="tip{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->tipo}}</span>
+
     <td class="opciones text-center" style="">
     
     
@@ -343,20 +358,22 @@ input[type="date"]:valid::before {
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
-    <a href="/pedidos/{{ $pedido->id }}/edit" ><button>Editar</button></a></li> 
+    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><button>Editar</button></a></li> 
     </div>  
 	<li class="botones">
-    <form action="{{ route ('pedidos.show', $pedido->id)}}" method="POST">
+    <!--
+    <form action="{{ route ('pedidos.show', $pedidos[$i]->id)}}" method="POST">
     @csrf
     @method('GET')
+-->
     &nbsp;
     <i class="fas fa-eye"></i>
     &nbsp;&nbsp;
-    <button>Ver</button>
+    <button type="button" class="edit" data-bs-toggle="modal" value="{{ $pedidos[$i]->id }}" data-bs-target="#exampleModal">Ver</button>
 </form>
 </li>
 <li class="botones">
-    <form action="{{ route ('pedidos.destroy', $pedido->id)}}" method="POST">
+    <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
         @csrf
         @method('DELETE')
         &nbsp;
@@ -371,9 +388,117 @@ input[type="date"]:valid::before {
 
     </td>
     </tr>
-    @endforeach
+    @endfor
 </tbody>
 </table>
+
+
+
+
+<!-- Inicio Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" style="float: left;"></h1> &nbsp; &nbsp; &nbsp;
+        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></span>
+      </div>
+      <div class="modal-body">
+        <div class="row p-3 m-3" style="border: solid 1px;">
+           
+            <table class="table table-borderless" >
+                <tr>
+                    <td  colspan="3"><h4>Datos del Comercio</h4>
+                        <hr>
+                    </td>
+                    
+                </tr>
+
+                <tr class="headt">
+                    <td width="230px">Nombre de comercio / Tienda </td>
+                    <td> <span ></span> <label for="" id="nombre"></label> </td>
+                    <td rowspan="15"> <span ></span> <label for="" > </label> <img  alt="" id="fotos" width="250"> </td>
+                </tr>
+
+                <tr class="headt">
+                    <td width="230px">Dirección </td>
+                    <td> <span ></span> <label for="" id="dire"></label> </td>
+                    
+                </tr>
+                
+
+                <tr class="headt">
+                    <br>
+                    <td  colspan="3" class="pt-2"> <h4> Datos del destinatario</h4>
+                        <hr>
+                    </td>
+                      
+                </tr>
+
+                <tr class="headt">
+                    <td width="230px">Destinatario </td>
+                    <td> <span ></span> <label for="" id="desti"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Telefono </td>
+                    <td> <span ></span> <label for="" id="telef"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Direccion de entrega </td>
+                    <td> <span ></span> <label for="" id="direc"></label> </td>
+                    
+                </tr>
+                
+
+                <tr class="headt">
+                    <br>
+                    <td  colspan="3" class="pt-2"> <h4> Datos del paquete</h4>
+                        <hr>
+                    </td>
+                      
+                </tr>
+
+                <tr class="headt">
+                    <td width="230px">Fecha de creacion </td>
+                    <td> <span ></span> <label for="" id="fecha"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Fecha de entrega </td>
+                    <td> <span ></span> <label for="" id="fechen"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Tipo de envio </td>
+                    <td> <span ></span> <label for="" id="tipoe"></label> </td>  
+                </tr>
+
+            </table>
+
+
+        </div>
+
+
+
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times" style="color: #ffffff;"></i> &nbsp; Cerrar</button>
+        <a id="impri" class="btn btn-primary" style="color: #ffffff;">Imprimir</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Termina Modal -->
+
+
+
+
+
+
 
 
 </div>
@@ -413,6 +538,68 @@ input[type="date"]:valid::before {
 
 <script>
        
+        
+$(document).ready(function(){
+	$(document).on('click', '.edit', function(){
+		var id=$(this).val();
+		var nomb=$('#nom'+id).text();
+        var dest=$('#des'+id).text();
+        var tele=$('#tel'+id).text();
+        var dire=$('#dir'+id).text();
+        var fech=$('#fec'+id).text();
+        var feche=$('#fece'+id).text();
+        var tipo=$('#tip'+id).text();
+
+        var baj=$('#agencia'+id).text();
+        var tip=$('#isss'+id).text();
+        var esta=$('#afp'+id).text();
+        var agenc=$('#cargo'+id).text();
+        var titu=$('#falta'+id).text();
+        var banc=$('#sala'+id).text();
+        var cuent=$('#fbaja'+id).text();
+        var tcuent=$('#nota'+id).text();
+        var chiv=$('#tvehi'+id).text();
+        var tmon=$('#equipo'+id).text();
+        var empre=$('#placa'+id).text();
+        var gir=$('#tarjeta'+id).text();
+
+        var nr=$('#licencia'+id).text();
+        //foti= '/imgs/fotos/';
+        var fot=$('#foto'+id).text();
+		
+	
+		$('#edit').modal('show');
+		$('#nombre').text(nomb);
+        $('#desti').text(dest);
+        $('#telef').text(tele);
+        $('#direc').text(dire);
+        $('#fecha').text(fech);
+        $('#fechen').text(feche);
+        $('#tipoe').text(tipo);
+
+        $('#baja').text(baj);
+        $('#tipo').text(tip);
+        $('#estado').text(esta);  
+        $('#agenci').text(agenc);
+        $('#titul').text(titu);
+        $('#banco').text(banc);
+        $('#cuenta').text(cuent);
+        $('#tcuenta').text(tcuent);
+        $('#chivo').text(chiv);
+        $('#tmoney').text(tmon);
+        $('#empresa').text(empre);
+        $('#giro').text(gir);   
+ 
+        $('#nrc').text(nr);
+        //$('#fotos').src(fot);
+        var ide = '/repartidor/imprimir/'+id ;
+		$('#fotos').attr("src", fot);
+        //$('#impri a').prop("href", ide);
+        //$('.paginacion a').prop('href','http://nuevaUrl.com');
+        document.getElementById("impri").href = ide;
+	});
+});
+ 
 
 
         $(document).ready(function () {
