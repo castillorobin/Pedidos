@@ -196,7 +196,7 @@ $(document).ready(function() {
                       <i class="fa-solid fa-id-card"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" id="correo" name="correo" placeholder="E-mail" tabindex="4" data-inputmask-alias="email">
+                  <input type="text" class="form-control" id="correo" name="correo" placeholder="E-mail" tabindex="4" >
                   
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
@@ -349,6 +349,9 @@ $(document).ready(function() {
     <option value="Bodeguero">Bodeguero</option>
     <option value="Oficios Varios">Oficios varios</option>
     <option value="Seguridad">Seguridad</option>
+    <option value="Jefe de almacén">Jefe de almacén</option>
+    <option value="Operario">Operario</option>
+    
   </select>
   <div class="invalid-feedback">Este campo es obligatorio.</div>
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>   

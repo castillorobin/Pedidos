@@ -257,7 +257,7 @@ ul li ul:hover {
                 <tr class="headt">
                     <td width="230px">Nombre del empleado </td>
                     <td> <span ></span> <label for="" id="efirstname"></label> </td>
-                    <td rowspan="15"> <span ></span> <label for="" > </label> <img  alt="" id="fotos" width="250"> </td>
+                    <td rowspan="8"> <span ></span> <label for="" > </label> <img  alt="" class="img-thumbnail" id="fotos" width="250"> </td>
                 </tr>
                 <tr class="headt">
                     <td width="230px">Dirección </td>
