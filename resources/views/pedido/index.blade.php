@@ -343,6 +343,19 @@ input[type="date"]:valid::before {
     <span hidden id="fec{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->created_at))  }}</span>
     <span hidden id="fece{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega))}}</span>
     <span hidden id="tip{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->tipo}}</span>
+    <span hidden id="este{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->estado}}</span>
+    <span hidden id="estp{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->pagado}}</span>
+    <span hidden id="pre{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->precio}}</span>
+    <span hidden id="env{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->envio}}</span>
+    <span hidden id="tot{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->total}}</span>
+    <span hidden id="ing{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ingresado}}</span>
+    <span hidden id="ang{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->agencia}}</span>
+    <span hidden id="rep{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->repartidor}}</span>
+    <span hidden id="rut{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ruta}}</span>
+    <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
+    <span hidden id="fot{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->foto}}</span>
+    <span hidden id="fot2{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->foto2}}</span>
+    <span hidden id="fot3{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->foto3}}</span>
 
     <td class="opciones text-center" style="">
     
@@ -418,7 +431,9 @@ input[type="date"]:valid::before {
                 <tr class="headt">
                     <td width="230px">Nombre de comercio / Tienda </td>
                     <td> <span ></span> <label for="" id="nombre"></label> </td>
-                    <td rowspan="15"> <span ></span> <label for="" > </label> <img  alt="" id="fotos" width="250"> </td>
+                    <td rowspan="15"> <span ></span> <label for="" > </label> <img  alt="" id="fotos" width="250"> 
+                    <br> <img  alt="" id="fotos2" width="250">
+                    <br> <img  alt="" id="fotos3" width="250"></td>
                 </tr>
 
                 <tr class="headt">
@@ -473,6 +488,57 @@ input[type="date"]:valid::before {
                     <td width="230px">Tipo de envio </td>
                     <td> <span ></span> <label for="" id="tipoe"></label> </td>  
                 </tr>
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Estado del envio </td>
+                    <td> <span ></span> <label for="" id="este"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Estado del pago </td>
+                    <td> <span ></span> <label for="" id="estp"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Precio del paquete </td>
+                    <td> <span ></span> <label for="" id="preci"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Costo del envio </td>
+                    <td> <span ></span> <label for="" id="envio"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Total a cobrar </td>
+                    <td> <span ></span> <label for="" id="total"></label> </td>  
+                </tr>
+
+                <tr class="headt">
+                    <br>
+                    <td  colspan="3" class="pt-2"> <h4> Datos internos</h4>
+                        <hr>
+                    </td>
+                      
+                </tr>
+
+                <tr class="headt">
+                    <td width="230px">Usuario que registró </td>
+                    <td> <span ></span> <label for="" id="ingre"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Recepción agencia </td>
+                    <td> <span ></span> <label for="" id="agen"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Repartidor </td>
+                    <td> <span ></span> <label for="" id="repar"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Ruta </td>
+                    <td> <span ></span> <label for="" id="ruta1"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Nota </td>
+                    <td> <span ></span> <label for="" id="nota1"></label> </td>  
+                </tr>
+
 
             </table>
 
@@ -549,23 +615,21 @@ $(document).ready(function(){
         var fech=$('#fec'+id).text();
         var feche=$('#fece'+id).text();
         var tipo=$('#tip'+id).text();
-
-        var baj=$('#agencia'+id).text();
-        var tip=$('#isss'+id).text();
-        var esta=$('#afp'+id).text();
-        var agenc=$('#cargo'+id).text();
-        var titu=$('#falta'+id).text();
-        var banc=$('#sala'+id).text();
-        var cuent=$('#fbaja'+id).text();
-        var tcuent=$('#nota'+id).text();
-        var chiv=$('#tvehi'+id).text();
-        var tmon=$('#equipo'+id).text();
-        var empre=$('#placa'+id).text();
-        var gir=$('#tarjeta'+id).text();
-
-        var nr=$('#licencia'+id).text();
+        var est=$('#este'+id).text();
+        var esp=$('#estp'+id).text();
+        var prec=$('#pre'+id).text();
+        var envi=$('#env'+id).text();
+        var tota=$('#tot'+id).text();
+        var ingr=$('#ing'+id).text();
+        var ange=$('#ang'+id).text();
+        var repa=$('#rep'+id).text();
+        var ruta=$('#rut'+id).text();
+        var nota=$('#not'+id).text();
+        var foto=$('#fot'+id).text();
+        var foto2=$('#fot2'+id).text();
+        var foto3=$('#fot3'+id).text();
         //foti= '/imgs/fotos/';
-        var fot=$('#foto'+id).text();
+
 		
 	
 		$('#edit').modal('show');
@@ -576,26 +640,30 @@ $(document).ready(function(){
         $('#fecha').text(fech);
         $('#fechen').text(feche);
         $('#tipoe').text(tipo);
+        $('#este').text(est);
+        $('#estp').text(esp);
+        $('#preci').text(prec);  
+        $('#envio').text(envi);
+        $('#total').text(tota);
+        $('#ingre').text(ingr);
+        $('#agen').text(ange);
+        $('#repar').text(repa);
+        $('#ruta1').text(ruta);
+        $('#nota1').text(nota);
 
-        $('#baja').text(baj);
-        $('#tipo').text(tip);
-        $('#estado').text(esta);  
-        $('#agenci').text(agenc);
-        $('#titul').text(titu);
-        $('#banco').text(banc);
-        $('#cuenta').text(cuent);
-        $('#tcuenta').text(tcuent);
-        $('#chivo').text(chiv);
-        $('#tmoney').text(tmon);
         $('#empresa').text(empre);
         $('#giro').text(gir);   
  
         $('#nrc').text(nr);
         //$('#fotos').src(fot);
         var ide = '/repartidor/imprimir/'+id ;
-		$('#fotos').attr("src", fot);
+		$('#fotos').attr("src", foto);
+        $('#fotos2').attr("src", foto2);
+        $('#fotos3').attr("src", foto3);
+
         //$('#impri a').prop("href", ide);
         //$('.paginacion a').prop('href','http://nuevaUrl.com');
+
         document.getElementById("impri").href = ide;
 	});
 });
