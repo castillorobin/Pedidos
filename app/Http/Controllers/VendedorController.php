@@ -59,7 +59,8 @@ class VendedorController extends Controller
         $vendedor->direccion = $request->get('direccion');
         $vendedor->telefono = $request->get('telefono');
         $vendedor->whatsapp = $request->get('whatsapp');
-        $vendedor->falta = $request->get('falta');
+        
+        $vendedor->falta = date("Y-m-d", strtotime($request->get('falta')));
         $vendedor->fbaja = $request->get('fbaja');
         $vendedor->tipovende = $request->get('tipoven');
         $vendedor->correo = $request->get('correo');
