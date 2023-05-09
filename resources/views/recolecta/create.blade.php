@@ -9,9 +9,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 @stop
 
 @section('content')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 body {
   font-family: 'Roboto', sans-serif;
@@ -116,7 +118,7 @@ $(document).ready(function() {
 });
 
 
-
+ 
  
 
 
@@ -145,7 +147,7 @@ $(document).ready(function() {
           <span class="input-group-text" id="basic-addon1"> <i class="fas fa-user"></i> </span>
         </div>
       <select id="nombre" name="nombre" class="form-control" tabindex="1" required>
-       <option >-Seleccionar comercio-</option>
+       <option value="Sin asignar" selected >Sin asignar</option>
        
        @for($i=0;  $i< count($vendedores); $i++ )
        <option value="{{$i}}">{{ $vendedores[$i]->nombre }} 
@@ -184,7 +186,7 @@ $(document).ready(function() {
   <div class="input-group-prepend">
   <span class="input-group-text" id="basic-addon1"> <i class="fas fa-map-marker-alt"></i> </span>
   </div>
-  <input type="text" class="form-control" id="direccion" name="direccion" aria-label="Username" aria-describedby="basic-addon1" tabindex="2" value="asd">
+  <input type="text" class="form-control" id="direccion" name="direccion" aria-label="Username" aria-describedby="basic-addon1" tabindex="2" >
   <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
 </div>
     </div>
@@ -405,5 +407,6 @@ $(document).ready(function() {
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 @stop

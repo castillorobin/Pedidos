@@ -120,7 +120,7 @@ $(document).ready(function() {
       </div>
     </div>
   <br>
-
+ 
   
   <div class="row mx-5" >
     <h4>Datos del Empleado</h4>

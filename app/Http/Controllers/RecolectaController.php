@@ -8,7 +8,7 @@ use App\Models\Vendedor;
 use App\Models\Repartidor;
 class RecolectaController extends Controller
 {
-    /** 
+    /**  
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -93,7 +93,7 @@ class RecolectaController extends Controller
         $vendedores = Vendedor::all();
         $recolecta = new Recolecta();
         
-        $recolecta->nombre = $request->get('nombre2');
+        $recolecta->nombre = $request->get('nombre');
         $recolecta->direccion = $request->get('direccion');
         $recolecta->telefono = $request->get('telefono');
         $recolecta->fechaent = $request->get('fechaen');
